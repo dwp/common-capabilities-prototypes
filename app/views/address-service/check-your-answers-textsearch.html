@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Address lookup using textsearch
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="address-details-postcode">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check selected address </h1>
+
+      <h2 class="govuk-heading-m">Address details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Selected address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            3 King Street South Shields NE33 1HT
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="enter-textsearch">
+              Change
+              <span class="govuk-visually-hidden">Postcode</span>
+            </a>
+          </dd>
+        </div>
+
+
+
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">Actions</h2>
+
+      <p>Few actions that can be performed (TBC).</p>
+
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button"> Copy address </button> &nbsp;
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button"> Send address </button> &nbsp;
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button"> Confirm & verify address </button>
+
+
+
+
+
+<br>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<br>
+
+<form action="/address-service/check-your-answers-textsearch-answer" method="post" class="form">
+
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Do you want to lookup another address using textsearch?
+      </h2>
+      <br>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="another-address" name="another-address" type="radio" value="true">
+        <label class="govuk-label govuk-radios__label" for="another-address">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="another-address" name="another-address" type="radio" value="false">
+        <label class="govuk-label govuk-radios__label" for="another-address">
+          No
+        </label>
+      </div>
+    </div>
+    </fieldset>
+  </div>
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+</form>
+
+
+
+
+    </div>
+  </div>
+{% endblock %}

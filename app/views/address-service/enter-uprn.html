@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Enter Unique Property Reference Number (UPRN)
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            UPRN address lookup
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="UPRN-start">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Enter Unique Property Reference Number (UPRN)
+      </h1>
+
+      <p class="govuk-hint">Must be a 12 digit Unique Property Reference Number (UPRN) without spaces. For example '42323329302'</p>
+
+
+      <form class="form " name="reason-form-2" action="address-details" onsubmit="return validateForm()" method="post">
+
+      <div><input class="govuk-input govuk-!-width-two-thirds" id="uprn-number" name="uprn-number" type="text"></div>
+
+
+      <!-- Field Error - Start -->
+      <span id="no-reason-error-2-2" class="govuk-error-message govuk-radios__conditional--hidden">
+          <span class="govuk-visually-hidden">Error:</span>Enter reason for not doing task
+      </span>
+      <!-- Field Error - End -->
+      <br>
+      <br>
+      <button class="govuk-button" data-module="govuk-button">Find address</button>
+
+
+
+
+
+      </form>
+
+      </div>
+
+
+
+    </div>
+
+
+{% endblock %}
