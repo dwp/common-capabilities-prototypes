@@ -114,9 +114,9 @@ router.post('/address-service/check-your-answers-textsearch-answer', function (r
   const anotherLookup = req.session.data['another-address']
 
   if (anotherLookup === 'false') {
-    res.redirect('/address-service/address-lookups-yes-no-postcode')
+    res.redirect('/address-service/address-lookups-yes-no-textsearch')
   } else {
-    res.redirect('enter-typeahead')
+    res.redirect('enter-textsearch')
   }
 })
 
