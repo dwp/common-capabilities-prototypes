@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers
+Address details
+
 {% endblock %}
 
 {% block header %}
@@ -9,10 +10,10 @@
 <header class="govuk-header " role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__content">
-      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/address-service/typeahead-start" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <span class="govuk-header__logotype-text">
-            Search for an address
+            Address lookup using textsearch
           </span>
         </span>
       </a>
@@ -35,9 +36,9 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check selected address </h1>
+      <h1 class="govuk-heading-xl">Address details</h1>
 
-      <h2 class="govuk-heading-m">Address details</h2>
+      <!-- <h2 class="govuk-heading-m">Address details</h2> -->
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -67,7 +68,7 @@
 
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button"> Copy address </button> &nbsp;
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button"> Send address </button> &nbsp;
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button"> Confirm and verify address </button>
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button"> Confirm & verify address </button>
 
 
 
@@ -84,7 +85,7 @@
     <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h2 class="govuk-fieldset__heading">
-        Do you want to search for another address?
+        Do you want to lookup another address using textsearch?
       </h2>
       <br>
     </legend>
