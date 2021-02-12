@@ -34,7 +34,7 @@ router.post('/address-service/check-your-answers-uprn-answer', function (req, re
   if (anotherLookup === 'false') {
     res.redirect('/address-service/address-lookups-yes-no')
   } else {
-    res.redirect('UPRN-start')
+    res.redirect('enter-uprn')
   }
 })
 
@@ -75,7 +75,7 @@ router.post('/address-service/check-your-answers-postcode-answer', function (req
   if (anotherLookup === 'false') {
     res.redirect('/address-service/address-lookups-yes-no-postcode')
   } else {
-    res.redirect('postcode-start')
+    res.redirect('enter-postcode')
   }
 })
 
@@ -116,7 +116,7 @@ router.post('/address-service/check-your-answers-textsearch-answer', function (r
   if (anotherLookup === 'false') {
     res.redirect('/address-service/address-lookups-yes-no-postcode')
   } else {
-    res.redirect('typeahead-start')
+    res.redirect('enter-typeahead')
   }
 })
 
