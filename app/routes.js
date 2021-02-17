@@ -53,9 +53,9 @@ router.post('/address-service/address-lookups-postcode', function (req, res) {
   const anotherLookup = req.session.data['another-lookup-service']
 
   if (anotherLookup === 'no-to-lookup') {
-    res.redirect('/address-service/thank-you')
+    res.redirect('/address-service/main-thank-you')
   } else {
-    res.redirect('/index-address-service')
+    res.redirect('/address-service/main-address-lookups-u-t')
   }
 })
 
@@ -94,9 +94,9 @@ router.post('/address-service/address-lookups-textsearch', function (req, res) {
   const anotherLookup = req.session.data['another-lookup-service']
 
   if (anotherLookup === 'no-to-lookup') {
-    res.redirect('/address-service/thank-you')
+    res.redirect('/address-service/main-thank-you')
   } else {
-    res.redirect('/index-address-service')
+    res.redirect('/address-service/main-address-lookups-p-u')
   }
 })
 
@@ -123,6 +123,35 @@ router.post('/address-service/check-your-answers-textsearch-answer', function (r
 router.get('/making-pages', function (req, res) {
   res.redirect('/docs/make-first-prototype/create-pages')
 })
+
+
+
+// Branching textsearch
+router.post('/address-service/main-address-lookups', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const anotherLookup = req.session.data['main-lookup-service']
+
+  if (anotherLookup === 'postcode') {
+    res.redirect('/address-service/main-address-details-postcode')
+  }
+
+  else if (anotherLookup === 'uprn') {
+    res.redirect('/address-service/main-check-address-uprn')
+  }
+
+  else if (anotherLookup === 'textsearch') {
+    res.redirect('/address-service/main-enter-textsearch')
+  }
+
+})
+
+
+
+
+
 
 
 

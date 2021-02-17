@@ -9,10 +9,10 @@
 <header class="govuk-header " role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__content">
-      <a href="/address-service/postcode-start" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/address-service/main-address-service-start" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <span class="govuk-header__logotype-text">
-            Find address using postcode
+            Find address using UPRN
           </span>
         </span>
       </a>
@@ -28,7 +28,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="address-details-postcode">Back</a>
+<a class="govuk-back-link" href="main-address-lookups">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -37,20 +37,20 @@
 
       <h1 class="govuk-heading-xl">Address details</h1>
 
-      <h2 class="govuk-heading-m">Address details</h2>
+      <!-- <h2 class="govuk-heading-m">Address details</h2> -->
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Postcode
+            UPRN
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['postcode-lookup-no'] | default('NE33 1HT') }}
+            {{ data['using-uprn'] | default('22223332232') }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="enter-postcode">
+            <a href="main-address-lookups">
               Change
-              <span class="govuk-visually-hidden">Postcode</span>
+              <span class="govuk-visually-hidden"> UPRN number</span>
             </a>
           </dd>
         </div>
@@ -59,7 +59,7 @@
             Address
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['sort'] | default('3 King Street South Shields NE33 1HT') }}
+            {{ data['selected-address'] | default('3 King Street South Shields NE33 1HT') }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -90,24 +90,28 @@
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 <br>
 
-<form action="/address-service/check-your-answers-postcode-answer" method="post" class="form">
+
 
 
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h2 class="govuk-fieldset__heading">
-        Do you want to find another address using a postcode?
+        Do you want to find another address?
       </h2>
       <br>
+      <a href="main-address-lookups"><button class="govuk-button" data-module="govuk-button">Find an address</button></a> &nbsp; &nbsp; <br>
+      <p>If you do not want to find another address, close the window or tab.</p>
+
     </legend>
-    <a href="enter-postcode"><button class="govuk-button" data-module="govuk-button">Find address</button></a> &nbsp; &nbsp; <br>
-    <p>If you do not want to find another address using a postcode, close the browser window or tab.</p>
+
     </fieldset>
   </div>
 
 
-</form>
+
+
+
 
 
 

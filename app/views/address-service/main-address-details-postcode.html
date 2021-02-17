@@ -8,10 +8,10 @@
 <header class="govuk-header " role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__content">
-      <a href="/address-service/typeahead-start" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/address-service/main-address-service-start" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <span class="govuk-header__logotype-text">
-            Search for an address
+            Find address using postcode
           </span>
         </span>
       </a>
@@ -59,7 +59,7 @@
 
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="main-enter-textsearch">Back</a>
+  <a class="govuk-back-link" href="main-address-lookups">Back</a>
 {% endblock %}
 
 
@@ -100,14 +100,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Do you want to use another lookup service? </h1>
+      <h1 class="govuk-heading-xl">Select the addresss</h1>
 
-      <form class="form " name="address-lookup-service-form" action="/address-service/address-lookups-textsearch" method="post">
+      <form class="form" name="reason-form-2" action="/address-service/main-check-address-postcode"  method="post">
 
       <div class="govuk-form-group" id="reason-options-3">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
 
-
+        <p class="govuk-heading-m">Postcode</p>
+        <p><strong>{{ data['using-postcode'] | default('NE33 1HT') }}</strong>&nbsp;&nbsp;&nbsp;<a href="main-address-lookups">Change</a></p>
       <!-- Specific error block - Start -->
 
       <span id="no-reason-error-2" class="govuk-error-message govuk-radios__conditional--hidden">
@@ -119,33 +120,31 @@
 
 
       <br>
-
-
-      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="another-lookup-service-yes" name="another-lookup-service" type="radio" value="yes-to-lookup" data-aria-controls="reason-for-not-doing-task-1">
-          <label class="govuk-label govuk-radios__label" for="reason-1">
-            Yes
-          </label>
-        </div>
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="another-lookup-service-no" name="another-lookup-service" type="radio" value="no-to-lookup" data-aria-controls="reason-for-not-doing-task-2">
-          <label class="govuk-label govuk-radios__label" for="reason-2">
-            No
-          </label>
-        </div>
+      <div id="contact-hint" class="govuk-heading-m">
+        Select an address
+      </div>
+      <div class="govuk-form-group">
+  <select class="govuk-select" id="sort" name="sort">
+    <option  selected>5 addresses  found</option>
+    <option value="1 King Street South Shields NE33 1HT" >1 King Street South Shields NE33 1HT</option>
+    <option value="2 King Street South Shields NE33 1HT" >2 King Street South Shields NE33 1HT</option>
+    <option value="3 King Street South Shields NE33 1HT" >3 King Street South Shields NE33 1HT</option>
+    <option value="4 King Street South Shields NE33 1HT" >4 King Street South Shields NE33 1HT</option>
+    <option value="5 King Street South Shields NE33 1HT" >5 King Street South Shields NE33 1HT</option>
+  </select>
+</div>
 
 
 
         </fieldset>
       </div>
-      <br>
+
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 <br>
+<p><a href="address-lookups-postcode">I can't find the address in the options</a></p>
 
 
 

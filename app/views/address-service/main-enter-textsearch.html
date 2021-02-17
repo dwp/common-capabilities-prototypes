@@ -9,7 +9,7 @@
 <header class="govuk-header " role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__content">
-      <a href="/address-service/typeahead-start" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/address-service/main-address-service-start" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <span class="govuk-header__logotype-text">
             Search for an address
@@ -29,7 +29,7 @@
 
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="typeahead-start">Back</a>
+  <a class="govuk-back-link" href="main-address-lookups">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -44,16 +44,11 @@
       <p class="govuk-hint">Start typing the address or postcode. For example '1, King Street' or 'King Street, South Shields' or 'NE33 1HT'</p>
 
       <br>
-      <form class="form " name="reason-form-2" action="check-your-answers-textsearch" onsubmit="return validateForm()" method="post">
+      <form class="form " name="reason-form-2" action="main-check-address-textsearch" onsubmit="return validateForm()" method="post">
 
       <div><input class="govuk-input govuk-!-width-two-thirds" id="uprn-number" name="uprn-number" type="text"></div>
 
 
-      <!-- Field Error - Start -->
-      <span id="no-reason-error-2-2" class="govuk-error-message govuk-radios__conditional--hidden">
-          <span class="govuk-visually-hidden">Error:</span>Enter reason for not doing task
-      </span>
-      <!-- Field Error - End -->
       <br>
       <br>
       <button class="govuk-button" data-module="govuk-button">Select address</button>
@@ -64,7 +59,7 @@
 
       </form>
       <br>
-      <p><a href="address-details-manually-textsearch">Enter address manually</a></p>
+      <p><a href="address-lookups-textsearch">I can't find the address in the options</a></p>
 
 
       </div>

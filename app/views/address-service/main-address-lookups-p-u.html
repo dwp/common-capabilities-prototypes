@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is the addresss you are looking for?
+  Address service
 {% endblock %}
 {% block header %}
 
 <header class="govuk-header " role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__content">
-      <a href="/address-service/typeahead-start" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <span class="govuk-header__logotype-text">
-            Search for an address
+            Find an address
           </span>
         </span>
       </a>
@@ -59,7 +59,7 @@
 
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="main-enter-textsearch">Back</a>
+  <a class="govuk-back-link" href="address-lookups-textsearch">Back</a>
 {% endblock %}
 
 
@@ -100,46 +100,70 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Do you want to use another lookup service? </h1>
+      <h1 class="govuk-heading-xl">How do you want to find an address? </h1>
 
-      <form class="form " name="address-lookup-service-form" action="/address-service/address-lookups-textsearch" method="post">
-
-      <div class="govuk-form-group" id="reason-options-3">
-        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <form class="form " name="address-lookup-service-form" action="/address-service/main-address-lookups" method="post">
 
 
-      <!-- Specific error block - Start -->
-
-      <span id="no-reason-error-2" class="govuk-error-message govuk-radios__conditional--hidden">
-          <span class="govuk-visually-hidden">Error:</span> Select reason for not doing task
-      </span>
-
-      <!-- Specific error block - End -->
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
 
 
-
-      <br>
-
-
-      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="another-lookup-service-yes" name="another-lookup-service" type="radio" value="yes-to-lookup" data-aria-controls="reason-for-not-doing-task-1">
-          <label class="govuk-label govuk-radios__label" for="reason-1">
-            Yes
-          </label>
-        </div>
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="another-lookup-service-no" name="another-lookup-service" type="radio" value="no-to-lookup" data-aria-controls="reason-for-not-doing-task-2">
-          <label class="govuk-label govuk-radios__label" for="reason-2">
-            No
-          </label>
-        </div>
-
-
-
-        </fieldset>
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="lookup-service" name="main-lookup-service" type="radio" value="uprn" data-aria-controls="using-uprn">
+        <label class="govuk-label govuk-radios__label" for="lookup-service">
+          Using Unique Property Reference Number (UPRN)
+        </label>
       </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="using-uprn">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="using-uprn">
+            Enter the UPRN
+          </label>
+          <p class="govuk-hint">The Unique Property Reference Number (UPRN) must be a 12 digit number with no spaces. For example '423233293021'.</p>
+
+          <input class="govuk-input govuk-!-width-two-thirds" id="using-uprn" name="using-uprn" type="text" spellcheck="false"></div>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="main-lookup-service" type="radio" value="postcode" data-aria-controls="using-postcode">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          Using postcode
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="using-postcode">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-phone">
+            Enter postcode
+          </label>
+          <p class="govuk-hint">Enter UK postcode For example 'NE33 1HT' or 'NE331HT'</p>
+
+          <input class="govuk-input govuk-!-width-one-third" id="using-postcode" name="using-postcode" type="text"></div>
+
+      </div>
+
+      <!--
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-3" name="main-lookup-service" type="radio" value="textsearch" ">
+        <label class="govuk-label govuk-radios__label" for="contact-3">
+          Search for an address
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Mobile phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel"></div>
+
+      </div> -->
+    </div>
+
+  </fieldset>
+</div>
+
       <br>
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>

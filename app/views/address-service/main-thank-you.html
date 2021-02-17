@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Address lookup
+  Find an address
 {% endblock %}
 
 {% block header %}
@@ -9,10 +9,10 @@
 <header class="govuk-header " role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__content">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <span class="govuk-header__logotype-text">
-            Address lookup
+            Find an address
           </span>
         </span>
       </a>
@@ -40,11 +40,20 @@
       </div>
 
 <br><br><br><br>
-      <h2 class="govuk-heading-m">You can also: </h2>
-      <p>Resume searching addressess using the following services </p>
-      <p><a href="/address-service/UPRN-start">Find an address using a UPRN</a></p>
-      <p><a href="/address-service/postcode-start">Find an address using a postcode</a></p>
-      <p><a href="/address-service/typeahead-start">Search for an address</a></p>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+    <h2 class="govuk-fieldset__heading">
+      Do you want to find another address?
+    </h2>
+    <br>
+    <a href="main-address-lookups"><button class="govuk-button" data-module="govuk-button">Find an address</button></a> &nbsp; &nbsp; <br>
+    <p>If you do not want to find another address, close the window or tab.</p>
+
+  </legend>
+
+  </fieldset>
+</div>
 
       <br><br>
 
