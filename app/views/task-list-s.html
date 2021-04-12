@@ -1,0 +1,678 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Manage tasks
+{% endblock %}
+
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    function validateForm() {
+      var x = document.forms["no-of-tasks-form"]["no-of-tasks"].value;
+      var y = document.getElementById("error-summary");
+
+      var reason_error = document.getElementById("no-reason-error");
+
+      if (x == "") {
+        y.style.display="block";
+        reason_error.style.display="block";
+        $("#reason-options").addClass("govuk-form-group--error");
+        return false;
+      }
+    }
+
+  </script>
+
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Manage tasks
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation  " aria-label="Navigation menu">
+          <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+            <a class="govuk-header__link" href="/my-tasks-using-tl/task-list">
+              My tasks
+            </a>
+          </li>
+          <li class="govuk-header__navigation-item ">
+            <a class="govuk-header__link" href="/my-tasks-using-tl/statistics/statistics">
+              My clearances
+            </a>
+          </li>
+
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+  <div class="govuk-grid-column-two-thirds" style="width:65%;">
+    <h1 class="govuk-heading-xl">
+      My tasks
+      <!-- <span class="govuk-body"><a href="/my-tasks-using-tl/task-list-alternative">Alternate option</a></span> -->
+    </h1>
+  </div>
+  <div class="govuk-grid-column-one-thirds" >
+  <a href="add-new-tasks"><button class="govuk-button govuk-!-margin-left-9 " data-module="govuk-button" > Add new tasks to my task list </button></a>
+</div>
+</div>
+
+
+<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-column-full">
+    <br><br>
+<!-- Start -->
+
+<div class="moj-filter-layout">
+
+<div class="moj-filter-layout__filter">
+
+<div class="moj-filter">
+
+  <div class="moj-filter__header">
+
+    <div class="moj-filter__header-title">
+      <h2 class="govuk-heading-m">Filter</h2>
+    </div>
+
+    <div class="moj-filter__header-action">
+
+    </div>
+
+  </div>
+
+  <div class="moj-filter__content">
+
+    <div class="moj-filter__selected">
+
+      <div class="moj-filter__selected-heading">
+
+        <div class="moj-filter__heading-title">
+          <h2 class="govuk-heading-m">Selected filters</h2>
+        </div>
+
+        <div class="moj-filter__heading-action">
+          <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+        </div>
+
+      </div>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Colour</h3>
+
+      <ul class="moj-filter-tags">
+
+        <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Blue</a></li>
+
+        <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Yellow</a></li>
+
+      </ul>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Status</h3>
+
+      <ul class="moj-filter-tags">
+
+        <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Complete</a></li>
+
+      </ul>
+
+    </div>
+
+    <div class="moj-filter__options">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Apply filters
+      </button>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="keywords">
+          Keywords
+        </label>
+
+        <input class="govuk-input" id="keywords" name="keywords" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+            Colour
+
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type">
+                Blue (18)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                Yellow (5)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+              <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                Red (2)
+              </label>
+
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+            Status
+
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="1" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="status">
+                Complete (5)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+              <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                Incomplete (3)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
+              <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                In progress (13)
+              </label>
+
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<div class="moj-filter-layout__content">
+
+<div class="moj-action-bar">
+
+  <div class="moj-action-bar__filter"></div>
+
+  <div class="moj-button-menu">
+    <div class="moj-button-menu__wrapper">
+
+      <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+        Action 1
+      </button>
+
+      <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+        Action 2
+      </button>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="moj-scrollable-pane">
+
+  <div class="moj-scrollable-pane__wrapper">
+
+    <table class="govuk-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header">Reference</th>
+
+          <th scope="col" class="govuk-table__header">Person</th>
+
+          <th scope="col" class="govuk-table__header">Colour</th>
+
+          <th scope="col" class="govuk-table__header">Status</th>
+
+          <th scope="col" class="govuk-table__header">Date of last event</th>
+
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">44455453</a></th>
+
+          <td class="govuk-table__cell">John Smith</td>
+
+          <td class="govuk-table__cell">Blue</td>
+
+          <td class="govuk-table__cell">Complete</td>
+
+          <td class="govuk-table__cell">25 Jan 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">12323212</a></th>
+
+          <td class="govuk-table__cell">Warren Sutton</td>
+
+          <td class="govuk-table__cell">Yellow</td>
+
+          <td class="govuk-table__cell">In progress</td>
+
+          <td class="govuk-table__cell">25 Jan 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">45678765</a></th>
+
+          <td class="govuk-table__cell">Alan Jones</td>
+
+          <td class="govuk-table__cell">Yellow</td>
+
+          <td class="govuk-table__cell">In progress</td>
+
+          <td class="govuk-table__cell">9 May 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">12345678</a></th>
+
+          <td class="govuk-table__cell">Jennifer Langley</td>
+
+          <td class="govuk-table__cell">Yellow</td>
+
+          <td class="govuk-table__cell">In progress</td>
+
+          <td class="govuk-table__cell">9 May 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">89009800</a></th>
+
+          <td class="govuk-table__cell">Susan Francis</td>
+
+          <td class="govuk-table__cell">Red</td>
+
+          <td class="govuk-table__cell">Incomplete</td>
+
+          <td class="govuk-table__cell">9 May 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">44455453</a></th>
+
+          <td class="govuk-table__cell">John Smith</td>
+
+          <td class="govuk-table__cell">Blue</td>
+
+          <td class="govuk-table__cell">Complete</td>
+
+          <td class="govuk-table__cell">25 Jan 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">12323212</a></th>
+
+          <td class="govuk-table__cell">Warren Sutton</td>
+
+          <td class="govuk-table__cell">Yellow</td>
+
+          <td class="govuk-table__cell">In progress</td>
+
+          <td class="govuk-table__cell">25 Jan 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">45678765</a></th>
+
+          <td class="govuk-table__cell">Alan Jones</td>
+
+          <td class="govuk-table__cell">Yellow</td>
+
+          <td class="govuk-table__cell">In progress</td>
+
+          <td class="govuk-table__cell">9 May 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">12345678</a></th>
+
+          <td class="govuk-table__cell">Jennifer Langley</td>
+
+          <td class="govuk-table__cell">Yellow</td>
+
+          <td class="govuk-table__cell">In progress</td>
+
+          <td class="govuk-table__cell">9 May 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">89009800</a></th>
+
+          <td class="govuk-table__cell">Susan Francis</td>
+
+          <td class="govuk-table__cell">Red</td>
+
+          <td class="govuk-table__cell">Incomplete</td>
+
+          <td class="govuk-table__cell">9 May 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">45456765</a></th>
+
+          <td class="govuk-table__cell">John Smith</td>
+
+          <td class="govuk-table__cell">Red</td>
+
+          <td class="govuk-table__cell">Incomplete</td>
+
+          <td class="govuk-table__cell">9 May 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">88675411</a></th>
+
+          <td class="govuk-table__cell">Margaret Blake</td>
+
+          <td class="govuk-table__cell">Red</td>
+
+          <td class="govuk-table__cell">Incomplete</td>
+
+          <td class="govuk-table__cell">9 May 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">44455453</a></th>
+
+          <td class="govuk-table__cell">John Smith</td>
+
+          <td class="govuk-table__cell">Blue</td>
+
+          <td class="govuk-table__cell">Complete</td>
+
+          <td class="govuk-table__cell">25 Jan 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">12323212</a></th>
+
+          <td class="govuk-table__cell">Warren Sutton</td>
+
+          <td class="govuk-table__cell">Yellow</td>
+
+          <td class="govuk-table__cell">In progress</td>
+
+          <td class="govuk-table__cell">25 Jan 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">45678765</a></th>
+
+          <td class="govuk-table__cell">Alan Jones</td>
+
+          <td class="govuk-table__cell">Yellow</td>
+
+          <td class="govuk-table__cell">In progress</td>
+
+          <td class="govuk-table__cell">9 May 2018</td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+
+          <th scope="row" class="govuk-table__header"><a href="#">12345678</a></th>
+
+          <td class="govuk-table__cell">Jennifer Langley</td>
+
+          <td class="govuk-table__cell">Yellow</td>
+
+          <td class="govuk-table__cell">In progress</td>
+
+          <td class="govuk-table__cell">9 May 2018</td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+</div>
+
+
+<!-- End -->
+
+
+    <!-- Table to hold list of tasks -->
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-half" style="width:55% !important;">Task</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" style="width:15% !important;">Priority</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" style="width:15% !important;">Due date</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" style="width:16% !important;">Status</th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Check claim details </a></td>
+          <td class="govuk-table__cell">Very high</td>
+          <td class="govuk-table__cell">10-01-2021</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Not started</strong></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="/my-tasks-using-tl/in-progress-2/check-disable-details">Check disabled person's details and appointee</a></td>
+          <td class="govuk-table__cell">Very high</td>
+          <td class="govuk-table__cell">12-01-2021</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="/my-tasks-using-tl/claim-details/check-claim-details">Update ceased to care details </a></td>
+          <td class="govuk-table__cell">Very high</td>
+          <td class="govuk-table__cell">12-01-2021</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Not started</strong></td>
+
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="/my-tasks-using-tl/in-progress/verify-non-employment">Check non-employment income</a></td>
+          <td class="govuk-table__cell">Low</td>
+          <td class="govuk-table__cell">13-01-2021</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="/my-tasks-using-tl/address-verify/verify-addresses">Update dependent qualifying benefits</a></td>
+          <td class="govuk-table__cell">Very high</td>
+          <td class="govuk-table__cell">13-01-2021</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Not started</strong></td>
+
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Update dependent details</a></td>
+          <td class="govuk-table__cell">Low</td>
+          <td class="govuk-table__cell">14-01-2021</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Not started</strong></td>
+
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Update employment status</a></td>
+          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell">14-01-2021</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Not started</strong></td>
+
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="/my-tasks-using-tl/add-payment/add-payment">Add payment details</a></td>
+          <td class="govuk-table__cell">Medium</td>
+          <td class="govuk-table__cell">15-01-2021</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Not started</strong></td>
+
+
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Update ceased to care details</a></td>
+          <td class="govuk-table__cell">Medium</td>
+          <td class="govuk-table__cell">15-01-2021</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Not started</strong></td>
+
+
+
+        </tr>
+
+      </tbody>
+    </table>
+    <!-- Table to hold list of tasks -- END -->
+  <br>
+  <br>
+  <h2 class="govuk-heading-m" id="subsection-title">
+    Assigned to someone else
+
+  </h2>
+
+
+
+  <!-- Table to hold list of tasks -->
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-!-width-one-half" style="width:55% !important;">Task</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" style="width:31% !important;">Assigned to</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" style="width:15% !important;">Status</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="#">Check claim evidence </a></td>
+        <td class="govuk-table__cell">Mary M</td>
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <!-- <th scope="row" class="govuk-table__header">Total estimated pay</th> -->
+        <td class="govuk-table__cell"><a href="#">Add payment details</a></td>
+        <td class="govuk-table__cell">Mathew Philip</td>
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="#">Update ceased to care details</a></td>
+        <td class="govuk-table__cell">James May</td>
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="#">Check disabled person's details and appointee</a></td>
+        <td class="govuk-table__cell">Andrew Smith</td>
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="#">Check address</a></td>
+        <td class="govuk-table__cell">James May</td>
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+      </tr>
+
+
+    </tbody>
+  </table>
+  <!-- Table to hold list of tasks -- END -->
+
+
+  </div>
+
+  </div>       <!-- End of main row -->
+
+
+
+{% endblock %}
