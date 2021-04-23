@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Services on DWP Manage tasks
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/self-service/index-self-service" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            DWP Manage task
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      This is not a service - this interface is to help teams set up and maintain DWP Manage tasks
+    </span>
+  </p>
+</div>
+<br>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Service and domain
+    </h1>
+
+    <p class="govuk-!-padding-bottom-6">Set up a service so you can create tasks, agents and task matching attributes.</p>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="setup-task-list" method="post">
+
+        <div class="govuk-form-group">
+
+          <fieldset data-required data-error="Cannot be blank" class="govuk-fieldset">
+          <label class="govuk-label" for="business-service-name">
+            Service name
+          </label>
+          <span class="govuk-hint">This will be name of the business or benefit name. For example 'Get your State Pension' or 'Future payments' </span>
+          <input class="govuk-input govuk-!-width-two-thirds form-control " id="business-service-name" name="business-service-name" type="text" value="{{ data['business-service-name'] }}">
+          </fieldset>
+        </div>
+
+
+        <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset"  data-required data-error="Cannot be blank">
+          <label class="govuk-label" for="service-domain">
+            Domain
+          </label>
+          <p class="govuk-hint">For example, the domain name for 'Get your State Pension' is 'uk.gov.dwp.rbc.gysp'</p>
+          <input class="govuk-input govuk-!-width-two-thirds" id="service-domain" name="service-domain" type="text"  value="{{ data['service-domain'] }}" >
+        </fieldset>
+
+        </div>
+
+
+        <p class="govuk-!-padding-bottom-4"></p>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

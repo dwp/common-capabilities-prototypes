@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Setup complete confirmation
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/self-service/index-self-service" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            DWP Manage task
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      This is not a service - this interface is to help teams set up and maintain DWP Manage tasks
+    </span>
+  </p>
+</div>
+<br>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Setup complete</h1>
+        <div class="govuk-panel__body">
+          Your service name: <br><strong>{{ data['business-service-name'] | default('Business service name') }}</strong>
+        </div>
+      </div>
+
+      <br>
+
+      <p>
+        You can now start using your <a href="">Self service dashboard </a> to manage and configure your DWP manage task service.
+      </p>
+
+      <a href="added-organisations"><button class="govuk-button" data-module="govuk-button">
+          Go to service list
+      </button></a>
+
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p></p>
+      <p>We will contact you either to confirm your registration, or to ask for more information.</p>
+      <!-- <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p> -->
+
+
+    </div>
+  </div>
+
+{% endblock %}
