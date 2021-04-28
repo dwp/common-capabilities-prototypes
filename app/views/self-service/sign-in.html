@@ -26,7 +26,9 @@
         error_summary_p.style.display="none";
         error_summary_e.style.display="none";
 
-        document.getElementById("email-address-field").focus();
+        document.getElementById("no-email-password").focus();
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+
 
         $("#signin-form").addClass("govuk-form-group--error");
         $("#email-address-field").addClass("govuk-input--error");
@@ -41,7 +43,9 @@
         emailAddress_error.style.display="block";
         password_error.style.display="none";
 
-        document.getElementById("email-address-field").focus();
+        document.getElementById("no-email-only").focus();
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+
 
         $("#signin-form").removeClass("govuk-form-group--error");
 
@@ -60,7 +64,9 @@
         emailAddress_error.style.display="none";
         password_error.style.display="block";
 
-        document.getElementById("password-field").focus();
+        document.getElementById("no-password-only").focus();
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+
 
         $("#signin-form").removeClass("govuk-form-group--error");
 
