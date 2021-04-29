@@ -149,9 +149,45 @@ router.post('/address-service/main-address-lookups', function (req, res) {
 })
 
 
+//////////////////////////SELF SERVICE/////////////////////////////////
+// Branching remove-task-definition
+router.post('/self-service/admin-self-service-1/task-definitions/remove-task', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const removeTaskDefinition = req.session.data['remove-task-definition']
+
+  if (removeTaskDefinition === 'yes') {
+    res.redirect('/self-service/admin-self-service-1/task-definitions/removed-task-defi')
+  }
+
+  else if (removeTaskDefinition === 'no') {
+    res.redirect('/self-service/admin-self-service-1/task-definitions/added-task-defi')
+  }
 
 
+})
 
+
+// Branching remove-task-definition
+router.post('/self-service/admin-self-service-1/agents/remove-agent', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const removeTaskDefinition = req.session.data['remove-agent']
+
+  if (removeTaskDefinition === 'yes') {
+    res.redirect('/self-service/admin-self-service-1/agents/removed-agents-list')
+  }
+
+  else if (removeTaskDefinition === 'no') {
+    res.redirect('/self-service/admin-self-service-1/agents/added-agents-list')
+  }
+
+
+})
 
 
 

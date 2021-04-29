@@ -48,7 +48,7 @@
 <div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
 <ol class="govuk-breadcrumbs__list">
   <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-taskdefi-added">Home</a>
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-agent-added">Home</a>
   </li>
   <li class="govuk-breadcrumbs__list-item">
     <a class="govuk-breadcrumbs__link" href="#">Task definitions</a>
@@ -67,7 +67,7 @@
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      Task definition added to the records.
+      Task definition removed from the records.
     </h3>
     <p class="govuk-body"><strong>Definition name: </strong>{{ data['task-defi-name'] | default('Verify address for NI') }} <br>
     <strong>Task name to be displayed for agents: </strong> {{ data['agent-task-name'] | default('Verify address') }}<br>
@@ -79,7 +79,6 @@
     </p>
     </div>
 </div>
-
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -100,10 +99,10 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for NI') }}</td>
-      <td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}</td>
-      <td class="govuk-table__cell"><a href="view-defi-details">View details</a></td>
-      <td class="govuk-table__cell"><a href="remove-task">Remove</a></td>
+      <td class="govuk-table__cell">No details to show. Add task definition to view details.</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"><a href=""></a></td>
+      <td class="govuk-table__cell"><a href=""></a></td>
     </tr>
 
 
@@ -112,7 +111,7 @@
 
 <p><a href="add-task-info">Add task defintion</a></p>
 <br><br>
-<a href="/self-service/admin-self-service-1/setup-task-list-taskdefi-added"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
+<a href="/self-service/admin-self-service-1/setup-task-list-agent-added"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
 
     </div>
   </div>

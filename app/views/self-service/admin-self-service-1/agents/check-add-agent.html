@@ -100,17 +100,18 @@
       <p><strong class="govuk-heading-m">Agent attributes</strong></p>
               <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+                <dt class="govuk-summary-list__key" style="border-bottom:0px;">
                   Attribute
                 </dt>
-                <dd class="govuk-summary-list__value">
+                <dd class="govuk-summary-list__value" style="border-bottom:0px;">
                   {{ data['attribute'] | default('Decision maker') }}
                 </dd>
-                <dd class="govuk-summary-list__actions">
+                <dd class="govuk-summary-list__actions" style="border-bottom:0px;">
                 <a class="govuk-link" href="add-agent-attributes">
                   Change<span class="govuk-visually-hidden"> attribute name</span>
                 </a>
                 </dd>
+
 
               </div>
               <div class="govuk-summary-list__row">
@@ -121,9 +122,7 @@
                   {{ data['attribute-property'] | default('Welsh, English') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="add-agent-attributes">
-                    Change<span class="govuk-visually-hidden"> attribute property</span>
-                  </a>
+
                 </dd>
               </div>
 

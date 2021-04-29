@@ -37,7 +37,7 @@
 <div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
 <ol class="govuk-breadcrumbs__list">
   <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-agent-added">Home</a>
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-att-added">Home</a>
   </li>
   <li class="govuk-breadcrumbs__list-item">
     <a class="govuk-breadcrumbs__link" href="#">Agents</a>
@@ -56,7 +56,7 @@
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      Agent added to the records.
+      Agent removed from the records.
     </h3>
     <p class="govuk-body"><strong>Attribute name: </strong>{{ data['agent-name'] | default('Jason Bourne') }} <br>
     <strong>Agent key or ID: </strong> {{ data['agent-keyid'] | default('ID2232DS') }} <br>
@@ -76,43 +76,30 @@
       </h1>
 
       <table class="govuk-table">
-    <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header" >Name</th>
-      <th scope="col" class="govuk-table__header">Agent key or ID </th>
-      <th scope="col" class="govuk-table__header">Attributes</th>
-      <th scope="col" class="govuk-table__header">Status</th>
-      <th scope="col" class="govuk-table__header">Actions</th>
-      <th scope="col" class="govuk-table__header"></th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">{{ data['agent-name'] | default('Jason Bourne') }}</td>
-      <td class="govuk-table__cell">{{ data['agent-keyid'] | default('ID2232DS') }}</td>
-      <td class="govuk-table__cell">{{ data['attribute'] | default('Decision maker') }}</td>
-      <td class="govuk-table__cell">
-          <strong class="govuk-tag govuk-tag govuk-tag--green">
-          Active
-          </strong></td>
-      <td class="govuk-table__cell"><a href="modify-agent-details">Modify details</a></td>
-      <td class="govuk-table__cell"><a href="remove-agent">Remove</a></td>
-    </tr>
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" >Name</th>
+        <th scope="col" class="govuk-table__header">Agent key or ID </th>
+        <th scope="col" class="govuk-table__header">Attributes</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header">Actions</th>
+        <th scope="col" class="govuk-table__header"></th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">No agents added. Add agents to view details.</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"> </td>
+          <td class="govuk-table__cell"><a href=""></a></td>
+          <td class="govuk-table__cell"><a href=""></a></td>
+        </tr>
+      </tbody>
+      </table>
 
-
-
-
-
-
-
-
-  </tbody>
-</table>
-
-<p><a href="add-agent">Add agent</a></p>
-<br><br>
-<a href="/self-service/admin-self-service-1/setup-task-list-agent-added"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
-
+      <p><a href="add-agent">Add agent</a></p>
+      <br><br>
+      <a href="/self-service/admin-self-service-1/setup-task-list-att-added"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
     </div>
   </div>
 
