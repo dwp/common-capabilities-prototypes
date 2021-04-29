@@ -79,7 +79,7 @@
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#reason-for-cancel">Enter reason for cancelling task</a>
+        <a href="#reason-for-cancel">Enter reason for returning task to queue</a>
       </li>
     </ul>
   </div>
@@ -94,7 +94,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Cancel task
+        Return task to queue
       </h1>
 
 
@@ -170,23 +170,23 @@
       <br>
 
       <form class="form " name="reason-for-cancel" action="/my-tasks/task-list-cancel-check-disabled-details" onsubmit="return validateForm()" method="post">
-        <h2 class="govuk-heading-m">Cancellation information</h2>
+        <h2 class="govuk-heading-m">Reason for returning task to queue</h2>
 
       <div class="govuk-form-group" id="reason-for-cancel">
         <label class="govuk-label" for="more-detail">
-          Enter reason for cancelling task
+
         </label>
 
         <!-- Field Error - Start -->
         <span id="reason-to-cancel-text" class="govuk-error-message govuk-radios__conditional--hidden">
-            <span class="govuk-visually-hidden">Error:</span>Enter reason for cancelling task
+            <span class="govuk-visually-hidden">Error:</span>Enter reason for returning task to queue
         </span>
         <!-- Field Error - End -->
 
         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Cancel task</button>
+      <button class="govuk-button" data-module="govuk-button">Return task to queue</button>
 
       </form>
     </div>
