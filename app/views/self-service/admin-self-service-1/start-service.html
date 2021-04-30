@@ -1,0 +1,81 @@
+{% extends "header-banner-for-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Maintain tasks, agents and attributes
+      </h1>
+
+      <p>Use this to add:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>task matching attributes</li>
+        <li>agents</li>
+        <li>task matching definitions for your service</li>
+      </ul>
+
+<br>
+      <a href="want-to-setup-new" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+<br>
+      <h2 class="govuk-heading-l">Terms used in this service</h2>
+
+      <p>To set up your business or service, you'll need to provide the following information:</p>
+      <br>
+
+      <h3 class="govuk-heading-m">Business or service name</h3>
+
+        <p>The name of your business or benefit to be used to configure in DWP Manage task service.</p>
+
+        <h3 class="govuk-heading-m">Domain</h3>
+
+      <p>The domain where your business or benefit service resides. Your BA, Developers or Architects may have this information. </p>
+
+        <h3 class="govuk-heading-m">List of attributes </h3>
+
+      <p>These are unique property or properities that are used in your business or benefit to define tasks and for allocating tasks to your agents. </p>
+      <p>Attributes are used to match tasks to agents. For example, agent roles or location or grade.</p>
+
+      <h3 class="govuk-heading-m">List of agents and their attributes</h3>
+
+      <p>This would be list of agents you want to give access to and the attributes for each agent.</p>
+
+        <p>For example, agent 'John Smith' can have attributes like
+            <ul class="govuk-list govuk-list--bullet">
+          <li>decision maker</li>
+          <li>Newcastle</li>
+          <li>level 7 clearance'</li>
+          </ul>
+
+      <h3 class="govuk-heading-m">Task definitions (task matching templates)</h3>
+
+      <p>To create task definitions (task matching templates) you need to know the:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>type of task and what attributes the task should have for</li>
+        <li>exection URL: where the task is going to get executed</li>
+        <li>priority of the task</li>
+        <li>SLA of the task</li>
+        <li>name of the task that your agents understand. Your user researchers and content designers may have this information</li>
+      </ul>
+
+      <br><br>
+      <p>You will be able to come back to the setup task list at any time using <a href="organisations">services</a> page. </p>
+
+    </div>
+
+
+  </div>
+{% endblock %}

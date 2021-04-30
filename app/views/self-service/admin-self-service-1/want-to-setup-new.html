@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Modify agent information
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            DWP Manage tasks
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      This is not a service - this interface is to help teams set up and maintain DWP Manage tasks
+    </span>
+  </p>
+</div>
+<br>
+<br>
+  <a class="govuk-back-link" href="start-service">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form class="form" action="/self-service/admin-self-service-1/want-to-setup-new" method="post">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+              Want to setup a new a new business or service?
+            </h1>
+
+              <fieldset class="govuk-fieldset">
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="remove-agent" name="setup-answer" type="radio" value="Yes" {{ checked("agent-status", "Active") }}>
+                  <label class="govuk-label govuk-radios__label" for="setup-answer">
+                    Yes, I want to setup a new business or domain
+                  </label>
+                </div>
+                <br><br>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="setup-answer-2" name="setup-answer" type="radio" value="No" {{ checked("agent-status", "Inactive") }}>
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    No, I want to modify tasks, agents and attributes
+                  </label>
+                </div>
+              </div>
+
+
+              </fieldset>
+        </div>
+        </div>
+        <br>
+        <br>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

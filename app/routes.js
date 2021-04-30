@@ -190,6 +190,24 @@ router.post('/self-service/admin-self-service-1/agents/remove-agent', function (
 })
 
 
+// Branching remove-task-definition
+router.post('/self-service/admin-self-service-1/want-to-setup-new', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const removeTaskDefinition = req.session.data['setup-answer']
+
+  if (removeTaskDefinition === 'Yes') {
+    res.redirect('/self-service/admin-self-service-1/service-domain')
+  }
+
+  else if (removeTaskDefinition === 'No') {
+    res.redirect('/self-service/admin-self-service-1/added-organisations')
+  }
+
+
+})
 
 
 module.exports = router
