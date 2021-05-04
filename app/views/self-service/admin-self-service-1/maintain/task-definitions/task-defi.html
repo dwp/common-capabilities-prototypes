@@ -1,3 +1,4 @@
+{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -14,49 +15,16 @@
     document.write(today);
    }
   </script>
+
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
+  </script>
 {% endblock %}
 
-{% block header %}
-<header class="govuk-header " role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <span class="govuk-header__logotype-text">
-            DWP Manage tasks
-          </span>
-        </span>
-      </a>
-    </div>
-  </div>
-</header>
 
-{% endblock %}
-
-{% block beforeContent %}
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-tag--red">
-      Experimental
-    </strong> &nbsp;
-    <span class="govuk-phase-banner__text">
-      This is not a service - this interface is to help teams set up and maintain DWP Manage tasks
-    </span>
-  </p>
-</div>
-<br>
-<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
-<ol class="govuk-breadcrumbs__list">
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-agent-added">Home</a>
-  </li>
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="#">Task definitions</a>
-  </li>
-
-</ol>
-</div>
-{% endblock %}
 
 {% block content %}
 
@@ -79,10 +47,10 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">No details to show. Add task definition to view details.</td>
-      <td class="govuk-table__cell"></td>
-      <td class="govuk-table__cell"><a href=""></a></td>
-      <td class="govuk-table__cell"><a href=""></a></td>
+      <td class="govuk-table__cell">Verify address for NI</td>
+      <td class="govuk-table__cell">sp.dwp.gov.uk/asdi23232asd/sdfsf</td>
+      <td class="govuk-table__cell"><a href="view-defi-details">View details</a></td>
+      <td class="govuk-table__cell"><a href="remove-task">Remove</a></td>
     </tr>
 
 
@@ -91,7 +59,7 @@
 
 <p><a href="add-task-info">Add task defintion</a></p>
 <br><br>
-<a href="/self-service/admin-self-service-1/setup-task-list-agent-added"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
+<a href="/self-service/admin-self-service-1/maintain/dashboard"><button class="govuk-button" data-module="govuk-button">Continue to summary page</button></a>
 
     </div>
   </div>

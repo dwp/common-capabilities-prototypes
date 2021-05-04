@@ -26,20 +26,6 @@
 
 {% endblock %}
 
-{% block beforeContent %}
-
-<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
-<ol class="govuk-breadcrumbs__list">
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-taskdefi-added">Home</a>
-  </li>
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="#">Task definitions</a>
-  </li>
-
-</ol>
-</div>
-{% endblock %}
 
 {% block content %}
 
@@ -63,8 +49,14 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for NI') }}</td>
-      <td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}</td>
+      <td class="govuk-table__cell">Verify address for NI</td>
+      <td class="govuk-table__cell">sp.dwp.gov.uk/asdi23232asd/sdfsf</td>
+      <td class="govuk-table__cell"><a href="view-defi-details">View details</a></td>
+      <td class="govuk-table__cell"><a href="remove-task">Remove</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for England') }}</td>
+      <td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }}</td>
       <td class="govuk-table__cell"><a href="view-defi-details">View details</a></td>
       <td class="govuk-table__cell"><a href="remove-task">Remove</a></td>
     </tr>
@@ -75,7 +67,7 @@
 
 <p><a href="add-task-info">Add task defintion</a></p>
 <br><br>
-<a href="/self-service/admin-self-service-1/setup-task-list-taskdefi-added"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
+<a href="/self-service/admin-self-service-1/maintain/dashboard"><button class="govuk-button" data-module="govuk-button">Continue to summary page</button></a>
 
     </div>
   </div>
