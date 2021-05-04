@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent attributes list
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            DWP Manage tasks
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      This is not a service - this interface is to help teams set up and maintain DWP Manage tasks
+    </span>
+  </p>
+</div>
+<br>
+<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-agent-added">Home</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#">Agents</a>
+  </li>
+
+</ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Agent details added to the records.
+    </h3>
+    <p class="govuk-body"><strong>Attribute name: </strong>{{ data['agent-name'] | default('Jason Bourne') }} <br>
+    <strong>Agent key or ID: </strong> {{ data['agent-keyid'] | default('ID2232DS') }} <br>
+    <strong>Attributes: </strong> {{ data['attribute'] | default('Decision maker') }}<br>
+    <strong>Status: </strong> {{ data['agent-status'] | default('Active') }}
+    </p>
+    </div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Agents
+        <p class="govuk-hint"></p>
+
+      </h1>
+
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" >Name</th>
+      <th scope="col" class="govuk-table__header">Agent key or ID </th>
+      <th scope="col" class="govuk-table__header">Attributes</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Actions</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ data['agent-name'] | default('Jason Bourne') }}</td>
+      <td class="govuk-table__cell">{{ data['agent-keyid'] | default('ID2232DS') }}</td>
+      <td class="govuk-table__cell">{{ data['attribute'] | default('Decision maker') }}</td>
+      <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag govuk-tag--green">
+          Active
+          </strong></td>
+      <td class="govuk-table__cell"><a href="modify-agent-details">Modify details</a></td>
+      <td class="govuk-table__cell"><a href="remove-agent">Remove</a></td>
+    </tr>
+
+
+
+
+
+
+
+
+  </tbody>
+</table>
+
+<p><a href="add-agent">Add agent</a></p>
+<br><br>
+<a href="/self-service/admin-self-service-1/setup-task-list-agent-added"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
+
+    </div>
+  </div>
+
+{% endblock %}

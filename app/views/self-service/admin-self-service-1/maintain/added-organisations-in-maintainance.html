@@ -14,10 +14,10 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      Businesses and services
+      Service and business areas
     </h1>
 
-    <p class="govuk-!-padding-bottom-8">Set up a service so you can create tasks, agents and task matching attributes.</p>
+    <p class="govuk-!-padding-bottom-8">Maintain or set up a new service or business area. You can manage tasks, agents and task matching attributes.</p>
 </div>
 </div>
 
@@ -26,22 +26,27 @@
     <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" style="width:65%;">Name</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Name</th>
             <th scope="col" class="govuk-table__header">Actions</th>
             <th scope="col" class="govuk-table__header"></th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">{{ data['business-service-name'] | default('Business service name') }} </td>
+            <td class="govuk-table__cell">Common capablities </td>
+            <td class="govuk-table__cell"><a href="/self-service/admin-self-service-1/maintain/dashboard">Maintainance dashboard</a></td>
+            <td class="govuk-table__cell"><a href="#">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{ data['business-service-name-m'] | default('Business service name') }} </td>
             <td class="govuk-table__cell"><a href="setup-task-list">Add attributes, agents and task details</a></td>
             <td class="govuk-table__cell"><a href="#">Remove</a></td>
           </tr>
       </tbody>
     </table>
 
-<p class="govuk-heading-s govuk-!-padding-top-8">Can't find your business or service in the list?  </p>
-<p><a href="service-domain">Add service and domain</a></p>
+    <p class="govuk-heading-s govuk-!-padding-top-8">Want to add a new service or business area? </p>
+    <p><a href="service-domain-maintainance">Add new service or business area</a></p>
 
 
   </div>

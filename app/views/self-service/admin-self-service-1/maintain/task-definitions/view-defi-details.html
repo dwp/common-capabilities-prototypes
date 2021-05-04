@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check task definition details
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            DWP Manage tasks
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      This is not a service - this interface is to help teams set up and maintain DWP Manage tasks
+    </span>
+  </p>
+</div>
+<br>
+  <a class="govuk-back-link" href="added-task-defi">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+      {{ data['task-defi-name'] | default('Verify address for NI template') }} definition details
+      </h1>
+      <form class="form"  method="post" action="added-task-defi">
+        <div class="govuk-form-group">
+
+          <br>
+          <p><strong class="govuk-heading-m">Task details</strong></p>
+
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Task definition name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['task-defi-name'] | default('Verify address for NI template') }}
+          </dd>
+
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Task name to be displayed for agents
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['agent-task-name'] | default('Verify address') }}
+          </dd>
+
+        </div>
+
+
+      </dl>
+      <br>
+      <p><strong class="govuk-heading-m">Definition detials</strong></p>
+              <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                  Priority
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-priority'] | default('Very high') }}
+                </dd>
+
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half" >
+                  Execution URL
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  SLA (days)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-sla'] | default('2') }}
+                </dd>
+
+              </div>
+
+            </dl>
+
+      <br>
+      <p><strong class="govuk-heading-m">Task matching attributes</strong></p>
+              <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                  Attributes
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-attribute'] | default('Decision maker') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                  Type of attribute
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-attribute-property'] | default('Welsh, English') }}
+                </dd>
+
+              </div>
+
+            </dl>
+
+
+        <br><br>
+        <button class="govuk-button" data-module="govuk-button">Back to list view</button>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -203,7 +203,7 @@ router.post('/self-service/admin-self-service-1/want-to-setup-new', function (re
   }
 
   else if (removeTaskDefinition === 'No') {
-    res.redirect('/self-service/admin-self-service-1/added-organisations')
+    res.redirect('/self-service/admin-self-service-1/maintain/added-organisations-maintain')
   }
 
 

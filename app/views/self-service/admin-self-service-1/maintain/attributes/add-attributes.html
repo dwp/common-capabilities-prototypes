@@ -1,0 +1,68 @@
+{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add attribute
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").addClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Add attribute
+
+      </h1>
+      <div class="govuk-inset-text">
+        Attributes are used to match tasks to agents. For example, agent roles or location or grade.
+      </div>
+
+      <form class="form" method="post" action="check-add-attribute">
+        <fieldset class="govuk-fieldset" data-required data-error="Cannot be blank">
+
+          <br>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="attribute-name">
+            Attribute name
+          </label>
+          <p class="govuk-hint">This could be the role or any other unique matching attribute. For example 'decision maker' or 'language' </p>
+          <input class="govuk-input" id="attribute-name" name="attribute-name" type="text"  ></div>
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="attribute-uid">
+            Attribute value
+          </label>
+          <p class="govuk-hint">This is unique matching value for this attribute. This could be location or grade level or language type.For example 'Welsh' or 'Grade 5'  </p>
+          <input class="govuk-input govuk-!-width-two-thirds" id="attribute-uid" name="attribute-uid" type="text"></div>
+
+          <a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Add another value
+          </button></a>
+      </fieldset>
+
+      <br><br><br>
+
+      <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -6,13 +6,24 @@
 {% endblock %}
 
 
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").addClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
 
 {% block content %}
 <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
-      Dashboard
+      <span class="govuk-body">Business or service name:</span><br>
+      Common Capablities
     </h1>
     </div>
 
@@ -27,8 +38,8 @@
   <div class="govuk-grid-column-one-half " >
     <div class="govuk-!-padding-4" style="border:1px solid #999999;"><label class="govuk-label" for="overall-statistics">Attributes</label>
     <h1 class="govuk-heading-xl">
-      12
-      <p><a href="#">View all</a></p>
+      5
+      <p><a href="attributes/attributes-list">View all</a></p>
     </h1>
     </div>
   </div>
@@ -37,7 +48,7 @@
     <div class=" govuk-!-padding-4" style="border:1px solid #999999;"><label class="govuk-label" for="overall-statistics">Agents</label>
     <h1 class="govuk-heading-xl">
       12
-      <p><a href="#">View all</a></p>
+      <p><a href="agents/agents-list">View all</a></p>
     </h1>
     </div>
   </div>
@@ -50,7 +61,7 @@
     <div class="govuk-!-padding-4" style="border:1px solid #999999;"><label class="govuk-label" for="overall-statistics">Task definitions</label>
     <h1 class="govuk-heading-xl">
       12
-      <p><a href="#">View all</a></p>
+      <p><a href="task-definitions/added-task-defi">View all</a></p>
     </h1>
     </div>
   </div>

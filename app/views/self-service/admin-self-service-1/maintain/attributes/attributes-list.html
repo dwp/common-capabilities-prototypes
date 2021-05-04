@@ -1,0 +1,59 @@
+{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent attributes list
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").addClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Attributes
+      </h1>
+
+
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" >Attribute name</th>
+      <th scope="col" class="govuk-table__header">Attribute value(s)</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Location</td>
+      <td class="govuk-table__cell">Newcatle, London</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Role-Level 5</td>
+      <td class="govuk-table__cell">Decision maker, Team leader, Decision maker - Team leader</td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+<p><a href="add-attributes">Add attribute</a></p>
+<br><br>
+<a href="/self-service/admin-self-service-1/maintain/dashboard"><button class="govuk-button" data-module="govuk-button">Continue to summary page</button></a>
+
+    </div>
+  </div>
+
+{% endblock %}
