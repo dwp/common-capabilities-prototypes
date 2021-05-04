@@ -3,7 +3,7 @@
 
 
 {% block pageTitle %}
-  Services on DWP Manage tasks
+  Business areas
 {% endblock %}
 
 
@@ -14,7 +14,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      Business areas
+       Services and business areas
     </h1>
 
     <p class="govuk-!-padding-bottom-8">Set up a business area so you can create tasks, agents and task matching attributes.</p>
@@ -34,14 +34,14 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">{{ data['business-service-name'] | default('Business service name') }} </td>
-            <td class="govuk-table__cell"><a href="setup-task-list">Add attributes, agents and task details</a></td>
+            <td class="govuk-table__cell"><a href="setup-task-list">Complete set up</a></td>
             <td class="govuk-table__cell"><a href="#">Remove</a></td>
           </tr>
       </tbody>
     </table>
 
-<p class="govuk-heading-s govuk-!-padding-top-8">Can't find your business area in the list?  </p>
-<p><a href="service-domain">Add service and domain</a></p>
+    <p class="govuk-heading-s govuk-!-padding-top-8">Want to set up a new business area? </p>
+<p><a href="service-domain">Set up a new business area</a></p>
 
 
   </div>
