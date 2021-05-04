@@ -14,6 +14,36 @@
         <p style="text-align:right;"><span class="govuk-!-padding-right-9 white-link">Service name: {{ data['business-service-name'] | default('Business service name') }}</span> <a href="/self-service/sign-in" class="white-link">Sign out</a></p>
 
     </div>
+
+    <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
+    <nav>
+      <ul id="navigation" class="govuk-header__navigation  " aria-label="Navigation menu">
+        <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+          <a class="govuk-header__link" href="#">
+            Dashboard
+          </a>
+        </li>
+
+        <li class="govuk-header__navigation-item ">
+          <a class="govuk-header__link" href="#">
+            Attribtues
+          </a>
+        </li>
+
+        <li class="govuk-header__navigation-item ">
+          <a class="govuk-header__link" href="#">
+            Agents
+          </a>
+        </li>
+        <li class="govuk-header__navigation-item ">
+          <a class="govuk-header__link" href="#">
+            Task definitions
+          </a>
+        </li>
+
+
+      </ul>
+    </nav>
   </div>
 </header>
 
