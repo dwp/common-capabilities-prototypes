@@ -25,10 +25,10 @@
     </div>
     <div class="govuk-notification-banner__content">
       <h3 class="govuk-notification-banner__heading">
-        Attribute added to the records.
+        Attribute added to the records
       </h3>
-      <p class="govuk-body"><strong>Attribute name: </strong>{{ data['attribute-name'] | default('Language for England and Wales') }} <br>
-      <strong>Attribute value(s): </strong> {{ data['attribute-uid'] | default('Welsh, English') }}
+      <p class="govuk-body"><strong>Attribute name:</strong> {{ data['attribute-name'] | default('Language for England and Wales') }} <br>
+      <strong>Attribute value: </strong> {{ data['attribute-uid'] | default('Welsh, English') }}
       </p>
       </div>
   </div>
@@ -46,17 +46,17 @@
     <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header" >Attribute name</th>
-      <th scope="col" class="govuk-table__header">Attribute value(s)</th>
+      <th scope="col" class="govuk-table__header">Attribute value</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">Location</td>
-      <td class="govuk-table__cell">Newcatle, London</td>
+      <td class="govuk-table__cell">Newcastle, London</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Role-Level 5</td>
-      <td class="govuk-table__cell">Decision maker, Team leader, Decision maker - Team leader</td>
+      <td class="govuk-table__cell">Role: Level 5</td>
+      <td class="govuk-table__cell">Decision maker, Team leader, Decision maker: Team leader</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">{{ data['attribute-name'] | default('Language for England and Wales') }}</td>

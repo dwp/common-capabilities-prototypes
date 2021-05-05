@@ -63,10 +63,10 @@
     </div>
     <div class="govuk-notification-banner__content">
       <h3 class="govuk-notification-banner__heading">
-        Attribute added to the records.
+        Attribute added
       </h3>
-      <p class="govuk-body"><strong>Attribute name: </strong>{{ data['attribute-name'] | default('Language for England and Wales') }} <br>
-      <strong>Attribute value(s): </strong> {{ data['attribute-uid'] | default('Welsh, English') }}
+      <p class="govuk-body"><strong>Name: </strong>{{ data['attribute-name'] | default('Language for England and Wales') }} <br>
+      <strong>Values: </strong> {{ data['attribute-uid'] | default('Welsh, English') }}
       </p>
       </div>
   </div>
@@ -83,8 +83,8 @@
       <table class="govuk-table">
     <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header" >Attribute name</th>
-      <th scope="col" class="govuk-table__header">Attribute value(s)</th>
+      <th scope="col" class="govuk-table__header" >Name</th>
+      <th scope="col" class="govuk-table__header">Values</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
@@ -99,7 +99,7 @@
 
 <p><a href="add-attributes">Add attribute</a></p>
 <br><br>
-<a href="/self-service/admin-self-service-1/setup-task-list-att-added"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
+<a href="/self-service/admin-self-service-1/setup-task-list-att-added"><button class="govuk-button" data-module="govuk-button">Continue setup</button></a>
 
     </div>
   </div>
