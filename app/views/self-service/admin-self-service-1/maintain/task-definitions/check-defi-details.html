@@ -25,7 +25,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Check task definition details and confirm
+        Check task definition details
       </h1>
       <form class="form"  method="post" action="added-to-task-defi">
         <div class="govuk-form-group">
@@ -36,7 +36,7 @@
         <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Task definition name
+            Name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['task-defi-name'] | default('Verify address for NI template') }}
@@ -45,12 +45,12 @@
           <a class="govuk-link" href="add-task-info">
             Change<span class="govuk-visually-hidden"> name</span>
           </a>
-          </dd>
+          </dd>s
 
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Task name to be displayed for agents
+            Display name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['agent-task-name'] | default('Verify address') }}
@@ -65,7 +65,7 @@
 
       </dl>
       <br>
-      <p><strong class="govuk-heading-m">Definition detials</strong></p>
+      <p><strong class="govuk-heading-m">Definition details</strong></p>
               <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
