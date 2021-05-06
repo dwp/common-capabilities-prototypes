@@ -25,18 +25,18 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-      {{ data['task-defi-name'] | default('Verify address for NI template') }} definition details
+      {{ data['task-defi-name'] | default('Verify address for NI template') }} Verify address for NI
       </h1>
       <form class="form"  method="post" action="added-task-defi">
         <div class="govuk-form-group">
 
           <br>
-          <p><strong class="govuk-heading-m">Task details</strong></p>
+          <p><strong class="govuk-heading-m">Task</strong></p>
 
         <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Task definition name
+          Name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['task-defi-name'] | default('Verify address for NI template') }}
@@ -46,7 +46,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Task name to be displayed for agents
+            Display name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['agent-task-name'] | default('Verify address') }}
@@ -57,7 +57,7 @@
 
       </dl>
       <br>
-      <p><strong class="govuk-heading-m">Definition detials</strong></p>
+      <p><strong class="govuk-heading-m">Definition</strong></p>
               <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key govuk-!-width-one-half">
@@ -91,7 +91,7 @@
             </dl>
 
       <br>
-      <p><strong class="govuk-heading-m">Task matching attributes</strong></p>
+      <p><strong class="govuk-heading-m">Matching attributes</strong></p>
               <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key govuk-!-width-one-half">
@@ -106,7 +106,7 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                  Type of attribute
+                  Type
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data['task-attribute-property'] | default('Welsh, English') }}
