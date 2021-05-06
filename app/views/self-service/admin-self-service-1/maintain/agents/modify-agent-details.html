@@ -27,7 +27,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Modify agent details
+        Change agent details and attributes
       </h1>
       <form class="form"  method="post" action="modified-agents-list">
         <div class="govuk-form-group">
@@ -52,7 +52,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Agent key or ID
+            Key or ID
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['agent-keyid'] | default('ID2232DS') }}
@@ -64,7 +64,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Agent status
+            Status
           </dt>
           <dd class="govuk-summary-list__value">
             <strong class="govuk-tag govuk-tag govuk-tag--green">
@@ -99,10 +99,10 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Type of attribute
+                  Type
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['attribute-property'] | default('Welsh, English') }}
+                  {{ data['attribute-property'] | default('Role') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
 
