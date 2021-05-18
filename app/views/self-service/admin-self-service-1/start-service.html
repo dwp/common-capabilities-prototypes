@@ -5,13 +5,47 @@
   Set up or modify your business area
 {% endblock %}
 
+{% block pageScripts %}
+<script type="text/javascript">
+
+        var selectEl = document.querySelector('#last-location')
+        accessibleAutocomplete.enhanceSelectElement({
+          autoselect: true,
+          defaultValue: selectEl.options[selectEl.options.selectedIndex].innerHTML,
+          minLength: 2,
+          selectElement: selectEl
+        })
+
+        selectEl = document.querySelector('#passport-location')
+        accessibleAutocomplete.enhanceSelectElement({
+          autoselect: true,
+          defaultValue: selectEl.options[selectEl.options.selectedIndex].innerHTML,
+          minLength: 2,
+          selectElement: selectEl
+        })
+
+        var queryStringParameters = window.location.search
+        var previouslySubmitted = queryStringParameters.length > 0
+        if (previouslySubmitted) {
+          var submittedEl = document.querySelector('.submitted')
+          submittedEl.classList.remove('submitted--hidden')
+          var params = new URLSearchParams(document.location.search.split('?')[1])
+          document.querySelector('.submitted__last-location').innerHTML = params.get('last-location')
+          document.querySelector('.submitted__passport-location').innerHTML = params.get('passport-location')
+        }
+
+</script>
+
+{% endblock %}
+
 
 {% block content %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Set up your business area
+        Set up or maintain your business area
       </h1>
 
       <p>You can use this service to set up a business area on DWP Manage tasks, so you can match tasks to agents who are able to do them.</p>
