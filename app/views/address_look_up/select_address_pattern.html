@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page
+  Select your address
 {% endblock %}
 
 {% set serviceName %}
@@ -17,17 +17,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-     
+
         <h1 class="govuk-heading-xl">
             Select your address
           </h1>
 
             <form class="form" action="/address_look_up/complete" method="post">
-      
+
               <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                     
+
                       <p class="govuk-!-margin-top-4">2 addresses found for <b>6</b> and <b>NE25 9NZ</b> &nbsp;&nbsp;&nbsp;<a href="search_pattern">Change</a></p>
                     </legend>
                     <div class="govuk-radios">
@@ -44,20 +44,18 @@
                             6 NEWSTEADS FARM COTTAGES, WHITLEY BAY
                           </label>
                         </div>
-                      
+
                     </div>
                   </fieldset>
                 </div>
-                <p><a href="/address_look_up/enter_address_pattern" >My address is not listed</a></p>
+                <p><a href="/address_look_up/enter_address_pattern" >I can't find my address in the list, I want to add address manually</a></p>
                 <p><a href="/address_look_up/complete" class="govuk-button">
                   Continue
                 </a></p>
-      
+
           </form>
 
     </div>
   </div>
 
 {% endblock %}
-
-
