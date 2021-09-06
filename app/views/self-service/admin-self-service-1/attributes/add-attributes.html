@@ -59,19 +59,48 @@
           </label>
           <p class="govuk-hint">This could be the role or any other unique matching attribute. For example 'decision maker' or 'language' </p>
           <input class="govuk-input" id="attribute-name" name="attribute-name" type="text"  ></div>
-
-
+        <br>
         <div class="govuk-form-group">
           <label class="govuk-label" for="attribute-uid">
             Attribute value
           </label>
           <p class="govuk-hint">This is unique matching value for this attribute. This could be location or grade level or language type.For example 'Welsh' or 'Grade 5'  </p>
-          <input class="govuk-input govuk-!-width-two-thirds" id="attribute-uid" name="attribute-uid" type="text"></div>
+          <!-- <input class="govuk-input govuk-!-width-two-thirds" id="attribute-uid" name="attribute-uid" type="text"></div>
 
           <a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Add another value
-          </button></a>
+          </button></a> -->
+          <br>
+          <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Attribute values added: {labelIndex}" data-add-remove-block-remove-message="Attribute value {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attribute values have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
+
+          <div class="add-remove-block__status visuallyhidden" role="status" aria-live="polite"></div>
+          <ul class="add-remove-block__list"><li class="add-remove-block__item" data-item-index="0">
+            <label class="form-label-bold" for="condition-0">Attribute value <span class="add-remove-block__label-index">1</span> </label> <br>
+              <input class="govuk-input  govuk-!-width-two-thirds" type="text" id="value-0" name="value-0">
+              <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+                Remove value
+              </button>
+            </li></ul>
+          <div class="button-combo gutter-half-bottom">
+            <button type="button" class="add-remove-block__add-trigger govuk-button govuk-button--secondary">Add another value</button>
+            <!-- <button type="button" class="add-remove-block__remove-all-trigger button-combo__right govuk-link">Remove all values</button> -->
+          </div>
+          <script type="text/x-template" class="add-remove-block__item-tpl">
+            <li class="add-remove-block__item" data-item-index="{index}">
+              <label class="form-label-bold" for="condition-{index}">Attribute value <span class="add-remove-block__label-index"></span></label><br>
+              <input class="govuk-input govuk-!-width-two-thirds" type="text" id="value-{index}" name="value-{index}">
+              <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+                Remove value
+              </button>
+            </li>
+          </script>
+        </div>
+
       </fieldset>
+
+
+
+
 
       <br><br><br>
 

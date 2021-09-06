@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
+
+
 // Add your routes here - above the module.exports line
 // Branching
 router.post('/address-service/address-lookups', function (req, res) {
@@ -209,5 +211,5 @@ router.post('/self-service/admin-self-service-1/want-to-setup-new', function (re
 
 })
 
-
+router.use('/node_modules', express.static('node_modules'))
 module.exports = router

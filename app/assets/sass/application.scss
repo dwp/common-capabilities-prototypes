@@ -18,6 +18,10 @@ $govuk-assets-path: '/govuk/assets/';
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 
+.govuk-link-style {
+
+
+}
 // for app-cards
 .app-card {
     text-decoration: none;

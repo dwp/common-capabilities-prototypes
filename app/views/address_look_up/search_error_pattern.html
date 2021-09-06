@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set serviceName %}
+  Find your address
+{% endset%}
+
+{% block beforeContent %}
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#number">Enter a property number or name</a>
+            </li>
+            <li>
+              <a href="#postcode">Enter a real postcode</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <form class="form" action="/address_look_up/select_address" method="post">
+
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-heading-xl">
+              Find your address
+            </h1>
+          </legend>
+          
+        
+          <div class="govuk-form-group govuk-form-group--error">
+           <a name="number"></a>
+            <label  class="govuk-label" for="address-number">
+              Property number or name
+            </label>
+      
+            <span id="address-postcode-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a property number or name
+              </span>
+            <input class="govuk-input govuk-input--width-10" id="address-number" name="address-number" type="text">
+          </div>
+        
+          <div class="govuk-form-group govuk-form-group--error">
+            <a name="postcode"></a>
+            <label class="govuk-label" for="address-postcode">
+              Postcode
+            </label>
+            <span id="address-postcode-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a real postcode
+              </span>
+            <input class="govuk-input govuk-input--width-5" id="address-postcode" name="address-postcode" type="text">
+          </div>
+        
+        </fieldset>
+
+        <button class="govuk-button">Find address</button>
+        <p><a href="/address_look_up/enter_address">Enter your address manually</a></p>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
