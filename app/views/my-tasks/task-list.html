@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends 'layout-mt.html' %}
 
 
 {% block pageTitle %}
@@ -6,44 +6,6 @@
 {% endblock %}
 
 
-{% block header %}
-
-<header class="govuk-header " role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__content">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <span class="govuk-header__logotype-text">
-            Manage tasks
-          </span>
-        </span>
-      </a>
-      <br>
-      <br>
-      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
-      <nav>
-        <ul id="navigation" class="govuk-header__navigation  " aria-label="Navigation menu">
-          <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
-            <a class="govuk-header__link" href="/my-tasks/task-list">
-              My tasks
-            </a>
-          </li>
-          <li class="govuk-header__navigation-item ">
-            <a class="govuk-header__link" href="/my-tasks/statistics/statistics">
-              My clearances
-            </a>
-          </li>
-
-
-        </ul>
-      </nav>
-    </div>
-  </div>
-
-
-
-</header>
-{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -98,63 +60,64 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">Check claim details </a></td>
-            <td class="govuk-table__cell">AB121212C</td>
+            <td class="govuk-table__cell"><a href="#">Verify claimant's current address</a></td>
+            <td class="govuk-table__cell">XX XX XX 2C</td>
             <td class="govuk-table__cell">Mary M</td>
             <td class="govuk-table__cell">Medium</td>
           </tr>
           <tr class="govuk-table__row">
             <!-- <th scope="row" class="govuk-table__header">Total estimated pay</th> -->
-            <td class="govuk-table__cell"><a href="#">Update dependent details</a></td>
-            <td class="govuk-table__cell">QQ123456C</td>
+            <td class="govuk-table__cell"><a href="#">Update current details</a></td>
+            <td class="govuk-table__cell">XX XX XX 6C</td>
             <td class="govuk-table__cell">System</td>
             <td class="govuk-table__cell">Low</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">Check applicant and partner benefits  </a></td>
-            <td class="govuk-table__cell">BC324212D</td>
+            <td class="govuk-table__cell"><a href="#">Verify immigration status  </a></td>
+            <td class="govuk-table__cell">XX XX XX 2D</td>
             <td class="govuk-table__cell">James May</td>
             <td class="govuk-table__cell">Very high</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/my-tasks/claim-details/check-claim-details">Update ceased to care details </a></td>
-            <td class="govuk-table__cell">CC346697E</td>
+            <td class="govuk-table__cell"><a href="/citizen/habitual_residency_test/simple_hrt_v3b/verify-nationality">Check residency qualification </a></td>
+            <td class="govuk-table__cell">XX XX XX 7E</td>
             <td class="govuk-table__cell">Me</td>
             <td class="govuk-table__cell">Very high</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">Update employment status </a></td>
-            <td class="govuk-table__cell">SS356656C</td>
+            <td class="govuk-table__cell"><a href="#">Update nationality status </a></td>
+            <td class="govuk-table__cell">XX XX XX 6C</td>
             <td class="govuk-table__cell">Andrew Smith</td>
             <td class="govuk-table__cell">High</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/my-tasks/address-verify/verify-addresses">Update dependent qualifying benefits</a></td>
-            <td class="govuk-table__cell">HR238615M</td>
+            <td class="govuk-table__cell"><a href="#">Verify immigration status </a></td>
+            <td class="govuk-table__cell">XX XX XX 5M</td>
             <td class="govuk-table__cell">Me</td>
             <td class="govuk-table__cell">Very high</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">Check breaks in care</a></td>
-            <td class="govuk-table__cell">OI126409C</td>
+            <td class="govuk-table__cell"><a href="#">Update adderess details</a></td>
+            <td class="govuk-table__cell">XX XX XX 9C</td>
             <td class="govuk-table__cell">System</td>
             <td class="govuk-table__cell">High</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">Update ceased to care details</a></td>
-            <td class="govuk-table__cell">LI547002R</td>
+            <td class="govuk-table__cell"><a href="#">Add non-UK address</a></td>
+            <td class="govuk-table__cell">XX XX XX 2R</td>
             <td class="govuk-table__cell">Me</td>
             <td class="govuk-table__cell">Very high</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/my-tasks/add-payment/add-payment">Add payment details</a></td>
-            <td class="govuk-table__cell">CA213121E</td>
+            <!-- <td class="govuk-table__cell"><a href="/my-tasks/add-payment/add-payment">Add current residency details</a></td> -->
+            <td class="govuk-table__cell"><a href="#">Add non-UK address</a></td>
+            <td class="govuk-table__cell">XX XX XX 1E</td>
             <td class="govuk-table__cell">System</td>
             <td class="govuk-table__cell">Medium</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">Update ceased to care details</a></td>
-            <td class="govuk-table__cell">LY124499K</td>
+            <td class="govuk-table__cell"><a href="#">Check residency check qualification</a></td>
+            <td class="govuk-table__cell">XX XX XX 9K</td>
             <td class="govuk-table__cell">Mark H</td>
             <td class="govuk-table__cell">Low</td>
           </tr>

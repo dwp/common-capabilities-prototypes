@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends 'layout-mt.html' %}
 
 
 {% block pageTitle %}
@@ -6,48 +6,8 @@
 {% endblock %}
 
 
-{% block header %}
-
-<header class="govuk-header " role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__content">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <span class="govuk-header__logotype-text">
-            Manage tasks
-          </span>
-        </span>
-      </a>
-      <br>
-      <br>
-      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
-      <nav>
-        <ul id="navigation" class="govuk-header__navigation  " aria-label="Navigation menu">
-          <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
-            <a class="govuk-header__link" href="/my-tasks/task-list">
-              My tasks
-            </a>
-          </li>
-
-          <li class="govuk-header__navigation-item ">
-            <a class="govuk-header__link" href="/my-tasks/statistics/statistics">
-              My clearances
-            </a>
-          </li>
-
-        </ul>
-      </nav>
-    </div>
-  </div>
-
-
-
-</header>
-{% endblock %}
-
 
 {% block content %}
-
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -56,11 +16,11 @@
   </div>
   <div class="govuk-notification-banner__content">
     <p class="govuk-notification-banner__heading">
-      {{ data['no-of-tasks'] | default('No data provided') }} task(s) added to my to-do list
+      Task removed from your to-do list
     </p>
+    <p class="govuk-body">Reason: {{ data['reason-for-not-doing-task'] | default('No reason provided') }}</p>
   </div>
 </div>
-
 
 <div class="govuk-grid-row">
 
@@ -71,7 +31,7 @@
     </h1>
   </div>
   <div class="govuk-grid-column-one-thirds" >
-  <a href="add-new-tasks"><button class="govuk-button govuk-!-margin-left-9 " data-module="govuk-button" > Add new tasks to my to-do list </button></a>
+  <a href="add-new-tasks"><button class="govuk-button govuk-!-margin-left-9 " data-module="govuk-button" > Add tasks to my to-do list </button></a>
 </div>
 </div>
 
@@ -89,7 +49,7 @@
               <a href="/my-tasks/task-list-in-progress">In progress</a>
             </li>
             <li>
-              <a href="/my-tasks/task-list-assigned">Assigned to someone else</a>
+              <a href="/my-tasks/task-list-assigned">Assigned or referred</a>
             </li>
           </ul>
         </nav>
@@ -132,12 +92,12 @@
             <td class="govuk-table__cell">James May</td>
             <td class="govuk-table__cell">Very high</td>
           </tr>
-          <tr class="govuk-table__row">
+          <!-- <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/citizen/habitual_residency_test/simple_hrt_v3b/verify-nationality">Check residency qualification </a></td>
             <td class="govuk-table__cell">XX XX XX 7E</td>
             <td class="govuk-table__cell">Me</td>
             <td class="govuk-table__cell">Very high</td>
-          </tr>
+          </tr> -->
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="#">Update nationality status </a></td>
             <td class="govuk-table__cell">XX XX XX 6C</td>
@@ -175,25 +135,7 @@
             <td class="govuk-table__cell">Mark H</td>
             <td class="govuk-table__cell">Low</td>
           </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">Add non-UK address</a></td>
-            <td class="govuk-table__cell">XX XX XX 2R</td>
-            <td class="govuk-table__cell">Me</td>
-            <td class="govuk-table__cell">Very high</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <!-- <td class="govuk-table__cell"><a href="/my-tasks/add-payment/add-payment">Add current residency details</a></td> -->
-            <td class="govuk-table__cell"><a href="#">Add non-UK address</a></td>
-            <td class="govuk-table__cell">XX XX XX 1E</td>
-            <td class="govuk-table__cell">System</td>
-            <td class="govuk-table__cell">Medium</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="#">Check residency check qualification</a></td>
-            <td class="govuk-table__cell">XX XX XX 9K</td>
-            <td class="govuk-table__cell">Mark H</td>
-            <td class="govuk-table__cell">Low</td>
-          </tr>
+
         </tbody>
       </table>
       <!-- Table to hold list of tasks -- END -->

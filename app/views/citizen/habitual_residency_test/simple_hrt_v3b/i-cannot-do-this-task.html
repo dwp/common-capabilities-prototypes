@@ -1,0 +1,272 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  I can't do this task
+{% endblock %}
+
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    function validateForm() {
+      var x = document.forms["reason-form"]["reason-for-not-doing-task"].value;
+      var y = document.getElementById("error-summary");
+      var yy = document.getElementById("error-summary-2");
+      var reason_error = document.getElementById("no-reason-error");
+      var other_reason = document.getElementById("other-reason-required").value;
+      var reason_error_2 = document.getElementById("no-reason-error-2");
+      if (x == "") {
+        y.style.display="block";
+        reason_error.style.display="block";
+        $("#reason-options").addClass("govuk-form-group--error");
+        return false;
+      } else if ( x == " " && other_reason == "") {
+        y.style.display="none";
+        reason_error.style.display="none";
+        yy.style.display="block";
+        reason_error_2.style.display="block";
+        $("#reason-options").addClass("govuk-form-group--error");
+        $("#other-reason-required").addClass("govuk-textarea--error");
+        return false;
+      }
+    }
+
+  </script>
+
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Manage tasks
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation  " aria-label="Navigation menu">
+          <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+            <a class="govuk-header__link" href="/my-tasks/task-list">
+              My tasks
+            </a>
+          </li>
+
+          <li class="govuk-header__navigation-item ">
+            <a class="govuk-header__link" href="/my-tasks/statistics/statistics">
+              My clearances
+            </a>
+          </li>
+
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/my-tasks/address-verify/verify-addresses">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+<!-- Error Summary - Start -->
+<div class="govuk-error-summary govuk-radios__conditional--hidden" id="error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" >
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#no-reason-error">Select your reason for not doing this task</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Error Summary - End -->
+
+<!-- Error Summary 2 -->
+<div class="govuk-error-summary govuk-radios__conditional--hidden" id="error-summary-2" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" >
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#other-reason-required">Enter your reason for not doing this task</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Error Summary 2 - End -->
+
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Task information
+    </span>
+  </summary>
+  <!-- Task information - start -->
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Task
+      </dt>
+
+      <dd class="govuk-summary-list__value">
+        Check residency qualification
+      </dd>
+
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Status
+      </dt>
+
+      <dd class="govuk-summary-list__value">
+        <strong class="govuk-tag govuk-tag--grey">
+          To-do
+        </strong>
+      </dd>
+
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Assigned by
+      </dt>
+
+      <dd class="govuk-summary-list__value">
+          Me
+      </dd>
+
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Case number
+      </dt>
+      <dd class="govuk-summary-list__value">
+        XX XX XX 7E
+      </dd>
+
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Description
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Get claimant's details and call them to verify their nationality. Enter their nationaity and currnet location details to check if they qualify for a residency check.
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Priority
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Very high
+      </dd>
+    </div>
+
+  </dl>
+
+  <!-- Task information - end -->
+</details>
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Why can't you do this task?</h1>
+
+      <form class="form " name="reason-form" action="/my-tasks/task-list-no-res-qual-removed" onsubmit="return validateForm()" method="post">
+
+      <div class="govuk-form-group" id="reason-options">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <div id="contact-hint" class="govuk-hint">
+            Select one option.
+          </div>
+
+      <!-- Error block  start-->
+
+      <span id="no-reason-error" class="govuk-error-message govuk-radios__conditional--hidden">
+          <span class="govuk-visually-hidden">Error:</span> Select your reason for not doing this task
+      </span>
+
+      <!-- Error block  end-->
+
+
+
+
+
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-1" name="reason-for-not-doing-task" type="radio" value="I don't have relevant experience or training" data-aria-controls="reason-for-not-doing-task-1">
+              <label class="govuk-label govuk-radios__label" for="reason-1">
+                I don't have relevant experience or training
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-2" name="reason-for-not-doing-task" type="radio" value="I don't have enough information to assess complexity of task" data-aria-controls="reason-for-not-doing-task-2">
+              <label class="govuk-label govuk-radios__label" for="reason-2">
+                I don't have enough information to assess complexity of task
+              </label>
+            </div>
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-4" name="reason-for-not-doing-task" type="radio" value=" " data-aria-controls="reason-for-not-doing-task-4">
+              <label class="govuk-label govuk-radios__label" for="reason-4">
+                Other reason
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="reason-for-not-doing-task-4">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="reason-5">
+                  Enter reason
+                </label>
+
+                <!-- Error -->
+                <span id="no-reason-error-2" class="govuk-error-message govuk-radios__conditional--hidden">
+                    <span class="govuk-visually-hidden">Error:</span>Enter your reason for not doing this task
+                </span>
+
+
+                <textarea class="govuk-textarea" id="other-reason-required" name="reason-for-not-doing-task" rows="5" aria-describedby="more-detail-hint"></textarea>
+
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
