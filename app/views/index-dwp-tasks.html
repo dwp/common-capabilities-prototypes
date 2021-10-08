@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  DWP Tasks
+  DWP Task
 {% endblock %}
 
 {% block header %}
@@ -43,21 +43,12 @@
 <!-- Section for Standards & accessiblity. -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <p><strong class="govuk-tag govuk-tag--green">Green </strong>
+    <p><strong class="govuk-tag govuk-tag--green">Green Zone </strong> <strong class="govuk-tag govuk-tag--pink">Conceptual</strong> <strong class="govuk-tag govuk-tag--red">Experimental </strong>
     </p>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">DWP Tasks</h1>
-    <p>Last updated: 18 January 2021</p>
+     <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Agent interfaces<br> </h1>
+    <!-- <h3 class="govuk-heading-m govuk-!-margin-bottom-4">(Self serve)</h3> -->
+    <p>Last updated: 18 May 2021</p>
 
-
-
-    <div class="govuk-error-summary" style="border-color:#999999 !important;"aria-labelledby="error-summary-title"  data-module="govuk-error-summary">
-      <h2 class="govuk-error-summary__title" id="error-summary-title">
-         Conceptual prototypes
-       </h2>
-  <div class="govuk-error-summary__body">
-    <p>These prototypes were created to test assumptions, generate insights, and gain a deeper understanding of user needs and behaviours.</p>
-  </div>
-</div>
 
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -65,74 +56,117 @@
 </div>
 </div>
 
+
+
   <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">
-        Agents
-            </h1>
         <p class="govuk-body">Service for case managers and decision makers to receive, view and manage their tasks.</p>
 
 <br><br>
-      <table class="govuk-table">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row" >
-          <td class="govuk-table__cell " style="width:28% !important;">
-            <h1 class="govuk-heading-m">
-              Manage tasks
-                  </h1>
-            <a href="/my-tasks/task-list">Manage tasks </a>
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+      Processing Agents
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Team Leaders or Managers
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-month">
+        MI Data Views
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-year">
+        Experimentals UI
+      </a>
+    </li>
 
-            <span class="govuk-heading-s" style="padding-top:2rem;">Aims</span>
-              <ul class="govuk-list govuk-list--bullet">
-              <li>To understand what data elements help agents choose, perform and manage an task</li>
-            </ul>
+  </ul>
+  <div class="govuk-tabs__panel" id="past-day">
+    <h2 class="govuk-heading-l">For processing agents to perform a task</h2>
+    <p><strong>Learning Objectives</strong></p>
+    <p>To understand Task service UI for agent which gives the agent an element of choice and efficiency in working (e.g. on a number of related tasks associated with the same citizen or claim correlation id).</p>
+    <p>Learning more about what elements agents find important to complete a task. </p>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-          </td>
-          <td class="govuk-table__cell" style="width:44%;">
-            <strong class="govuk-tag govuk-tag govuk-tag--red">
-              Experimental
-            </strong>
-            <br>
-            <strong class="govuk-tag govuk-tag govuk-tag--blue govuk-!-margin-top-3">
-              To be tested
-            </strong>
-        </td>
-        </tr>
+    <div class="govuk-grid-row govuk-!-padding-top-3">
+      <div class="govuk-grid-column-two-thirds govuk-!-padding-4" >
 
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" style="width:78%;">
-            <br><br>
-            <h1 class="govuk-heading-m">
-              Manage tasks - landing pages
-                  </h1>
+      <h1 class="govuk-heading-m"><span class="govuk-body" style="color:#666666;">11 October 2021 - 15 October 2021</span><br><a href="/collab/res/task/r2/one-task">Version 2: One task at a time</a></h1>
+<br>
+      <strong class="govuk-tag govuk-tag govuk-tag--green">
+        Collabrative testing with Residency
+      </strong>
+      <strong class="govuk-tag govuk-tag govuk-tag--grey">
+       To be tested
+      </strong>
+      <br><br>
 
-            <a href="/my-tasks-using-tl/task-list-v2">Version 1</a><br>
-            <a href="/my-tasks-using-tl/task-list-v3a">Version 2</a><br>
-            <a href="/my-tasks-using-tl/task-list">Version 3</a><br>
+      <span class="govuk-heading-s" style="padding-top:2rem;">Aims</span>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>To understand what data elements help agents choose, perform and manage an task</li>
+      </ul>
+    </div>
+    </div>
 
-            <span class="govuk-heading-s" style="padding-top:2rem;">Aims</span>
-              <ul class="govuk-list govuk-list--bullet">
-              <li>To understand what data elements help agents choose an task.</li>
-              <li>To understand states of a task.</li>
-          </ul>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-          </td>
-          <td class="govuk-table__cell">
-            <br><br>
-            <strong class="govuk-tag govuk-tag govuk-tag--red">
-              Experimental
-            </strong>
-            <strong class="govuk-tag govuk-tag govuk-tag--blue  govuk-!-margin-top-3">
-              To be tested
-            </strong>
-        </td>
-        </tr>
+    <div class="govuk-grid-row govuk-!-padding-top-3">
+      <div class="govuk-grid-column-two-thirds govuk-!-padding-4" >
+      <h1 class="govuk-heading-m"><span class="govuk-body" style="color:#666666;">13 Septemeber 2021 - 01 October 2021</span><br><a href="/my-tasks/task-list">Version 1: Task list view</a></h1>
+
+      <strong class="govuk-tag govuk-tag govuk-tag--green">
+        Collabrative testing with Residency
+      </strong>
+      <strong class="govuk-tag govuk-tag govuk-tag--orange">
+        Testing in progress
+      </strong>
+      <br><br>
+      <span class="govuk-heading-s" style="padding-top:2rem;">Aims</span>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>To understand what data elements help agents choose, perform and manage an task</li>
+      </ul>    </div>
+    </div>
+  </div>
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-l">Work in-progress</h2>
 
 
-      </tbody>
-    </table>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+    <h2 class="govuk-heading-l">Work in-progress</h2>
+
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <h2 class="govuk-heading-l">Landing pages for task: Experiemntal versions</h2>
+    <h1 class="govuk-heading-m">
+          </h1>
+    <p>
+    <a href="/my-tasks-using-tl/task-list-v2">Version 1</a><br>
+    <a href="/my-tasks-using-tl/task-list-v3a">Version 2</a><br>
+    <a href="/my-tasks-using-tl/task-list">Version 3</a><br>
+
+    <span class="govuk-heading-s" style="padding-top:2rem;">Aims</span>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>To understand what data elements help agents choose an task.</li>
+      <li>To understand states of a task.</li>
+    </ul>
+   </p>
+  </div>
+</div>
+
     </div>
   </div>
 

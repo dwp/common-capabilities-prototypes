@@ -1,0 +1,97 @@
+{% extends 'layout-mt.html' %}
+
+{% block pageTitle %}
+  Check residency qualification
+{% endblock %}
+
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/my-tasks/task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check residency qualification
+      </h1>
+
+      <p></p>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--grey">
+              To-do
+            </strong>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Assigned by
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+              Me
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XX XX XX 7E
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Get claimant's details and call them to verify their nationality. Enter their nationaity and currnet location details to check if they qualify for a residency check.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Priority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Very high
+          </dd>
+        </div>
+
+      </dl>
+
+      <br>
+      <a href="/citizen/habitual_residency_test/simple_hrt_v3b/nationality_question_1.html"><button class="govuk-button" data-module="govuk-button">Start task </button></a>
+
+      <br>      <br>
+
+    <!--   <p class="govuk-body govuk-!-font-weight-bold">Other actions</p> -->
+      <p><a href="i-cannot-do-this-task">I cannot do this task</a></p>
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

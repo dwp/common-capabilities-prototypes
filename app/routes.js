@@ -259,5 +259,49 @@ router.post('/citizen/habitual_residency_test/simple_hrt_v3b/continue_applicatio
 
 
 
+router.post('/collab/res/task/r2/citizen/habitual_residency_test/simple_hrt_v4', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const nationalityQuestion = req.session.data['nationality']
+
+  if (nationalityQuestion === 'british') {
+    res.redirect('/collab/res/task/r2/citizen/habitual_residency_test/simple_hrt_v4/presence.html')
+  }
+
+  else if (nationalityQuestion === 'irish') {
+    res.redirect('/collab/res/task/r2/citizen/habitual_residency_test/simple_hrt_v4/presence.html')
+  }
+  else if (nationalityQuestion === 'no') {
+    res.redirect('/collab/res/task/r2/citizen/habitual_residency_test/simple_hrt_v4/nationality_question_2.html')
+  }
+
+
+})
+
+
+
+
+router.post('/collab/res/task/r2/citizen/habitual_residency_test/simple_hrt_v4/continue_application', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const presense = req.session.data['presence']
+
+  if (presense === 'yes') {
+    res.redirect('/collab/res/task/r2/citizen/habitual_residency_test/simple_hrt_v4/continue_application.html')
+  }
+
+  else if (presense === 'no') {
+    res.redirect('/collab/res/task/r2/citizen/habitual_residency_test/simple_hrt_v4/continue_application.html')
+  }
+
+
+})
+
+
+
 router.use('/node_modules', express.static('node_modules'))
 module.exports = router

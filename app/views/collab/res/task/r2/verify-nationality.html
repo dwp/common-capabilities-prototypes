@@ -1,0 +1,137 @@
+{% extends 'layout-mt.html' %}
+
+{% block pageTitle %}
+  Check residency qualification on behalf of a claimant
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check residency qualification on behalf of a claimant
+      </h1>
+
+      <p></p>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--grey">
+              To-do
+            </strong>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Assigned by
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+              Residency 
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            XX XX XX 7E
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Get claimant's details and call them to verify their nationality. Enter their nationaity and currnet location details to check if they qualify for a residency check.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Priority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Very high
+          </dd>
+        </div>
+
+      </dl>
+
+      <br>
+      <a href="/collab/res/task/r2/citizen/habitual_residency_test/simple_hrt_v4/nationality_question_1.html"><button class="govuk-button" data-module="govuk-button">Start task </button></a>
+
+      <br>      <br>
+
+    <!--   <p class="govuk-body govuk-!-font-weight-bold">Other actions</p> -->
+      <p><a href="i-cannot-do-this-task">I cannot do this task</a></p>
+
+    </div>
+    <!--  Task history </p> -->
+
+    <div class="govuk-grid-column-one-third">
+
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Task history
+          </h2>
+      <ol style="list-style: none; padding-left:0px;" class="dwp-timeline" class="govuk-list govuk-!-font-size-16">
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s">Started</h3>
+          <p class="dwp-timeline__info">
+            <span class="govuk-visually-hidden visually-hidden">Task started</span>
+            <span class="dwp-timeline__author">by John Smith</span>
+            <span class="dwp-timeline__date">5 January 2021 at 13:02</span>
+          </p>
+        </li>
+
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s">Returned back to queue due to inactivity</h3>
+          <p class="dwp-timeline__info">
+            <!-- <span class="dwp-visually__hidden">Note: Task abandoned by John Smith</span> -->
+            <span class="dwp-timeline__author">by System</span>
+            <span class="dwp-timeline__date">6 January 2021 at 13:21</span>
+          </p>
+          <p class="dwp-timeline__body">
+            Returned to system queue due to inactivity or no status update
+          </p>
+        </li>
+      </ol>
+
+      <!-- <p><a href="check-claim-details-history">View complete history</a></p> -->
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
