@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+
+
+
+{% block pageTitle %}
+  Search for an address
+{% endblock %}
+
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Find an address
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+
+
+</header>
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#address-errror">Select address from the list</a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Where does the citizen live in the United Kingdom?
+
+      </h1>
+      <p>Search address using partial address or postcode </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+      <div class="govuk-form-group govuk-form-group--error">
+      <h3 class="govuk-heading-m">Find address and select </h3>
+      <p class="govuk-hint">Start typing the address or postcode.For example ‘ne11dg’ or ’10 the street’ </p>
+
+      <br>  <span id="address-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Select address from the list
+  </span>
+      <form class="form " name="reason-form-2" action="address-information">
+
+      <div><input class="govuk-input govuk-!-width-two-fourth govuk-input govuk-input--error " style="border-color:red;" id="f-nationality" name="address-selected" type="hidden"></div>
+      <div class="govuk-body" id="address-search" name="address-selected" style="border-color:red;" ></div>
+
+
+      <br>
+      <br>
+      <button class="govuk-button" data-module="govuk-button">Show address details</button>
+
+
+
+
+
+      </form>
+      </div>
+      <br>
+      <p><a href="no-address">I can't see the address in the options</a></p>
+
+
+
+
+
+      </div>
+
+
+
+    </div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+    <div class="govuk-grid-row govuk-!-padding-top-5" style="border:1px solid black; background:#f9f9f9;">
+      <div class="govuk-grid-column-two-thirds" >
+
+        <h1 class="govuk-heading-m">
+          Other versions
+
+        </h1>
+        <p>When <a href="enter-textsearch-no-js">Javascript is disabled </a> in the user browser</p>
+        <h1 class="govuk-heading-m">
+          Errors
+
+        </h1>
+        <p>
+          Error: <a href="enter-textsearch-no-text">No address selected </a> <br>
+          Error: <a href="enter-textsearch-invalid-entry">Invalid selection or free text</a><br>
+        </p>
+    </div>
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

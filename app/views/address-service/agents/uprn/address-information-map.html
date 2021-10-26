@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Address Information
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Find address using UPRN
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Search information</h1>
+
+      <h2 class="govuk-heading-m">Match for UPRN </h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-heading-l">{{ data['uprn-number'] | default('22223332232') }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="enter-uprn">
+              Change
+              <span class="govuk-visually-hidden"> UPRN number</span>
+            </a>
+          </dd>
+
+        </div>
+
+
+
+      </dl>
+
+
+    </div>
+
+</div>
+
+
+
+
+<div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+            <h2 class="govuk-heading-m">Map options</h2>
+
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+         <div class="govuk-checkboxes__item">
+           <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+           <label class="govuk-label govuk-checkboxes__label" for="nationality">
+             Satellite View
+           </label>
+           <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+             view map in photographic view
+           </div>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+          <label class="govuk-label govuk-checkboxes__label" for="nationality">
+            3D View
+          </label>
+          <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+            view map with buildings and roads
+          </div>
+       </div>
+         </div>
+         <br>
+      </div>
+
+        <div class="govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m">Actions</h2>
+
+          <a href="#"><button class="govuk-button" data-module="govuk-button" style="text-align:right;" >
+            View full screen map
+          </button>
+          </a>
+        </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-fourth-from-desktop">
+
+<p><img src="/public/images/map-small.png" width="100%" alt="Sample map"></p>
+
+
+    </div>
+
+  </div>
+{% endblock %}

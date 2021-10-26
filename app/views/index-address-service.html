@@ -46,14 +46,139 @@
     <p><strong class="govuk-tag govuk-tag--blue">DEMO</strong>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"><span class="govuk-body" style="color:#666666;">Service area 2</span><br>
 Address services</h1>
-    <p>Last updated: 06 September 2021</p>
+    <p>Last updated: 20 October 2021</p>
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 </div>
 </div>
+
+
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
 
+
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#agents">
+          Agents
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#citizens">
+          Citizens
+        </a>
+      </li>
+
+    </ul>
+    <div class="govuk-tabs__panel" id="agents">
+      <h2 class="govuk-heading-l">Address lookup service for agents</h2>
+
+
+      <p><strong>Learning Objectives</strong></p>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>To understand Address service UI for agent which gives the agents detials of Citizen's address</li>
+      <li>Learning more about what elements agents find important to perform address checks. </li>
+      </ul>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <div class="govuk-grid-row" >
+        <div class="govuk-grid-column-full govuk-!-padding-4"  >
+        <h1 class="govuk-heading-m"><a href="/address-service/agents/address-start">Find an address</a>  </h1>
+
+        <strong class="govuk-tag govuk-tag govuk-tag--orange  govuk-!-margin-top-3">
+           To Be tested
+        </strong>
+        <span class="govuk-heading-s" style="padding-top:2rem;">Notes</span>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Search for an address using approximate string matching by typing in a text field. Accessible autocomplete component.</li>
+            <li>Testing OS Maps and filters</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="citizens">
+      <h2 class="govuk-heading-l">Citizen address lookup pattern</h2>
+
+            <p><strong>Learning Objectives</strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>To understand common pattern for address lookup</li>
+              <li>Understanding how property name and number with postcode help citizens refine search </li>
+              <li>Investigate improvmenets to current GDS address lookup </li>
+            </ul>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <div class="govuk-grid-row" >
+              <div class="govuk-grid-column-full govuk-!-padding-4"  >
+                <h2 class="govuk-heading-m"><a href="/address_look_up/search_pattern">Find your address: Property name and address search</a></h2>
+                <strong class="govuk-tag govuk-tag govuk-tag--blue">
+                  Proposed pattern
+                </strong>
+                <strong class="govuk-tag govuk-tag govuk-tag--green  govuk-!-margin-top-3">
+                   Testing
+                </strong>
+                <span class="govuk-heading-s" style="padding-top:2rem;">Notes</span>
+                  <ul class="govuk-list govuk-list--bullet">
+                  <li>Search for an address using propery name and postcode</li>
+                </ul>
+                <br>
+                 <h3 class="govuk-heading-s">Additional pages</h3>
+                 <ul class="govuk-list govuk-list--bullet">
+                  <li><a href="/address_look_up/search_error_pattern">Search validation</a></li>
+                  <li><a href="/address_look_up/select_address_pattern_error">Select address validation</a></li>
+                  <li><a href="/address_look_up/no_address_pattern">No addresses found</a></li>
+                </ul>
+              <span class="govuk-heading-s" style="padding-top:2rem;">Notes</span>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Search for an address using property name or number along with postcode</li>
+                  <li>Intetrate OS data and new fuzzy logic</li>
+                </ul>
+              </div>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                        <div class="govuk-grid-row" >
+                          <div class="govuk-grid-column-full govuk-!-padding-4"  >
+                            <h1 class="govuk-heading-m"><a href="/address-service/enter-postcode">Find an address using a postcode (GDS Address Lookup)</a>  </h1>
+
+                            <strong class="govuk-tag govuk-tag govuk-tag--blue">
+                              Demo
+                            </strong>
+                            <strong class="govuk-tag govuk-tag govuk-tag--orange  govuk-!-margin-top-3">
+                               Not tested
+                            </strong>
+
+
+                            <span class="govuk-heading-s" style="padding-top:2rem;">Notes</span>
+                              <ul class="govuk-list govuk-list--bullet">
+                              <li>Looking at address as a standalone service</li>
+                              <li>GDS flow - use a postcode to find an address</li>
+                          </ul>
+                          </div>
+                        </div>
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!--
 
 
     <h1 class="govuk-heading-l"> <br>Agents <p class="govuk-body">Service for agents and citizens to view, track and manage tasks</p></h1>
@@ -162,9 +287,7 @@ Address services</h1>
         </ul>
         <br>
          <h3 class="govuk-heading-s">Additional pages</h3>
-        <!-- <p><a href="/address_look_up/search_pattern">Address search</a></p>
-        <p><a href="/address_look_up/confirm_address_pattern">1 address found</a></p>
-        <p><a href="/address_look_up/select_address_pattern">Multiple addresses found</a></p> -->
+
           <p><a href="/address_look_up/search_error_pattern">Search validation</a></p>
           <p><a href="/address_look_up/select_address_pattern_error">Select address validation</a></p>
           <p><a href="/address_look_up/no_address_pattern">No addresses found</a></p>
@@ -178,7 +301,7 @@ Address services</h1>
 
 
     </div>
-  </div>
+  </div> -->
 
     </main>
   </div>

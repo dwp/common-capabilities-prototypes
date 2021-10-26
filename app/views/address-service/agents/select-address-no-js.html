@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Select your address
+{% endblock %}
+
+{% set serviceName %}
+  Find your address
+{% endset%}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-xl">
+            Select an address
+          </h1>
+
+            <form class="form" action="/address_look_up/complete" method="post">
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                      <p class="govuk-!-margin-top-4">We found 16 address matches for<br>
+                        <strong style="font-size:1.3em;">{{ data['address-selected'] }}</strong>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="enter-textsearch-no-js">Change</a></p>
+                    </legend>
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="address-confirmation1" name="address-confirmation" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="address-confirmation1">
+                          6 TURNBERRY, WHITLEY BAY
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="address-confirmation2" name="address-confirmation" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="address-confirmation2">
+                          6 NEWSTEADS FARM COTTAGES, WHITLEY BAY
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="address-confirmation2" name="address-confirmation" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="address-confirmation2">
+                          6 NEWSTEADS FARM COTTAGES, WHITLEY BAY
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="address-confirmation2" name="address-confirmation" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="address-confirmation2">
+                          6 NEWSTEADS FARM COTTAGES, WHITLEY BAY
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="address-confirmation2" name="address-confirmation" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="address-confirmation2">
+                          6 NEWSTEADS FARM COTTAGES, WHITLEY BAY
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="address-confirmation2" name="address-confirmation" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="address-confirmation2">
+                          6 NEWSTEADS FARM COTTAGES, WHITLEY BAY
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="address-confirmation2" name="address-confirmation" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="address-confirmation2">
+                          6 NEWSTEADS FARM COTTAGES, WHITLEY BAY
+                        </label>
+                      </div>
+
+
+
+
+                  </fieldset>
+
+                </div><br>
+                <p><a href="address-information.html" class="govuk-button">
+                  Continue
+                </a></p>
+                <p><a href="no-address" >I can't find my address in the list.</a></p>
+
+          </form>
+          <br>
+          <br>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Rules for display (for development only - not part of UI)
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-heading-s">When results less than or equal to 10 </p>
+              <p>Show results in radio buttons. Individual addresses in an radio button texts</p>
+              <p class="govuk-heading-s">When results greater than 10 </p>
+              <p>Use pagination after displaying 10 resutls. Show results in radio buttons. Individual addresses in an radio button texts. </p>
+              <br>
+              <p>Example:</p>
+              <img src="/public/images/pagination-example.png" alt="Image of how paginations should look like" width="100%">
+
+              <p>Source: <a href="https://ons-design-system.netlify.app/components/pagination/">https://ons-design-system.netlify.app/components/pagination/</a></p>
+            </div>
+          </details>
+    </div>
+  </div>
+
+{% endblock %}

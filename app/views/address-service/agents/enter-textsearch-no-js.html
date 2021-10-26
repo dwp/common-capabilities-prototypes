@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search for an address
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Find an address
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Where does the citizen live in the United Kingdom?
+
+      </h1>
+      <p>Search address using partial address or postcode </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+
+      <h3 class="govuk-heading-m">Find address</h3>
+      <p class="govuk-hint">Type the address or postcode and find address. For example ‘ne11dg’ or ’10 the street’ </p>
+
+      <br>
+      <form class="form " name="reason-form-2" action="select-address-no-js">
+
+      <div><input class="govuk-input govuk-!-width-two-fourth" id="address-search" name="address-selected" type="text"></div>
+
+
+
+      <br>
+      <br>
+      <button class="govuk-button" data-module="govuk-button">Find address</button>
+
+
+
+
+
+      </form>
+      <br>
+
+
+
+
+
+      </div>
+
+
+
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+    <div class="govuk-grid-row govuk-!-padding-top-5" style="border:1px solid black; background:#f9f9f9;">
+      <div class="govuk-grid-column-two-thirds" >
+
+        <h1 class="govuk-heading-m">
+          Other versions
+
+        </h1>
+        <p>When <a href="enter-textsearch">Javascript is not-disabled</a> in the user browser</p>
+        <h1 class="govuk-heading-m">
+          Errrors
+
+        </h1>
+        <p>Error: <a href="no-address-found">No address matches found</a> <br>
+        Error: <a href="enter-textsearch-no-js-no-text">No text entered</a></p>
+        <p></p>
+    </div>
+    </div>
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}

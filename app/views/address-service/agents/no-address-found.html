@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  I can't find address in the list
+{% endblock %}
+
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Find an address
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        No address found
+      </h1>
+      <p>We couldn’t not find any results for your address. Please check the details again.</p>
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+        <p class="govuk-!-margin-top-4">We could not find any results for your search for<br>
+          <strong style="font-size:1.3em;">{{ data['address-selected'] | default('Selected address') }}</strong>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="enter-textsearch-no-js">Change</a></p>
+      </legend>
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <p class="govuk-heading-l">What can I do?</p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+      <p class="govuk-heading-m">Find address by refining the search</p>
+
+      <p class="govuk-heading-s">Multiple versions of the address:</p>
+
+
+      <p>  In these cases we show the main property number and street name, and then the property number with the individual flat number. <br> <br>For example, there may be three results; 3 High Street; 3A High Street; and 3B High Street, or 3 High Street; Ground Floor Flat, 3 High Street; and First Floor Flat, 3 High Street.
+</p>
+<br>
+      <p>Go <a href="enter-textsearch">back and search</a>.</p>
+      <br><br>
+      <p class="govuk-heading-m">Search using UPRN</p>
+
+      <p>You can search for an using using UPRN. Use <a href="uprn/UPRN-start"> Find address using UPRN</a> service to get address details.</p>
+
+      <br><br>
+      <p class="govuk-heading-m">Report to the team</p>
+
+      <p>You can report this to the <a href="enter-textsearch"> address service team</a> and give them further information about the address you are looking for.</p>
+    </div>
+  </div>
+
+{% endblock %}

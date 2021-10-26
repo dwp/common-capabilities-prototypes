@@ -1,0 +1,273 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Address Information
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Find an address
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Address information</h1>
+
+      <h2 class="govuk-heading-m">Selected address</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            {{ data['address-selected'] }}
+            46 Low Friar Street
+            <br> Newcastle Upon Tyne
+            <br> NE1 5UE
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="enter-textsearch">
+              Change
+              <span class="govuk-visually-hidden">add address type here</span>
+            </a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+
+            </a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="address-information-map"><button class="govuk-button" data-module="govuk-button" >
+              View map
+            </button>
+            </a>
+          </dd>
+
+        </div>
+
+
+
+      </dl>
+
+
+    </div>
+
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Sub Building
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No Data
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            PO Box
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No Data
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Building Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No Data
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Building Number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            10
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Description (Line 1)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Commercial
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Description (Line 2)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Retail
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Description (Line 3)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Shop/Showroom
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Address details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Single line
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            Secret Massage Centre
+            <br>46 Low Friar Street
+            <br> Newcastle Upon Tyne
+            <br> NE1 5UE
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Alternate
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Former @ Bangkok Mini Market
+            <br>46 Low Friar Street
+            <br> Newcastle Upon Tyne
+            <br> NE1 5UE
+          </dd>
+        </div>
+
+      </dl>
+
+
+      <h2 class="govuk-heading-m">Other information </h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Local authority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Newcastle Upon Tyne
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            County
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Tyne and Wear
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Region
+          </dt>
+          <dd class="govuk-summary-list__value">
+            North East
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            UPRN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            4510141828
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Description (Line 1)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            NE1 5UE
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country
+          </dt>
+          <dd class="govuk-summary-list__value">
+            GB - Great Britain
+          </dd>
+        </div>
+
+      </dl>
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Actions
+        </h2>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Print this page
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Download as PDF
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Download as CSV
+        </button>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
