@@ -78,6 +78,10 @@ Address services</h1>
       <h2 class="govuk-heading-l">Address lookup service for agents</h2>
 
 
+
+
+
+
       <p><strong>Learning Objectives</strong></p>
       <ul class="govuk-list govuk-list--bullet">
       <li>To understand Address service UI for agent which gives the agents detials of Citizen's address</li>
@@ -85,14 +89,83 @@ Address services</h1>
       </ul>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+
       <div class="govuk-grid-row" >
         <div class="govuk-grid-column-full govuk-!-padding-4"  >
-        <h1 class="govuk-heading-m"><a href="/address-service/agents/address-start">Find an address</a>  </h1>
-
+        <h1 class="govuk-heading-m"><a href="/address-service/agents/address-start">Find an address (Javascript enabled)</a>  </h1>
         <strong class="govuk-tag govuk-tag govuk-tag--orange  govuk-!-margin-top-3">
            To Be tested
         </strong>
-        <span class="govuk-heading-s" style="padding-top:2rem;">Notes</span>
+        <span class="govuk-heading-s" style="padding-top:2rem;">Additional pages:</span>
+        <span class="govuk-heading-s">Error(s) - Find and select address page</span>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/address-service/agents/errors/textsearch-js-no-text">No data entered (Blank)</a></li>
+            <li><a href="/address-service/agents/errors/textsearch-js-invalid-text.html">Incorrect Data (Address not selected from list / user enters own data)</a></li>
+          </ul>
+          <span class="govuk-heading-s">Error(s) - Other</span>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/address-service/agents/errors/no-address-js.html">Can't find address in the list</a></li>
+            </ul>
+
+
+
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+        <h1 class="govuk-heading-m"><a href="/address-service/agents/address-start-no-js">Find an address (Javascript disabled)</a>  </h1>
+        <strong class="govuk-tag govuk-tag govuk-tag--orange  govuk-!-margin-top-3">
+           To Be tested
+        </strong>
+        <span class="govuk-heading-s" style="padding-top:2rem;">Additional pages:</span>
+
+        <span class="govuk-heading-s">Error(s) - Find address page</span>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/address-service/agents/errors/textsearch-no-js-no-text">No data entered (Blank)</a></li>
+          </ul>
+
+
+          <span class="govuk-heading-s">Error(s) - Search results page </span>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/address-service/agents/errors/select-address-no-js-no-selection.html">No selection </a></li>
+          </ul>
+
+          <span class="govuk-heading-s">Rules - Search results page </span>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Rules for display for search results page
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-heading-s">When results less than or equal to 10 </p>
+              <p>Show results in radio buttons. Individual addresses in an radio button texts</p>
+              <p class="govuk-heading-s">When results greater than 10 </p>
+              <p>Use pagination after displaying 10 resutls. Show results in radio buttons. Individual addresses in an radio button texts. </p>
+              <br>
+              <p>Example:</p>
+              <img src="/public/images/pagination-example.png" alt="Image of how paginations should look like" width="100%">
+
+              <p>Source: <a href="https://ons-design-system.netlify.app/components/pagination/">https://ons-design-system.netlify.app/components/pagination/</a></p>
+            </div>
+          </details>
+
+          <span class="govuk-heading-s">Error(s) - Other</span>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/address-service/agents/errors/no-js-no-address-found.html">No address found</a></li>
+              <li><a href="/address-service/agents/errors/no-address.html">Can't find address in the list</a></li>
+            </ul>
+
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+        <span class="govuk-heading-s">Notes</span>
           <ul class="govuk-list govuk-list--bullet">
             <li>Search for an address using approximate string matching by typing in a text field. Accessible autocomplete component.</li>
             <li>Testing OS Maps and filters</li>

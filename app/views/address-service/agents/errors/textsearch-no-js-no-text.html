@@ -1,11 +1,8 @@
 {% extends "layout.html" %}
 
-
-
 {% block pageTitle %}
   Search for an address
 {% endblock %}
-
 
 {% block header %}
 
@@ -27,11 +24,8 @@
 
 
 
-
 </header>
 {% endblock %}
-
-
 
 {% block beforeContent %}
 
@@ -42,10 +36,7 @@
         href: 'javascript:history.back()'
     }) }}
 
-
-
 {% endblock %}
-
 
 {% block content %}
 
@@ -56,7 +47,7 @@
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#address-errror">Select an address</a>
+        <a href="#address-error">Enter an address to search</a>
       </li>
 
     </ul>
@@ -74,21 +65,22 @@
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
       <div class="govuk-form-group govuk-form-group--error">
-      <h3 class="govuk-heading-m">Find address and select </h3>
-      <p class="govuk-hint">Start typing the address or postcode.For example ‘ne11dg’ or ’10 the street’ </p>
 
-      <br>  <span id="address-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Select an address
-  </span>
-      <form class="form " name="reason-form-2" action="address-information">
+      <h3 class="govuk-heading-m">Find address</h3>
+      <p class="govuk-hint">Enter partial address or Postcode. Refine your search by adding more address details. For example ’10 the street’ or '10 the street, bristol' or '10 the street, bristol, BR1 1DQ' </p>
 
-      <div><input class="govuk-input govuk-!-width-two-fourth govuk-input govuk-input--error " style="border-color:red;" id="f-nationality" name="address-selected" type="hidden"></div>
-      <div class="govuk-body" id="address-search" name="address-selected" style="border-color:red;" ></div>
+      <br>
+      <form class="form " name="reason-form-2" action="select-address-no-js">
+        <span id="address-error" class="govuk-error-message">
+     <span class="govuk-visually-hidden">Error:</span> Enter an address to search
+   </span>
+      <div id="address-error"><input class="govuk-input govuk-!-width-two-fourth govuk-input--error " id="address-search" name="address-selected" type="text"></div>
+
 
 
       <br>
       <br>
-      <button class="govuk-button" data-module="govuk-button">Show address details</button>
+      <button class="govuk-button" data-module="govuk-button">Find address</button>
 
 
 
@@ -97,7 +89,6 @@
       </form>
       </div>
       <br>
-      <p><a href="no-address">I can't see the address in the options</a></p>
 
 
 
@@ -108,26 +99,30 @@
 
 
     </div>
+
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
-    <div class="govuk-grid-row govuk-!-padding-top-5" style="border:1px solid black; background:#f9f9f9;">
+    <!-- <div class="govuk-grid-row govuk-!-padding-top-5" style="border:1px solid black; background:#f9f9f9;">
       <div class="govuk-grid-column-two-thirds" >
 
         <h1 class="govuk-heading-m">
           Other versions
 
         </h1>
-        <p>When <a href="enter-textsearch-no-js">Javascript is disabled </a> in the user browser</p>
+        <p>When <a href="enter-textsearch">Javascript is not-disabled</a> in the user browser</p>
+
+
         <h1 class="govuk-heading-m">
           Errors
 
         </h1>
-        <p>
-          Error: <a href="enter-textsearch-no-text">No address selected </a> <br>
-          Error: <a href="enter-textsearch-invalid-entry">Invalid selection or free text</a><br>
-        </p>
+
+        <p>Error: <a href="no-address-found">No address matches found</a> <br>
+        Error: <a href="enter-textsearch-no-js-no-text">No text entered</a></p>
+        <p></p>
     </div>
-    </div>
+    </div> -->
+
 
 
 {% endblock %}
