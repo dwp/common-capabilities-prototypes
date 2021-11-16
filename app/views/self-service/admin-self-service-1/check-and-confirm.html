@@ -1,0 +1,166 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check setup details
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/self-service/admin-self-service-1/setup-task-list-added-org-attri-agent-acti">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Check setup details
+      </h1>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
+
+      <h1 class="govuk-heading-l">
+        Organisation information
+      </h1>
+
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['business-service-name']  | default('Get your state pension') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="service-domain">
+            Change<span class="govuk-visually-hidden"> attribute name</span>
+          </a>
+          </dd>
+
+
+        </div>
+
+
+      </dl>
+      <div class="govuk-warning-text">
+
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    Your have to setup your organisation again if you change the organisation name later.
+  </strong>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
+
+
+      <h1 class="govuk-heading-l">
+        Attributes list
+      </h1>
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Value(s)</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header" style="text-align:right;">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ data['attribute-name'] | default('Language for England and Wales') }}</td>
+      <td class="govuk-table__cell"> {{ data['attribute-uid'] | default('Welsh, English') }}</td>
+      <td class="govuk-table__cell"> {{ data['attribute-status'] | default('Active') }}</td>
+      <td class="govuk-table__cell" style="text-align:right;"><a href="#">Modify status</a></td>
+
+    </tr>
+
+  </tbody>
+</table>
+<p><a href="add-attributes">Add attribute</a></p>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
+
+<h1 class="govuk-heading-l">
+  Agent profile
+</h1>
+<table class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th scope="col" class="govuk-table__header" style="width:20%">Staff number </th>
+<th scope="col" class="govuk-table__header" style="width:40%">Attributes</th>
+<th scope="col" class="govuk-table__header" style="width:10%">Status</th>
+<th scope="col" class="govuk-table__header" style="text-align:right;">Actions</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">{{ data['agent-keyid'] | default('ID2232DS') }}</td>
+<td class="govuk-table__cell">{{ data['selected-attribute-0'] | default('Decision maker') }}<br>{{ data['selected-attribute-1'] | default('Decision maker') }}</td>
+<td class="govuk-table__cell">
+    Active
+  </td>
+<td class="govuk-table__cell" style="text-align:right;"><a href="modify-agent-details">Modify profile</a> &nbsp; <a href="remove-agent">Remove</a></td>
+</tr>
+
+
+</tbody>
+</table>
+
+<p><a href="add-agent">Add agent profile</a></p>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
+
+<h1 class="govuk-heading-l">
+  Activities list
+</h1>
+<table class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th scope="col" class="govuk-table__header">Name</th>
+<th scope="col" class="govuk-table__header">Execution URL</th>
+<th scope="col" class="govuk-table__header">Type</th>
+<th scope="col" class="govuk-table__header" style="text-align:right;">Actions</th>
+
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for NI') }}</td>
+<td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}</td>
+<td class="govuk-table__cell">{{ data['activity-type'] | default('Regular') }}</td>
+<td class="govuk-table__cell" style="text-align:right;"><a href="view-defi-details">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
+</tr>
+
+
+</tbody>
+</table>
+
+<p><a href="add-task-info">Add an activity</a></p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
+
+      <a href="confirmation">  <button class="govuk-button" data-module="govuk-button">Confirm and setup</button></a>
+
+        </div>
+
+
+    </div>
+
+
+{% endblock %}

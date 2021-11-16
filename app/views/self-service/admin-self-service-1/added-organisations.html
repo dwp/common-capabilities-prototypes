@@ -1,10 +1,11 @@
-{% extends "header-banner-for-setup-dwptask.html" %}
+{% extends "header-dwptask.html" %}
 {% extends "layout.html" %}
 
 
 {% block pageTitle %}
-  Services on DWP Manage tasks
+  Orgnaisations on DWP Task
 {% endblock %}
+
 
 
 {% block content %}
@@ -14,11 +15,11 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      Business areas
+      Organisations
     </h1>
 
-    <p class="govuk-!-padding-bottom-8">Select a business area so you can create tasks, agents and task matching attributes.</p>
-</div>
+    <p class="govuk-!-padding-bottom-2"> View, modify or create attributes, agent profiles and acitivies (task matching templates) for your organisation.</p>
+    <p class="govuk-!-padding-bottom-8">You can also setup a new organisation to use DWP Task service.</p></div>
 </div>
 
 <div class="govuk-grid-row">
@@ -27,21 +28,19 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header" style="width:75%;">Service name</th>
-            <th scope="col" class="govuk-table__header">Actions</th>
-            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header"style="text-align:right;">Actions</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">{{ data['business-service-name'] | default('Business service name') }} </td>
-            <td class="govuk-table__cell"><a href="/self-service/admin-self-service-1/maintain/dashboard">View dashboard</a></td>
-            <td class="govuk-table__cell"><a href="#">Remove</a></td>
+            <td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/maintain/dashboard">View dashboard</a>  &nbsp; &nbsp; <a href="#">Remove</a></td>
           </tr>
       </tbody>
     </table>
 
-<p class="govuk-heading-s govuk-!-padding-top-8">I can't see my business area in the list?  </p>
-<p><a href="service-domain">Set up your business area</a></p>
+<p class="govuk-heading-s govuk-!-padding-top-8">I can't see my organisation or business area in the list?  </p>
+<p><a href="service-domain">Add organisation</a></p>
 
 
   </div>

@@ -1,39 +1,23 @@
+{% extends "header-setup-dwptask.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
   Add agent
 {% endblock %}
 
-{% block header %}
-<header class="govuk-header " role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <span class="govuk-header__logotype-text">
-            DWP Manage tasks
-          </span>
-        </span>
-      </a>
-    </div>
-  </div>
-</header>
-
-{% endblock %}
-
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-tag--red">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
       Experimental
     </strong> &nbsp;
     <span class="govuk-phase-banner__text">
-      This is not a service - this interface is to help teams set up and maintain DWP Manage tasks
+      Set up or maintain your organisation to use DWP Task.
     </span>
   </p>
 </div>
-<br>
-<br>
   <a class="govuk-back-link" href="agents-list">Back</a>
 {% endblock %}
 
@@ -52,21 +36,14 @@
               <fieldset class="govuk-fieldset">
 
 
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="agent-name">
-                  Full name
-                </label>
-
-                <input class="govuk-input" id="agent-name" name="agent-name" type="text"></div>
-
                 <div class="govuk-form-group">
-                <label class="govuk-label" for="agent-keyid">
-                  Agent key or ID
+                <label class="govuk-label govuk-!-font-weight-bold" for="agent-keyid">
+                  Staff number
                 </label>
-                <p class="govuk-hint">This is the unique key identifier for the agent </p>
+                <p class="govuk-hint">This is the unique staff number for the agent </p>
 
                 <input class="govuk-input govuk-!-width-two-thirds" id="agent-keyid" name="agent-keyid" type="text"></div>
-                <label class="govuk-label" for="sort">
+                <label class="govuk-label govuk-!-font-weight-bold" for="sort">
                 Agent status
                 <p class="govuk-hint">It is the primary property for this attribute. </p>
                 </label>

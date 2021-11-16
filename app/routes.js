@@ -201,7 +201,7 @@ router.post('/self-service/admin-self-service-1/want-to-setup-new', function (re
   const removeTaskDefinition = req.session.data['setup-answer']
 
   if (removeTaskDefinition === 'Yes') {
-    res.redirect('/self-service/admin-self-service-1/service-domain')
+    res.redirect('/self-service/admin-self-service-1/start')
   }
 
   else if (removeTaskDefinition === 'No') {
@@ -212,6 +212,47 @@ router.post('/self-service/admin-self-service-1/want-to-setup-new', function (re
 })
 
 //Braching for Restest
+
+
+
+
+router.post('/self-service/admin-self-service-1/attributes/add-attributes-add-another', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const removeTaskDefinition = req.session.data['add-another-attribute']
+
+  if (removeTaskDefinition === 'yes') {
+    res.redirect('/self-service/admin-self-service-1/attributes/add-attributes')
+  }
+
+  else if (removeTaskDefinition === 'no') {
+    res.redirect('/self-service/admin-self-service-1/attributes/added-to-attributes-list')
+  }
+
+
+})
+
+
+router.post('/self-service/admin-self-service-1/agents/add-agent-add-another', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const removeTaskDefinition = req.session.data['add-another-agent']
+
+  if (removeTaskDefinition === 'yes') {
+    res.redirect('/self-service/admin-self-service-1/agents/add-agent')
+  }
+
+  else if (removeTaskDefinition === 'no') {
+    res.redirect('/self-service/admin-self-service-1/agents/added-to-agents-list')
+  }
+
+
+})
+
 
 
 

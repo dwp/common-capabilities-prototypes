@@ -5,14 +5,14 @@
       <a href="/self-service/admin-self-service-1/maintain/added-organisations-maintain" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <span class="govuk-header__logotype-text" >
-            DWP Manage tasks
+            DWP Task
             <!-- <span class="govuk-body white-text">&nbsp; Setup and maintain </span> -->
           </span>
         </span>
       </a>
     </div>
     <div class="white-link">
-        <p style="text-align:right;"><span class="govuk-!-padding-right-9 white-link">Business area: {{ data['business-service-name'] | default('Common Capabilities') }}</span> <a href="/self-service/sign-in" class="white-link">Sign out</a></p>
+        <p style="text-align:right;"><span class="govuk-!-padding-right-9 white-link"> Organisation :: {{ data['business-service-name'] | default('Common Capabilities') }}</span> <a href="/self-service/sign-in" class="white-link">Sign out</a></p>
 
     </div>
 
@@ -38,7 +38,7 @@
         </li>
         <li class="govuk-header__navigation-item " id="menu-task-definitions">
           <a class="govuk-header__link" href="/self-service/admin-self-service-1/maintain/task-definitions/task-defi">
-            Task definitions
+            Activities
           </a>
         </li>
 
@@ -53,11 +53,13 @@
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-tag--red">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
       Experimental
     </strong> &nbsp;
     <span class="govuk-phase-banner__text">
-      Set up and maintain your business area on DWP Manage tasks.
+      Set up or maintain your organisation to use DWP Task.
     </span>
   </p>
 </div>

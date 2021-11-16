@@ -1,3 +1,4 @@
+{% extends "header-dwptask.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -92,7 +93,7 @@
       <a href="/self-service/index-self-service" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <span class="govuk-header__logotype-text">
-            DWP Manage tasks
+            DWP Task
           </span>
         </span>
       </a>
@@ -102,19 +103,6 @@
 
 {% endblock %}
 
-{% block beforeContent %}
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-tag--red">
-      Experimental
-    </strong> &nbsp;
-    <span class="govuk-phase-banner__text">
-      Set up and maintain your business area on DWP Manage tasks.
-    </span>
-  </p>
-</div>
-<br>
-{% endblock %}
 
 {% block content %}
 
@@ -178,7 +166,7 @@
       </h1>
 
 
-      <form class="form" id="signin-form" action="admin-self-service-1/start-service" method="post" onsubmit="">
+      <form class="form" id="signin-form" action="admin-self-service-1/want-to-setup-new" method="" onsubmit="">
 
               <div class="govuk-form-group" id="div-email-address">
 

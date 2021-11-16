@@ -1,3 +1,4 @@
+{% extends "header-setup-dwptask.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -5,35 +6,20 @@
 {% endblock %}
 
 
-{% block header %}
-<header class="govuk-header " role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <span class="govuk-header__logotype-text">
-            DWP Manage tasks
-          </span>
-        </span>
-      </a>
-    </div>
-  </div>
-</header>
-
-{% endblock %}
-
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-tag--red">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
       Experimental
     </strong> &nbsp;
     <span class="govuk-phase-banner__text">
-      This is not a service - this interface is to help teams set up and maintain DWP Manage tasks
+      Set up or maintain your organisation to use DWP Task.
     </span>
   </p>
 </div>
-<br>
+
   <a class="govuk-back-link" href="add-attributes">Back</a>
 {% endblock %}
 
@@ -43,13 +29,17 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Check attribute details
+        Check details
+      </h1>
+
+      <h1 class="govuk-heading-m">
+        Attribute details
       </h1>
 
         <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Attribute name
+            Name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['attribute-name'] | default('Language for England and Wales') }}
@@ -63,10 +53,23 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Attribute values
+            Value(s)
           </dt>
           <dd class="govuk-summary-list__value">
-           {{ data['value-0'] }}, {{ data['value-1'] }}, {{ data['value-2'] }}, {{ data['value-3'] }}
+           {{ data['value-0'] }}  {{ data['value-1'] }}  {{ data['value-2'] }}  {{ data['value-3'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-attributes">
+              Change<span class="govuk-visually-hidden"> attribute value</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data['attribute-status'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="add-attributes">
@@ -76,13 +79,38 @@
         </div>
 
       </dl>
+      <form class="form" action="/self-service/admin-self-service-1/attributes/add-attributes-add-another" method="post">
+
+      <div class="govuk-form-group govuk-!-padding-top-8">
+  <fieldset class="govuk-fieldset" aria-describedby="add-another-attribute-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Do you want to add another attribute?
+      </h1>
+    </legend>
+    <!-- <div id="add-another-attribute-hint" class="govuk-hint">
+      Add another attribute to the attributes list.
+    </div> -->
+    <div class="govuk-radios govuk-radios--inline govuk-!-padding-top-3">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="add-another-attribute" name="add-another-attribute" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="add-another-attribute">
+          Yes, I want to add another
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="add-another-attribute-2" name="add-another-attribute" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="add-another-attribute-2">
+          No, take me to the list of attributes
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
 
 
-      <form class="form" action="added-to-attributes-list" method="post">
-        <div class="govuk-form-group">
-
-      <br>
-      <button class="govuk-button" data-module="govuk-button">Confirm and create attribute</button>
+      <br><br>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 

@@ -1,22 +1,35 @@
-{% extends "header-banner-for-setup-dwptask-with-name.html" %}
+{% extends "header-setup-dwptask.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
   Setup your service on DWP Manage tasks
 {% endblock %}
 
-
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+{% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Setup your orgnisation for DWP Task service
+        Setup your organisation for DWP Task service
       </h1>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Setup incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 6 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have added information in 1 of 6 sections.</p>
 <!--
       <p>You are setting up the following service: </p>
 
@@ -50,11 +63,11 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="service-domain" aria-describedby="eligibility-status">
+                <a href="service-domain" aria-describedby="organisation-information">
                   Organisation information
                 </a>
               </span>
-              <strong class="govuk-tag app-task-list__tag govuk-tag--grey " id="eligibility-status">Not Started</strong>
+              <strong class="govuk-tag app-task-list__tag " id="organisation-information">Information added</strong>
             </li>
             <!-- <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -71,10 +84,10 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                  List attributes
-
+              <a href="attributes/attributes-list" aria-describedby="list-attributes">    List attributes
+              </a>
               </span>
-              <strong class="govuk-tag app-task-list__tag govuk-tag--grey " id="eligibility-status">Cannot start yet</strong>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--grey " id="eligibility-status">Not Started</strong>
             </li>
 
             <li class="app-task-list__item">

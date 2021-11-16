@@ -1,38 +1,24 @@
+{% extends "header-setup-dwptask.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
   Check task definition details
 {% endblock %}
 
-{% block header %}
-<header class="govuk-header " role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <span class="govuk-header__logotype-text">
-            DWP Manage tasks
-          </span>
-        </span>
-      </a>
-    </div>
-  </div>
-</header>
-
-{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-tag--red">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
       Experimental
     </strong> &nbsp;
     <span class="govuk-phase-banner__text">
-      This is not a service - this interface is to help teams set up and maintain DWP Manage tasks
+      Set up or maintain your organisation to use DWP Task.
     </span>
   </p>
 </div>
-<br>
   <a class="govuk-back-link" href="added-task-defi">Back</a>
 {% endblock %}
 
@@ -41,19 +27,33 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <h1 class="govuk-heading-s">
+      Activity
+
+      </h1>
       <h1 class="govuk-heading-xl">
-      {{ data['task-defi-name'] | default('Verify address for NI template') }} Task definition details
+      {{ data['task-defi-name'] | default('Verify address for NI template') }}
+
       </h1>
       <form class="form"  method="post" action="added-task-defi">
         <div class="govuk-form-group">
 
           <br>
-          <p><strong class="govuk-heading-m">Task details</strong></p>
+          <p><strong class="govuk-heading-m">Activity </strong></p>
 
         <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Activity type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['activity-type'] | default('Regular') }}
+            </dd>
+
+          </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Task definition name
+          <dt class="govuk-summary-list__key">
+            Activity name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['task-defi-name'] | default('Verify address for NI template') }}
@@ -62,7 +62,7 @@
 
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          <dt class="govuk-summary-list__key">
             Task name to be displayed for agents
           </dt>
           <dd class="govuk-summary-list__value">
@@ -74,10 +74,12 @@
 
       </dl>
       <br>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
       <p><strong class="govuk-heading-m">Definition detials</strong></p>
               <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                <dt class="govuk-summary-list__key">
                   Priority
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -87,7 +89,7 @@
 
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half" >
+                <dt class="govuk-summary-list__key">
                   Execution URL
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -100,7 +102,16 @@
                   SLA (days)
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['task-sla'] | default('2') }}
+                  {{ data['task-sla'] | default('None') }}
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Reserve tasks in days
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-reserve'] | default('2') }}
                 </dd>
 
               </div>
@@ -108,21 +119,22 @@
             </dl>
 
       <br>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
       <p><strong class="govuk-heading-m">Task matching attributes</strong></p>
               <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                <dt class="govuk-summary-list__key">
                   Attributes
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data['task-attribute'] | default('Decision maker') }}
                 </dd>
-                <dd class="govuk-summary-list__actions">
 
 
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                <dt class="govuk-summary-list__key">
                   Type of attribute
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -132,10 +144,9 @@
               </div>
 
             </dl>
+            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
 
-
-        <br><br>
-        <button class="govuk-button" data-module="govuk-button">Back to list view</button>
+        <button class="govuk-button" data-module="govuk-button">Back to list</button>
 
         </div>
       </form>

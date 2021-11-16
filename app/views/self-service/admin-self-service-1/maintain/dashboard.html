@@ -22,8 +22,8 @@
 
     <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
-      <span class="govuk-body">Business area</span><br>
-      Common Capablities
+      <span class="govuk-body">Organisation</span><br>
+      {{ data['business-service-name'] | default('Business service name') }}
 <br><span class="govuk-body"><strong>Domain</strong>: http://uk.dwp.rbc.cc.not-an-actual-domain</span><br>
     </h1>
 
@@ -31,7 +31,7 @@
 
   <div class="govuk-grid-column-full">
   <h1 class="govuk-heading-m">Summary
-      <span class="govuk-hint">Last updated: 03 May 2021 </span>
+      <span class="govuk-hint">Last updated: 15 November 2021 </span>
   </h1>
   </div>
 
@@ -60,7 +60,7 @@
   </div>
 
   <div class="govuk-grid-column-one-half " >
-    <div class="govuk-!-padding-4" style="border:1px solid #999999;"><label class="govuk-label" for="overall-statistics">Task definitions</label>
+    <div class="govuk-!-padding-4" style="border:1px solid #999999;"><label class="govuk-label" for="overall-statistics">Activities</label>
     <h1 class="govuk-heading-xl">
       1
       <p><a href="task-definitions/added-task-defi">View all</a></p>

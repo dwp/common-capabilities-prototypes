@@ -1,3 +1,4 @@
+{% extends "header-setup-dwptask.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -16,42 +17,26 @@
   </script>
 {% endblock %}
 
-{% block header %}
-<header class="govuk-header " role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__logo">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <span class="govuk-header__logotype-text">
-            DWP Manage tasks
-          </span>
-        </span>
-      </a>
-    </div>
-  </div>
-</header>
-
-{% endblock %}
-
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-tag--red">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
       Experimental
     </strong> &nbsp;
     <span class="govuk-phase-banner__text">
-      This is not a service - this interface is to help teams set up and maintain DWP Manage tasks
+      Set up or maintain your organisation to use DWP Task.
     </span>
   </p>
 </div>
-<br>
 <div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
 <ol class="govuk-breadcrumbs__list">
   <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-taskdefi-added">Home</a>
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-agent-added">Home</a>
   </li>
   <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="#">Task definitions</a>
+    <a class="govuk-breadcrumbs__link" href="#">List activities</a>
   </li>
 
 </ol>
@@ -65,16 +50,16 @@
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
-        Task definitions
+        Activities list
       </h1>
 
       <table class="govuk-table">
     <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Definition name</th>
+      <th scope="col" class="govuk-table__header">Name</th>
       <th scope="col" class="govuk-table__header">Execution URL</th>
-      <th scope="col" class="govuk-table__header">Actions</th>
-      <th scope="col" class="govuk-table__header"></th>
+      <th scope="col" class="govuk-table__header">Type</th>
+      <th scope="col" class="govuk-table__header" style="text-align:right;">Actions</th>
 
     </tr>
   </thead>
@@ -82,15 +67,15 @@
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for NI') }}</td>
       <td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}</td>
-      <td class="govuk-table__cell"><a href="view-defi-details">View details</a></td>
-      <td class="govuk-table__cell"><a href="remove-task">Remove</a></td>
+      <td class="govuk-table__cell">{{ data['activity-type'] | default('Regular') }}</td>
+      <td class="govuk-table__cell" style="text-align:right;"><a href="view-defi-details">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
     </tr>
 
 
   </tbody>
 </table>
 
-<p><a href="add-task-info">Add task defintion</a></p>
+<p><a href="add-task-info">Add an activity</a></p>
 <br><br>
 <a href="/self-service/admin-self-service-1/setup-task-list-taskdefi-added"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
 
