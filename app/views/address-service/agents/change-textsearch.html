@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Change selected address
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Find an address
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Change selected address
+
+      </h1>
+      <p>Search address using partial address or postcode </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+
+      <h3 class="govuk-heading-m">Find address and select </h3>
+      <p class="govuk-hint">Start typing the address or postcode.For example ‘ne11dg’ or ’10 the street’ </p>
+
+      <br>
+      <form class="form " name="reason-form-2" action="address-information">
+
+      <div><input class="govuk-input govuk-!-width-two-fourth" id="f-nationality" name="address-selected" type="hidden" value="{{ data['address-selected'] | default('Address selected') }}"></div>
+      <div class="govuk-body" id="address-search" name="address-selected"  ></div>
+
+
+      <br>
+      <br>
+      <button class="govuk-button" data-module="govuk-button">Show address details</button>
+
+
+
+
+
+      </form>
+      <br>
+      <p><a href="no-address-js">I can't see the address in the list</a></p>
+
+
+
+
+
+      </div>
+
+
+
+    </div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+    <!-- <div class="govuk-grid-row govuk-!-padding-top-5" style="border:1px solid black; background:#f9f9f9;">
+      <div class="govuk-grid-column-two-thirds" >
+
+        <h1 class="govuk-heading-m">
+          Other versions
+
+        </h1>
+        <p>When <a href="enter-textsearch-no-js">Javascript is disabled </a> in the user browser</p>
+
+        <h1 class="govuk-heading-m">
+          Errors
+
+        </h1>
+        <p>
+          Error: <a href="enter-textsearch-no-text">No address selected </a> <br>
+          Error: <a href="enter-textsearch-invalid-entry">Invalid selection or free text</a><br>
+        </p>
+    </div>
+    </div> -->
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+{% endblock %}
