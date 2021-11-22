@@ -739,6 +739,12 @@ const address = [
   '236 Blantyre Rd, Everton Ward, Merseyside, L6 2EN',
   '70 Lilly Rd, Shirley Ward, Greater London, CR0 7PT',
   '58 Gloucester Rd, Holbrook, Derbyshire, DE56 0TX',
+  '21A Low Friar Street, Newcastle upon Tyne, NE1 5UE',
+  '21B Low Friar Street, Newcastle upon Tyne, NE1 5UE',
+  '21C Low Friar Street, Newcastle upon Tyne, NE1 5UE',
+  '21D Low Friar Street, Newcastle upon Tyne, NE1 5UE',
+  '21E Low Friar Street, Newcastle upon Tyne, NE1 5UE',
+  '21F Low Friar Street, Newcastle upon Tyne, NE1 5UE',
   '21G Low Friar Street, Newcastle upon Tyne, NE1 5UE',
   '35B Low Friar Street, Newcastle upon Tyne, NE1 5UE',
   '35C Low Friar Street, Newcastle upon Tyne, NE1 5UE',
@@ -752,12 +758,6 @@ const address = [
   '37J Low Friar Street, Newcastle upon Tyne, NE1 5UE',
   '37A Low Friar Street, Newcastle upon Tyne, NE1 5UE',
   '46 Low Friar Street, Newcastle Upon Tyne, NE1 5UE',
-  '21A Low Friar Street, Newcastle upon Tyne, NE1 5UE',
-  '21B Low Friar Street, Newcastle upon Tyne, NE1 5UE',
-  '21C Low Friar Street, Newcastle upon Tyne, NE1 5UE',
-  '21D Low Friar Street, Newcastle upon Tyne, NE1 5UE',
-  '21E Low Friar Street, Newcastle upon Tyne, NE1 5UE',
-  '21F Low Friar Street, Newcastle upon Tyne, NE1 5UE',
   'Secret Massage Centre, 46 Low Friar Street, Newcastle upon Tyne, NE1 5UE',
   'Low Friar Court, 27A Low Friar Street, Newcastle upon Tyne, NE1 5UE',
   'Low Friar Court, 27B Low Friar Street, Newcastle upon Tyne, NE1 5UE',
@@ -816,17 +816,17 @@ accessibleAutocomplete({
     source: address
 })
 
-if (document.addEventListener){
-    document.addEventListener('DOMContentLoaded', getElement, false);
-} else if (document.attachEvent){
-    document.attachEvent('onDOMContentLoaded', getElement);
-}
+// if (document.addEventListener){
+//     document.addEventListener('DOMContentLoaded', getElement, false);
+// } else if (document.attachEvent){
+//     document.attachEvent('onDOMContentLoaded', getElement);
+// }
 
-function getElement() {
-    if (document.getElementById("previousValue")) {
-        document.getElementsByClassName("autocomplete__input autocomplete__input--default")[0].value = document.getElementById("previousValue").value;
-        setTimeout(function(){
-            document.getElementById("address-search__option--0").click()
-        }, 100);
-    }
-}
+// function getElement() {
+//     if (document.getElementById("previousValue")) {
+//         document.getElementsByClassName("autocomplete__input autocomplete__input--default")[0].value = document.getElementById("previousValue").value;
+//         setTimeout(function(){
+//             document.getElementById("address-search__option--0").click()
+//         }, 100);
+//     }
+// }
