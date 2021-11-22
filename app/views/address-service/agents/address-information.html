@@ -50,9 +50,15 @@
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
             {{ data['address-selected'] }}
-            46 Low Friar Street
+            <script>
+              var address=document.getElementsById("address-search").value;
+              document.write(address);
+
+
+</script>
+            <!-- 46 Low Friar Street
             <br> Newcastle Upon Tyne
-            <br> NE1 5UE
+            <br> NE1 5UE -->
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="change-textsearch">
