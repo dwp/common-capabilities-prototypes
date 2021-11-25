@@ -19,6 +19,5 @@ Example usage:
 
 module.exports = {
 
-  "activity-property": [ "Agents"]
-
+  "activity-property": ["Agents"], "map-view" : ["Map"]
 }

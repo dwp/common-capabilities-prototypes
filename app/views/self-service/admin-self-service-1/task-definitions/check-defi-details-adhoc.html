@@ -29,7 +29,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Check activity details and confirm
+        Check adhoc activity details and confirm
       </h1>
       <form class="form"  method="post" action="added-to-task-defi">
         <div class="govuk-form-group">
@@ -40,16 +40,46 @@
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
+              Orgnaisation name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['business-service-name'] | default('Common Capablilities') }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Activity type
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['activity-type'] | default('Regular') }}
+              {{ data['activity-type'] | default('Adhoc') }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="add-task-info">
+              <a class="govuk-link" href="add-task-info-adhoc">
                 Change<span class="govuk-visually-hidden"> task name</span>
               </a>
             </dd>
+          </div>
+          </dl>
+          <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Subject key
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['subject-key'] | default('Subject Key') }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-task-info-adhoc">
+              Change <span class="govuk-visually-hidden"> name</span>
+            </a>
+            </dd>
+
           </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -59,13 +89,27 @@
             {{ data['task-defi-name'] | default('Verify address for NI template') }}
           </dd>
           <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="add-task-info">
+          <a class="govuk-link" href="add-task-info-adhoc">
             Change<span class="govuk-visually-hidden"> name</span>
           </a>
           </dd>
 
         </div>
         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Actor
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['activity-property'] | default('Actor') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-task-info-adhoc">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+          </dd>
+
+        </div>
+        <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Task name to be displayed
           </dt>
@@ -77,25 +121,11 @@
               Change<span class="govuk-visually-hidden"> task name</span>
             </a>
           </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Actor type
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['acitivity-property'] | default('Agents') }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="add-task-info">
-              Change<span class="govuk-visually-hidden">Actor type</span>
-            </a>
-          </dd>
-        </div>
+        </div> -->
+
 
 
       </dl>
-      <br>
-      <p><strong class="govuk-heading-m">Definition detials</strong></p>
               <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -137,23 +167,23 @@
                   </a>
                 </dd>
               </div>
-              <!-- <div class="govuk-summary-list__row">
+              <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Reserve tasks in days
+                  Citizen GUID
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['task-reserve'] | default('2') }}
+                  {{ data['citizen-guid'] | default('GUID GUID ') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="add-task-info">
                     Change<span class="govuk-visually-hidden"> sla</span>
                   </a>
                 </dd>
-              </div> -->
+              </div>
 
             </dl>
 
-      <br>
+      <!-- <br>
       <p><strong class="govuk-heading-m">Task matching attributes</strong></p>
               <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -184,7 +214,7 @@
                 </dd>
               </div>
 
-            </dl>
+            </dl> -->
 
 
         <br><br>

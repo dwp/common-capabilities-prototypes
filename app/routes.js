@@ -349,11 +349,11 @@ router.post('/self-service/admin-self-service-1/task-definitions/type-of-activit
 
   const activitytype = req.session.data['activity-type']
 
-  if (activitytype === 'Adhoc') {
+  if (activitytype === 'Adhoc task') {
     res.redirect('/self-service/admin-self-service-1/task-definitions/add-task-info-adhoc.html')
   }
 
-  else if (activitytype === 'Regular') {
+  else if (activitytype === 'Regular activity') {
     res.redirect('/self-service/admin-self-service-1/task-definitions/add-task-info.html')
   }
 

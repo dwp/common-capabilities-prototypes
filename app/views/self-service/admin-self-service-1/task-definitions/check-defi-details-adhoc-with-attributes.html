@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  View acitivity details
+  Check acitivity details
 {% endblock %}
 
 
@@ -20,7 +20,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="added-task-defi">Back</a>
+  <a class="govuk-back-link" href="add-task-defi-attributes">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -29,9 +29,9 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-       View activity details
+        Check activity details and confirm
       </h1>
-      <form class="form"  method="post" action="added-task-defi">
+      <form class="form"  method="post" action="added-to-task-defi">
         <div class="govuk-form-group">
 
           <br>
@@ -59,13 +59,28 @@
                 {{ data['activity-type'] | default('Adhoc') }}
               </dd>
               <dd class="govuk-summary-list__actions">
-
+                <a class="govuk-link" href="add-task-info-adhoc">
+                  Change<span class="govuk-visually-hidden"> task name</span>
+                </a>
               </dd>
             </div>
             </dl>
 
         <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Subject key
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['subject-key'] | default('Subject Key') }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-task-info-adhoc">
+              Change <span class="govuk-visually-hidden"> name</span>
+            </a>
+            </dd>
 
+          </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Activity name
@@ -74,21 +89,25 @@
             {{ data['task-defi-name'] | default('Verify address for NI template') }}
           </dd>
           <dd class="govuk-summary-list__actions">
-
+          <a class="govuk-link" href="add-task-info-adhoc">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
           </dd>
 
         </div>
-        <div class="govuk-summary-list__row">
+        <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Activity or task name to be displayed
+            Task name to be displayed
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['agent-task-name'] | default('Verify address') }}
           </dd>
           <dd class="govuk-summary-list__actions">
-
+            <a class="govuk-link" href="add-task-info-adhoc">
+              Change<span class="govuk-visually-hidden"> task name</span>
+            </a>
           </dd>
-        </div>
+        </div> -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Actor type
@@ -97,13 +116,14 @@
             {{ data['acitivity-property'] | default('Agents') }}
           </dd>
           <dd class="govuk-summary-list__actions">
-
+            <a class="govuk-link" href="add-task-info-adhoc">
+              Change<span class="govuk-visually-hidden">Actor type</span>
+            </a>
           </dd>
         </div>
 
 
       </dl>
-
               <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -113,7 +133,9 @@
                   {{ data['task-priority'] | default('Very high') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-
+                <a class="govuk-link" href="add-task-info-adhoc">
+                  Change<span class="govuk-visually-hidden"> priority</span>
+                </a>
                 </dd>
 
               </div>
@@ -125,7 +147,9 @@
                   {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-
+                  <a class="govuk-link" href="add-task-info-adhoc">
+                    Change<span class="govuk-visually-hidden"> execution url</span>
+                  </a>
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -136,7 +160,9 @@
                   {{ data['task-sla'] | default('None') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-
+                  <a class="govuk-link" href="add-task-info-adhoc">
+                    Change<span class="govuk-visually-hidden"> sla</span>
+                  </a>
                 </dd>
               </div>
               <!-- <div class="govuk-summary-list__row">
@@ -156,6 +182,7 @@
             </dl>
 
       <br>
+      <br>
       <p><strong class="govuk-heading-m">Task matching attributes</strong></p>
               <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -166,7 +193,9 @@
                   {{ data['task-attribute'] | default('Decision maker') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-
+                <a class="govuk-link" href="add-task-defi-attributes-adhoc">
+                  Change<span class="govuk-visually-hidden"> attribute name</span>
+                </a>
                 </dd>
 
               </div>
@@ -178,7 +207,9 @@
                   {{ data['task-attribute-property'] | default('Welsh, English') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-
+                  <a class="govuk-link" href="add-task-defi-attributes-adhoc">
+                    Change<span class="govuk-visually-hidden"> attribute property</span>
+                  </a>
                 </dd>
               </div>
 
@@ -186,7 +217,7 @@
 
 
         <br><br>
-        <button class="govuk-button" data-module="govuk-button">Back to list</button>
+        <button class="govuk-button" data-module="govuk-button">Confirm and create activity</button>
 
         </div>
       </form>

@@ -87,13 +87,13 @@
       <td class="govuk-table__cell">{{ data['attribute-name'] | default('Language for England and Wales') }}</td>
       <td class="govuk-table__cell"> {{ data['attribute-uid'] | default('Welsh, English') }}</td>
       <td class="govuk-table__cell"> {{ data['attribute-status'] | default('Active') }}</td>
-      <td class="govuk-table__cell" style="text-align:right;"><a href="#">Modify status</a></td>
+      <td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/attributes/change-attribute">Modify status</a></td>
 
     </tr>
 
   </tbody>
 </table>
-<p><a href="add-attributes">Add attribute</a></p>
+<p><a href="/self-service/admin-self-service-1/attributes/add-attributes">Add attribute</a></p>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
 
@@ -116,19 +116,19 @@
 <td class="govuk-table__cell">
     Active
   </td>
-<td class="govuk-table__cell" style="text-align:right;"><a href="modify-agent-details">Modify profile</a> &nbsp; <a href="remove-agent">Remove</a></td>
+<td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/agents/modify-agent-details">Modify profile</a> &nbsp; <a href="remove-agent">Remove</a></td>
 </tr>
 
 
 </tbody>
 </table>
 
-<p><a href="add-agent">Add agent profile</a></p>
+<p><a href="/self-service/admin-self-service-1/agents/add-agent">Add agent profile</a></p>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
 
 <h1 class="govuk-heading-l">
-  Activities list
+  Adhoc tasks or activities list
 </h1>
 <table class="govuk-table">
 <thead class="govuk-table__head">
@@ -145,14 +145,14 @@
 <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for NI') }}</td>
 <td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}</td>
 <td class="govuk-table__cell">{{ data['activity-type'] | default('Regular') }}</td>
-<td class="govuk-table__cell" style="text-align:right;"><a href="view-defi-details">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
+<td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/task-definitions/view-defi-details">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
 </tr>
 
 
 </tbody>
 </table>
 
-<p><a href="add-task-info">Add an activity</a></p>
+<p><a href="/self-service/admin-self-service-1/task-definitions/type-of-activity">Add an activity</a></p>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
 
       <a href="confirmation">  <button class="govuk-button" data-module="govuk-button">Confirm and setup</button></a>

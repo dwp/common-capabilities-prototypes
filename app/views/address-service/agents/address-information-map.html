@@ -77,9 +77,37 @@
 <div class="govuk-grid-row">
 
       <div class="govuk-grid-column-two-thirds-from-desktop">
-            <h2 class="govuk-heading-m">Map options</h2>
+            <h2 class="govuk-heading-m">View options</h2>
 
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item" style="margin-left:0px; padding-left:0px;">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="map-view" name="map-view" type="radio" value="Map" {{ checked("map-view", "Map") }}>
+                      <label class="govuk-label govuk-radios__label" for="map-view-1">
+                        Map view
+                      </label>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="map-view-2" name="map-view" type="radio" value="Satellite" {{ checked("map-view", "Satellite") }}>
+                    <label class="govuk-label govuk-radios__label" for="map-view-2">
+                      Satellite view
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="map-view-3" name="map-view" type="radio" value="3D" {{ checked("map-view", "3D") }}>
+                    <label class="govuk-label govuk-radios__label" for="map-view-3">
+                      3D View
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- <div class="govuk-checkboxes" data-module="govuk-checkboxes">
          <div class="govuk-checkboxes__item">
            <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
            <label class="govuk-label govuk-checkboxes__label" for="nationality">
@@ -98,8 +126,7 @@
             view map with buildings and roads
           </div>
        </div>
-         </div>
-         <br>
+         </div> -->
       </div>
 
         <div class="govuk-grid-column-one-third">
