@@ -342,6 +342,43 @@ router.post('/collab/res/task/r2/citizen/habitual_residency_test/simple_hrt_v4/c
 
 })
 
+router.post('/self-service/admin-self-service-1/task-definitions/type-of-activity', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const activitytype = req.session.data['activity-type']
+
+  if (activitytype === 'Adhoc') {
+    res.redirect('/self-service/admin-self-service-1/task-definitions/add-task-info-adhoc.html')
+  }
+
+  else if (activitytype === 'Regular') {
+    res.redirect('/self-service/admin-self-service-1/task-definitions/add-task-info.html')
+  }
+
+
+})
+
+
+
+router.post('/self-service/admin-self-service-1/task-definitions/add-attributes', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const addAttributes = req.session.data['add-attribute-adhoc']
+
+  if (addAttributes === 'Yes') {
+    res.redirect('/self-service/admin-self-service-1/task-definitions/add-task-defi-attributes-adhoc.html')
+  }
+
+  else if (addAttributes === 'No') {
+    res.redirect('/self-service/admin-self-service-1/task-definitions/check-defi-details-adhoc.html')
+  }
+
+
+})
 
 
 router.use('/node_modules', express.static('node_modules'))

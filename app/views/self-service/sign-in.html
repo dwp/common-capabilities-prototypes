@@ -158,17 +158,29 @@
 
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <p>Temporary page - single sign in is preferred.</p>
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-6" style="border:1px solid;">
       <br>
       <h1 class="govuk-heading-xl">
-        Sign in
+        User is authenticated before access to the service and directed to next page
       </h1>
 
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h1 class="govuk-heading-s">
+        Option 1:
+        <p>Single sign in (preferred method)</p>
+
+      </h1>
+
+      <h1 class="govuk-heading-s">
+        Option 2:
+        <p>Using username and password</p>
+
+      </h1>
 
       <form class="form" id="signin-form" action="admin-self-service-1/want-to-setup-new" method="" onsubmit="">
 
-              <div class="govuk-form-group" id="div-email-address">
+              <!-- <div class="govuk-form-group" id="div-email-address">
 
                   <fieldset class="govuk-fieldset" data-required data-error="Cannot be blank">
                     <label class="govuk-label govuk-label--m" for="email-address">
@@ -198,14 +210,14 @@
                   <input class="govuk-input govuk-input--width-20" id="password-field" name="password" type="password">
                   </fieldset>
 
-                </div>
+                </div> -->
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
                 <button class="govuk-button" data-module="govuk-button">Continue</button>
         </form>
 
 
-        <br>
-        <br>
-        <a href="#"><p>I forgot my password</p></a>
+        <!-- <a href="#"><p>I forgot my password</p></a> -->
 
         </div>
 

@@ -30,23 +30,34 @@
         Add activity details
       </h1>
 
-      <form class="form" action="add-task-defi-attributes" method="post">
-
+      <p><strong class="govuk-heading-m">Activity details</strong></p>
 
         <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Orgnaisation name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['business-service-name'] | default('Common Capablilities') }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+
+
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Activity type
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['activity-type'] | default('Regular') }}
+              {{ data['activity-type'] | default('Adhoc') }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="type-of-activity">
                 Change<span class="govuk-visually-hidden"> task name</span>
               </a>
-              <br>
-              <br>
+
             </dd>
 
 
@@ -77,6 +88,16 @@
         <fieldset class="govuk-fieldset govuk-!-padding-top-5">
 
 
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="task-name">
+              Subject key
+            </label>
+            <p class="govuk-hint">This is the unique key or identier for this Adhoc task </p>
+
+            <input class="govuk-input" id="subject-key" name="subject-key" type="text" value="{{ data['subject-key'] }}" ></div>
+
+
+
         <div class="govuk-form-group">
           <label class="govuk-label govuk-!-font-weight-bold" for="task-name">
             Activity name
@@ -85,12 +106,12 @@
 
           <input class="govuk-input" id="task-defi-name" name="task-defi-name" type="text" value="{{ data['task-defi-name'] }}" ></div>
 
-          <div class="govuk-form-group">
+          <!-- <div class="govuk-form-group">
             <label class="govuk-label govuk-!-font-weight-bold" for="task-domain">
-              Activity or task name to be displayed
+              Activity or task name to be displayed for agents
             </label>
             <p class="govuk-hint">This the name of the task that is shown when agent claims a task. For example "Verify address" </p>
-            <input class="govuk-input " id="task-agent-name" name="agent-task-name" type="text" value="{{ data['agent-task-name'] }}"></div>
+            <input class="govuk-input " id="task-agent-name" name="agent-task-name" type="text" value="{{ data['agent-task-name'] }}"></div> -->
 
             <label class="govuk-label govuk-!-font-weight-bold" for="sort">
             Select actor type
@@ -111,8 +132,8 @@
               </label>
             </div>
           </div>
-
       </fieldset>
+
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
       <fieldset class="govuk-fieldset">
@@ -146,10 +167,10 @@
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
-                SLA (optional)
+                Citizen GUID (optional)
               </label>
               <p class="govuk-hint">Enter the number of days or how long the task could take. </p>
-              <input class="govuk-input govuk-!-width-one-third" id="task-sla" name="task-sla" type="text" value="{{ data['task-sla'] }}"></div>
+              <input class="govuk-input govuk-!-width-one-third" id="citizen-guid" name="citizen-guid" type="text" value="{{ data['citizen-guid'] }}"></div>
 
             <!--   <div class="govuk-form-group">
                 <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
@@ -162,33 +183,45 @@
                     Select type and attribute
                   </h1> -->
 
-                  <!-- <label class="govuk-label" for="sort">
-                  Select type
-                  <p class="govuk-hint">It is the primary property for this attribute. </p>
-                  </label>
 
-                <div class="govuk-radios govuk-radios--inline">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="remove-agent" name="attribute-property" type="radio" value="Mandatory">
-                    <label class="govuk-label govuk-radios__label" for="remove-attribute">
-                      Agents
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="remove-agent-2" name="attribute-property" type="radio" value="Optional">
-                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                      Citizens
-                    </label>
-                  </div>
-                </div> -->
 
     </fieldset>
 
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    <form class="form" action="/self-service/admin-self-service-1/task-definitions/add-attributes" method="post">
 
-      </form>
+    <div class="govuk-form-group govuk-!-padding-top-8 ">
+<fieldset class="govuk-fieldset" >
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+      Do you want to add any matching attributes for this activity?
+    </h1>
+  </legend>
+  <!-- <div id="add-another-attribute-hint" class="govuk-hint">
+    Add another attribute to the attributes list.
+  </div> -->
+  <br>
+  <div class="govuk-radios govuk-radios--inline govuk-!-padding-top-3">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="add-attribute-adhoc" name="add-attribute-adhoc" type="radio" value="Yes">
+      <label class="govuk-label govuk-radios__label" for="add-attribute-adhoc">
+        Yes, I want to add task matching attributes
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="aadd-attribute-adhoc-2" name="add-attribute-adhoc" type="radio" value="No">
+      <label class="govuk-label govuk-radios__label" for="add-another-attribute-2">
+        No, this activity does not need any matching attributes
+      </label>
+    </div>
+  </div>
+
+</fieldset>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+    <br><br>
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
 
     </div>
   </div>
