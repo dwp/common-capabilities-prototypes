@@ -58,14 +58,15 @@
     </h3>
     <p class="govuk-body">
       <strong>Activity Type: </strong>{{ data['activity-type'] | default('Regular') }}<br>
+      <strong>Subject Key: </strong>{{ data['subject-key'] | default('SKID133') }} <br>
       <strong>Activity name: </strong>{{ data['task-defi-name'] | default('Verify address for NI') }} <br>
-    <strong>Task name to be displayed for agents: </strong> {{ data['agent-task-name'] | default('Verify address') }}<br>
+    <!-- <strong>Task name to be displayed for agents: </strong> {{ data['agent-task-name'] | default('Verify address') }}<br> -->
     <strong>Priority: </strong> {{ data['task-priority'] | default('Very high') }}<br>
     <strong>Exeution URL: </strong> {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }} <br>
     <strong>SLA(days):</strong> {{ data['task-sla'] | default('2') }}
     <!-- <strong>Reserve tasks in days</strong> {{ data['task-reserve'] | default('3') }} -->
     <br>
-    <strong>Attributes:</strong> {{ data['task-attribute'] | default('Decision maker') }} ({{ data['task-attribute-property'] | default('Welsh, English') }})
+    <!-- <strong>Attributes:</strong> {{ data['task-attribute'] | default('Decision maker') }} ({{ data['task-attribute-property'] | default('Welsh, English') }}) -->
     </p>
     </div>
 </div>

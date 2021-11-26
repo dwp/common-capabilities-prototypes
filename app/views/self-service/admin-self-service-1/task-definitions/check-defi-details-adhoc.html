@@ -135,7 +135,7 @@
                   {{ data['task-priority'] | default('Very high') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="add-task-info">
+                <a class="govuk-link" href="add-task-info-adhoc">
                   Change<span class="govuk-visually-hidden"> priority</span>
                 </a>
                 </dd>
@@ -149,7 +149,7 @@
                   {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="add-task-info">
+                  <a class="govuk-link" href="add-task-info-adhoc">
                     Change<span class="govuk-visually-hidden"> execution url</span>
                   </a>
                 </dd>
@@ -162,7 +162,7 @@
                   {{ data['task-sla'] | default('None') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="add-task-infon">
+                  <a class="govuk-link" href="add-task-info-adhoc">
                     Change<span class="govuk-visually-hidden"> sla</span>
                   </a>
                 </dd>
@@ -172,11 +172,11 @@
                   Citizen GUID
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['citizen-guid'] | default('GUID GUID ') }}
+                  {{ data['citizen-guid'] | default('None') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="add-task-info">
-                    Change<span class="govuk-visually-hidden"> sla</span>
+                  <a class="govuk-link" href="add-task-info-adhoc">
+                    Change<span class="govuk-visually-hidden"> Citizen GUID</span>
                   </a>
                 </dd>
               </div>
