@@ -1,0 +1,95 @@
+{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add agent
+{% endblock %}
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="add-agent">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form class="form" action="check-add-agent" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Add agent attributes
+      </h1>
+
+      <div class="govuk-form-group">
+
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+          <!-- <h1 class="govuk-heading-m">
+            Select type and attribute
+          </h1> -->
+
+          <label class="govuk-label" for="sort">
+          Type
+          <p class="govuk-hint">The primary property for this attribute. </p>
+          </label>
+
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="remove-agent" name="attribute-property" type="radio" value="Mandatory">
+            <label class="govuk-label govuk-radios__label" for="remove-attribute">
+              Mandatory
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="remove-agent-2" name="attribute-property" type="radio" value="Optional">
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+              Optional
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      <br>
+      <div class="moj-add-another">
+        <div class="govuk-form-group ">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+      <br>
+      <label class="govuk-label" for="sort">
+      Attribute
+      </label>
+      <select class="govuk-select govuk-!-width-two-thirds" id="sort" name="attribute">
+      <option value="Not selected">-Select- </option>
+      <option value="Decsion maker">Decision maker </option>
+      <option value="Processing agent" >Processing agent</option>
+      <option value="Specialist">Specialist</option>
+      <option value="Team manager">Team manager</option>
+      <option value="Leeds">Leeds</option>
+      <option value="Newcastle">Newcastle</option>
+      <option value="New claims">New claims</option>
+      </select>
+
+
+      </fieldset>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <button class="govuk-button govuk-button--secondary  govuk-!-margin-bottom-4" data-module="govuk-button">Add another attribute</button>
+      </div>
+
+      <p><strong>Can't see the agent attribute you want? </strong> &nbsp;<a href="/self-service/admin-self-service-1/attributes/add-attributes.html">Add attribute</a> </p>
+      <br>
+
+    </div>
+    </div>
+  </div>
+  <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+  </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

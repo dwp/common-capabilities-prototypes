@@ -1,0 +1,194 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add activity information
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="check-defi-details">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Change activity details
+      </h1>
+
+      <form class="form" action="check-defi-details" method="post">
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Activity type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['activity-type'] | default('Regular') }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+              <br>
+              <br>
+            </dd>
+
+
+          </div>
+          </dl>
+        <!--
+
+        <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+       Activity type
+       <p class="govuk-hint">It is the primary property for this attribute. </p>
+       </label>
+       <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="attribute-status" name="activity-type" type="radio" value="Adhoc" {{ checked("activity-type", "Adhoc") }}>
+            <label class="govuk-label govuk-radios__label" for="attribute-status">
+              Adhoc
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="attribute-status-2" name="activity-type" type="radio" value="Regular" {{ checked("activity-type", "Regular") }}>
+            <label class="govuk-label govuk-radios__label" for="attribute-status-2">
+              Regular
+            </label>
+          </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">-->
+
+        <fieldset class="govuk-fieldset govuk-!-padding-top-5">
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="task-name">
+            Activity name
+          </label>
+          <p class="govuk-hint">This the name of the definition. For example "Verify address for NI"  </p>
+
+          <input class="govuk-input" id="task-defi-name" name="task-defi-name" type="text" value="{{ data['task-defi-name'] }}" ></div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="task-domain">
+              Activity or task name to be displayed
+            </label>
+            <p class="govuk-hint">This the name of the task that is shown when agent claims a task. For example "Verify address" </p>
+            <input class="govuk-input " id="task-agent-name" name="agent-task-name" type="text" value="{{ data['agent-task-name'] }}"></div>
+
+            <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+            Select actor type
+            <!-- <p class="govuk-hint">. </p> -->
+            </label>
+
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="activity-property" name="activity-property" type="radio" value="Agents" {{ checked("activity-property", "Agents") }}>
+              <label class="govuk-label govuk-radios__label " for="activity-property">
+                Agents
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="activity-property-2" name="activity-property" type="radio" value="Citizens" {{ checked("activity-property", "Citizens") }}>
+              <label class="govuk-label govuk-radios__label" for="activity-property2">
+                Citizens
+              </label>
+            </div>
+          </div>
+
+      </fieldset>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <fieldset class="govuk-fieldset">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="task-priority">
+              Priority
+            </label>
+            <p class="govuk-hint">Enter priority of the activity or task. 1 being highest priority. Accepted values range is 1 to 99. </p>
+            <input class="govuk-input govuk-!-width-one-third" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}">
+
+            <!-- <select class="govuk-select govuk-!-width-two-thirds" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}">
+            <option value="No prority">-Select priority- </option>
+            <option value="Immediate - 10">Immediate - 1</option>
+            <option value="Urgent - 9  " >Urgent - 2  </option>
+            <option value="Very high - 8 ">Very High - 8 </option>
+            <option value="High - 7">High - 7</option>
+            <option value="Medium - 6">Medium - 6</option>
+            <option value="Normal - 5">Normal - 5</option>
+            <option value="Low - 4">Low - 4</option>
+            <option value="Very low - 3">Very low - 3</option>
+            </select> -->
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+              Execution URL
+            </label>
+            <p class="govuk-hint">This is the URL in your appliction where the task can be done. </p>
+            <input class="govuk-input" id="task-url" name="task-url" type="text" value="{{ data['task-url'] }}"></div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+                SLA (optional)
+              </label>
+              <p class="govuk-hint">Enter the number of days or how long the task could take. </p>
+              <input class="govuk-input govuk-!-width-one-third" id="task-sla" name="task-sla" type="text" value="{{ data['task-sla'] }}"></div>
+
+            <!--   <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+                  Reserve tasks in days (optional)
+                </label>
+                <p class="govuk-hint">Enter the number of days a task can be reserved. </p>
+                <input class="govuk-input govuk-!-width-one-third" id="task-reserve" name="task-reserve" type="text" value="{{ data['task-reserve'] }}" ></div>
+
+                  <h1 class="govuk-heading-m">
+                    Select type and attribute
+                  </h1> -->
+
+                  <!-- <label class="govuk-label" for="sort">
+                  Select type
+                  <p class="govuk-hint">It is the primary property for this attribute. </p>
+                  </label>
+
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="remove-agent" name="attribute-property" type="radio" value="Mandatory">
+                    <label class="govuk-label govuk-radios__label" for="remove-attribute">
+                      Agents
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="remove-agent-2" name="attribute-property" type="radio" value="Optional">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                      Citizens
+                    </label>
+                  </div>
+                </div> -->
+
+    </fieldset>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

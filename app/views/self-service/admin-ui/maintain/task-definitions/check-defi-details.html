@@ -1,0 +1,156 @@
+{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check task definition details
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="add-agent-attributes">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check task definition details
+      </h1>
+      <form class="form"  method="post" action="added-to-task-defi">
+        <div class="govuk-form-group">
+
+          <br>
+          <p><strong class="govuk-heading-m">Task details</strong></p>
+
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['task-defi-name'] | default('Verify address for NI template') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-task-info">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+          </dd>s
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Display name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['agent-task-name'] | default('Verify address') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-task-info">
+              Change<span class="govuk-visually-hidden"> task name</span>
+            </a>
+          </dd>
+        </div>
+
+
+      </dl>
+      <br>
+      <p><strong class="govuk-heading-m">Definition details</strong></p>
+              <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Priority
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-priority'] | default('Very high') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-task-execution">
+                  Change<span class="govuk-visually-hidden"> priority</span>
+                </a>
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Execution URL
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="add-task-execution">
+                    Change<span class="govuk-visually-hidden"> execution url</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  SLA (days)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-sla'] | default('2') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="add-task-execution">
+                    Change<span class="govuk-visually-hidden"> sla</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+
+      <br>
+      <p><strong class="govuk-heading-m">Task matching attributes</strong></p>
+              <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Attributes
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-attribute'] | default('Decision maker') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-task-defi-attributes">
+                  Change<span class="govuk-visually-hidden"> attribute name</span>
+                </a>
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Type of attribute
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-attribute-property'] | default('Welsh, English') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="add-task-defi-attributes">
+                    Change<span class="govuk-visually-hidden"> attribute property</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+
+
+        <br><br>
+        <button class="govuk-button" data-module="govuk-button">Confirm and create agent</button>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

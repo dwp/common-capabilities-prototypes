@@ -1,0 +1,172 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check details of the agent
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="add-agent-attributes">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check agent profile
+      </h1>
+
+        <div class="govuk-form-group">
+
+          <p><strong class="govuk-heading-m">Agent details</strong></p>
+
+        <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Staff number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['agent-keyid'] | default('ID2232DS') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-agent">
+              Change<span class="govuk-visually-hidden"> attribute key id</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Agent status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag govuk-tag--green">
+            {{ data['agent-status'] | default('Active') }}
+            </strong>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-agent">
+              Change<span class="govuk-visually-hidden"> attribute status</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <br>
+      <p><strong class="govuk-heading-m">Agent attributes</strong></p>
+              <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+                  Attribute 1
+                </dt>
+                <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+                  {{ data['selected-attribute-0'] | default('Decision maker') }}
+                </dd>
+                <dd class="govuk-summary-list__actions" style="border-bottom:0px;">
+                <a class="govuk-link" href="add-agent-attributes">
+                  Change<span class="govuk-visually-hidden"> attribute name</span>
+                </a>
+                </dd>
+
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Attribute type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['attribute-property'] | default('Mandatory') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+                  Attribute 2
+                </dt>
+                <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+                  {{ data['selected-attribute-1'] | default('Decision maker') }}
+                </dd>
+                <dd class="govuk-summary-list__actions" style="border-bottom:0px;">
+                <a class="govuk-link" href="add-agent-attributes">
+                  Change<span class="govuk-visually-hidden"> attribute name</span>
+                </a>
+                </dd>
+
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Attribute type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['attribute-property-1'] | default('Optional') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+
+                </dd>
+              </div>
+
+            </dl>
+
+        <form class="form" action="/self-service/admin-self-service-1/agents/add-agent-add-another" method="post">
+
+        <div class="govuk-form-group govuk-!-padding-top-8">
+    <fieldset class="govuk-fieldset" aria-describedby="add-another-attribute-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Do you want to add another agent?
+        </h1>
+      </legend>
+      <!-- <div id="add-another-attribute-hint" class="govuk-hint">
+        Add another attribute to the attributes list.
+      </div> -->
+      <div class="govuk-radios govuk-radios--inline govuk-!-padding-top-3">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="add-another-attribute" name="add-another-agent" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="add-another-attribute">
+            Yes, I want to add another
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="add-another-attribute-2" name="add-another-agent" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="add-another-attribute-2">
+            No, take me to the list of agent profiles
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+
+
+        <br><br>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        </form>
+
+
+        </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add task
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            DWP Manage tasks
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      This is not a service - this interface is to help teams set up and maintain DWP Manage tasks
+    </span>
+  </p>
+</div>
+<br>
+  <a class="govuk-back-link" href="add-task-info">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Add definition details
+      </h1>
+
+      <form class="form" action="add-task-defi-attributes" method="post">
+        <fieldset class="govuk-fieldset">
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="task-priority">
+                Priority
+              </label>
+              <!-- <p class="govuk-hint">Prority for this task </p> -->
+              <input class="govuk-input govuk-!-width-one-third" id="task-priority" name="task-priority" type="text" ></div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="task-subject">
+                Execution URL
+              </label>
+              <p class="govuk-hint">This is the URL in your appliction where the task can be done. </p>
+              <input class="govuk-input" id="task-url" name="task-url" type="text" ></div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="task-subject">
+                  SLA (optional)
+                </label>
+                <p class="govuk-hint">Enter the number of days or how long the task could take. </p>
+                <input class="govuk-input govuk-!-width-one-third" id="task-sla" name="task-sla" type="text" ></div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="task-subject">
+                    Reserve tasks in days (optional)
+                  </label>
+                  <p class="govuk-hint">Enter the number of days a task can be reserved. </p>
+                  <input class="govuk-input govuk-!-width-one-third" id="task-reserve" name="task-reserve" type="text" ></div>
+
+                    <!-- <h1 class="govuk-heading-m">
+                      Select type and attribute
+                    </h1> -->
+
+                    <!-- <label class="govuk-label" for="sort">
+                    Select type
+                    <p class="govuk-hint">It is the primary property for this attribute. </p>
+                    </label>
+
+                  <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="remove-agent" name="attribute-property" type="radio" value="Mandatory">
+                      <label class="govuk-label govuk-radios__label" for="remove-attribute">
+                        Agents
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="remove-agent-2" name="attribute-property" type="radio" value="Optional">
+                      <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                        Citizens
+                      </label>
+                    </div>
+                  </div> -->
+
+      </fieldset>
+
+      <br><br><br>
+      <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

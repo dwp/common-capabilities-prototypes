@@ -1,0 +1,67 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add task
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="task-defi">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        What type of activity or task do you want to add to the list?
+      </h1>
+
+      <form class="form" action="/self-service/admin-self-service-1/task-definitions/type-of-activity" method="post">
+
+        <label class="govuk-label" for="sort">
+        Select the activity or task type
+        </label>
+        <br>
+        <div class="govuk-radios ">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="attribute-status" name="activity-type" type="radio" value="Adhoc task" {{ checked("activity-type", "Adhoc task") }}>
+            <label class="govuk-label govuk-radios__label" for="attribute-status">
+              Adhoc task
+              <p class="govuk-hint">One off activity for your agents 'to do'.</p>
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="attribute-status-2" name="activity-type" type="radio" value="Regular activity" {{ checked("activity-type", "Regular activity") }}>
+            <label class="govuk-label govuk-radios__label" for="attribute-status-2">
+              Regular activity
+              <p class="govuk-hint">This is an common activity you want use for matching.</p>
+
+            </label>
+          </div>
+        </div>
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

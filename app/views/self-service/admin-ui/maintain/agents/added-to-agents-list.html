@@ -1,0 +1,109 @@
+{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent attributes list
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Agent added to the records.
+    </h3>
+    <p class="govuk-body"><strong>Attribute name: </strong>{{ data['agent-name'] | default('Jason Bourne') }} <br>
+    <strong>Agent key or ID: </strong> {{ data['agent-keyid'] | default('ID2232DS') }} <br>
+    <strong>Attributes: </strong> {{ data['attribute'] | default('Decision maker') }}<br>
+    <strong>Status: </strong> {{ data['agent-status'] | default('Active') }}
+    </p>
+    </div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Agents
+        <p class="govuk-hint"></p>
+
+      </h1>
+
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" >Name</th>
+      <th scope="col" class="govuk-table__header">Agent key or ID </th>
+      <th scope="col" class="govuk-table__header">Attributes</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Actions</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">James Bond</td>
+      <td class="govuk-table__cell">ID2232DS</td>
+      <td class="govuk-table__cell">Decision maker</td>
+      <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag govuk-tag--green">
+          Active
+          </strong></td>
+      <td class="govuk-table__cell"><a href="modify-agent-details">Modify details</a></td>
+      <td class="govuk-table__cell"><a href="remove-agent">Remove</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">John Smith</td>
+      <td class="govuk-table__cell">ID122DS</td>
+      <td class="govuk-table__cell">Processing agent</td>
+      <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag govuk-tag--grey">
+          Inactive
+          </strong></td>
+      <td class="govuk-table__cell"><a href="modify-agent-details">Modify details</a></td>
+      <td class="govuk-table__cell"><a href="remove-agent">Remove</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ data['agent-name'] | default('Jason Bourne') }}</td>
+      <td class="govuk-table__cell">{{ data['agent-keyid'] | default('ID2232DS') }}</td>
+      <td class="govuk-table__cell">{{ data['attribute'] | default('Decision maker') }}</td>
+      <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag govuk-tag--green">
+          Active
+          </strong></td>
+      <td class="govuk-table__cell"><a href="modify-agent-details">Modify details</a></td>
+      <td class="govuk-table__cell"><a href="remove-agent">Remove</a></td>
+    </tr>
+
+
+
+
+
+
+
+
+  </tbody>
+</table>
+
+<p><a href="add-agent">Add agent</a></p>
+<br><br>
+<a href="/self-service/admin-self-service-1/maintain/dashboard"><button class="govuk-button" data-module="govuk-button">Continue to summary page</button></a>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task definitions
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    function getDate () { var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+    document.write(today);
+   }
+  </script>
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Task definition added to business area
+    </h3>
+    <p class="govuk-body"><strong>Name: </strong>{{ data['task-defi-name'] | default('Verify address for England') }} <br>
+    <strong>Display name: </strong> {{ data['agent-task-name'] | default('Verify address') }}<br>
+    <strong>Priority: </strong> {{ data['task-priority'] | default('Very high') }}<br>
+    <strong>Execution URL: </strong> {{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }} <br>
+    <strong>SLA:</strong> {{ data['task-sla'] | default('4') }}
+    <br>
+    <strong>Attributes:</strong> {{ data['task-attribute'] | default('Decision maker') }} ({{ data['task-attribute-property'] | default('Welsh, English') }})
+    </p>
+    </div>
+</div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Task definitions
+      </h1>
+
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Execution URL</th>
+      <th scope="col" class="govuk-table__header">Actions</th>
+      <th scope="col" class="govuk-table__header"></th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Verify address for NI</td>
+      <td class="govuk-table__cell">sp.dwp.gov.uk/asdi23232asd/sdfsf</td>
+      <td class="govuk-table__cell"><a href="view-defi-details">View</a></td>
+      <td class="govuk-table__cell"><a href="remove-task">Remove</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for England') }}</td>
+      <td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd')}}</td>
+      <td class="govuk-table__cell"><a href="view-defi-details">View</a></td>
+      <td class="govuk-table__cell"><a href="remove-task">Remove</a></td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+<p><a href="add-task-info">Add task defintion</a></p>
+<br><br>
+<a href="/self-service/admin-self-service-1/maintain/dashboard"><button class="govuk-button" data-module="govuk-button">Continue to summary page</button></a>
+
+    </div>
+  </div>
+
+{% endblock %}

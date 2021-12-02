@@ -20,7 +20,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="add-task-defi-attributes">Back</a>
+  <a class="govuk-back-link" href="add-task-info-adhoc">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -59,10 +59,7 @@
               {{ data['activity-type'] | default('Adhoc') }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="add-task-info-adhoc">
-                Change<span class="govuk-visually-hidden"> task name</span>
-              </a>
-            </dd>
+
           </div>
           </dl>
           <dl class="govuk-summary-list">
@@ -75,7 +72,7 @@
               {{ data['subject-key'] | default('Subject Key') }}
             </dd>
             <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="add-task-info-adhoc">
+            <a class="govuk-link" href="modify-task-info-adhoc">
               Change <span class="govuk-visually-hidden"> name</span>
             </a>
             </dd>
@@ -89,7 +86,7 @@
             {{ data['task-defi-name'] | default('Verify address for NI template') }}
           </dd>
           <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="add-task-info-adhoc">
+          <a class="govuk-link" href="modify-task-info-adhoc">
             Change<span class="govuk-visually-hidden"> name</span>
           </a>
           </dd>
@@ -103,7 +100,7 @@
             {{ data['activity-property'] | default('Actor') }}
           </dd>
           <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="add-task-info-adhoc">
+          <a class="govuk-link" href="modify-task-info-adhoc">
             Change<span class="govuk-visually-hidden"> name</span>
           </a>
           </dd>
@@ -135,7 +132,7 @@
                   {{ data['task-priority'] | default('Very high') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="add-task-info-adhoc">
+                <a class="govuk-link" href="modify-task-info-adhoc">
                   Change<span class="govuk-visually-hidden"> priority</span>
                 </a>
                 </dd>
@@ -149,7 +146,7 @@
                   {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="add-task-info-adhoc">
+                  <a class="govuk-link" href="modify-task-info-adhoc">
                     Change<span class="govuk-visually-hidden"> execution url</span>
                   </a>
                 </dd>
@@ -162,7 +159,7 @@
                   {{ data['task-sla'] | default('None') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="add-task-info-adhoc">
+                  <a class="govuk-link" href="modify-task-info-adhoc">
                     Change<span class="govuk-visually-hidden"> sla</span>
                   </a>
                 </dd>
@@ -175,7 +172,7 @@
                   {{ data['citizen-guid'] | default('None') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="add-task-info-adhoc">
+                  <a class="govuk-link" href="modify-task-info-adhoc">
                     Change<span class="govuk-visually-hidden"> Citizen GUID</span>
                   </a>
                 </dd>

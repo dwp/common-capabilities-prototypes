@@ -1,0 +1,101 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent attributes list
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-agent-added">Home</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#">List agent profiles</a>
+  </li>
+
+</ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Agent profile modified.
+    </h3>
+    <p class="govuk-body">
+    <strong>Staff number: </strong> {{ data['agent-keyid'] | default('ID2232DS') }} <br>
+    <strong>Attributes: </strong> {{ data['selected-attribute-0'] | default('Decision maker') }}, {{ data['selected-attribute-1'] | default('Decision maker') }} <br>
+    <strong>Status: </strong> {{ data['agent-status'] | default('Active') }}
+    </p>
+    </div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Agent profiles
+        <p class="govuk-hint"></p>
+
+      </h1>
+
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" style="width:20%">Staff number </th>
+      <th scope="col" class="govuk-table__header" style="width:40%">Attributes</th>
+      <th scope="col" class="govuk-table__header" style="width:10%">Status</th>
+      <th scope="col" class="govuk-table__header" style="text-align:right;">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ data['agent-keyid'] | default('ID2232DS') }}</td>
+      <td class="govuk-table__cell">{{ data['selected-attribute-0'] | default('Decision maker') }}<br>{{ data['selected-attribute-1'] | default('Decision maker') }}</td>
+      <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag govuk-tag--green">
+          Active
+          </strong></td>
+      <td class="govuk-table__cell" style="text-align:right;"><a href="modify-agent-details">Modify profile</a> &nbsp; <a href="remove-agent">Remove</a></td>
+    </tr>
+
+
+
+
+
+
+
+
+  </tbody>
+</table>
+
+<p><a href="add-agent">Add agent profile</a></p>
+<br><br>
+<a href="/self-service/admin-self-service-1/setup-task-list-added-org-attri-agent"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Add attributes, agents and tasks
+      </h1>
+
+      <p>You are setting up the following service: </p>
+
+      <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Service name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['business-service-name'] | default('Business service name') }}
+        </dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Service domain
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['service-domain'] | default('Domain name')}}
+        </dd>
+
+      </div>
+    </dl>
+
+      <br><br><br>
+
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Add task matching parameters
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="attributes/added-attributes-list" aria-describedby="eligibility-status">
+                  Add attributes
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--blue " id="eligibility-status">added</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/self-service/admin-self-service-1/agents/agents-list" aria-describedby="read-declaration-status">
+                  Add agent profiles and attributes
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--grey " id="read-declaration-status">Not Started</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Task definition
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+
+                <a href="/self-service/admin-self-service-1/task-definitions/task-defi" aria-describedby="read-declaration-status">
+                  Add tasks matching definition
+                  </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--grey" id="company-information-status">Not Started</strong>
+            </li>
+
+          </ul>
+        </li>
+        <br>
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" disabled="disabled" data-module="govuk-button">
+            Complete setup
+        </button>
+        &nbsp;
+        <a href="partial-2-organisations"><button class="govuk-button" data-module="govuk-button">
+          Complete later
+        </button></a>
+        </div>
+
+
+        <div class="govuk-inset-text">
+          You can add more attributes, agents and task definitions later
+        </div>
+
+      </ol>
+    </div>
+  </div>
+
+{% endblock %}

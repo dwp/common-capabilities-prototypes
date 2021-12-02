@@ -1,0 +1,54 @@
+{% extends "header-banner-for-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Services on DWP Manage tasks
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Services
+    </h1>
+
+    <p class="govuk-!-padding-bottom-8">Set up a service so you can create tasks, agents and task matching attributes.</p>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width:65%;">Service name</th>
+            <th scope="col" class="govuk-table__header">Actions</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{ data['business-service-name'] | default('Business service name') }} </td>
+            <td class="govuk-table__cell"><a href="/self-service/admin-self-service-1/setup-task-list">Complete set up</a></td>
+            <td class="govuk-table__cell"><a href="#">Remove</a></td>
+          </tr>
+      </tbody>
+    </table>
+
+<p class="govuk-heading-s govuk-!-padding-top-8">Can't find your service in the list? </p>
+<p><a href="service-domain">Add service and domain</a></p>
+
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

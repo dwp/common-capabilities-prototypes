@@ -1,0 +1,100 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check details of the attribute
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+
+  <a class="govuk-back-link" href="add-attributes">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Change attribute details
+      </h1>
+
+      <h1 class="govuk-heading-m">
+        Attribute details
+      </h1>
+
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['attribute-name'] | default('Language for England and Wales') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Value(s)
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data['value-0'] }}  {{ data['value-1'] }}  {{ data['value-2'] }}  {{ data['value-3'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="change-attribute-details">
+              Change<span class="govuk-visually-hidden"> attribute value</span>
+            </a> -->
+          </dd>
+        </div>
+
+
+      </dl>
+
+      <form class="form" action="/self-service/admin-self-service-1/attributes/add-attributes-add-another" method="post">
+
+
+                            <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+                            Attribute status
+                            <p class="govuk-hint">It is the primary property for this attribute. </p>
+                            </label>
+                            <div class="govuk-radios govuk-radios--inline">
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="attribute-status" name="attribute-status" type="radio" value="Active" {{ checked("attribute-status", "Active") }}>
+                                <label class="govuk-label govuk-radios__label" for="attribute-status">
+                                  Active
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="attribute-status-2" name="attribute-status" type="radio" value="Inactive" {{ checked("attribute-status", "Inactive") }}>
+                                <label class="govuk-label govuk-radios__label" for="attribute-status-2">
+                                  Inactive
+                                </label>
+                              </div>
+                            </div>
+
+
+      <br><br>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

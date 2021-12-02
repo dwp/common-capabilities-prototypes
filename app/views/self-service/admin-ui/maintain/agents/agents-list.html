@@ -1,0 +1,74 @@
+{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent profiles list
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Agent profiles
+        <p class="govuk-hint"></p>
+
+      </h1>
+
+      <table class="govuk-table">
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Key or ID </th>
+        <th scope="col" class="govuk-table__header">Attributes</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header">Actions</th>
+        <th scope="col" class="govuk-table__header"></th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">James Bond</td>
+          <td class="govuk-table__cell">ID2232DS</td>
+          <td class="govuk-table__cell">Decision maker</td>
+          <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag govuk-tag--green">
+              Active
+              </strong></td>
+          <td class="govuk-table__cell"><a href="modify-agent-details">Change</a></td>
+          <td class="govuk-table__cell"><a href="remove-agent"></a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">John Smith</td>
+          <td class="govuk-table__cell">ID122DS</td>
+          <td class="govuk-table__cell">Processing agent</td>
+          <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag govuk-tag--grey">
+              Inactive
+              </strong></td>
+          <td class="govuk-table__cell"><a href="modify-agent-details">Change</a></td>
+          <td class="govuk-table__cell"><a href="remove-agent">Remove</a></td>
+        </tr>
+
+      </tbody>
+      </table>
+
+      <p><a href="add-agent">Add agent profile</a></p>
+      <br><br>
+      <a href="/self-service/admin-self-service-1/maintain/dashboard"><button class="govuk-button" data-module="govuk-button">Continue to summary page</button></a>
+    </div>
+  </div>
+
+{% endblock %}

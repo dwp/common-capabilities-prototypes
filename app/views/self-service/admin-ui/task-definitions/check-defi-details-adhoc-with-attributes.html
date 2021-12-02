@@ -1,0 +1,228 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check acitivity details
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="add-task-defi-attributes">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check activity details and confirm
+      </h1>
+      <form class="form"  method="post" action="added-to-task-defi">
+        <div class="govuk-form-group">
+
+          <br>
+          <p><strong class="govuk-heading-m">Activity details</strong></p>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Orgnaisation name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['business-service-name'] | default('Common Capablilities') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+
+              </dd>
+
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Activity type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['activity-type'] | default('Adhoc') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-task-info-adhoc">
+                  Change<span class="govuk-visually-hidden"> task name</span>
+                </a>
+              </dd>
+            </div>
+            </dl>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Subject key
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['subject-key'] | default('Subject Key') }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-task-info-adhoc">
+              Change <span class="govuk-visually-hidden"> name</span>
+            </a>
+            </dd>
+
+          </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Activity name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['task-defi-name'] | default('Verify address for NI template') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-task-info-adhoc">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+          </dd>
+
+        </div>
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task name to be displayed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['agent-task-name'] | default('Verify address') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-task-info-adhoc">
+              Change<span class="govuk-visually-hidden"> task name</span>
+            </a>
+          </dd>
+        </div> -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Actor type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['acitivity-property'] | default('Agents') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-task-info-adhoc">
+              Change<span class="govuk-visually-hidden">Actor type</span>
+            </a>
+          </dd>
+        </div>
+
+
+      </dl>
+              <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Priority
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-priority'] | default('Very high') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-task-info-adhoc">
+                  Change<span class="govuk-visually-hidden"> priority</span>
+                </a>
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Execution URL
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="add-task-info-adhoc">
+                    Change<span class="govuk-visually-hidden"> execution url</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  SLA (days)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-sla'] | default('None') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="add-task-info-adhoc">
+                    Change<span class="govuk-visually-hidden"> sla</span>
+                  </a>
+                </dd>
+              </div>
+              <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Reserve tasks in days
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-reserve'] | default('2') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="add-task-info">
+                    Change<span class="govuk-visually-hidden"> sla</span>
+                  </a>
+                </dd>
+              </div> -->
+
+            </dl>
+
+      <br>
+      <br>
+      <p><strong class="govuk-heading-m">Task matching attributes</strong></p>
+              <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Attributes
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-attribute'] | default('Decision maker') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-task-defi-attributes-adhoc">
+                  Change<span class="govuk-visually-hidden"> attribute name</span>
+                </a>
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Type of attribute
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-attribute-property'] | default('Welsh, English') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="add-task-defi-attributes-adhoc">
+                    Change<span class="govuk-visually-hidden"> attribute property</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+
+
+        <br><br>
+        <button class="govuk-button" data-module="govuk-button">Confirm and create activity</button>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

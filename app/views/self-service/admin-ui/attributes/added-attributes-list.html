@@ -1,0 +1,82 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent attributes list
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+<!-- Brad crumbs -->
+
+
+<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-att-added">Home</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#">List attributes</a>
+  </li>
+
+</ol>
+</div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Attributes List
+      </h1>
+
+
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Value(s)</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header" style="text-align:right;">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ data['attribute-name'] | default('Language for England and Wales') }}</td>
+      <td class="govuk-table__cell"> {{ data['value-0'] }} , {{ data['value-1'] }} , {{ data['value-2'] }} , {{ data['value-3'] }}</td>
+      <td class="govuk-table__cell"> {{ data['attribute-status'] | default('Active') }}</td>
+      <td class="govuk-table__cell" style="text-align:right;"><a href="change-attribute">Modify status</a></td>
+
+
+    </tr>
+
+  </tbody>
+</table>
+
+<p><a href="add-attributes">Add attribute</a></p>
+<br><br>
+<a href="/self-service/admin-self-service-1/setup-task-list-att-added"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
+
+    </div>
+  </div>
+
+{% endblock %}

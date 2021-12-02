@@ -1,0 +1,176 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add agent
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="add-task-info">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form class="form" action="check-defi-details" method="post">
+      <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Add task matching attributes
+      </h1>
+
+
+            <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Attributes added: {labelIndex}" data-add-remove-block-remove-message="Attribute {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attributes have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
+
+            <div class="add-remove-block__status visuallyhidden" role="status" aria-live=""></div>
+
+            <ul class="add-remove-block__list" style="padding-left:0px;">
+              <li class="add-remove-block__item" data-item-index="0" style="list-style-type: none;">
+
+                <br>
+              <label class="form-label-bold govuk-!-font-weight-bold" for="condition-0">Select attribute</label> <br>
+                <!-- <input class="govuk-input  govuk-!-width-two-thirds" type="text" id="value-0" name="value-0"> -->
+                <select class="govuk-select govuk-!-width-two-thirds" id="selected-attribute-0" name="selected-attribute-0">
+                <option value="Not selected">-Select- </option>
+                <option value="Decision maker">Added attribute value - For example: Decision maker </option>
+                <option value="Processing agent" >Added attribute value - For example: Welsh</option>
+                <option value="Specialist">Added attribute value- For example: Specialist</option>
+                <option value="Team manager">Added attribute value- For example: English </option>
+                <option value="Leeds">Added attribute value- For example: Location - Leeds</option>
+                <option value="Newcastle">Added attribute value- For example: Newcastle</option>
+                <option value="New claims">Added attribute value- For example: New claims</option>
+                </select><br><br>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+                    <!-- <h1 class="govuk-heading-m">
+                      Select type and attribute
+                    </h1> -->
+
+                    <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+                    Attribute type
+                    <p class="govuk-hint">It is the primary property for this attribute. </p>
+                    </label>
+
+                  <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="remove-agent" name="attribute-property" type="radio" value="Mandatory">
+                      <label class="govuk-label govuk-radios__label" for="remove-attribute">
+                        Mandatory
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="remove-agent-2" name="attribute-property" type="radio" value="Optional">
+                      <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                        Optional
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+                  Remove attribute
+                </button>
+                <hr class="govuk-section-break govuk-section-break-m govuk-section-break--visible">
+
+              </li></ul>
+            <div class="button-combo gutter-half-bottom">
+              <button type="button" class="add-remove-block__add-trigger govuk-button govuk-button--secondary">Add another attribute</button>
+              <!-- <button type="button" class="add-remove-block__remove-all-trigger button-combo__right govuk-link">Remove all values</button> -->
+            </div>
+
+            <script type="text/x-template" class="add-remove-block__item-tpl">
+
+              <li class="add-remove-block__item" data-item-index="{index}" style="list-style-type: none;">
+
+                <br>
+                <label class="form-label-bold govuk-!-font-weight-bold" for="condition-{index}">Select attribute </label><br>
+
+                <select class="govuk-select govuk-!-width-two-thirds" id="sort" name="selected-attribute-{index}">
+                <option value="Not selected">-Select- </option>
+                <option value="Decsion maker">Added attribute value - For example: Decision maker </option>
+                <option value="Processing agent" >Added attribute value - For example: Welsh</option>
+                <option value="Specialist">Added attribute value- For example: Specialist</option>
+                <option value="Team manager">Added attribute value- For example: English </option>
+                <option value="Leeds">Added attribute value- For example: Location - Leeds</option>
+                <option value="Newcastle">Added attribute value- For example: Newcastle</option>
+                <option value="New claims">Added attribute value- For example: New claims</option>
+                </select><br>
+
+                          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+                              <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+                              Attritbute type
+                              <p class="govuk-hint">It is the primary property for this attribute. </p>
+                              </label>
+
+                            <div class="govuk-radios govuk-radios--inline">
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="remove-agent" name="attribute-property-{index}" type="radio" value="Mandatory">
+                                <label class="govuk-label govuk-radios__label" for="remove-attribute">
+                                  Mandatory
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="remove-agent-2" name="attribute-property-{index}" type="radio" value="Optional">
+                                <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                  Optional
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+
+                <br>
+                <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+                  Remove attribute
+                </button>
+
+                <hr class="govuk-section-break govuk-section-break-m govuk-section-break--visible">
+
+              </li>
+            </script>
+          </div>
+
+            <br>
+
+          </div>
+          </div>
+          <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+          <div class="govuk-inset-text">
+            <p>Can't see the agent attribute you want? <br><a href="/self-service/admin-self-service-1/attributes/add-attributes.html">Add attribute</a> </p>
+            <div class="govuk-warning-text">
+
+
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            You will be redirected to adding new attributes. You will have to add the agent again.
+          </strong>
+          </div>
+          </div>
+
+  </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

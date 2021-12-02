@@ -1,0 +1,71 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent attributes list
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-added-org-attri">Home</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#">List agent profiles</a>
+  </li>
+
+</ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Agent profiles
+        <p class="govuk-hint"></p>
+
+      </h1>
+
+      <table class="govuk-table">
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Staff Number </th>
+        <th scope="col" class="govuk-table__header">Attributes</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header">Actions</th>
+        <th scope="col" class="govuk-table__header"></th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">No agent profiles added. Add agent profiles to view details.</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"> </td>
+          <td class="govuk-table__cell"><a href=""></a></td>
+        </tr>
+      </tbody>
+      </table>
+
+      <p><a href="add-agent">Add agent profile</a></p>
+      <br><br>
+      <a href="/self-service/admin-self-service-1/setup-task-list-added-org-attri-agent"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
+    </div>
+  </div>
+
+{% endblock %}

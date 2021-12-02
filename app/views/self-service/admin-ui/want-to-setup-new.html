@@ -1,0 +1,49 @@
+{% extends "header-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you want to set up a new business area?
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form class="form" action="/self-service/admin-self-service-1/want-to-setup-new" method="post">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+              Do you want to set up or maintain your organisation?
+            </h1>
+
+              <fieldset class="govuk-fieldset">
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="remove-agent" name="setup-answer" type="radio" value="Yes" >
+                  <label class="govuk-label govuk-radios__label" for="setup-answer">
+                      Set up an organisation
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="setup-answer-2" name="setup-answer" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    Maintain your orgnaisation
+                  </label>
+                </div>
+              </div>
+              </fieldset>
+        </div>
+        </div>
+        <br>
+        <br>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

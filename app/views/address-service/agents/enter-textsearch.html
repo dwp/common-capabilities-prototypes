@@ -37,40 +37,88 @@
     }) }}
 
 {% endblock %}
+
+
+
+{% block pageScripts %}
+
+  <script type="text/javascript">
+
+    function validateForm() {
+      var addressInput = document.getElementById("address-search").value;
+      var addressInput_error = document.getElementById("addressInput-noAddress");
+      var error_summary = document.getElementById("no-addressInput");
+      if (addressInput == "") {
+        error_summary.style.display="block";
+        addressInput_error.style.display="block";
+
+        document.getElementById("address-search").focus();
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+        $("#address-search-form").addClass("govuk-form-group--error");
+        $("#address-search").addClass("govuk-input--error");
+        return false;
+
+      }
+    }
+
+
+  </script>
+
+  <link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+  <script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
+  <script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
+
+{% endblock %}
+
 {% block content %}
+
+<div class="govuk-error-summary govuk-radios__conditional--hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="no-addressInput">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#address-search">Enter an address or postcode and select it from the list</a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Where does the citizen live in the United Kingdom?
+        Where does the citizen live in England or Wales?
 
       </h1>
-      <p>Search address using partial address or postcode </p>
+      <!-- <p>Search address using partial address or postcode </p> -->
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
 
-      <h3 class="govuk-heading-m">Find address and select </h3>
-      <p class="govuk-hint">Start typing the address or postcode.For example ‘ne11dg’ or ’10 the street’ </p>
+      <h3 class="govuk-heading-m">Enter an address or postcode</h3>
+      <p class="govuk-hint">Refine your search by adding more address details. For example '10 the street, bristol, BR1' </p>
 
       <br>
-      <form class="form " name="reason-form-2" action="address-information">
+      <form class="form " name="address-search" id="address-search-form" actions="address-information" method="post" onsubmit="return validateForm()">
 
-      <!-- <div><input class="govuk-input govuk-!-width-two-fourth" name="address-search" type=""></div> -->
-      <div class="govuk-body" id="address-search" name="address-selected" ></div>
+       <span  class="govuk-error-message govuk-radios__conditional--hidden" id="addressInput-noAddress">
+       <span class="govuk-visually-hidden">Error:</span> Enter an address or postcode and select it from the list
+       </span>
 
+      <!-- <div><input class="govuk-input govuk-!-width-two-fourth" id="address-search" name="address-search" type=""></div> -->
+      <div class="govuk-body" id="address-search" name="address-selected"></div>
 
       <br>
       <br>
       <button class="govuk-button" data-module="govuk-button">Show address details</button>
 
-
-
-
-
       </form>
       <br>
-      <p><a href="no-address-js">I can't see the address in the list</a></p>
+      <p><a href="no-address-js">I cannot find the address in the list</a></p>
 
 
 
@@ -104,10 +152,4 @@
     </div> -->
 
 
-{% endblock %}
-
-{% block pageScripts %}
-<link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
-<script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
-<script src="/public/javascripts/assets_js_auto-complete.js" rel="stylesheet" type="text/javascript"></script>
 {% endblock %}

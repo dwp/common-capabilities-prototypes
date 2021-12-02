@@ -1,0 +1,154 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Setup your service on DWP Manage tasks
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Setup your organisation for DWP Task service
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Setup incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have added information in 2 of 6 sections.</p>
+<!--
+      <p>You are setting up the following service: </p>
+
+      <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Service name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['business-service-name'] | default('Business service name') }}
+        </dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Service domain
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['service-domain'] | default('Domain name')}}
+        </dd>
+
+      </div>
+    </dl> -->
+
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Setup details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="service-domain" aria-describedby="organisation-information">
+                  Organisation information
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag " id="organisation-information">Information added</strong>
+            </li>
+            <!-- <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="attributes/attributes-list" aria-describedby="eligibility-status">
+                  Initial setup parameters
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--grey " id="eligibility-status">Not Started</strong>
+            </li> -->
+          </ul>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Add organisation details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+              <a href="attributes/added-attributes-list" aria-describedby="list-attributes">    List attributes
+              </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag " id="eligibility-status">Information added</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="agents/added-agents-list" aria-describedby="list-attributes">
+                  List agent profiles
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag " id="read-declaration-status">Information added</strong>
+            </li>
+
+
+            <li class="app-task-list__item">
+               <span class="app-task-list__task-name">
+                <a href="task-definitions/task-defi" aria-describedby="list-activities">
+                  List adhoc tasks or activities
+                </a>
+               </span>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--grey " id="read-declaration-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Setup
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+
+                  Confirm and setup
+
+              </span>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--grey" id="company-information-status">Cannot start yet</strong>
+            </li>
+
+
+          </ul>
+        </li>
+        <br>
+
+        <div class="govuk-button-group">
+        <!-- <button class="govuk-button" disabled="disabled" data-module="govuk-button">
+            Complete setup
+        </button>
+        &nbsp; -->
+        <a href="partial-1-organisations"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Save and complete later
+        </button></a>
+
+        </div>
+
+
+        <div class="govuk-inset-text">
+          You can add more attributes, agents and task definitions later
+        </div>
+
+      </ol>
+    </div>
+  </div>
+
+{% endblock %}
