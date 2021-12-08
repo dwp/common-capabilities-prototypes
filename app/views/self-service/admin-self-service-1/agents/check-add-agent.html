@@ -19,7 +19,28 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="add-agent-attributes">Back</a>
+<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list">Setup task list</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="agents-list">Agent profiles</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="add-agent">Add agent details</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="add-agent-attributes">Add agent attributes</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#">Check agent profile</a>
+  </li>
+</ol>
+</div>
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+<br>
+<a class="govuk-back-link" href="add-agent-attributes">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -79,7 +100,7 @@
                   {{ data['selected-attribute-0'] | default('Decision maker') }}
                 </dd>
                 <dd class="govuk-summary-list__actions" style="border-bottom:0px;">
-                <a class="govuk-link" href="add-agent-attributes">
+                <a class="govuk-link" href="modify-agent-attributes">
                   Change<span class="govuk-visually-hidden"> attribute name</span>
                 </a>
                 </dd>
@@ -106,7 +127,7 @@
                   {{ data['selected-attribute-1'] | default('Decision maker') }}
                 </dd>
                 <dd class="govuk-summary-list__actions" style="border-bottom:0px;">
-                <a class="govuk-link" href="add-agent-attributes">
+                <a class="govuk-link" href="modify-agent-attributes">
                   Change<span class="govuk-visually-hidden"> attribute name</span>
                 </a>
                 </dd>

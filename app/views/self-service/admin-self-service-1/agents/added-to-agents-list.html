@@ -42,12 +42,12 @@
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      Agent added to the records.
+      Agent profile added to the records.
     </h3>
     <p class="govuk-body">
     <strong>Staff number: </strong> {{ data['agent-keyid'] | default('ID2232DS') }} <br>
+    <strong>Status: </strong> {{ data['agent-status'] | default('Active') }} <br>
     <strong>Attributes: </strong> {{ data['selected-attribute-0'] | default('Decision maker') }}, {{ data['selected-attribute-1'] | default('Decision maker') }} <br>
-    <strong>Status: </strong> {{ data['agent-status'] | default('Active') }}
     </p>
     </div>
 </div>

@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add agent attributes
+  Add agent
 {% endblock %}
 
 
@@ -19,25 +19,7 @@
     </span>
   </p>
 </div>
-<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
-<ol class="govuk-breadcrumbs__list">
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list">Setup task list</a>
-  </li>
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="agents-list">Agent profiles</a>
-  </li>
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="add-agent">Add agent details</a>
-  </li>
-  <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="#">Add agent attributes</a>
-  </li>
-</ol>
-</div>
-<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
-<br>
-<a class="govuk-back-link" href="add-agents">Back</a>
+  <a class="govuk-back-link" href="add-agent">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -49,7 +31,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Add agent attributes
+        Add agent's attributes
       </h1>
 
 
@@ -73,8 +55,34 @@
           <option value="Leeds">Added attribute value- For example: Location - Leeds</option>
           <option value="Newcastle">Added attribute value- For example: Newcastle</option>
           <option value="New claims">Added attribute value- For example: New claims</option>
-          </select>
-          &nbsp;
+          </select><br><br>
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+              <!-- <h1 class="govuk-heading-m">
+                Select type and attribute
+              </h1>
+
+              <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+              Attribute type
+              <p class="govuk-hint">It is the primary property for this attribute. </p>
+              </label>
+
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="remove-agent" name="attribute-property" type="radio" value="Mandatory">
+                <label class="govuk-label govuk-radios__label" for="remove-attribute">
+                  Mandatory
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="remove-agent-2" name="attribute-property" type="radio" value="Optional">
+                <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                  Optional
+                </label>
+              </div>
+            </div> -->
+          </fieldset>
+
           <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
             Remove attribute
           </button>
@@ -102,7 +110,12 @@
           <option value="Leeds">Added attribute value- For example: Location - Leeds</option>
           <option value="Newcastle">Added attribute value- For example: Newcastle</option>
           <option value="New claims">Added attribute value- For example: New claims</option>
-          </select> &nbsp;
+          </select><br>
+
+
+                    
+
+          <br>
           <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
             Remove attribute
           </button>

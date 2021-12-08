@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Where does the citizen live in England or Wales?
+
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/address-service/postcode-start" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Find an address using postcode
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl" >
+        Where does the citizen live in England or Wales?
+
+      </h1>
+      <h3 class="govuk-heading-m">Enter postcode</h3>
+      <p class="govuk-hint">For example 'BR1 4NL' or 'br1 4nl' </p> <br>
+      <form class="form " name="reason-form-2" action="address-details-postcode" onsubmit="return validateForm()" method="post">
+
+      <div><input class="govuk-input govuk-input--width-10" id="postcode-lookup-no" name="postcode-lookup-no" type="text"></div>
+
+
+      <!-- Field Error - Start -->
+      <span id="no-reason-error-2-2" class="govuk-error-message govuk-radios__conditional--hidden">
+          <span class="govuk-visually-hidden">Error:</span>Enter reason for not doing task
+      </span>
+      <!-- Field Error - End -->
+      <br>
+      <br>
+      <br>
+      <button class="govuk-button" data-module="govuk-button">Find address</button>
+
+
+
+
+
+      </form>
+
+      </div>
+
+
+
+    </div>
+
+
+{% endblock %}

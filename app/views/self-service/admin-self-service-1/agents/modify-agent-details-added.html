@@ -1,0 +1,176 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Modify agent details
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="added-agents-list">Back</a>
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript">
+  function removeAttribute1() {
+    const attri1_name = document.getElementById("attribute-1-name");
+    const attri1_type = document.getElementById("attribute-1-type");
+    const btn_attri_1 = document.getElementById("remove-attribute-1");
+      if (attri1_name.style.display !== "none" && attri1_type.style.display !== "none" ) {
+        attri1_name.style.display = "none";
+        attri1_type.style.display = "none"
+      } else {
+        attri1_name.style.display = "block";
+        attri1_type.style.display = "block"
+      }
+  };
+
+  function removeAttribute2() {
+    const attri2_name = document.getElementById("attribute-2-name");
+    const attri2_type = document.getElementById("attribute-2-type");
+    const btn_attri_2 = document.getElementById("remove-attribute-2");
+      if (attri2_name.style.display !== "none" && attri2_type.style.display !== "none" ) {
+        attri2_name.style.display = "none";
+        attri2_type.style.display = "none"
+      } else {
+        attri2_name.style.display = "block";
+        attri2_type.style.display = "block"
+      }
+  };
+
+
+</script>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Modify agent details
+      </h1>
+      <div class="govuk-form-group">
+
+        <p><strong class="govuk-heading-m">Agent details</strong></p>
+
+      <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Staff mumber
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['agent-keyid'] | default('ID2232DS') }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-agent">
+            Change<span class="govuk-visually-hidden"> attribute key id</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Agent status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['agent-status'] | default('Active') }}
+          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-agent">
+            Change<span class="govuk-visually-hidden"> attribute status</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <br>
+    <p><strong class="govuk-heading-m">Agent attributes</strong></p>
+            <dl class="govuk-summary-list">
+
+
+            <div class="govuk-summary-list__row" id="attribute-1-name">
+              <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+                Attribute 1
+              </dt>
+              <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+                {{ data['selected-attribute-0'] | default('Decision maker') }}
+              </dd>
+              <dd class="govuk-summary-list__actions" style="border-bottom:0px;">
+              <a class="govuk-link" id="remove-attribute-1" onclick="removeAttribute1()" href="#">
+                Remove<span class="govuk-visually-hidden"> attribute name</span>
+              </a>
+              </dd>
+
+
+            </div>
+            <div class="govuk-summary-list__row" id="attribute-1-type">
+              <dt class="govuk-summary-list__key">
+                Attribute type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['attribute-property'] | default('Mandatory') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+
+              </dd>
+            </div>
+
+
+
+            <div class="govuk-summary-list__row" id="attribute-2-name">
+              <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+                Attribute 2
+              </dt>
+              <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+                {{ data['selected-attribute-1'] | default('Decision maker') }}
+              </dd>
+              <dd class="govuk-summary-list__actions" style="border-bottom:0px;">
+              <a class="govuk-link" href="#" id="remove-attribute-2" onclick="removeAttribute2()">
+                Remove<span class="govuk-visually-hidden"> attribute name</span>
+              </a>
+              </dd>
+
+
+            </div>
+            <div class="govuk-summary-list__row"  id="attribute-2-type">
+              <dt class="govuk-summary-list__key">
+                Attribute type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['attribute-property-1'] | default('Optional') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+
+              </dd>
+            </div>
+
+          </dl>
+
+
+            <p><a href="add-agent-attributes-modify">Add agent attribute</a></p>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+        <a href="added-agents-list"><button class="govuk-button" data-module="govuk-button">Continue</button></a>
+
+        </div>
+
+    </div>
+  </div>
+
+{% endblock %}

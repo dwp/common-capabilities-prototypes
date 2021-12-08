@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Address details
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/address-service/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Find an address using postcode
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Confirm details</h1>
+
+      <h2 class="govuk-heading-m">Address details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Postcode
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['postcode-lookup-no'] | default('NE33 1HT') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="enter-postcode">
+              Change
+              <span class="govuk-visually-hidden">Postcode</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Selected Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['sort'] | default('3 King Street South Shields NE33 1HT') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="address-details-postcode">
+              Change
+              <span class="govuk-visually-hidden">Selected address</span>
+            </a>
+          </dd>
+        </div>
+
+
+      </dl>
+
+
+
+<form action="/address-service/check-your-answers-postcode-answer" method="post" class="form">
+
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+
+      <h2 class="govuk-heading-m">
+        Confirmation
+      </h2>
+
+      <p>I confirm I live in the above stated address while I am in United Kingdom. </p><br>
+
+<br>
+    <a href="enter-postcode"><button class="govuk-button" data-module="govuk-button">Continue</button></a> &nbsp; &nbsp; <br>
+
+    </fieldset>
+  </div>
+
+
+</form>
+
+
+
+
+    </div>
+  </div>
+{% endblock %}

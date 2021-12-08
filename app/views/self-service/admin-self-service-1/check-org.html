@@ -5,6 +5,21 @@
   Check organisation information
 {% endblock %}
 
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="service-domain">Back</a>
+{% endblock %}
 
 {% block content %}
 
@@ -24,7 +39,7 @@
             {{ data['business-service-name']  | default('Get your state pension') }}
           </dd>
           <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="service-domain">
+          <a class="govuk-link" href="modify-org">
             Change<span class="govuk-visually-hidden"> attribute name</span>
           </a>
           </dd>

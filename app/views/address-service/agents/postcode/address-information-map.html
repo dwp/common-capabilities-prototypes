@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Address Information
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/index-address-service" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Find an address using postcode
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Address information</h1>
+
+      <h2 class="govuk-heading-m">Selected address</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            {{ data['address-selected'] }}
+            46 Low Friar Street
+            <br> Newcastle Upon Tyne
+            <br> NE1 5UE
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="change-selection">
+              Change
+              <span class="govuk-visually-hidden">add address type here</span>
+            </a>
+          </dd>
+
+        </div>
+
+
+
+      </dl>
+
+
+    </div>
+
+</div>
+
+
+
+<div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+            <h2 class="govuk-heading-m">View options</h2>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item" style="margin-left:0px; padding-left:0px;">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="map-view" name="map-view" type="radio" value="Map" {{ checked("map-view", "Map") }}>
+                      <label class="govuk-label govuk-radios__label" for="map-view-1">
+                        Map view
+                      </label>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="map-view-2" name="map-view" type="radio" value="Satellite" {{ checked("map-view", "Satellite") }}>
+                    <label class="govuk-label govuk-radios__label" for="map-view-2">
+                      Satellite view
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="map-view-3" name="map-view" type="radio" value="3D" {{ checked("map-view", "3D") }}>
+                    <label class="govuk-label govuk-radios__label" for="map-view-3">
+                      3D View
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+         <div class="govuk-checkboxes__item">
+           <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+           <label class="govuk-label govuk-checkboxes__label" for="nationality">
+             Satellite View
+           </label>
+           <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+             view map in photographic view
+           </div>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+          <label class="govuk-label govuk-checkboxes__label" for="nationality">
+            3D View
+          </label>
+          <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+            view map with buildings and roads
+          </div>
+       </div>
+         </div> -->
+      </div>
+
+        <div class="govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m">Actions</h2>
+
+          <a href="#"><button class="govuk-button" data-module="govuk-button" style="text-align:right;" >
+            View full screen map
+          </button>
+          </a>
+        </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-fourth-from-desktop">
+
+
+      <p><img src="/public/images/map-small.png" width="100%" alt="Sample map"></p>
+
+    </div>
+
+  </div>
+{% endblock %}

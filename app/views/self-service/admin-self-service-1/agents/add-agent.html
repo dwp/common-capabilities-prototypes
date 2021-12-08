@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add agent
+  Add agent details
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,19 +18,33 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="agents-list">Back</a>
+<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list">Setup task list</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="agents-list">Agent profiles</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#">Add agent details</a>
+  </li>
+</ol>
+</div>
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+<br>
+<a class="govuk-back-link" href="agents-list">Back</a>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <form class="form" action="add-agent-attributes" method="post">
-
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
             <h1 class="govuk-heading-xl">
-              Add agents details
+              Add agent details
             </h1>
 
               <fieldset class="govuk-fieldset">
@@ -56,7 +70,7 @@
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="remove-agent-2" name="agent-status" type="radio" value="Inactive" {{ checked("agent-status", "Inctive") }}>
+                  <input class="govuk-radios__input" id="remove-agent-2" name="agent-status" type="radio" value="Inactive" {{ checked("agent-status", "Inactive") }}>
                   <label class="govuk-label govuk-radios__label" for="changed-name-2">
                     Inactive
                   </label>
