@@ -42,28 +42,6 @@
 
 {% block pageScripts %}
 
-  <script type="text/javascript">
-
-    function validateForm() {
-      var addressInput = document.getElementById("address-search").value;
-      var addressInput_error = document.getElementById("addressInput-noAddress");
-      var error_summary = document.getElementById("no-addressInput");
-      if (addressInput == "") {
-        error_summary.style.display="block";
-        addressInput_error.style.display="block";
-
-        document.getElementById("address-search").focus();
-        document.body.scrollTop = document.documentElement.scrollTop = 0;
-
-        $("#address-search-form").addClass("govuk-form-group--error");
-        $("#address-search").addClass("govuk-input--error");
-        return false;
-
-      }
-    }
-
-
-  </script>
 
   <link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
   <script src="/public/javascripts/accessible-autocomplete.min.js" rel="stylesheet" type="text/javascript"></script>
@@ -99,24 +77,19 @@
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
 
+
       <h3 class="govuk-heading-m">Enter an address or postcode</h3>
       <p class="govuk-hint">Refine your search by adding more address details. For example '10 the street, bristol, BR1' </p>
 
-      <br>
-      <form class="form " name="address-search" id="address-search-form" actions="address-information">
-
-       <span  class="govuk-error-message govuk-radios__conditional--hidden" id="addressInput-noAddress">
-       <span class="govuk-visually-hidden">Error:</span> Enter an address or postcode and select it from the list
-       </span>
 
       <!-- <div><input class="govuk-input govuk-!-width-two-fourth" id="address-search" name="address-search" type=""></div> -->
       <div class="govuk-body" id="address-search" name="address-selected"></div>
 
       <br>
       <br>
-      <button class="govuk-button" data-module="govuk-button">Show address details</button>
+      <a href="address-information"><button class="govuk-button" data-module="govuk-button">Show address details</button></a>
 
-      </form>
+
       <br>
       <p><a href="no-address-js">I cannot find the address in the list</a></p>
 
