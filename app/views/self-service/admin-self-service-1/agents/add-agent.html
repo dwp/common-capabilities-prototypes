@@ -21,7 +21,7 @@
 <div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
 <ol class="govuk-breadcrumbs__list">
   <li class="govuk-breadcrumbs__list-item">
-    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list">Setup task list</a>
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-added-org-attri">Setup task list</a>
   </li>
   <li class="govuk-breadcrumbs__list-item">
     <a class="govuk-breadcrumbs__link" href="agents-list">Agent profiles</a>
@@ -56,7 +56,7 @@
                 </label>
                 <p class="govuk-hint">This is the unique staff number for the agent </p>
 
-                <input class="govuk-input govuk-!-width-two-thirds" id="agent-keyid" name="agent-keyid" type="text"></div>
+                <input class="govuk-input govuk-!-width-two-thirds" id="agent-keyid" name="agent-keyid" type="text" value="{{ data['agent-keyid'] }}"></div>
                 <label class="govuk-label govuk-!-font-weight-bold" for="sort">
                 Agent status
                 <p class="govuk-hint">It is the primary property for this attribute. </p>

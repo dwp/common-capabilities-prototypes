@@ -17,6 +17,7 @@
 
 
 {% block content %}
+<hr class="govuk-section-break govuk-section-break--hidden govuk-section-break--xl">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -30,42 +31,31 @@
       <table class="govuk-table">
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Name</th>
-        <th scope="col" class="govuk-table__header">Key or ID </th>
-        <th scope="col" class="govuk-table__header">Attributes</th>
-        <th scope="col" class="govuk-table__header">Status</th>
-        <th scope="col" class="govuk-table__header">Actions</th>
-        <th scope="col" class="govuk-table__header"></th>
+        <th scope="col" class="govuk-table__header" style="width:20%">Staff number </th>
+        <th scope="col" class="govuk-table__header" style="width:40%">Status</th>
+        <th scope="col" class="govuk-table__header" style="width:10%">Attributes</th>
+        <th scope="col" class="govuk-table__header" style="text-align:right;">Actions</th>
       </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">James Bond</td>
-          <td class="govuk-table__cell">ID2232DS</td>
+          <td class="govuk-table__cell">JKM32DS</td>
           <td class="govuk-table__cell">Decision maker</td>
-          <td class="govuk-table__cell">
-              <strong class="govuk-tag govuk-tag govuk-tag--green">
-              Active
-              </strong></td>
-          <td class="govuk-table__cell"><a href="modify-agent-details">Change</a></td>
-          <td class="govuk-table__cell"><a href="remove-agent"></a></td>
+          <td class="govuk-table__cell"> Active</td>
+          <td class="govuk-table__cell" style="text-align:right;"><a href="modify-agent-details">Modify profile</a> &nbsp; <a href="remove-agent">Remove</a></td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">John Smith</td>
           <td class="govuk-table__cell">ID122DS</td>
           <td class="govuk-table__cell">Processing agent</td>
-          <td class="govuk-table__cell">
-              <strong class="govuk-tag govuk-tag govuk-tag--grey">
-              Inactive
-              </strong></td>
-          <td class="govuk-table__cell"><a href="modify-agent-details">Change</a></td>
-          <td class="govuk-table__cell"><a href="remove-agent">Remove</a></td>
+          <td class="govuk-table__cell"> Inactive</td>
+          <td class="govuk-table__cell" style="text-align:right;"><a href="modify-agent-details">Modify profile</a> &nbsp; <a href="remove-agent">Remove</a></td>
+
         </tr>
 
       </tbody>
       </table>
 
-      <p><a href="add-agent">Add agent profile</a></p>
+      <p><a href="#">Add agent profile</a></p>
       <br><br>
       <a href="/self-service/admin-self-service-1/maintain/dashboard"><button class="govuk-button" data-module="govuk-button">Continue to summary page</button></a>
     </div>

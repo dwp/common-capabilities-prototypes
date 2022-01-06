@@ -20,6 +20,30 @@
     </span>
   </p>
 </div>
+<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-added-org-attri-agent">Setup task list</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="task-defi">List activities</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="type-of-activity">Type of activity</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="add-task-info">Add activity details</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="add-task-defi-attributes">Add matching attributes</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#">Check details</a>
+  </li>
+</ol>
+</div>
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+<br>
   <a class="govuk-back-link" href="add-task-defi-attributes">Back</a>
 {% endblock %}
 
@@ -146,7 +170,7 @@
                   {{ data['task-sla'] | default('None') }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="modify-task-infon">
+                  <a class="govuk-link" href="modify-task-info">
                     Change<span class="govuk-visually-hidden"> sla</span>
                   </a>
                 </dd>

@@ -12,7 +12,7 @@
       </a>
     </div>
     <div class="white-link">
-        <p style="text-align:right;"><span class="govuk-!-padding-right-9 white-link"> Organisation :: {{ data['business-service-name'] | default('Common Capabilities') }}</span> <a href="/self-service/sign-in" class="white-link">Sign out</a></p>
+        <p style="text-align:right;"><a href="/self-service/sign-in" class="white-link govuk-!-font-weight-bold">Sign out</a></p>
 
     </div>
 
@@ -64,4 +64,15 @@
   </p>
 </div>
 <br>
+<div class="govuk-grid-column-full" style="border-bottom:1px solid #b1b4b6; padding:0px; " >
+  <div class="govuk-grid-column-one-half" style="padding-left:0px;">
+    <span class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">{{ data['business-service-name'] | default('Common Capabilities') }}</span>
+    <span class="govuk-hint"><strong>Domain</strong>: http://uk.dwp.rbc.cc.not-an-actual-domain</span>
+  </div>
+  <div class="govuk-grid-column-one-half" style="padding-right:0px;" >
+    <p style="text-align:right;"><a href="/self-service/admin-self-service-1/maintain/added-organisations-maintain"  >Switch organisation</a></p>
+    </div>
+
+</div>
+
 {% endblock %}

@@ -29,43 +29,52 @@
 
 {% block content %}
 
+<hr class="govuk-section-break govuk-section-break--hidden govuk-section-break--xl">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
-        Task definitions
+        Activities list
       </h1>
 
       <table class="govuk-table">
     <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Name</th>
-      <th scope="col" class="govuk-table__header">Execution URL</th>
-      <th scope="col" class="govuk-table__header">Actions</th>
-      <th scope="col" class="govuk-table__header"></th>
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Execution URL</th>
+        <th scope="col" class="govuk-table__header">Type</th>
+        <th scope="col" class="govuk-table__header" style="text-align:right;">Actions</th>
 
-    </tr>
+      </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Verify address for NI</td>
-      <td class="govuk-table__cell">sp.dwp.gov.uk/asdi23232asd/sdfsf</td>
-      <td class="govuk-table__cell"><a href="view-defi-details">View</a></td>
-      <td class="govuk-table__cell"><a href="remove-task">Remove</a></td>
+      <td class="govuk-table__cell">Award updates (SRBs)</td>
+      <td class="govuk-table__cell">https://sp.dwp.gov.uk/3434asdf/award-review</td>
+      <td class="govuk-table__cell">Regular</td>
+      <td class="govuk-table__cell" style="text-align:right;"><a href="#">View Details</a>&nbsp;<a href="#">Remove</a></td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for England') }}</td>
-      <td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }}</td>
-      <td class="govuk-table__cell"><a href="view-defi-details">View</a></td>
-      <td class="govuk-table__cell"><a href="remove-task">Remove</a></td>
+      <td class="govuk-table__cell">Verify address for NI</td>
+      <td class="govuk-table__cell">sp.dwp.gov.uk/asdi23232asd/sdfsf</td>
+      <td class="govuk-table__cell">Regular</td>
+      <td class="govuk-table__cell" style="text-align:right;"><a href="view-defi-details">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Verify address for England</td>
+      <td class="govuk-table__cell">https://sp.dwp.gov.uk/34343adfasdf/address-england</td>
+      <td class="govuk-table__cell">Regular</td>
+      <td class="govuk-table__cell" style="text-align:right;"><a href="#">View Details</a>&nbsp;<a href="#">Remove</a></td>
     </tr>
 
 
   </tbody>
 </table>
 
-<p><a href="add-task-info">Add task definition</a></p>
+<p><a href="#">Add an activity</a></p>
 <br><br>
 <a href="/self-service/admin-self-service-1/maintain/dashboard"><button class="govuk-button" data-module="govuk-button">Continue to summary page</button></a>
 

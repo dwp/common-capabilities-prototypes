@@ -1,4 +1,4 @@
-{% extends "header-banner-for-setup-dwptask.html" %}
+{% extends "header-dwptask.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -12,36 +12,41 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
     <h1 class="govuk-heading-xl">
-      Services
+       Organisations
     </h1>
 
-    <p class="govuk-!-padding-bottom-8">Set up a service so you can create tasks, agents and task matching attributes.</p>
-</div>
+    <p class="govuk-!-padding-bottom-2"> View, modify or create attributes, agent profiles and acitivies (task matching templates) for your organisation.</p>
+    <p class="govuk-!-padding-bottom-8">You can also setup a new organisation to use DWP Task service.</p>
+  </div>
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" style="width:65%;">Service name</th>
-            <th scope="col" class="govuk-table__header">Actions</th>
-            <th scope="col" class="govuk-table__header"></th>
-          </tr>
-        </thead>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Name</th>
+          <th scope="col" class="govuk-table__header" style="text-align:right;">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Common Capabilities (example)</td>
+          <td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/maintain/dashboard">View dashboard</a> &nbsp; &nbsp; <a href="#">Remove</a></td>
+        </tr>
+    </tbody>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">{{ data['business-service-name'] | default('Business service name') }} </td>
-            <td class="govuk-table__cell"><a href="/self-service/admin-self-service-1/setup-task-list-att-added">Complete set up</a></td>
-            <td class="govuk-table__cell"><a href="#">Remove</a></td>
+            <td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/setup-task-list-added-org">Complete set up</a> &nbsp; &nbsp; <a href="#">Remove</a></td>
+
           </tr>
       </tbody>
     </table>
 
-<p class="govuk-heading-s govuk-!-padding-top-8">Can't find your service in the list? </p>
-<p><a href="service-domain">Add service and domain</a></p>
+    <p class="govuk-heading-s govuk-!-padding-top-8">I can't see my organisation or business area in the list?  </p>
+    <p><a href="/self-service/admin-self-service-1/start">Setup an organisation</a></p>
 
 
   </div>

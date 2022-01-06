@@ -33,15 +33,21 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Common Capabilities </td>
-            <td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/maintain/dashboard">View</a> &nbsp; &nbsp; <a href="#">Remove</a></td>
+            <td class="govuk-table__cell">Common Capabilities (example)</td>
+            <td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/maintain/dashboard">View dashboard</a> &nbsp; &nbsp; <a href="#">Remove</a></td>
           </tr>
       </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['business-service-name'] | default('Business service name') }} </td>
+          <td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/maintain/dashboard">View dashboard</a> &nbsp; &nbsp; <a href="#">Remove</a></td>
+        </tr>
+    </tbody>
     </table>
 
 
     <p class="govuk-heading-s govuk-!-padding-top-8">I can't see my organisation or business area in the list?  </p>
-    <p><a href="service-domain-maintainance">Add organisation</a></p>
+    <p><a href="/self-service/admin-self-service-1/start">Setup an organisation</a></p>
 
 
   </div>

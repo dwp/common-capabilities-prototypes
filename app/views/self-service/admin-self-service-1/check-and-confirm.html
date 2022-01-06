@@ -20,7 +20,20 @@
     </span>
   </p>
 </div>
+<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list-added-org-attri-agent-acti">Setup task list</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#">Check and confirm</a>
+  </li>
+</ol>
+</div>
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+  <br>
   <a class="govuk-back-link" href="/self-service/admin-self-service-1/setup-task-list-added-org-attri-agent-acti">Back</a>
+
 {% endblock %}
 
 {% block content %}
@@ -29,7 +42,7 @@
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
-        Check setup details
+        Check and confirm setup details
       </h1>
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
@@ -47,7 +60,7 @@
             {{ data['business-service-name']  | default('Get your state pension') }}
           </dd>
           <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="service-domain">
+          <a class="govuk-link" href="#">
             Change<span class="govuk-visually-hidden"> attribute name</span>
           </a>
           </dd>
@@ -87,7 +100,7 @@
       <td class="govuk-table__cell">{{ data['attribute-name'] | default('Language for England and Wales') }}</td>
       <td class="govuk-table__cell"> {{ data['attribute-uid'] | default('Welsh, English') }}</td>
       <td class="govuk-table__cell"> {{ data['attribute-status'] | default('Active') }}</td>
-      <td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/attributes/change-attribute">Modify status</a></td>
+      <td class="govuk-table__cell" style="text-align:right;"><a href="#">Modify status</a></td>
 
     </tr>
 
@@ -116,7 +129,7 @@
 <td class="govuk-table__cell">
     Active
   </td>
-<td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/agents/modify-agent-details">Modify profile</a> &nbsp; <a href="remove-agent">Remove</a></td>
+<td class="govuk-table__cell" style="text-align:right;"><a href="#>Modify profile</a> &nbsp; <a href="#">Remove</a></td>
 </tr>
 
 
@@ -145,7 +158,7 @@
 <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for NI') }}</td>
 <td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}</td>
 <td class="govuk-table__cell">{{ data['activity-type'] | default('Regular') }}</td>
-<td class="govuk-table__cell" style="text-align:right;"><a href="/self-service/admin-self-service-1/task-definitions/view-defi-details">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
+<td class="govuk-table__cell" style="text-align:right;"><a href="#">View Details</a>&nbsp;<a href="#">Remove</a></td>
 </tr>
 
 
