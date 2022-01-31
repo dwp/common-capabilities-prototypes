@@ -93,13 +93,13 @@
       <p><strong class="govuk-heading-m">Agent attributes</strong></p>
               <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+                <dt class="govuk-summary-list__key" >
                   Attribute 1
                 </dt>
-                <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+                <dd class="govuk-summary-list__value" >
                   {{ data['selected-attribute-0'] | default('Decision maker') }}
                 </dd>
-                <dd class="govuk-summary-list__actions" style="border-bottom:0px;">
+                <dd class="govuk-summary-list__actions" >
                 <a class="govuk-link" href="#">
                   Change<span class="govuk-visually-hidden"> attribute name</span>
                 </a>
@@ -107,7 +107,7 @@
 
 
               </div>
-              <div class="govuk-summary-list__row">
+              <!-- <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Attribute type
                 </dt>
@@ -117,16 +117,16 @@
                 <dd class="govuk-summary-list__actions">
 
                 </dd>
-              </div>
+              </div> -->
 
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+                <dt class="govuk-summary-list__key" >
                   Attribute 2
                 </dt>
-                <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-                  {{ data['selected-attribute-1'] | default('Decision maker') }}
+                <dd class="govuk-summary-list__value" >
+                  {{ data['selected-attribute-1'] | default('English') }}
                 </dd>
-                <dd class="govuk-summary-list__actions" style="border-bottom:0px;">
+                <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
                   Change<span class="govuk-visually-hidden"> attribute name</span>
                 </a>
@@ -134,17 +134,7 @@
 
 
               </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Attribute type
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['attribute-property-1'] | default('Optional') }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
 
-                </dd>
-              </div>
 
             </dl>
 

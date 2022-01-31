@@ -57,9 +57,11 @@
           <label class="govuk-label govuk-!-font-weight-bold" for="attribute-name">
             Attribute name
           </label>
-          <p class="govuk-hint">This could be the role or any other unique matching attribute. For example 'decision maker' or 'language' </p>
+          <p class="govuk-hint">This could be the location or role or any other unique matching attribute. For example 'decision maker' or 'language' </p>
           <input class="govuk-input" id="attribute-name" name="attribute-name" type="text"  ></div>
-        <br>
+
+
+<br>
         <div class="govuk-form-group">
           <label class="govuk-label govuk-!-font-weight-bold" for="attribute-uid">
             Attribute value
@@ -71,6 +73,7 @@
             Add another value
           </button></a> -->
           <br>
+
           <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Attribute values added: {labelIndex}" data-add-remove-block-remove-message="Attribute value {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attribute values have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
 
           <div class="add-remove-block__status visuallyhidden" role="status" aria-live="polite"></div>
@@ -81,6 +84,9 @@
                 Remove value
               </button>
             </li></ul>
+            <div class="govuk-inset-text">
+              You can add multiple values to an attribute and create group. For example 'Language' can have multiple values like 'English', 'Welsh' or 'Irish'.
+            </div>
           <div class="button-combo gutter-half-bottom">
             <button type="button" class="add-remove-block__add-trigger govuk-button govuk-button--secondary">Add another value</button>
             <!-- <button type="button" class="add-remove-block__remove-all-trigger button-combo__right govuk-link">Remove all values</button> -->
