@@ -1,0 +1,129 @@
+{% extends "header-banner-tl.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+How would you like to search for a task?
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<!--
+      <h1 class="govuk-heading-xl" >
+        Find a task
+
+      </h1>
+      <h3 class="govuk-heading-m">Enter task id or staff number</h3>
+      <p class="govuk-hint"> Task ID is the unique ID for your task the agent is working on. Staff number or Agent ID is the unique number for an agent. For example, You can enter staff number as 'DWP-RBC9083' or 'dwp-rbc9083' </p> <br>
+
+      <div><input class="govuk-input govuk-input--width-20" id="search-task-input" name="search-task-input" type="text"></div>
+
+
+      <span id="no-reason-error-2-2" class="govuk-error-message govuk-radios__conditional--hidden">
+          <span class="govuk-visually-hidden">Error:</span>Enter task id or staff number
+      </span>
+
+
+ -->
+
+
+
+
+      <form class="form " action="/task/search-task" method="post">
+
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        How would you like to search for a task?
+      </h1>
+    </legend>
+    <br>
+    <div id="contact-hint" class="govuk-hint">
+      Select one option.
+    </div>
+    <!-- <p class="govuk-hint"> .  For example, You can enter staff number as 'DWP-RBC9083' or 'dwp-rbc9083' </p> <br> -->
+    <br>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="searchTerm" type="radio" value="taskid" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Task ID
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          Task ID is the unique ID for your task the agent is working on.
+        </div>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-email">
+            Enter task ID
+          </label>
+
+          <input class="govuk-input govuk-!-width-two-thirds" id="taskid" name="taskid" type="text"></div>
+
+      </div>
+      <br>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-3" name="searchTerm" type="radio" value="staffnumber" data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-radios__label" for="contact-3">
+          Staff Number
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          It is the unique identification number for an agent or staff.
+        </div>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Enter staff number
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="staff-number" name="staff-number" type="text"  ></div>
+
+      </div>
+      <br>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="searchTerm" type="radio" value="citizenGUID" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          Citizen GUID
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          This is the unique number given to a every citizen or customer of DWP.
+        </div>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-phone">
+            Enter citizen GUID
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="citizenGUID" name="citizenGUID" type="text"></div>
+
+      </div>
+
+    </div>
+
+  </fieldset>
+</div>
+<br>
+
+<button class="govuk-button" data-module="govuk-button">Find task</button>
+
+</form>
+
+      <!-- <br>
+      <p><a href="search-task-GUID">I want to search using citizen GUID</a></p> -->
+
+
+      </div>
+
+
+
+    </div>
+
+
+{% endblock %}

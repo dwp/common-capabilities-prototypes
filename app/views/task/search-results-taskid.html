@@ -1,0 +1,227 @@
+{% extends "header-banner-tl.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search results
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Search results</h1>
+
+      <h2 class="govuk-heading-s">Task ID</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            {{ data['taskid'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="change-selection">
+              Change
+              <span class="govuk-visually-hidden">change task id</span>
+            </a>
+          </dd>
+          <!-- <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Task ID</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Staff ID</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Task name</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Action</th>
+
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">£109.80 per week</td>
+        <td class="govuk-table__cell">£109.80 per week</td>
+        <td class="govuk-table__cell">£109.80 per week</td>
+        <td class="govuk-table__cell">£59.10 per week</td>
+      </tr>
+
+    </tbody>
+  </table> -->
+
+
+        </div>
+
+
+
+      </dl>
+
+
+    </div>
+
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-s">
+        Task name
+      </h1>
+          <h1 class="govuk-heading-xl">
+            Check residency qualification on behalf of a claimant
+          </h1>
+
+          <p></p>
+
+          <h1 class="govuk-heading-m">
+            Allocation details
+          </h1>
+          <dl class="govuk-summary-list">
+
+
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Activated on
+                          </dt>
+
+                          <dd class="govuk-summary-list__value">
+                              29 January 2022
+                          </dd>
+
+                        </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Activated by
+              </dt>
+
+              <dd class="govuk-summary-list__value">
+                  James Bond
+              </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Staff number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                DWP-RBC009
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+
+              <dd class="govuk-summary-list__value">
+                <strong class="govuk-tag govuk-tag--green">
+                  In progress
+                </strong>
+              </dd>
+
+            </div>
+
+
+          </dl>
+          <br><br>
+          <h1 class="govuk-heading-m">
+            Task details
+          </h1>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Task ID
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  {{ data['taskid'] }}
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Priority
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Very high
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Attributes
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Decision maker, Welsh
+              </dd>
+
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Organisation name
+              </dt>
+
+              <dd class="govuk-summary-list__value">
+                  Residency
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Execution URL
+              </dt>
+              <dd class="govuk-summary-list__value">
+                https://dwp.internal.benefit.app
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                SLA (days)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                12
+              </dd>
+            </div>
+
+
+
+          </dl>
+
+
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+          <aside class="app-related-items" role="complementary">
+            <h2 class="govuk-heading-m" id="subsection-title">
+              Actions
+            </h2>
+              <p><a href="address-information-map">
+                Unallocate task
+              </a></p>
+              <p><a href="address-information-map">
+                Refer the task
+              </a></p>
+              <p><a href="address-information-map">
+                Cancel task
+              </a></p>
+
+          </aside>
+
+        </div>
+  </div>
+{% endblock %}

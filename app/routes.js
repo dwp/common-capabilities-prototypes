@@ -380,6 +380,28 @@ router.post('/self-service/admin-self-service-1/task-definitions/add-attributes'
 
 })
 
+router.post('/task/search-task', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const searchTerm = req.session.data['searchTerm']
+
+  if (searchTerm === 'taskid') {
+    res.redirect('/task/search-results-taskid.html')
+  }
+
+  else if (searchTerm === 'staffnumber') {
+    res.redirect('/task/search-results-staffnumber.html')
+  }
+  else if (searchTerm === 'citizenGUID') {
+    res.redirect('/task/search-results-citizenGUID')
+  }
+
+
+})
+
+
 
 router.use('/node_modules', express.static('node_modules'))
 module.exports = router

@@ -1,0 +1,50 @@
+{% extends "header-banner-tl.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Where does the citizen live in England or Wales?
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl" >
+        Find a task
+
+      </h1>
+      <h3 class="govuk-heading-m">Enter citizen GUID</h3>
+      <p class="govuk-hint">For example, You can enter staff number as 'ABCD39329' or 'abcd39329' </p> <br>
+      <form class="form " name="reason-form-2" action="address-details-postcode" onsubmit="return validateForm()" method="post">
+
+      <div><input class="govuk-input govuk-input--width-10" id="postcode-lookup-no" name="postcode-lookup-no" type="text"></div>
+
+      <!-- Field Error - Start -->
+      <span id="no-reason-error-2-2" class="govuk-error-message govuk-radios__conditional--hidden">
+          <span class="govuk-visually-hidden">Error:</span>Enter task id or staff number
+      </span>
+      <!-- Field Error - End -->
+      <br><br>
+
+      <button class="govuk-button" data-module="govuk-button">Find task</button>
+
+      <br>
+      <p><a href="search-task">I want to search using task ID or staff number</a></p>
+
+
+
+      </form>
+
+      </div>
+
+
+
+    </div>
+
+
+{% endblock %}
