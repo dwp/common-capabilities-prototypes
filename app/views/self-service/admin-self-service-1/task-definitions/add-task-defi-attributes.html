@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add agent
+  Select all task matching attributes
 {% endblock %}
 
 
@@ -53,10 +53,14 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Add task matching attributes
+        Select all task matching attributes
       </h1>
 
+      <div class="govuk-inset-text">
+        <p>These will used to match a task to an agent or group of agents. </p>
+        <p>For example, If a task may be performed by Decision Maker with Level 5 clearance from Newcastle and can speak welsh. Select all the relevant attributes and if they are manditory or optional. </p>
 
+      </div>
             <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Attributes added: {labelIndex}" data-add-remove-block-remove-message="Attribute {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attributes have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
 
             <div class="add-remove-block__status visuallyhidden" role="status" aria-live=""></div>
@@ -85,7 +89,7 @@
 
                     <label class="govuk-label govuk-!-font-weight-bold" for="sort">
                     Attribute type
-                    <p class="govuk-hint">It is the primary property for this attribute. </p>
+                    <p class="govuk-hint">Select if this attribute is mandatory or optional for matching an task with an agent. </p>
                     </label>
 
                   <div class="govuk-radios govuk-radios--inline">
