@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="list-agent-groups.html" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">
+      Add agent group
+    </h1>
+    <div class="govuk-inset-text">
+      Agent Groups is a mechanism for grouping agents together who have the same skill profile.  Agents may then claim tasks as members of the group using their group attributes.
+    </div>
+    <form class="form" method="get" action="add-agent-group-agents">
+      <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="group-name">
+            Group name
+          </label>
+          <p class="govuk-hint">The name of the group in your organisation unit</p>
+          <input class="govuk-input govuk-input--width-30" id="group-name" name="group-name" type="text">
+        </div>
+      </fieldset>
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

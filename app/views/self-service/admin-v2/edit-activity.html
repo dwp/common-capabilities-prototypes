@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="list-activities.html" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">
+      Edit Activity
+    </h1>
+    <div class="govuk-inset-text">
+      Activities create a means to create Task templates, where tasks that are created many times may be stored as
+      templates and then simply created by giving the appropriate subject key or citizen guid.
+    </div>
+    <form class="form" method="get" action="edit-activity-attributes">
+      <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="activity-name">
+            Activity name
+          </label>
+          <p class="govuk-hint">This could be the name of your activity. For example 'Find an address'.</p>
+          <input class="govuk-input govuk-input--width-30" id="activity-name" name="activity-name" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="execution-url">
+            Execution Url
+          </label>
+          <p class="govuk-hint">This is a URL that leads to a specific page on the client system.
+            This is a page where the activity will actually be carried out. If it is a multi-page flow, then this is the URL of the first page.</p>
+          <input class="govuk-input govuk-input--width-30" id="execution-url" name="execution-url" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="mustCompleteBy">
+            Must Complete By
+          </label>
+          <p class="govuk-hint">Time in days that the task should be completed in.</p>
+          <input class="govuk-input govuk-input--width-30" id="mustCompleteBy" name="mustCompleteBy" type="number" min="0" max="10">
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
+              Priority
+            </legend>
+            <div id="changed-name-hint" class="govuk-hint">
+              Priority of the task represented by a positive number, one being the most urgent..
+            </div>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="priority-1" name="priority" type="radio" value="1">
+                <label class="govuk-label govuk-radios__label" for="priority-1">
+                  Very High
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="priority-2" name="priority" type="radio" value="2">
+                <label class="govuk-label govuk-radios__label" for="priority-2">
+                  High
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="priority-3" name="priority" type="radio" value="3">
+                <label class="govuk-label govuk-radios__label" for="priority-3">
+                  Medium
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="priority-4" name="priority" type="radio" value="4">
+                <label class="govuk-label govuk-radios__label" for="priority-4">
+                  Low
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="priority-5" name="priority" type="radio" value="5">
+                <label class="govuk-label govuk-radios__label" for="priority-5">
+                  Very Low
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </fieldset>
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

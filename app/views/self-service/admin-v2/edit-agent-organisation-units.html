@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="edit-agent.html" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">
+      Edit agent organisation units
+    </h1>
+    <form class="form" method="get" action="edit-agent">
+      <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="organisation-units">
+            Organisation Units
+          </label>
+          <p class="govuk-hint">Organisation units that the agent works in.</p>
+          <select class="govuk-select" id="organisation-units" name="organisation-units">
+            <option disabled selected value>-- Select an option --</option>
+            <option value="rbc">Retirement, Bereavement and Care</option>
+            <option value="gysp">Get Your State Pension</option>
+            <option value="searchlight">Searchlight</option>
+          </select>
+          <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add</button>
+        </div>
+        <div class="govuk-form-group">
+          <table class="govuk-table" id="organisation-units-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Organisation Unit</th>
+                <th scope="col" class="govuk-table__header">Action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+<script language="JavaScript">
+function addRow() {
+  var organisationUnit = document.getElementById('organisation-units');
+  var table = document.getElementById('organisation-units-table');
+
+  var rowCount = table.rows.length;
+  var row = table.insertRow(rowCount);
+  row.className = 'govuk-table__row';
+
+  var valueCell = row.insertCell(0);
+
+  valueCell.innerHTML = organisationUnit.options[organisationUnit.selectedIndex].text;
+  valueCell.id = 'attribute-value-' + organisationUnit.options[organisationUnit.selectedIndex].text;
+  valueCell.className = 'govuk-table__cell';
+
+  var actionCell = row.insertCell(1);
+  actionCell.innerHTML = '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="removeRow(' + rowCount + ');">Remove</button>';
+  actionCell.className = 'govuk-table__cell';
+}
+
+function removeRow(index) {
+  var table = document.getElementById('organisation-units-table');
+  table.deleteRow(index);
+}
+</script>
+
+{% endblock %}

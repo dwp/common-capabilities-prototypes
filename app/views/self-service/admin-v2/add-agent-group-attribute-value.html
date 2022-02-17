@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="add-agent-attribute.html" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">
+      Add agent group attribute value
+    </h1>
+    <div class="govuk-inset-text">
+      Attributes are used to match agents to tasks. For example, agent roles or location or grade.
+    </div>
+    <form class="form" method="get" action="add-agent-group-attributes">
+      <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="attribute-name">
+            Attribute value
+          </label>
+          <select class="govuk-select" id="attribute-name" name="attribute-name">
+            <option disabled selected value>-- Select an option --</option>
+            <option value="ni">Northern Ireland</option>
+            <option value="eng">England</option>
+          </select>
+        </div>
+      </fieldset>
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

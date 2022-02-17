@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="add-agent-attributes.html" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">
+      Add agent confirmation
+    </h1>
+    <h2 class="govuk-heading-m">
+      Agent details
+    </h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Staff number
+        </dt>
+        <dd class="govuk-summary-list__value">
+            123456
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-agent.html">
+            Change<span class="govuk-visually-hidden"> staff number</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Organisation Units
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Get Your State Pension
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-agent-organisation-units.html">
+            Change<span class="govuk-visually-hidden"> organisation units</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Attributes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Location=Newcastle<br>
+          Role=Decision Maker
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-agent-attributes.html">
+            Change<span class="govuk-visually-hidden"> attributes</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <form method="post" action="list-agents">
+      <button data-prevent-double-click="true" class="govuk-button" role="link" data-module="govuk-button">Save and continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

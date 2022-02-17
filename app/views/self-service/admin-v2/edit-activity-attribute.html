@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <a href="edit-activity-attributes.html" class="govuk-back-link">Back</a>
+        <h1 class="govuk-heading-xl">
+            Edit attribute
+        </h1>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Language
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    &nbsp;
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Values
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    English
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="edit-activity-attribute.html">
+                        Remove<span class="govuk-visually-hidden"> attribute value</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    &nbsp;
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Welsh
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="edit-activity-attribute.html">
+                        Remove<span class="govuk-visually-hidden"> attribute value</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    &nbsp;
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Spanish
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="edit-activity-attribute.html">
+                        Remove<span class="govuk-visually-hidden"> attribute value</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    &nbsp;
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    French
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="edit-activity-attribute.html">
+                        Remove<span class="govuk-visually-hidden"> attribute value</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
+
+{% endblock %}
+

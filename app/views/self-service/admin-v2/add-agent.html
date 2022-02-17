@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="list-agents.html" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">
+      Add agent
+    </h1>
+    <div class="govuk-inset-text">
+      Agents are staff remembers with a particular set of skills who are able to work on Tasks.  They may belong to multiple organisation units and agent groups.
+    </div>
+    <form class="form" method="get" action="add-agent-organisation-units">
+      <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="staff-number">
+            Staff number
+          </label>
+          <p class="govuk-hint">Unique identifier for an Agent, provided by an external domain, in this case DWP People.</p>
+          <input class="govuk-input govuk-input--width-30" id="staff-number" name="staff-number" type="text">
+        </div>
+      </fieldset>
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

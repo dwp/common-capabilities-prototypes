@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="add-attribute-values.html" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">
+      Add attribute confirmation
+    </h1>
+    <h2 class="govuk-heading-m">
+      Attribute details
+    </h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Language
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-attribute.html">
+            Change<span class="govuk-visually-hidden"> attribute name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Values
+        </dt>
+        <dd class="govuk-summary-list__value">
+          English<br>Welsh<br>Spanish<br>French
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-attribute-values.html">
+            Change<span class="govuk-visually-hidden"> attribute value</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <form method="post" action="list-attributes">
+      <button data-prevent-double-click="true" class="govuk-button" role="link" data-module="govuk-button">Save and continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

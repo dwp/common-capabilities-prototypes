@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="add-attribute.html" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">
+      Add attribute values
+    </h1>
+    <form class="form" method="post" action="add-attribute-confirmation">
+      <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="attribute-value">
+            Attribute value
+          </label>
+          <p class="govuk-hint">This is unique matching values for this attribute. This could be location or grade level or language type.  For example 'Welsh' or 'English'.  </p>
+          <input class="govuk-input govuk-input--width-30" type="text" id="attribute-value" name="attribute-value">
+          <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add</button>
+        </div>
+        <div class="govuk-form-group">
+          <table class="govuk-table" id="attribute-values">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Value</th>
+                <th scope="col" class="govuk-table__header">Action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script language="JavaScript">
+function addRow() {
+  var attributeValue = document.getElementById('attribute-value');
+  var table = document.getElementById('attribute-values');
+
+  var rowCount = table.rows.length;
+  var row = table.insertRow(rowCount);
+  row.className = 'govuk-table__row';
+
+  var valueCell = row.insertCell(0);
+  valueCell.innerHTML = attributeValue.value;
+  valueCell.id = 'attribute-value-' + attributeValue.value;
+  valueCell.className = 'govuk-table__cell';
+
+  var actionCell = row.insertCell(1);
+  actionCell.innerHTML = '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="removeRow(' + rowCount + ');">Remove</button>';
+  actionCell.className = 'govuk-table__cell';
+}
+
+function removeRow(index) {
+  var table = document.getElementById('attribute-values');
+  table.deleteRow(index);
+}
+</script>
+
+{% endblock %}

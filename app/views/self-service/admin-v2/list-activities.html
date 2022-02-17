@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-breadcrumbs">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="start.html">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="organisation-unit-dashboard.html">Get Your State Pension Dashboard</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          Activities list
+        </li>        
+      </ol>
+    </div>  
+    <h1 class="govuk-heading-xl">
+      Activities list
+    </h1>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Verify address for NI</td>
+          <td class="govuk-table__cell">
+            <a href="edit-activity.html">Edit</a>
+            <a href="remove-activity.html">Remove</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Verify address for England</td>
+          <td class="govuk-table__cell">
+            <a href="edit-activity.html">Edit</a>
+            <a href="remove-activity.html">Remove</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="add-activity.html">Add activity</a></p>
+  </div>
+</div>
+
+{% endblock %}

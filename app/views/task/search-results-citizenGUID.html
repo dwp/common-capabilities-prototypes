@@ -1,0 +1,151 @@
+{% extends "header-banner-tl.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search results
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Search results</h1>
+
+      <h2 class="govuk-heading-s">Citizen GUID</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            {{ data['citizenGUID'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="change-selection">
+              Change
+              <span class="govuk-visually-hidden">change citizen GUID</span>
+            </a>
+          </dd>
+
+
+
+        </div>
+
+
+
+      </dl>
+
+
+    </div>
+
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+          <h1 class="govuk-heading-xl">
+            Jason Bourne
+            <br>
+            <span class="govuk-body-l">XX 12 XX 34 56</span>
+          </h1>
+
+
+          <p></p>
+
+          <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header ">Task ID</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Organisation</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Allocated on</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-third">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">GMP2232</td>
+      <td class="govuk-table__cell">Residency</td>
+      <td class="govuk-table__cell">12 January 2022</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Active</strong></td>
+      <td class="govuk-table__cell"><a href="#">Unallocate</a> <br> <a href="#">Refer the task</a><br> <a href="#">Cancel task</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">GMP2232</td>
+      <td class="govuk-table__cell">Residency</td>
+      <td class="govuk-table__cell">12 January 2022</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Active</strong></td>
+      <td class="govuk-table__cell"><a href="#">Unallocate</a> <br> <a href="#">Refer the task</a><br> <a href="#">Cancel task</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">GMP332</td>
+      <td class="govuk-table__cell">Residency</td>
+      <td class="govuk-table__cell">12 January 2022</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Suspended</strong></td>
+      <td class="govuk-table__cell"><a href="#">Unsuspend</a> <br> <a href="#">Cancel task</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">DWPP2929</td>
+      <td class="govuk-table__cell">Residency</td>
+      <td class="govuk-table__cell">11 January 2022</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Done</strong></td>
+      <td class="govuk-table__cell"><a href="#">Reopen the task</a> </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">DWP2993</td>
+      <td class="govuk-table__cell">Residency</td>
+      <td class="govuk-table__cell">10 January 2022</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Active</strong></td>
+      <td class="govuk-table__cell"><a href="#">Unallocate</a> <br> <a href="#">Refer the task</a><br> <a href="#">Cancel task</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">GMP3302</td>
+      <td class="govuk-table__cell">Residency</td>
+      <td class="govuk-table__cell">9 January 2022</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Suspended</strong></td>
+      <td class="govuk-table__cell"><a href="#">Unsuspend</a>  <br> <a href="#">Cancel task</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">GMP9332</td>
+      <td class="govuk-table__cell">Residency</td>
+      <td class="govuk-table__cell">19 December 2021</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Suspended</strong></td>
+      <td class="govuk-table__cell"><a href="#">Unsuspend</a> <br> <a href="#">Cancel task</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">DW0929</td>
+      <td class="govuk-table__cell">Residency</td>
+      <td class="govuk-table__cell">8 March 2020</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Done</strong></td>
+      <td class="govuk-table__cell"><a href="#">Reopen the task</a> </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">DWP829</td>
+      <td class="govuk-table__cell">Residency</td>
+      <td class="govuk-table__cell">29 May 2019</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Done</strong></td>
+      <td class="govuk-table__cell"><a href="#">Reopen the task</a> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+        </div>
+
+
+  </div>
+{% endblock %}

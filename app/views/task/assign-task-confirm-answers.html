@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm escalation details
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <span class="govuk-header__logotype-text">
+            Manage tasks
+          </span>
+        </span>
+      </a>
+      <br>
+      <br>
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation  " aria-label="Navigation menu">
+          <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+            <a class="govuk-header__link" href="/my-tasks-using-tl/task-list">
+              My tasks
+            </a>
+          </li>
+
+          <li class="govuk-header__navigation-item ">
+            <a class="govuk-header__link" href="/my-tasks-using-tl/statistics/statistics">
+              My clearances
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+
+</header>
+{% endblock %}
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="assign-this-task">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers before assigning this task</h1>
+
+      <h2 class="govuk-heading-m">Task information</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+              Check non-employment income
+
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Assigned by
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Me
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            HR238615M
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Investigate and verify fostering, rental income and direct payment details
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Priority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Very high
+          </dd>
+
+        </div>
+
+      </dl>
+      <br>
+      <br>
+      <h2 class="govuk-heading-m">Assigned to and notes </h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Assigned to
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{ data['assign-team-member'] | default('Mark Duncan') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="assign-this-task">
+              Change
+              <span class="govuk-visually-hidden"> Assigned to</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Notes
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['more-notes'] | default('No addional notes') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="assign-this-task">
+              Change
+              <span class="govuk-visually-hidden"> note about the task</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+      <br>
+      <br>
+      <h2 class="govuk-heading-m">Reason for assigning task</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reason
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['more-detail'] | default('No addional details') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="assign-this-task">
+              Change
+              <span class="govuk-visually-hidden"> Reason for assigning task</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+      <form action="/my-tasks-using-tl/task-list-assign-paper-claim#in-progress" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Assign task
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

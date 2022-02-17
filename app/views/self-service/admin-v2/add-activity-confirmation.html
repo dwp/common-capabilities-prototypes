@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="add-activity-attributes.html" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">
+      Add activity confirmation
+    </h1>
+    <h2 class="govuk-heading-m">
+      Activity details
+    </h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Activity name
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Verify an address
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-activity.html">
+            Change<span class="govuk-visually-hidden"> activity name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Execution url
+        </dt>
+        <dd class="govuk-summary-list__value">
+          http://localhost/verify-an-address
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-activity.html">
+            Change<span class="govuk-visually-hidden"> execution url</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Must complete by
+        </dt>
+        <dd class="govuk-summary-list__value">
+          10 days
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-activity.html">
+            Change<span class="govuk-visually-hidden"> must complete by</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Priority
+        </dt>
+        <dd class="govuk-summary-list__value">
+          High
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-activity.html">
+            Change<span class="govuk-visually-hidden"> priority</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Attributes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Location=Newcastle<br>
+          Role=Decision Maker
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="add-activity-attributes.html">
+            Change<span class="govuk-visually-hidden"> attributes</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <form method="post" action="list-activities">
+      <button data-prevent-double-click="true" class="govuk-button" role="link" data-module="govuk-button">Save and continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

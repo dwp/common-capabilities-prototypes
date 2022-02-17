@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<main class="govuk-template__body">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-xl">
+                Organisation units
+            </h1>
+
+            <div class="govuk-inset-text">
+                Where Organisation Unit is a part of the DWP organisation hierarchy, for example Retirement, Bereavement and
+                Care or Get Your State Pension
+            </div>
+
+
+            <p class="govuk-!-padding-bottom-8"> View, modify or create attributes, agent profiles and activities for your
+                organisation unit.</p>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Name</th>
+                    <th scope="col" class="govuk-table__header">Actions</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Retirement, Bereavement and Care</td>
+                    <td class="govuk-table__cell"><a href="organisation-unit-dashboard.html">View dashboard</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Get Your State Pension</td>
+                    <td class="govuk-table__cell"><a href="organisation-unit-dashboard.html">View dashboard</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Searchlight</td>
+                    <td class="govuk-table__cell"><a href="organisation-unit-dashboard.html">View dashboard</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}
