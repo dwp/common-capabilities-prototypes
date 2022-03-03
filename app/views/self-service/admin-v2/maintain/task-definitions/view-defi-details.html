@@ -1,0 +1,129 @@
+{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check task definition details
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="added-task-defi">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+      {{ data['task-defi-name'] | default('Verify address for NI template') }}
+      </h1>
+      <form class="form"  method="post" action="added-task-defi">
+        <div class="govuk-form-group">
+
+          <br>
+          <p><strong class="govuk-heading-m">Task</strong></p>
+
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['task-defi-name'] | default('Verify address for NI template') }}
+          </dd>
+
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Display name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['agent-task-name'] | default('Verify address') }}
+          </dd>
+
+        </div>
+
+
+      </dl>
+      <br>
+      <p><strong class="govuk-heading-m">Definition</strong></p>
+              <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                  Priority
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-priority'] | default('Very high') }}
+                </dd>
+
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half" >
+                  Execution URL
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  SLA (days)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-sla'] | default('2') }}
+                </dd>
+
+              </div>
+
+            </dl>
+
+      <br>
+      <p><strong class="govuk-heading-m">Matching attributes</strong></p>
+              <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                  Attributes
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-attribute'] | default('Decision maker') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                  Type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['task-attribute-property'] | default('Welsh, English') }}
+                </dd>
+
+              </div>
+
+            </dl>
+
+
+        <br><br>
+        <button class="govuk-button" data-module="govuk-button">Back to list view</button>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

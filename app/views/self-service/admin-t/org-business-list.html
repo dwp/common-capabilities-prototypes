@@ -1,0 +1,64 @@
+{% extends "admin-header.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Orgnaisations and benefits on DWP Task
+{% endblock %}
+
+
+{% block content %}
+<main class="govuk-template__body">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <h1 class="govuk-heading-xl">
+                Manage your organisation unit or business area
+            </h1>
+
+            <!-- <div class="govuk-inset-text">
+                Where Organisation Unit is a part of the DWP organisation hierarchy, for example Retirement, Bereavement and
+                Care or Get Your State Pension
+            </div> -->
+
+
+            <p class="govuk-!-padding-bottom-8">View, modify or create attributes, agent profiles and acitivies (task matching templates) for your organisation unit or business area.</p>
+
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-three-quarters">Name</th>
+                    <th scope="col" class="govuk-table__header">Actions</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Retirement, Bereavement and Care</td>
+                    <td class="govuk-table__cell"><a href="#">View dashboard</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Get Your State Pension</td>
+                    <td class="govuk-table__cell"><a href="organisation-unit-dashboard.html">View dashboard</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Searchlight</td>
+                    <td class="govuk-table__cell"><a href="#">View dashboard</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+    <p class="govuk-heading-m govuk-!-padding-top-8 contact-panel">Can't see your organisation or business area?   </p>
+
+    <p> If you’ve got a question about how to add or manage your organisation unit or business area. <a href="get-in-touch"">contact the team</a></p>
+
+</main>
+
+
+{% endblock %}

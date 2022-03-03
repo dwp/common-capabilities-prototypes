@@ -1,0 +1,42 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Setup complete confirmation
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Setup complete</h1>
+        <div class="govuk-panel__body">
+          Your service name: <br><strong>{{ data['business-service-name'] | default('Business service name') }}</strong>
+        </div>
+      </div>
+
+      <br>
+
+      <p>
+        You can now add and modify tasks, agents and attributes using your <a href="/self-service/admin-self-service-1/maintain/dashboard"> maintainace dashboard </a> to manage and configure your DWP manage task service.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+      <a href="/self-service/admin-self-service-1/maintain/added-organisations-maintain"><button class="govuk-button" data-module="govuk-button">
+          View your organisations or business areas
+      </button></a>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p></p>
+      <p>We will contact you either to confirm your setup, or ask for more information.</p>
+      <!-- <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p> -->
+
+
+    </div>
+  </div>
+
+{% endblock %}

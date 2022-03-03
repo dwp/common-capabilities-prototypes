@@ -1,0 +1,86 @@
+{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Modify agent information
+{% endblock %}
+
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="modify-agent-details">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form class="form" action="modify-agent-details" method="post">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+              Modify agents information
+            </h1>
+
+              <fieldset class="govuk-fieldset">
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="agent-name">
+                  Full name
+                </label>
+
+                <input class="govuk-input" id="agent-name" name="agent-name" type="text" value="{{ data['agent-name'] | default('Jason Bourne') }}"></div>
+
+                <div class="govuk-form-group">
+                <label class="govuk-label" for="agent-keyid">
+                  Agent key or ID
+                </label>
+                <p class="govuk-heading-m">{{ data['agent-keyid'] | default('ID2232DS') }}</p>
+                <!-- <input class="govuk-input govuk-!-width-two-thirds" id="agent-keyid" name="agent-keyid" type="text"></div> -->
+                <label class="govuk-label" for="sort">
+                Select agent status
+                <p class="govuk-hint">It is the primary property for this attribute. </p>
+                </label>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="remove-agent" name="agent-status" type="radio" value="Active" {{ checked("agent-status", "Active") }}>
+                  <label class="govuk-label govuk-radios__label" for="agent-status">
+                    Active
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="agent-status-2" name="agent-status" type="radio" value="Inactive" {{ checked("agent-status", "Inactive") }}>
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    Inactive
+                  </label>
+                </div>
+              </div>
+
+
+              </fieldset>
+        </div>
+        </div>
+        <br>
+        <br>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

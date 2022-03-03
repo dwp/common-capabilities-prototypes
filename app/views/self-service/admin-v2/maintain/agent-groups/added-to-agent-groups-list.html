@@ -1,0 +1,126 @@
+{% extends "admin-header-with-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent profiles
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").addClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+    <!-- Breadcrumbs for the page -->
+
+    <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+      <ol class="govuk-breadcrumbs__list">
+
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard-agAdded">Dashboard</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Agent groups</a>
+        </li>
+
+      </ol>
+    </div>
+</div>
+</div>
+
+
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Agent group added
+    </h3>
+    <p class="govuk-body" style="max-width:100%;">
+    <strong>Group name: </strong> {{ data['group-name'] | default('New Claims Group') }} <br>
+    <strong>Attributes: </strong> {{ data['group-attributes'] | default('Decision maker') }}<br>
+    <strong>Agents: </strong> {{ data['agents-0'] | default('James Bond') }}, {{ data['agents-1'] | default('James Bond') }}, {{ data['agents-2'] | default('James Bond') }}
+
+    </p>
+    </div>
+</div>
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Agent groups
+        <p class="govuk-hint"></p>
+
+      </h1>
+
+      <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" style="width:22%">Name </th>
+          <th scope="col" class="govuk-table__header" style="width:32%">Agents</th>
+          <th scope="col" class="govuk-table__header" style="width:32%">Attributes</th>
+          <th scope="col" class="govuk-table__header" >Actions</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">New Claims Team 1</td>
+            <td class="govuk-table__cell">Jason Bourne, James Bond, Jack Reacher</td>
+            <td class="govuk-table__cell"> Role - Decision maker</td>
+            <td class="govuk-table__cell"><a href="modify-agent-details">Modify</a> &nbsp; <a href="remove-agent">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Claims Backup Team</td>
+            <td class="govuk-table__cell">Santa C, Adam Bond, Jack Reacher, Andy R</td>
+            <td class="govuk-table__cell">Skill - New Claims, Role - Processing agent</td>
+            <td class="govuk-table__cell" ><a href="modify-agent-details">Modify</a> &nbsp; <a href="remove-agent">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Specialists </td>
+            <td class="govuk-table__cell">Hally Bond, Jack Reacher</td>
+            <td class="govuk-table__cell">Role - Specialist</td>
+            <td class="govuk-table__cell" ><a href="modify-agent-details">Modify</a> &nbsp; <a href="remove-agent">Remove</a></td>
+          </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['group-name'] | default('ID2232DS') }}</td>
+          <td class="govuk-table__cell"> {{ data['agents-0'] | default('James Bond') }}, {{ data['agents-1'] | default('James Bond') }}, {{ data['agents-2'] | default('James Bond') }}</td>
+          <td class="govuk-table__cell">{{ data['group-attributes'] | default('Decision maker') }}</td>
+          <td class="govuk-table__cell" ><a href="modify-agent-details">Modify</a> &nbsp; <a href="remove-agent">Remove</a></td>
+        </tr>
+
+      </tbody>
+      </table>
+
+      <p><a href="add-agent">Add agent profile</a></p>
+      <br><br>
+      <a href="/self-service/admin-v2/maintain/dashboard-agAdded"><button class="govuk-button" data-module="govuk-button">Go to dashboard</button></a>
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock %}

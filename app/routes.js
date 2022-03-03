@@ -4,6 +4,16 @@ const router = express.Router()
 
 
 // Add your routes here - above the module.exports line
+
+// GET SPRINT NAME - useful for relative templates
+router.use('/', (req, res, next) => {
+  res.locals.currentURL = req.originalUrl; //current screen
+  res.locals.prevURL = req.get('Referrer'); // previous screen
+console.log('previous page is: ' + res.locals.prevURL + " and current page is " + req.url + " " + res.locals.currentURL );
+  next();
+});
+
+
 // Branching
 router.post('/address-service/address-lookups', function (req, res) {
   // Get the answer from session data
@@ -396,6 +406,27 @@ router.post('/task/search-task', function (req, res) {
   }
   else if (searchTerm === 'citizenGUID') {
     res.redirect('/task/search-results-citizenGUID')
+  }
+
+
+})
+
+
+
+
+router.post('/self-service/admin-v2/attributes/add-attributes-add-another', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const removeTaskDefinition = req.session.data['add-another-attribute']
+
+  if (removeTaskDefinition === 'yes') {
+    res.redirect('/self-service/admin-v2/attributes/add-attributes')
+  }
+
+  else if (removeTaskDefinition === 'no') {
+    res.redirect('/self-service/admin-v2/attributes/added-to-attributes-list')
   }
 
 

@@ -1,0 +1,161 @@
+{% extends "admin-header.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Common attributes
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
+
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list">
+
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/org-business-list">Organisation units or business areas</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Common attributes</a>
+            </li>
+
+          </ol>
+        </div>
+  </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        Attribute added
+      </h3>
+      <p class="govuk-body"><strong>Attribute name: </strong>{{ data['attribute-name'] | default('Address verify for England and Wales') }} <br>
+      <strong>Values: </strong> {{ data['value-0'] | default('Welsh') }}, {{ data['value-1'] | default('English') }}, {{ data['value-2'] | default('Irish') }}
+      <!-- <strong>Status: </strong> {{ data['attribute-status'] | default('Active') }} -->
+      </p>
+
+      </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Attributes list
+      </h1>
+
+
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" style="width:30%" >Name</th>
+        <th scope="col" class="govuk-table__header" style="width:50%" >Value(s)</th>
+        <th scope="col" class="govuk-table__header" >Actions</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Location </td>
+        <td class="govuk-table__cell">Newcastle</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Location </td>
+        <td class="govuk-table__cell">London</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Location </td>
+        <td class="govuk-table__cell">Leeds</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Language </td>
+        <td class="govuk-table__cell">English</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Language </td>
+        <td class="govuk-table__cell">Welsh</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Language </td>
+        <td class="govuk-table__cell">Irish</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Role </td>
+        <td class="govuk-table__cell">Decision Maker</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Role </td>
+        <td class="govuk-table__cell">Specialist</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Role  </td>
+        <td class="govuk-table__cell">Processing agent</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Role </td>
+        <td class="govuk-table__cell">Telephony</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Level </td>
+        <td class="govuk-table__cell">Grade 5</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Level </td>
+        <td class="govuk-table__cell">Grade 7, Decision Maker</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Skill </td>
+        <td class="govuk-table__cell">New Claims</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Skill </td>
+        <td class="govuk-table__cell">Recovery</td>
+        <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+      </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ data['attribute-name'] | default('Language for England and Wales') }}</td>
+      <td class="govuk-table__cell"> {{ data['value-0'] }} , {{ data['value-1'] }} , {{ data['value-2'] }}</td>
+      <td class="govuk-table__cell" ><a href="modify-agent-details">Modify </a> &nbsp; <a href="remove-agent">Remove</a></td>
+
+
+    </tr>
+
+  </tbody>
+</table>
+
+<p><a href="add-attributes">Add attribute</a></p>
+<br><br>
+<!-- <a href="/self-service/admin-self-service-1/setup-task-list-added-org-attri"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a> -->
+
+    </div>
+  </div>
+
+{% endblock %}

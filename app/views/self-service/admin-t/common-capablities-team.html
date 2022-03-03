@@ -1,0 +1,84 @@
+{% extends "admin-header.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP Task team - DWP Task Manage
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+<main class="govuk-template__body">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <h1 class="govuk-heading-xl">
+              DWP digital team
+            </h1>
+            <p>The Common Capablities team at the DWP maintains this DWP Task service.</p>
+
+
+            <p class="govuk-!-padding-bottom-6">If you want to contact the team you can <a href="https://join.slack.com/share/enQtMzE3MDI3NTM0MDM0MS1hZDU3ZGQwYTMzNTA5MTUyMmJjODQ2MmZmN2VhZDcwMDg2YWRmNTE5NzFhMWJlYTdlZDYxOWJlODFjOThlNjJj">get in touch via Slack </a> or contact a team member.</p>
+
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h1 class="govuk-heading-l">
+            Members
+          </h1>
+          <ul class="govuk-list govuk-list--bullet">
+          <li>
+              Martin Stapley - Delivery Manager
+          </li>
+          <li>
+              Kashif Chaudhury - Product Owner
+          </li>
+          <li>
+              Tom Romer - Lead Technical Architect
+          </li>
+          <li>
+              Jeff Douglass - Lead Engineer
+          </li>
+          <li>
+              Miriam Macleod - Business Analyst
+          </li>
+          <li>
+              Andy Hardy - Senior Software Engineer
+          </li>
+          <li>
+              Phil Merrilee - Senior Software Engineer
+          </li>
+          <li>
+              Alex Wintle - Software Engineer Apprentice
+          </li>
+          <li>
+              Tejsingh Godake - Test Engineer
+          </li>
+          <li>
+              Sunil Sethumadhavan - Test Engineer
+          </li>
+          <li>
+              Helen Doyle - User Researcher
+          </li>
+          <li>
+              Sarat Kumar	- Interaction Designer
+          </li>
+
+        </ul>
+
+        </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

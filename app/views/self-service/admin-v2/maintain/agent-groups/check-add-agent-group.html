@@ -1,0 +1,119 @@
+{% extends "admin-header-with-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check agent group detials and confirm - Agent group
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
+
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list ">
+
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard-agentAdded">Dashboard</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agent-groups/agent-groups-list">Agent groups</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agent-groups/add-agent-group">Add agent group</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Check and confirm</a>
+            </li>
+
+          </ol>
+        </div>
+  </div>
+  </div>
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check and confirm
+      </h1>
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+      <form class="form"  method="post" action="added-to-agent-groups-list">
+        <div class="govuk-form-group">
+
+          <!-- <p><strong class="govuk-heading-m">Agent details</strong></p> -->
+
+          <p class="govuk-heading-m">
+            Agent group details &nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="govuk-link" href="add-agent-group" >
+            <span class="govuk-body">Change</span>
+          </a>
+          </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+        <dl class="govuk-summary-list">
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Group name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['group-name'] | default('ID2232DS') }}
+            </dd>
+
+          </div>
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Agent attributes
+                </dt>
+                <dd class="govuk-summary-list__value" >
+                  {{ data['group-attributes' ] | default('Decision maker') }}
+                </dd>
+
+
+
+              </div>
+
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" >
+                Agents
+              </dt>
+              <dd class="govuk-summary-list__value" >
+                {{ data['agents-0'] | default('James Bond') }}, {{ data['agents-1'] | default('James Bond') }}, {{ data['agents-2'] | default('James Bond') }},
+              </dd>
+        
+
+
+            </div>
+
+
+            </dl>
+
+        <br><br>
+        <button class="govuk-button" data-module="govuk-button">Confirm and create agent group</button>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

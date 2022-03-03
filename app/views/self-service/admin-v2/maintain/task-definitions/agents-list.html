@@ -1,0 +1,90 @@
+{% extends "admin-header-with-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent profiles list
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <!-- Breadcrumbs for the page -->
+
+      <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+        <ol class="govuk-breadcrumbs__list">
+
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Dashboard</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Agent profiles</a>
+          </li>
+
+        </ol>
+      </div>
+</div>
+</div>
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Agent profiles
+        <p class="govuk-hint"></p>
+
+      </h1>
+
+      <table class="govuk-table">
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" style="width:20%">Staff number </th>
+        <th scope="col" class="govuk-table__header" style="width:45%">Attributes</th>
+        <th scope="col" class="govuk-table__header" style="width:15%">Status</th>
+        <th scope="col" class="govuk-table__header" >Actions</th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">JKM32DS</td>
+          <td class="govuk-table__cell">Role - Decision maker, Grade - Level 5</td>
+          <td class="govuk-table__cell"> Active</td>
+          <td class="govuk-table__cell"><a href="modify-agent-details">Modify profile</a> &nbsp; <a href="remove-agent">Remove</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">ID122DS</td>
+          <td class="govuk-table__cell">Skill - New Claims, Role - Processing agent</td>
+          <td class="govuk-table__cell"> Inactive</td>
+          <td class="govuk-table__cell" ><a href="modify-agent-details">Modify profile</a> &nbsp; <a href="remove-agent">Remove</a></td>
+
+        </tr>
+
+      </tbody>
+      </table>
+
+      <p><a href="add-agent">Add agent profile</a></p>
+      <br><br>
+      <a href="/self-service/admin-self-service-1/maintain/dashboard"><button class="govuk-button" data-module="govuk-button">Continue to summary page</button></a>
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,153 @@
+{% extends "admin-header-with-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <!-- Breadcrumbs for the page -->
+
+      <div class="govuk-breadcrumbs" style="background:#ffffff;">
+        <ol class="govuk-breadcrumbs__list">
+
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Dashboard</a>
+          </li>
+
+        </ol>
+      </div>
+
+</div>
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <!-- <span class="govuk-hint">Last updated: 16 March 2022 </span> -->
+    <h1 class="govuk-heading-xl">
+      Dashboard
+    </h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-one-half govuk-!-padding-left-0">
+      <div class="govuk-!-padding-4" style="border:1px solid #1d70b8; background:#1d70b8;">
+        <h2 class="govuk-!-font-size-80 govuk-!-font-weight-bold govuk-body" style="color:#ffffff;">
+            2
+          <p class="govuk-body-l" ><a href="list-attributes.html" style="color:#ffffff;">Attributes</a></p>
+        </h2>
+        <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"  style="border-color:#ffffff;">
+
+        <p style="color:#ffffff;">Read about <a href="list-attributes.html" style="color:#ffffff;">attributes</a></p> -->
+
+
+        <!-- <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#ffffff;">
+            <span class="govuk-details__summary-text">
+              Help with attributes
+            </span>
+          </summary>
+          <div class="govuk-details__text" style="color:#ffffff;">
+            Attributes are key-value pairs of characteristics that an Agent or Task may have.  By decorating both an Agent and Task with the appropriate
+            attribute language value then they may be matched.
+          </div>
+        </details> -->
+
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-half ">
+      <div class=" govuk-!-padding-4" style="border:1px solid #1d70b8; background:#1d70b8;">
+        <h2 class="govuk-!-font-size-80 govuk-!-font-weight-bold govuk-body" style="color:#ffffff;">
+          2
+          <p class="govuk-body-l"><a href="list-activities.html" style="color:#ffffff; ">Activities</a></p>
+        </h2>
+        <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"  style="border-color:#ffffff;">
+
+        <p style="color:#ffffff;">Read about <a href="list-attributes.html" style="color:#ffffff;">activities</a></p> -->
+
+        <!-- <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#ffffff;">
+            <span class="govuk-details__summary-text">
+              Help with activities
+            </span>
+          </summary>
+          <div class="govuk-details__text" style="color:#ffffff;">
+            Activities create a means to create Task templates, where tasks that are created many times may be stored as templates and then simply
+            created by giving the appropriate subject key or citizen guid.
+          </div>
+        </details> -->
+      </div>
+    </div>
+    <div class="govuk-grid-column-full">
+      <hr class="govuk-section-break govuk-section-break--hidden govuk-section-break--m">
+    </div>
+    <div class="govuk-grid-column-one-half govuk-!-padding-left-0">
+      <div class="govuk-!-padding-4" style="border:1px solid #1d70b8; background:#1d70b8;">
+        <h2 class="govuk-!-font-size-80 govuk-!-font-weight-bold govuk-body" style="color:#ffffff;">
+          2
+          <p class="govuk-body-l"><a href="list-agents.html" style="color:#ffffff;">Agent profiles</a></p>
+        </h2>
+        <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"  style="border-color:#ffffff;"> -->
+
+        <!-- <p style="color:#ffffff;" class="govuk-!-font-weight-bold">Agents</p>
+        <p class="govuk-hint" style="color:#ffffff;">Agents are staff remembers with a particular set of skills who are able to work on Tasks. They may belong to multiple organisation units
+        and agent groups.</p>
+        <br> -->
+
+        <!-- <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#ffffff;">
+            <span class="govuk-details__summary-text">
+              Help with agents
+            </span>
+          </summary>
+          <div class="govuk-details__text" style="color:#ffffff;">
+            Agents are staff remembers with a particular set of skills who are able to work on Tasks. They may belong to multiple organisation units
+            and agent groups.
+          </div>
+        </details> -->
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-half ">
+      <div class="govuk-!-padding-4" style="border:1px solid #1d70b8; background:#1d70b8;">
+        <h2 class="govuk-!-font-size-80 govuk-!-font-weight-bold govuk-body" style="color:#ffffff;">
+          2
+          <p class="govuk-body-l"><a href="list-agent-groups.html" style="color:#ffffff;">Agent groups</a></p>
+        </h2>
+        <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"  style="border-color:#ffffff;">
+
+        <p style="color:#ffffff;">Read about <a href="list-attributes.html" style="color:#ffffff;">agent groups</a></p> -->
+
+
+        <!-- <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#ffffff;">
+            <span class="govuk-details__summary-text">
+              Help with agent groups
+            </span>
+          </summary>
+          <div class="govuk-details__text" style="color:#ffffff;">
+            Agent Groups is a mechanism for grouping agents together who have the same skill profile.  Agents may then claim tasks as members of
+            the group using their group attributes.
+          </div>
+        </details> -->
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<!-- Help section -->
+<p class="govuk-heading-m">Need help?</p>
+<p >View <a href="terms-and-glossary.html" >Terms and glossary</a></p>
+
+
+
+
+{% endblock %}

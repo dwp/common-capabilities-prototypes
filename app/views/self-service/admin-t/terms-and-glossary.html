@@ -1,0 +1,92 @@
+{% extends "admin-header.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Terms and glossary - DWP Task Manage
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+<main class="govuk-template__body">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <h1 class="govuk-heading-xl">
+              Terms and glossary
+            </h1>
+            <p class="govuk-body-l"></p>
+        </div>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <div class="govuk-grid-row">
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+          <div class="govuk-grid-column-three-quarters">
+              <h1 class="govuk-heading-l">
+                Attributes
+              </h1>
+              <p>Attributes are key-value pairs of characteristics that an Agent or Task may have.  By decorating both an Agent and Task with the appropriate
+              attribute language value then they may be matched.</p>
+          </div>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-three-quarters">
+          <h1 class="govuk-heading-l">
+            Activities
+          </h1>
+          <p>Activities create a means to create Task templates, where tasks that are created many times may be stored as templates and then simply
+          created by giving the appropriate subject key or citizen guid.</p>
+      </div>
+
+    </div>
+
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-three-quarters">
+          <h1 class="govuk-heading-l">
+            Agent profiles
+          </h1>
+          <p>Agents are staff remembers with a particular set of skills who are able to work on Tasks. They may belong to multiple organisation units
+          and agent groups.</p>
+      </div>
+
+    </div>
+
+
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-three-quarters">
+          <h1 class="govuk-heading-l">
+            Agent groups
+          </h1>
+          <p>Agent groups is a mechanism for grouping agents together who have the same skill profile.  Agents may then claim tasks as members of
+          the group using their group attributes..</p>
+      </div>
+
+    </div>
+
+</main>
+
+
+{% endblock %}

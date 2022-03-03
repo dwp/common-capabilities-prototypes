@@ -1,0 +1,95 @@
+{% extends "admin-header-with-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent groups list
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").addClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <!-- Breadcrumbs for the page -->
+
+      <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+        <ol class="govuk-breadcrumbs__list ">
+
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard-agentAdded">Dashboard</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Agent groups</a>
+          </li>
+
+        </ol>
+      </div>
+</div>
+</div>
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Agent groups
+        <p class="govuk-hint"></p>
+
+      </h1>
+
+      <table class="govuk-table">
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" style="width:22%">Name </th>
+        <th scope="col" class="govuk-table__header" style="width:32%">Agents</th>
+        <th scope="col" class="govuk-table__header" style="width:32%">Attributes</th>
+        <th scope="col" class="govuk-table__header" >Actions</th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">New Claims Team 1</td>
+          <td class="govuk-table__cell">Jason Bourne, James Bond, Jack Reacher</td>
+          <td class="govuk-table__cell"> Role - Decision maker</td>
+          <td class="govuk-table__cell"><a href="modify-agent-details">Modify</a> &nbsp; <a href="remove-agent">Remove</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Claims Backup Team</td>
+          <td class="govuk-table__cell">Santa C, Adam Bond, Jack Reacher, Andy R</td>
+          <td class="govuk-table__cell">Skill - New Claims, Role - Processing agent</td>
+          <td class="govuk-table__cell" ><a href="modify-agent-details">Modify</a> &nbsp; <a href="remove-agent">Remove</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Specialists </td>
+          <td class="govuk-table__cell">Hally Bond, Jack Reacher</td>
+          <td class="govuk-table__cell">Role - Specialist</td>
+          <td class="govuk-table__cell" ><a href="modify-agent-details">Modify</a> &nbsp; <a href="remove-agent">Remove</a></td>
+        </tr>
+
+      </tbody>
+      </table>
+
+      <p><a href="add-agent-group">Add agent group</a></p>
+      <br><br>
+      <a href="/self-service/admin-v2/maintain/dashboard-agentAdded"><button class="govuk-button" data-module="govuk-button">Go to dashboard</button></a>
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock %}
