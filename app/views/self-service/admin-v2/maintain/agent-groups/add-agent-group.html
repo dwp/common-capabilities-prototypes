@@ -56,7 +56,7 @@
                   <label class="govuk-fieldset__legend--s govuk-!-font-weight-bold" for="group-name">
                     Group name
                   </label>
-                  <p class="govuk-hint">The name of the group in your organisation unit</p>
+                  <p class="govuk-hint">The name of the group in your business area</p>
                   <input class="govuk-input govuk-input--width-30" id="group-name" name="group-name" type="text" value="{{ data['group-name'] }}">
 
                 </div>
@@ -87,11 +87,81 @@
 
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
+
+        <label class="govuk-fieldset__legend--l govuk-!-font-weight-bold" for="agents">
+          Select agents
+        </label>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+        <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Agents selected: {labelIndex}" data-add-remove-block-remove-message="Attribute {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attributes have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
+
+        <div class="add-remove-block__status visuallyhidden" role="status" aria-live=""></div>
+
+        <ul class="add-remove-block__list" style="padding-left:0px;">
+          <li class="add-remove-block__item" data-item-index="0" style="list-style-type: none;">
+
+            <br>
+          <label class="form-label-bold govuk-!-font-weight-bold" for="condition-0">Select agent</label> <br>
+            <!-- <input class="govuk-input  govuk-!-width-two-thirds" type="text" id="value-0" name="value-0"> -->
+            <select class="govuk-select govuk-!-width-two-thirds" id="agents-0" name="agents-0">
+            <option disabled selected value>-- Select an agent --</option>
+            <option value="Peter Parker">JKM32DS - Peter Parker</option>
+            <option value="Bruce Wayne">ID122DS - Bruce Wayne</option>
+            <option value="Jean Teofil">23DFDF - Jean Teofil</option>
+            <option value="Artemi Shigeru">KDFI33F - Artemi Shigeru</option>
+            <option value="Alec Juliano">KDWP229 - Alec Juliano</option>
+            <option value="Phaidra Radoslava">ID122DK - Phaidra Radoslava</option>
+            <option value="Alban Vikenti">JKM3D2DS - Alban Vikenti</option>
+            <option value="Aleksandar Lidia">DID122DS - Aleksandar Lidia</option>
+            </select>
+            &nbsp;
+            <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+              Remove agent
+            </button>
+            <hr class="govuk-section-break govuk-section-break-m govuk-section-break--visible">
+
+          </li></ul>
+
+        <div class="button-combo gutter-half-bottom">
+          <button type="button" class="add-remove-block__add-trigger govuk-button govuk-button--secondary">Select another agent</button>
+          <!-- <button type="button" class="add-remove-block__remove-all-trigger button-combo__right govuk-link">Remove all values</button> -->
+        </div>
+
+        <script type="text/x-template" class="add-remove-block__item-tpl">
+
+          <li class="add-remove-block__item" data-item-index="{index}" style="list-style-type: none;">
+
+            <br>
+            <label class="form-label-bold govuk-!-font-weight-bold" for="condition-{index}">Select agent </label><br>
+
+            <select class="govuk-select govuk-!-width-two-thirds" id="sort" name="agents-{index}">
+              <option disabled selected value>-- Select an agent --</option>
+              <option value="Peter Parker">JKM32DS - Peter Parker</option>
+              <option value="Bruce Wayne">ID122DS - Bruce Wayne</option>
+              <option value="Jean Teofil">23DFDF - Jean Teofil</option>
+              <option value="Artemi Shigeru">KDFI33F - Artemi Shigeru</option>
+              <option value="Alec Juliano">KDWP229 - Alec Juliano</option>
+              <option value="Phaidra Radoslava">ID122DK - Phaidra Radoslava</option>
+              <option value="Alban Vikenti">JKM3D2DS - Alban Vikenti</option>
+              <option value="Aleksandar Lidia">DID122DS - Aleksandar Lidia</option>
+            </select> &nbsp;
+            <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+              Remove agent
+            </button>
+
+            <hr class="govuk-section-break govuk-section-break-m govuk-section-break--visible">
+
+          </li>
+        </script>
+      </div>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Select agent characteristics
+                Select group characteristics
               </h1>
             </legend>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
@@ -297,8 +367,6 @@
                 </div>
 
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
-                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
 <!--
                 <div class="govuk-grid-row">
@@ -374,72 +442,7 @@
                 }
                 </script> -->
 
-                <label class="govuk-fieldset__legend--l govuk-!-font-weight-bold" for="agents">
-                  Select agents
-                </label>
-                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
-                <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Agents selected: {labelIndex}" data-add-remove-block-remove-message="Attribute {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attributes have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
-
-                <div class="add-remove-block__status visuallyhidden" role="status" aria-live=""></div>
-
-                <ul class="add-remove-block__list" style="padding-left:0px;">
-                  <li class="add-remove-block__item" data-item-index="0" style="list-style-type: none;">
-
-                    <br>
-                  <label class="form-label-bold govuk-!-font-weight-bold" for="condition-0">Select agent</label> <br>
-                    <!-- <input class="govuk-input  govuk-!-width-two-thirds" type="text" id="value-0" name="value-0"> -->
-                    <select class="govuk-select govuk-!-width-two-thirds" id="agents-0" name="agents-0">
-                    <option disabled selected value>-- Select an agent --</option>
-                    <option value="Peter Parker">JKM32DS - Peter Parker</option>
-                    <option value="Bruce Wayne">ID122DS - Bruce Wayne</option>
-                    <option value="Jean Teofil">23DFDF - Jean Teofil</option>
-                    <option value="Artemi Shigeru">KDFI33F - Artemi Shigeru</option>
-                    <option value="Alec Juliano">KDWP229 - Alec Juliano</option>
-                    <option value="Phaidra Radoslava">ID122DK - Phaidra Radoslava</option>
-                    <option value="Alban Vikenti">JKM3D2DS - Alban Vikenti</option>
-                    <option value="Aleksandar Lidia">DID122DS - Aleksandar Lidia</option>
-                    </select>
-                    &nbsp;
-                    <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
-                      Remove agent
-                    </button>
-                    <hr class="govuk-section-break govuk-section-break-m govuk-section-break--visible">
-
-                  </li></ul>
-
-                <div class="button-combo gutter-half-bottom">
-                  <button type="button" class="add-remove-block__add-trigger govuk-button govuk-button--secondary">Select another agent</button>
-                  <!-- <button type="button" class="add-remove-block__remove-all-trigger button-combo__right govuk-link">Remove all values</button> -->
-                </div>
-
-                <script type="text/x-template" class="add-remove-block__item-tpl">
-
-                  <li class="add-remove-block__item" data-item-index="{index}" style="list-style-type: none;">
-
-                    <br>
-                    <label class="form-label-bold govuk-!-font-weight-bold" for="condition-{index}">Select agent </label><br>
-
-                    <select class="govuk-select govuk-!-width-two-thirds" id="sort" name="agents-{index}">
-                      <option disabled selected value>-- Select an agent --</option>
-                      <option value="Peter Parker">JKM32DS - Peter Parker</option>
-                      <option value="Bruce Wayne">ID122DS - Bruce Wayne</option>
-                      <option value="Jean Teofil">23DFDF - Jean Teofil</option>
-                      <option value="Artemi Shigeru">KDFI33F - Artemi Shigeru</option>
-                      <option value="Alec Juliano">KDWP229 - Alec Juliano</option>
-                      <option value="Phaidra Radoslava">ID122DK - Phaidra Radoslava</option>
-                      <option value="Alban Vikenti">JKM3D2DS - Alban Vikenti</option>
-                      <option value="Aleksandar Lidia">DID122DS - Aleksandar Lidia</option>
-                    </select> &nbsp;
-                    <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
-                      Remove agent
-                    </button>
-
-                    <hr class="govuk-section-break govuk-section-break-m govuk-section-break--visible">
-
-                  </li>
-                </script>
-              </div>
 
         </div>
 

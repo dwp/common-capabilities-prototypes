@@ -68,7 +68,7 @@
     <strong>Task start page:</strong> {{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }} <br>
     <strong>Completion time (days):</strong> {{ data['task-sla'] | default('4') }}
     <br>
-    <strong>Task matching attributes:</strong> {{ data['matching-attributes'] | default('Decision maker') }} ({{ data['task-attribute-property'] | default('Welsh, English') }})
+    <strong>Task matching characteristics:</strong> {{ data['matching-attributes'] | default('Decision maker') }} ({{ data['task-attribute-property'] | default('Welsh, English') }})
     </p>
     </div>
 </div>
@@ -94,12 +94,12 @@
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Award updates (SRBs)</td>
         <td class="govuk-table__cell">https://sp.dwp.gov.uk/3434asdf/award-review</td>
-        <td class="govuk-table__cell"><a href="#">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
+        <td class="govuk-table__cell"><a href="view-defi-details">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for England') }}</td>
         <td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }}</td>
-        <td class="govuk-table__cell" ><a href="view-defi-details">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
+        <td class="govuk-table__cell" ><a href="#">View Details</a>&nbsp;<a href="#">Remove</a></td>
 
       </tr>
 
