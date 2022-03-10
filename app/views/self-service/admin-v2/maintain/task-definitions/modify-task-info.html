@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add an activity - Activities
+  Modify activity - Activities
 {% endblock %}
 
 {% block pageScripts %}
@@ -32,7 +32,7 @@
               <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/task-definitions/task-defi">Activities</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Add an activity</a>
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Modify activity</a>
             </li>
 
           </ol>
@@ -52,53 +52,11 @@
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
-        Add an activity
+        Modify activity <br>
       </h1>
 
-      <p class="govuk-inset-text">Add an activity or task template which will be used to match agents and tasks</p>
-      <form class="form" action="check-defi-details" method="post">
+      <form class="form" action="modify-check-defi-details" method="post">
 
-
-      <!--  <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Activity type
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['activity-type'] | default('Regular') }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="type-of-activity">
-                Change<span class="govuk-visually-hidden"> task name</span>
-              </a>
-              <br>
-              <br>
-            </dd>
-
-
-          </div>
-          </dl>
-
-
-        <label class="govuk-label govuk-!-font-weight-bold" for="sort">
-       Activity type
-       <p class="govuk-hint">It is the primary property for this attribute. </p>
-       </label>
-       <div class="govuk-radios govuk-radios--inline">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="attribute-status" name="activity-type" type="radio" value="Adhoc" {{ checked("activity-type", "Adhoc") }}>
-            <label class="govuk-label govuk-radios__label" for="attribute-status">
-              Adhoc
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="attribute-status-2" name="activity-type" type="radio" value="Regular" {{ checked("activity-type", "Regular") }}>
-            <label class="govuk-label govuk-radios__label" for="attribute-status-2">
-              Regular
-            </label>
-          </div>
-        </div>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">-->
 
         <fieldset class="govuk-fieldset govuk-!-padding-top-5">
 
@@ -109,33 +67,8 @@
           </label>
           <p class="govuk-hint">This the name of the task. For example "Verify address for NI" or "Find an address" or "Reopened Claim"  </p>
 
-          <input class="govuk-input govuk-!-width-two-thirds" id="task-defi-name" name="task-defi-name" type="text" value="{{ data['task-defi-name'] }}" ></div>
-<!--
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-!-font-weight-bold" for="task-domain">
-              Activity or task name to be displayed
-            </label>
-            <p class="govuk-hint">This the name of the task that is shown when agent claims a task. For example "Verify address" </p>
-            <input class="govuk-input " id="task-agent-name" name="agent-task-name" type="text" value="{{ data['agent-task-name'] }}"></div> -->
+          <input class="govuk-input govuk-!-width-two-thirds" id="task-defi-name" name="task-defi-name" type="text" value="Award updates (SRBs)" ></div>
 
-            <!-- <label class="govuk-label govuk-!-font-weight-bold" for="sort">
-            Select actor type
-            </label>
-
-          <div class="govuk-radios govuk-radios--inline">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="activity-property" name="activity-property" type="radio" value="Agents" {{ checked("activity-property", "Agents") }}>
-              <label class="govuk-label govuk-radios__label " for="activity-property">
-                Agents
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="activity-property-2" name="activity-property" type="radio" value="Citizens" {{ checked("activity-property", "Citizens") }}>
-              <label class="govuk-label govuk-radios__label" for="activity-property2">
-                Citizens
-              </label>
-            </div>
-          </div> -->
 
       </fieldset>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -151,9 +84,9 @@
 
             <select class="govuk-select govuk-!-width-one-half" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}" >
             <option value="No prority selected">-Select priority- </option>
-            <option value="Very high">Very High</option>
+            <option value="Very high" selected>Very High</option>
             <option  value="High">High </option>
-            <option selected value="Medium">Medium (Default)</option>
+            <option value="Medium">Medium (Default)</option>
             <option value="Normal">Normal</option>
             <option value="Low">Low</option>
             <option value="Very low">Very low</option>
@@ -167,14 +100,14 @@
             <p class="govuk-hint">This is the URL in your appliction where the task can be carried out. If it is a multi-page flow, this is the URL of the first page.
 
  </p>
-            <input class="govuk-input govuk-!-width-two-thirds" id="task-url" name="task-url" type="text" value="{{ data['task-url'] }}" ></div>
+            <input class="govuk-input govuk-!-width-two-thirds" id="task-url" name="task-url" type="text" value="https://sp.dwp.gov.uk/3434asdf/award-review" ></div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
                 Time for task completion (optional)
               </label>
               <p class="govuk-hint">Enter the number of days or maximum time this task should be completed. Sometimes known as SLA </p>
-              <input class="govuk-input govuk-!-width-one-third" id="task-sla" name="task-sla" type="text" value="{{ data['task-sla'] }}"></div>
+              <input class="govuk-input govuk-!-width-one-third" id="task-sla" name="task-sla" type="text" value="28"></div>
 
             <!--   <div class="govuk-form-group">
                 <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
@@ -234,7 +167,7 @@
                             </h1>
 
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Newcastle" {{ checked("['matching-attributes']", "Newcastle") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Newcastle" {{ checked }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
                                 Newcastle
                               </label>
@@ -282,7 +215,7 @@
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-3" name="matching-attributes" type="checkbox" value="Specialist" {{ checked("['matching-attributes']", "Specialist") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-3" name="matching-attributes" type="checkbox" value="Specialist" {{ checked }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-3">
                                 Specialist
                               </label>
@@ -334,7 +267,7 @@
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Grade 7" {{ checked("['matching-attributes']", "Grade 7") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Grade 7" {{ checked }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
                                 Grade 7
                               </label>
@@ -399,7 +332,7 @@
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="General" {{ checked("['matching-attributes']", "General") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="General" {{ checked }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
                                 General
                               </label>
