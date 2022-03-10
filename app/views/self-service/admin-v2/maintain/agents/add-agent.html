@@ -88,7 +88,7 @@
           <div class="govuk-grid-column-full">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Select agent attribute(s)
+                Select agent characteristics
               </h1>
             </legend>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
@@ -99,54 +99,89 @@
                     <fieldset class="govuk-fieldset">
 
                       <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <h1 class="govuk-heading-m">
+                          Location
+                        </h1>
+
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes" name="agent-attributes" type="checkbox" value="Location - Newcastle" {{ checked("['agent-attributes']", "Location - Newcastle") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes" name="agent-attributes" type="checkbox" value="Newcastle" {{ checked("['agent-attributes']", "Newcastle") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes">
-                            Location - Newcastle
+                            Newcastle
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes" name="agent-attributes" type="checkbox" value="Location - London" {{ checked("['agent-attributes']", "Location - London") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes" name="agent-attributes" type="checkbox" value="London" {{ checked("['agent-attributes']", "London") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes">
-                            Location - London
+                            London
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes-2" name="agent-attributes" type="checkbox" value="Role - Decision maker" {{ checked("['agent-attributes']", "Role - Decision maker") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes" name="agent-attributes" type="checkbox" value="Leeds" {{ checked("['agent-attributes']", "Leeds") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="agent-attributes">
+                            Leeds
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="agent-attributes" name="agent-attributes" type="checkbox" value="Blackpool" {{ checked("['agent-attributes']", "Blackpool") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="agent-attributes">
+                            Blackpool
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="agent-attributes" name="agent-attributes" type="checkbox" value="Birmingham" {{ checked("['agent-attributes']", "Birmingham") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="agent-attributes">
+                            Birmingham
+                          </label>
+                        </div>
+
+                        </div>
+                        </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset">
+                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                        <h1 class="govuk-heading-m">
+                          Role
+                        </h1>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="agent-attributes-2" name="agent-attributes" type="checkbox" value="Decision maker" {{ checked("['agent-attributes']", "Decision maker") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-2">
-                            Role - Decision maker
+                            Decision maker
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes-3" name="agent-attributes" type="checkbox" value="Role - Specialist" {{ checked("['agent-attributes']", "Role - Specialist") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes-3" name="agent-attributes" type="checkbox" value="Specialist" {{ checked("['agent-attributes']", "Specialist") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-3">
-                            Role - Specialist
+                            Specialist
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes-4" name="agent-attributes" type="checkbox" value="Role - Processing Agent" {{ checked("['agent-attributes']", "Role - Processing Agent") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes-4" name="agent-attributes" type="checkbox" value="Processing Agent" {{ checked("['agent-attributes']", "Processing Agent") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-4">
-                            Role - Processing Agent
+                            Processing Agent
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Role - Telephony" {{ checked("['agent-attributes']", "Role - Telephony") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Telephony" {{ checked("['agent-attributes']", "Telephony") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-5">
-                            Role - Telephony
+                            Telephony
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Level - Grade 5" {{ checked("['agent-attributes']", "Level - Grade 5") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Manager" {{ checked("['agent-attributes']", "Manager") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-5">
-                            Level - Grade 5
+                            Manager
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Level - Grade 7, Decision Maker" {{ checked("['agent-attributes']", "Level - Grade 7, Decision Maker") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Executive officer" {{ checked("['agent-attributes']", "Executive officer") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-5">
-                            Level - Grade 7, Decision Maker
+                            Executive officer
                           </label>
                         </div>
+
                       </div>
 
                     </fieldset>
@@ -159,40 +194,84 @@
                     <fieldset class="govuk-fieldset">
 
                       <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <h1 class="govuk-heading-m">
+                          Job Grade
+                        </h1>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes" name="agent-attributes" type="checkbox" value="Location - Leeds" {{ checked("['agent-attributes']", "Location - Leeds") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="agent-attributes">
-                            Location - Leeds
+                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Grade 5" {{ checked("['agent-attributes']", "Grade 5") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-5">
+                            Grade 5
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes-2" name="agent-attributes" type="checkbox" value="Language - English" {{ checked("['agent-attributes']", "Language - English") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Grade 7" {{ checked("['agent-attributes']", "Grade 7") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-5">
+                            Grade 7
+                          </label>
+                        </div>
+
+                      </fieldset>
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                      <h1 class="govuk-heading-m">
+                        Language
+                      </h1>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="agent-attributes-2" name="agent-attributes" type="checkbox" value="English" {{ checked("['agent-attributes']", "English") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-2">
-                            Language - English
+                            English
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes-3" name="agent-attributes" type="checkbox" value="Language - Irish" {{ checked("['agent-attributes']", "Language - Irish") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes-3" name="agent-attributes" type="checkbox" value="Irish" {{ checked("['agent-attributes']", "Irish") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-3">
-                            Language - Irish
+                            Irish
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes-4" name="agent-attributes" type="checkbox" value="Language - Welsh" {{ checked("['agent-attributes']", "Language - Welsh") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes-4" name="agent-attributes" type="checkbox" value="Welsh" {{ checked("['agent-attributes']", "Welsh") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-4">
-                            Language - Welsh
+                            Welsh
+                          </label>
+                        </div>
+                      </fieldset>
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                      <h1 class="govuk-heading-m">
+                        Skill
+                      </h1>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="New Claims" {{ checked("['agent-attributes']", "New Claims") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-5">
+                            New Claims
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Skill - New Claims" {{ checked("['agent-attributes']", "Skill - New Claims") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Recovery" {{ checked("['agent-attributes']", "Recovery") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-5">
-                            Skill - New Claims
+                            Recovery
                           </label>
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Skill - Recovery" {{ checked("['agent-attributes']", "Skill - Recovery") }}>
+                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Fraud" {{ checked("['agent-attributes']", "Fraud") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-5">
-                            Skill - Recovery
+                            Fraud
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="agent-attributes-5" name="agent-attributes" type="checkbox" value="Fraud" {{ checked("['agent-attributes']", "Fraud") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="agent-attributes-5">
+                            General
                           </label>
                         </div>
                       </div>
@@ -203,13 +282,13 @@
 
                 <br><br>
                 <div class="govuk-inset-text " >
-                  <p><span class="govuk-!-font-weight-bold">Can't see the attribute you want? </span><br><a href="/self-service/admin-v2/attributes/add-attributes.html">Add attribute</a> </p>
+                  <p><span class="govuk-!-font-weight-bold">Can't see the characteristics you want? </span><br><a href="/self-service/admin-v2/attributes/add-attributes.html">Add characteristics</a> </p>
                   <div class="govuk-warning-text">
 
                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                 <strong class="govuk-warning-text__text">
                   <span class="govuk-warning-text__assistive">Warning</span>
-                  You will be redirected to adding new attributes. You will have to add details again.
+                  You will be redirected to adding new characteristics (or attribute). You will have to add details again.
                 </strong>
                 </div>
                 </div>

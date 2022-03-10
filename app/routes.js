@@ -433,6 +433,25 @@ router.post('/self-service/admin-v2/attributes/add-attributes-add-another', func
 })
 
 
+router.post('/self-service/admin-v2/maintain/task-definitions/remove-task', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const removeTaskDefinition = req.session.data['remove-task-definition']
+
+  if (removeTaskDefinition === 'yes') {
+    res.redirect('/self-service/admin-v2/maintain/task-definitions/removed-task-defi')
+  }
+
+  else if (removeTaskDefinition === 'no') {
+    res.redirect('/self-service/admin-v2/maintain/task-definitions/added-task-defi')
+  }
+
+
+})
+
+
 
 router.use('/node_modules', express.static('node_modules'))
 module.exports = router

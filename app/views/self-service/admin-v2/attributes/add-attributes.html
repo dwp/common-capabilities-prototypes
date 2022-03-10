@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Common attributes
+  Add an attribute - Common attributes
 {% endblock %}
 
 {% block beforeContent %}
@@ -45,12 +45,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Add attribute
+        Add characteristics
 
       </h1>
-      <!-- <div class="govuk-inset-text">
-        Attributes are used to match tasks to agents. For example, agent roles or location or grade.
-      </div> -->
+      <div class="govuk-inset-text">
+        Characteristics or attributes are used to match tasks to agents. For example, agent roles or location or grade.
+      </div>
 
       <form class="form" method="post" action="check-add-attribute">
         <fieldset class="govuk-fieldset" data-required data-error="Cannot be blank">
@@ -58,7 +58,7 @@
           <br>
         <div class="govuk-form-group">
           <label class="govuk-label govuk-!-font-weight-bold" for="attribute-name">
-            Attribute name
+            Characteristic name
           </label>
           <p class="govuk-hint">This could be the skill or location or role or any other unique attribute. For example 'role' or 'language' </p>
           <input class="govuk-input" id="attribute-name" name="attribute-name" type="text"  ></div>
@@ -67,7 +67,7 @@
 <br>
         <div class="govuk-form-group">
           <label class="govuk-label govuk-!-font-weight-bold" for="attribute-uid">
-            Attribute value
+            Characteristics value
           </label>
           <p class="govuk-hint">These are unique matching value for this attribute. For example if attribute is 'Skill' values could be 'Policy specialist' and/or 'New claims'  </p>
           <!-- <input class="govuk-input govuk-!-width-two-thirds" id="attribute-uid" name="attribute-uid" type="text"></div>
@@ -77,11 +77,11 @@
           </button></a> -->
           <br>
 
-          <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Attribute values added: {labelIndex}" data-add-remove-block-remove-message="Attribute value {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attribute values have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
+          <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Characteristics values added: {labelIndex}" data-add-remove-block-remove-message="Attribute value {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attribute values have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
 
           <div class="add-remove-block__status visuallyhidden" role="status" aria-live="polite"></div>
           <ul class="add-remove-block__list" style="padding-left:0px;"><li class="add-remove-block__item" data-item-index="0" style="list-style-type:none;">
-            <label class="form-label-bold" for="condition-0">Attribute value <span class="add-remove-block__label-index">1</span> </label> <br>
+            <label class="form-label-bold" for="condition-0">Characteristics value <span class="add-remove-block__label-index">1</span> </label> <br>
               <input class="govuk-input  govuk-!-width-two-thirds" type="text" id="value-0" name="value-0">
               <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
                 Remove value
@@ -96,7 +96,7 @@
           </div>
           <script type="text/x-template" class="add-remove-block__item-tpl">
             <li class="add-remove-block__item" data-item-index="{index}" style="list-style-type: none; padding-left:0px;">
-              <label class="form-label-bold" for="condition-{index}">Attribute value <span class="add-remove-block__label-index"></span></label><br>
+              <label class="form-label-bold" for="condition-{index}">Characteristics value <span class="add-remove-block__label-index"></span></label><br>
               <input class="govuk-input govuk-!-width-two-thirds" type="text" id="value-{index}" name="value-{index}">
               <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
                 Remove value

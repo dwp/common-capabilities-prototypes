@@ -65,7 +65,7 @@
     </h3>
     <p class="govuk-body" style="max-width:100%;"><strong>Activity or task name: </strong>{{ data['task-defi-name'] | default('Verify address for England') }} <br>
     <strong>Priority: </strong> {{ data['task-priority'] | default('Very high') }}<br>
-    <strong>Execution URL: </strong> {{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }} <br>
+    <strong>Task start page:</strong> {{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }} <br>
     <strong>Completion time (days):</strong> {{ data['task-sla'] | default('4') }}
     <br>
     <strong>Task matching attributes:</strong> {{ data['matching-attributes'] | default('Decision maker') }} ({{ data['task-attribute-property'] | default('Welsh, English') }})
@@ -85,7 +85,7 @@
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header">Name</th>
-        <th scope="col" class="govuk-table__header">Execution URL</th>
+        <th scope="col" class="govuk-table__header">Task start page </th>
         <th scope="col" class="govuk-table__header">Actions</th>
 
       </tr>
@@ -94,7 +94,7 @@
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Award updates (SRBs)</td>
         <td class="govuk-table__cell">https://sp.dwp.gov.uk/3434asdf/award-review</td>
-        <td class="govuk-table__cell"><a href="#">View Details</a>&nbsp;<a href="#">Remove</a></td>
+        <td class="govuk-table__cell"><a href="#">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for England') }}</td>

@@ -1,8 +1,8 @@
-{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
+{% extends "admin-header-with-nav.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Remove task definition
+  Activities list
 {% endblock %}
 
 {% block pageScripts %}
@@ -15,9 +15,7 @@
     document.write(today);
    }
   </script>
-{% endblock %}
 
-{% block pageScripts %}
   <script type="text/javascript">
     $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
     $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
@@ -26,60 +24,94 @@
   </script>
 {% endblock %}
 
+{% block beforeContent %}
+  {{ super() }}
+
+{% endblock %}
+
 {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <!-- Breadcrumbs for the page -->
+
+      <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+        <ol class="govuk-breadcrumbs__list">
+
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard-actAdded">Dashboard</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Activities</a>
+          </li>
+
+        </ol>
+      </div>
+</div>
+</div>
+
+
+
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
+
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
       Success
     </h2>
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      Task definition removed from the records.
+      Activity removed.
     </h3>
-    <p class="govuk-body"><strong>Definition name: </strong>{{ data['task-defi-name'] | default('Verify address for NI') }} <br>
-    <strong>Task name to be displayed for agents: </strong> {{ data['agent-task-name'] | default('Verify address') }}<br>
+    <p class="govuk-body" style="max-width:100%;"><strong>Activity or task name: </strong>{{ data['task-defi-name'] | default('Verify address for England') }} <br>
     <strong>Priority: </strong> {{ data['task-priority'] | default('Very high') }}<br>
-    <strong>Exeution URL: </strong> {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }} <br>
-    <strong>SLA(days):</strong> {{ data['task-sla'] | default('2') }}
+    <strong>Execution URL: </strong> {{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }} <br>
+    <strong>Completion time (days):</strong> {{ data['task-sla'] | default('4') }}
     <br>
-    <strong>Attributes:</strong> {{ data['task-attribute'] | default('Decision maker') }} ({{ data['task-attribute-property'] | default('Welsh, English') }})
+    <strong>Task matching attributes:</strong> {{ data['matching-attributes'] | default('Decision maker') }} ({{ data['task-attribute-property'] | default('Welsh, English') }})
     </p>
     </div>
 </div>
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
-        Task definitions
+        Activities list
       </h1>
 
       <table class="govuk-table">
     <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Definition name</th>
-      <th scope="col" class="govuk-table__header">Execution URL</th>
-      <th scope="col" class="govuk-table__header">Actions</th>
-      <th scope="col" class="govuk-table__header"></th>
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Execution URL</th>
+        <th scope="col" class="govuk-table__header">Actions</th>
 
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">No details to show. Add task definition to view details.</td>
-      <td class="govuk-table__cell"></td>
-      <td class="govuk-table__cell"><a href=""></a></td>
-      <td class="govuk-table__cell"><a href=""></a></td>
-    </tr>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <!-- <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Award updates (SRBs)</td>
+        <td class="govuk-table__cell">https://sp.dwp.gov.uk/3434asdf/award-review</td>
+        <td class="govuk-table__cell"><a href="#">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
+      </tr> -->
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for England') }}</td>
+        <td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }}</td>
+        <td class="govuk-table__cell" ><a href="view-defi-details">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
+
+      </tr>
+
+
 
 
   </tbody>
 </table>
 
-<p><a href="add-task-info">Add task defintion</a></p>
+<p><a href="add-task-info">Add an activity</a></p>
 <br><br>
-<a href="/self-service/admin-self-service-1/setup-task-list-agent-added"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
+<a href="/self-service/admin-v2/maintain/dashboard-actAdded"><button class="govuk-button" data-module="govuk-button">Go to dashboard</button></a>
 
     </div>
   </div>

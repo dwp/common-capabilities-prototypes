@@ -5,24 +5,6 @@
   Check and confirm - Activities
 {% endblock %}
 
-{% block pageScripts %}
-  <script type="text/javascript">
-    function getDate () { var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-    today = mm + '/' + dd + '/' + yyyy;
-    document.write(today);
-   }
-  </script>
-
-  <script type="text/javascript">
-    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
-    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
-    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
-    $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
-  </script>
-{% endblock %}
 
 {% block beforeContent %}
 
@@ -108,7 +90,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Execution URL
+            Task start page (URL)
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
@@ -117,7 +99,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Completion time (days)
+            Time for task completion (days)
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['task-sla'] | default('2') }}
@@ -127,7 +109,7 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Task matching attributes
+            Task matching characteristics
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['matching-attributes'] | default('Decision maker') }}

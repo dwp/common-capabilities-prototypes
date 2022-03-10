@@ -1,120 +1,116 @@
-{% extends "header-banner-for-setup-dwptask-with-name-nav.html" %}
+{% extends "admin-header-with-nav.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Remove task definition
+  Remove - Activities
 {% endblock %}
 
-{% block pageScripts %}
-  <script type="text/javascript">
-    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
-    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
-    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
-    $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
-  </script>
-{% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="added-task-defi">Back</a>
+
+    {{ super() }}
+
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <!-- Breadcrumbs for the page -->
+
+            <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+              <ol class="govuk-breadcrumbs__list">
+
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard">Dashboard</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/task-definitions/task-defi">Activities</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Remove activity</a>
+                </li>
+
+              </ol>
+            </div>
+        </div>
+        </div>
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
 
       <h1 class="govuk-heading-xl">
-        Do you want to remove this task definition details?
+        Do you want to remove activity?
       </h1>
         <div class="govuk-form-group">
 
           <br>
-          <p><strong class="govuk-heading-m">Task details</strong></p>
-
-        <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half" >
-            Task definition name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['task-defi-name'] | default('Verify address for NI template') }}
-          </dd>
+          <p><strong class="govuk-heading-m">Activity details</strong></p>
 
 
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Task name to be displayed for agents
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['agent-task-name'] | default('Verify address') }}
-          </dd>
 
-        </div>
-
-
-      </dl>
-      <br>
-      <p><strong class="govuk-heading-m">Definition detials</strong></p>
-              <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half" >
-                  Priority
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['task-priority'] | default('Very high') }}
-                </dd>
+          <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Activity or task name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Award updates (SRBs)
+            </dd>
 
 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                  Execution URL
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
-                </dd>
+          </div>
 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half" >
-                  SLA (days)
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['task-sla'] | default('2') }}
-                </dd>
-
-              </div>
-
-            </dl>
-
-      <br>
-      <p><strong class="govuk-heading-m">Task matching attributes</strong></p>
-              <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                  Attributes
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['task-attribute'] | default('Decision maker') }}
-                </dd>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Priority
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Very high
+            </dd>
 
 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                  Type of attribute
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['task-attribute-property'] | default('Welsh, English') }}
-                </dd>
-              </div>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Execution URL
+            </dt>
+            <dd class="govuk-summary-list__value">
+              https://sp.dwp.gov.uk/3434asdf/award-review
+            </dd>
 
-            </dl>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Completion time (days)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              28
+            </dd>
+
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Task matching attributes
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Location - Newcastle, Role - Specialist, Level - Grade 7, Specialist, Role - Fraud
+            </dd>
 
 
-        <br><br>
-<form class="form" action="/self-service/admin-self-service-1/task-definitions/remove-task" method="post">
+          </div>
+
+          </dl>
+
+
+<br>
+<br>
+<form class="form" action="/self-service/admin-v2/maintain/task-definitions/remove-task" method="post">
   <div class="govuk-form-group">
 
   <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">

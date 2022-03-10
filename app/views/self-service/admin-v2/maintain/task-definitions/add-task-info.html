@@ -162,7 +162,7 @@
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
-              Execution URL
+              Task start page
             </label>
             <p class="govuk-hint">This is the URL in your appliction where the task can be carried out. If it is a multi-page flow, this is the URL of the first page.
 
@@ -171,7 +171,7 @@
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
-                Completion time (days) (optional)
+                Time for task completion (optional)
               </label>
               <p class="govuk-hint">Enter the number of days or maximum time this task should be completed. Sometimes known as SLA </p>
               <input class="govuk-input govuk-!-width-one-third" id="task-sla" name="task-sla" type="text" value="{{ data['task-sla'] }}"></div>
@@ -218,7 +218,7 @@
               <div class="govuk-grid-column-full">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
-                    Select task matching attribute(s)
+                    Select task characteristics
                   </h1>
                 </legend>
                 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
@@ -229,54 +229,89 @@
                         <fieldset class="govuk-fieldset">
 
                           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <h1 class="govuk-heading-m">
+                              Location
+                            </h1>
+
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Location - Newcastle" {{ checked("['matching-attributes']", "Location - Newcastle") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Newcastle" {{ checked("['matching-attributes']", "Newcastle") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
-                                Location - Newcastle
+                                Newcastle
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Location - London" {{ checked("['matching-attributes']", "Location - London") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="London" {{ checked("['matching-attributes']", "London") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
-                                Location - London
+                                London
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-2" name="matching-attributes" type="checkbox" value="Role - Decision maker" {{ checked("['matching-attributes']", "Role - Decision maker") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Leeds" {{ checked("['matching-attributes']", "Leeds") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
+                                Leeds
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Blackpool" {{ checked("['matching-attributes']", "Blackpool") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
+                                Blackpool
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Birmingham" {{ checked("['matching-attributes']", "Birmingham") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
+                                Birmingham
+                              </label>
+                            </div>
+
+                            </div>
+                            </fieldset>
+                            </div>
+
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                            <h1 class="govuk-heading-m">
+                              Role
+                            </h1>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-2" name="matching-attributes" type="checkbox" value="Decision maker" {{ checked("['matching-attributes']", "Decision maker") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-2">
-                                Role - Decision maker
+                                Decision maker
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-3" name="matching-attributes" type="checkbox" value="Role - Specialist" {{ checked("['matching-attributes']", "Role - Specialist") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-3" name="matching-attributes" type="checkbox" value="Specialist" {{ checked("['matching-attributes']", "Specialist") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-3">
-                                Role - Specialist
+                                Specialist
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-4" name="matching-attributes" type="checkbox" value="Role - Processing Agent" {{ checked("['matching-attributes']", "Role - Processing Agent") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-4" name="matching-attributes" type="checkbox" value="Processing Agent" {{ checked("['matching-attributes']", "Processing Agent") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-4">
-                                Role - Processing Agent
+                                Processing Agent
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Role - Telephony" {{ checked("['matching-attributes']", "Role - Telephony") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Telephony" {{ checked("['matching-attributes']", "Telephony") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
-                                Role - Telephony
+                                Telephony
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Level - Grade 5" {{ checked("['matching-attributes']", "Level - Grade 5") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Manager" {{ checked("['matching-attributes']", "Manager") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
-                                Level - Grade 5
+                                Manager
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Level - Grade 7, Decision Maker" {{ checked("['matching-attributes']", "Level - Grade 7, Decision Maker") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Executive officer" {{ checked("['matching-attributes']", "Executive officer") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
-                                Level - Grade 7, Decision Maker
+                                Executive officer
                               </label>
                             </div>
+
                           </div>
 
                         </fieldset>
@@ -289,40 +324,84 @@
                         <fieldset class="govuk-fieldset">
 
                           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <h1 class="govuk-heading-m">
+                              Job Grade
+                            </h1>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Location - Leeds" {{ checked("['matching-attributes']", "Location - Leeds") }}>
-                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
-                                Location - Leeds
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Grade 5" {{ checked("['matching-attributes']", "Grade 5") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                Grade 5
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-2" name="matching-attributes" type="checkbox" value="Language - English" {{ checked("['matching-attributes']", "Language - English") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Grade 7" {{ checked("['matching-attributes']", "Grade 7") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                Grade 7
+                              </label>
+                            </div>
+
+                          </fieldset>
+                          </div>
+
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                          <h1 class="govuk-heading-m">
+                            Language
+                          </h1>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-2" name="matching-attributes" type="checkbox" value="English" {{ checked("['matching-attributes']", "English") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-2">
-                                Language - English
+                                English
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-3" name="matching-attributes" type="checkbox" value="Language - Irish" {{ checked("['matching-attributes']", "Language - Irish") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-3" name="matching-attributes" type="checkbox" value="Irish" {{ checked("['matching-attributes']", "Irish") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-3">
-                                Language - Irish
+                                Irish
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-4" name="matching-attributes" type="checkbox" value="Language - Welsh" {{ checked("['matching-attributes']", "Language - Welsh") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-4" name="matching-attributes" type="checkbox" value="Welsh" {{ checked("['matching-attributes']", "Welsh") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-4">
-                                Language - Welsh
+                                Welsh
+                              </label>
+                            </div>
+                          </fieldset>
+                          </div>
+
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                          <h1 class="govuk-heading-m">
+                            Skill
+                          </h1>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="New Claims" {{ checked("['matching-attributes']", "New Claims") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                New Claims
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Skill - New Claims" {{ checked("['matching-attributes']", "Skill - New Claims") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Recovery" {{ checked("['matching-attributes']", "Recovery") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
-                                Skill - New Claims
+                                Recovery
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Skill - Recovery" {{ checked("['matching-attributes']", "Skill - Recovery") }}>
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Fraud" {{ checked("['matching-attributes']", "Fraud") }}>
                               <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
-                                Skill - Recovery
+                                Fraud
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Fraud" {{ checked("['matching-attributes']", "Fraud") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                General
                               </label>
                             </div>
                           </div>
@@ -333,13 +412,13 @@
 
                     <br><br>
                     <div class="govuk-inset-text " >
-                      <p><span class="govuk-!-font-weight-bold">Can't see the attribute you want? </span><br><a href="/self-service/admin-v2/attributes/add-attributes.html">Add attribute</a> </p>
+                      <p><span class="govuk-!-font-weight-bold">Can't see the characteristics you want? </span><br><a href="/self-service/admin-v2/attributes/add-attributes.html">Add characteristics</a> </p>
                       <div class="govuk-warning-text">
 
                     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                     <strong class="govuk-warning-text__text">
                       <span class="govuk-warning-text__assistive">Warning</span>
-                      You will be redirected to adding new attributes. You will have to add details again.
+                      You will be redirected to adding new characteristics (or attribute). You will have to add details again.
                     </strong>
                     </div>
                     </div>
