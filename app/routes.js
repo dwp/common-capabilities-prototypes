@@ -441,7 +441,7 @@ router.post('/self-service/admin-v2/maintain/task-definitions/remove-task', func
   const removeTaskDefinition = req.session.data['remove-task-definition']
 
   if (removeTaskDefinition === 'yes') {
-    res.redirect('/self-service/admin-v2/maintain/task-definitions/removed-task-defi')
+    res.redirect('/self-service/admin-v2/maintain/task-definitions/removed-task-defi.html')
   }
 
   else if (removeTaskDefinition === 'no') {

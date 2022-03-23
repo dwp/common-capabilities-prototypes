@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8 unbranded" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="unbranded" lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <title>
+  Searchlight
+</title>
+
+    <!--[if gt IE 8]><!--><link href="/public/v6/stylesheets/govuk-template.css?0.18.3" media="screen" rel="stylesheet" /><!--<![endif]-->
+    <!--[if IE 6]><link href="/public/v6/stylesheets/govuk-template-ie6.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 7]><link href="/public/v6/stylesheets/govuk-template-ie7.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 8]><link href="/public/v6/stylesheets/govuk-template-ie8.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
+    <link href="/public/v6/stylesheets/govuk-template-print.css?0.18.3" media="print" rel="stylesheet" />
+
+    <!--[if IE 8]><link href="/public/v6/stylesheets/fonts-ie8.css?0.18.3" media="all" rel="stylesheet" /><![endif]-->
+    <!--[if gte IE 9]><!--><link href="/public/v6/stylesheets/fonts.css?0.18.3" media="all" rel="stylesheet" /><!--<![endif]-->
+    <!--[if lt IE 9]><script src="/public/v6/javascripts/ie.js?0.18.3"></script><![endif]-->
+
+    <link rel="shortcut icon" href="/public/v6/images/favicon.ico?0.18.3" type="image/x-icon" />
+    <link rel="mask-icon" href="/public/v6/images/gov.uk_logotype_crown.svg?0.18.3" color="#0b0c0c">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/v6/images/apple-touch-icon-152x152.png?0.18.3">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/v6/images/apple-touch-icon-120x120.png?0.18.3">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/v6/images/apple-touch-icon-76x76.png?0.18.3">
+    <link rel="apple-touch-icon-precomposed" href="/public/v6/images/apple-touch-icon-60x60.png?0.18.3">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="/public/v6/images/opengraph-image.png?0.18.3">
+
+
+
+  <!--[if lte IE 8]><link href="/public/v6/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/v6/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+
+
+
+
+  </head>
+
+  <body class="">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+
+    <nav id="sl-header" class="navbar navbar-default navbar-fixed-top ng-scope">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 sl-header-container" ng-class="{'sl-header-expanded': state.current.name !== 'search'}">
+        <ul>
+          <div class="sl-header-col-left">
+            <a class="skip-main" ng-click="jumpToMainContent()" href="#maincontent">Skip to main content</a>
+            <div class="sl-header-title" ui-sref="search" href="./search-for-a-person-five">
+              <a class="sl-crown-logo-container">
+                <div class="sl-crown-logo sl-crown-logo-white"></div>
+                <img class="sl-crown-logo-black" alt="Searchlight black" src="/public/v6/images/crown-logo-black.png">
+              </a>
+              <a class="sl-third-heading sl-main-heading sl-page-color sl-font-bold ng-binding sl-service-name" ui-sref="search" href="./search-for-a-person-five"> Searchlight</a>
+            </div>
+          </div>
+          <div class="sl-header-col-right pull-right">
+            <li>
+              <a href="/" tabindex="" ng-click="openFeedbackModal('lg'); feedbackJumpToTop()" class="sl-link sl-link-modal under-link">Feedback</a>
+            </li>
+
+            <li>
+              <a href="/" tabindex="0" ng-click="openWhatsNewModal('lg')" class="sl-link sl-link-modal under-link">What’s new</a>
+            </li>
+
+            <li>
+              <a id="nino-menu-link" class="sl-link sl-link-modal under-link">More options</a>
+            </li>
+
+            <span tabindex="-1" class="sl-hamburger-icon-container pull-right sl-hamburger-icon-container-search" ng-class="{'sl-hamburger-icon-container-search': state.current.name === 'search'}" ng-click="navMenuOpen = !navMenuOpen" href="#" role="button">
+              <div class="sl-hamburger-closed sl-hamburger-image ng-scope" ng-if="!navMenuOpen"></div>
+            </span>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+          <div id="nino-menu" class="hide">
+          <ul class="list">
+            <li>
+              <a href="../apply-for-a-nino-2-phase-3-force/gnc" tabindex="0" ng-click="openWhatsNewModal('lg')" class="sl-link sl-link-modal under-link">National Insurance number applications</a>
+            </li>
+            <li>
+              <a href="" tabindex="0" ng-click="openWhatsNewModal('lg')" class="sl-link sl-link-modal under-link">Manually create an account</a>
+            </li>
+
+          </ul
+        </div>
+
+</nav>
+
+
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink">Skip to main content</a>
+      </div>
+    </div>
+
+    <div id="global-cookie-message">
+
+
+
+
+    </div>
+    <!--end global-cookie-message-->
+
+
+    <header role="banner" id="global-header" class="
+  with-proposition
+">
+    </header>
+    <!--end header-->
+
+
+
+
+
+
+  <div class="container-fluid ng-scope">
+  <div id="search" class="row">
+    <div class="sl-account-canvas-width">
+      <h2 id="sl-title" class="">Enter a National Insurance or Corporate Organisation number</h2>
+        <div class="spacing-top-single sl-home-search-input-container input-group" ng-class="{'sl-home-search-input-reduced-padding': nino.length>7, 'sl-search-input-align': !showTrace.personTrace}">
+          <div id="sl-search" ng-keydown="toggleHover($event.keyCode, $event)" ng-class="{'sl-account-search-container': state.current.name !=='search', 'spacing-top-sixth': state.current.name !== 'search'}">
+            <form action="preview-handler">
+              <input name="nino" autocomplete="off" id="maincontent" class="ng-valid ng-isolate-scope sl-home-search ng-touched ng-not-empty ng-dirty ng-valid-parse ng-valid-maxlength" id="maincontent" aria-invalid="false">
+              <div class="clear-icon ng-scope search">
+                <div class="inner-clear-icon">
+                </div>
+              </div>
+              <div class="sl-header-btn">
+                <a href="cis-handler?nino=SX170203&role=none" class="sl-search-btn">Look up<span class="search-icon search"></span></a>
+                <button id="preview">
+                  <a href="preview-handler">
+  <div class="sl-user-search-container">
+    <h3> <span id="bstitle">MRS</span>&nbsp; <span id="bsfirstname">BESSIE</span>&nbsp; <span id="bslastname">BLACK</span> </h3>
+    <p> <span id="nino">SX170201</span> &nbsp;·&nbsp; <span id="bsDob">26 Jan 1970</span> </p>
+    <p>Postcode <span id="bsPostcode">NE1 1HH</span> </p>
+  </div>
+</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="tabsversion2" class="trace-background">
+  <div id="tabs" class="tabs tracetabs" >
+    <ul>
+
+
+    </ul>
+    <div>
+      <div id="tabs1">
+          <div id="mainsearchform" class="grid-row">
+    <div class="column-full">
+      <div class="header">
+        <h2 class="sl-font-bold sl-third-heading">Find someone who has a CIS account</h2>
+      </div>
+
+      <div class="form">
+        <form action="trace-handler" method="get" class="form">
+          <div class="form-col-large">
+            <div class="form-group left">
+              <label class="form-label" for="mainsearch_firstname">First and middle names</label>
+              <input class="form-control" id="mainsearch_firstname" name="mainsearch_firstname"></input>
+            </div>
+            <div class="form-group right">
+              <label class="form-label" for="mainsearch_lastname">Last name</label>
+              <input class="form-control" id="mainsearch_lastname" name="mainsearch_lastname"></input>
+            </div>
+            <div class="form-group left">
+              <label class="form-label" for="mainsearch_dateofbirth">Date of birth</label>
+              <input class="form-control" id="mainsearch_dateofbirth" name="mainsearch_dateofbirth"></input>
+            </div>
+            <div class="form-group right">
+              <label class="form-label" for="mainsearch_dateofdeath">Date of death</label>
+              <input class="form-control" id="mainsearch_dateofbdeath" name="mainsearch_dateofbdeath"></input>
+            </div>
+            <div class="form-group short">
+              <label class="form-label" for="mainsearch_firstline">First line of address</label>
+              <input class="form-control" id="mainsearch_firstline" name="mainsearch_firstline"></input>
+            </div>
+            <div class="form-group short">
+              <label class="form-label" for="mainsearch_town">Town</label>
+              <input class="form-control" id="mainsearch_town" name="mainsearch_town"></input>
+            </div>
+            <div class="form-group short">
+              <label class="form-label" for="mainsearch_postcode">Postcode</label>
+              <input class="form-control" id="mainsearch_postcode" name="mainsearch_postcode"></input>
+            </div>
+            <div class="form-group">
+              <fieldset>
+                <legend>
+                  <span class="form-label">Sex</span>
+                </legend>
+                <div class="multiple-choice inline">
+                  <input id="male" name="waste-types" type="checkbox" value="male">
+                  <label for="male">Male</label>
+                </div>
+                <div class="multiple-choice inline">
+                  <input id="female" name="waste-types" type="checkbox" value="female">
+                  <label for="female">Female</label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mainsearch_contact">Contact number or email</label>
+              <input class="form-control" id="mainsearch_contact"></input>
+            </div>
+          </div>
+          <div class="form-col-small">
+            <div class="form-group">
+                <fieldset>
+                  <legend class="visually-hidden">
+                    <p>Trace options</p>
+                  </legend>
+                  <div class="multiple-choice">
+                    <input id="relaxed" name="trace-options" type="checkbox" value="relaxed">
+                    <label for="relaxed"><span>Relaxed trace</span> <span>Include similar names</span></label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="multipart" name="trace-options" type="checkbox" value="multipart">
+                    <label for="multipart"><span>Multipart surname</span> <span>Prefix, hyphen, part name</span></label>
+                  </div>
+                  <div class="multiple-choice">
+                    <input id="historic" name="trace-options" type="checkbox" value="historic">
+                    <label for="historic"><span>Historic trace</span> <span>Include historic entries</span></label>
+                  </div>
+                </fieldset>
+              </div>
+          </div>
+          <div class="form-group buttons">
+            <button class="button" type="submit">Search</button>
+            <a href="./settlement-status" class="button sl-secondary-button" type="submit">Clear form</a>
+          </div>
+        </form>
+      </div>
+      </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+    </footer>
+
+    <!--end footer-->
+
+    <div id="global-app-error" class="app-error hidden"></div>
+
+    <script src="/public/v6/javascripts/govuk-template.js?0.18.3" type="text/javascript"></script>
+
+
+
+    <!-- Javascript -->
+<!--[if lte IE 8]><script src="/public/v6/javascripts/bind.js"></script><![endif]-->
+<script src="/public/v6/javascripts/details.polyfill.js"></script>
+<script src="/public/v6/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/v6/javascripts/govuk/shim-links-with-button-role.js"></script>
+<script src="/public/v6/javascripts/govuk/show-hide-content.js"></script>
+<script src="/public/v6/javascripts/application.js"></script>
+<script src="/public/v6/javascripts/preview-search.js"></script>
+<script src="/public/v6/javascripts/populate-dates.js"></script>
+
+<script src="/public/v6/javascripts/validation.js"></script>
+
+
+  <script src="/public/v6/javascripts/auto-store-data.js"></script>
+
+
+
+
+
+  <div ui-view="footer" class="ng-scope"><div class="col-xs-12 ng-scope" id="sl-footer">
+  <div class="col-md-offset-1 sl-footer-content">
+    <div class="sl-footer-left-content col-xs-12 col-sm-8">
+      <div class="spacing-bottom-single">
+            <span class="sl-font-bold">This is a new service – your <a class="sl-footer-link sl-font-bold" href="/" ng-click="openFeedbackModal('lg'); feedbackJumpToTop()">feedback</a> will help us improve it.</span>
+      </div>
+      <div class="spacing-bottom-single">
+        <span class="sl-footer-color">If you can't find what you're looking for here, you can return to the legacy CIS interface by using the 'CIS FMO' icon on your desktop.</span>
+      </div>
+      <div class="spacing-bottom-half">
+        <span class="sl-footer-color">Built by DWP Digital.</span>
+      </div>
+
+    </div>
+    <div class="col-xs-12 center-block col-sm-offset-0 col-sm-3 sl-footer-right-content">
+      <div class="footer-vertical-align">
+      <div>
+        <div class="sl-govuk-crest center-block"></div>
+        <div>
+          <p class="sl-footer-color text-center spacing-top-third">© Crown copyright</p>
+        </div>
+      </div>
+
+    </div>
+      </div>
+  </div>
+  <div>
+
+  </div>
+</div></div>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#tabs" ).tabs();
+  } );
+  </script>
+
+
+
+    <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
+  </body>
+</html>
