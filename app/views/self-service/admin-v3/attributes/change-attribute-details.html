@@ -1,0 +1,120 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add attribute
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="check-add-attribute">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Change attribute
+
+      </h1>
+      <div class="govuk-inset-text">
+        Attributes are used to match tasks to agents. For example, agent roles or location or grade.
+      </div>
+
+      <form class="form" method="post" action="check-add-attribute">
+        <fieldset class="govuk-fieldset" data-required data-error="Cannot be blank">
+
+          <br>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="attribute-name">
+            Attribute name
+          </label>
+          <p class="govuk-hint">This could be the role or any other unique matching attribute. For example 'decision maker' or 'language' </p>
+          <input class="govuk-input" id="attribute-name" name="attribute-name" type="text" value="{{data['attribute-name']}}"  ></div>
+        <br>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="attribute-uid">
+            Attribute value
+          </label>
+          <p class="govuk-hint">This is unique matching value for this attribute. This could be location or grade level or language type.For example 'Welsh' or 'Grade 5'  </p>
+          <!-- <input class="govuk-input govuk-!-width-two-thirds" id="attribute-uid" name="attribute-uid" type="text"></div>
+
+          <a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Add another value
+          </button></a> -->
+          <br>
+          <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Attribute values added: {labelIndex}" data-add-remove-block-remove-message="Attribute value {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attribute values have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
+
+          <div class="add-remove-block__status visuallyhidden" role="status" aria-live="polite"></div>
+          <ul class="add-remove-block__list" style="padding-left:0px;"><li class="add-remove-block__item" data-item-index="0" style="list-style-type:none;">
+            <label class="form-label-bold" for="condition-0">Attribute value <span class="add-remove-block__label-index">1</span> </label> <br>
+              <input class="govuk-input  govuk-!-width-two-thirds" type="text" id="value-0" name="value-0" value="{{data['value-0']}}">
+              <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+                Remove value
+              </button>
+            </li></ul>
+          <div class="button-combo gutter-half-bottom">
+            <button type="button" class="add-remove-block__add-trigger govuk-button govuk-button--secondary">Add another value</button>
+            <!-- <button type="button" class="add-remove-block__remove-all-trigger button-combo__right govuk-link">Remove all values</button> -->
+          </div>
+          <script type="text/x-template" class="add-remove-block__item-tpl">
+            <li class="add-remove-block__item" data-item-index="{index}" style="list-style-type: none; padding-left:0px;">
+              <label class="form-label-bold" for="condition-{index}">Attribute value <span class="add-remove-block__label-index"></span></label><br>
+              <input class="govuk-input govuk-!-width-two-thirds" type="text" id="value-{index}" name="value-{index}" value="{{data['value-{index}']}}">
+              <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+                Remove value
+              </button>
+            </li>
+          </script>
+        </div>
+
+      </fieldset>
+
+<!-- 
+      <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+      Attribute status
+      <p class="govuk-hint">It is the primary property for this attribute. </p>
+      </label>
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="attribute-status" name="attribute-status" type="radio" value="Active" {{ checked("attribute-status", "Active") }}>
+          <label class="govuk-label govuk-radios__label" for="attribute-status">
+            Active
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="attribute-status-2" name="attribute-status" type="radio" value="Inactive" {{ checked("attribute-status", "Inctive") }}>
+          <label class="govuk-label govuk-radios__label" for="attribute-status-2">
+            Inactive
+          </label>
+        </div>
+      </div> -->
+
+      <br><br><br>
+
+      <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

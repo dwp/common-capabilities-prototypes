@@ -1,0 +1,100 @@
+{% extends "admin-header.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage your organisation unit or business area - DWP task manage
+{% endblock %}
+
+
+{% block content %}
+<main class="govuk-template__body">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+                <h1 class="govuk-heading-xl">
+                    Manage your business area
+                </h1>
+
+            <p class="govuk-!-padding-bottom-8">View details, add & modify agent profiles, groups and activities.</p>
+
+    </div>
+    </div>
+
+
+    <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" style="width:80%;">Oraganisation Unit name</th>
+                    <th scope="col" class="govuk-table__header">Actions</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Pension Credit</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Care Homes</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Health</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Bereavement</td>
+                    <td class="govuk-table__cell"><a href="maintain/dashboard">View dashboard</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Searchlight</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+      </div>
+  </div>
+
+
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-heading-m govuk-!-padding-top-5 ">Can't see your organisation or business area?   </h2>
+        <p> If you’ve got a question about how to add, remove or manage your organisation unit or business area. Contact the team or SPOC.</p>
+      </div>
+
+
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+  <div class="govuk-grid-row govuk-!-padding-top-5 contact-panel">
+    <div class="govuk-grid-column-full "  style="padding-left:0px;">
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-5 "  style="padding-left:0px;">Useful links   </h2>
+
+          <div class="govuk-grid-column-one-half " style="padding-left:0px;">
+
+          <!-- Help section -->
+          <p><a href="/self-service/admin-v2/attributes/attributes-list.html" >Common Characteristics</a>
+          <span class="govuk-hint">Common skills, roles, languages and locations</span></p>
+
+          </div>
+
+        <!-- <div class="govuk-grid-column-one-half">
+
+        <p><a href="/self-service/admin-v2/terms-and-glossary.html" >Help and guidance</a>
+        <span class="govuk-hint">List of terms used in this service.</span></p>
+        </div> -->
+
+  </div>
+  </div>
+</main>
+
+
+{% endblock %}

@@ -1,0 +1,438 @@
+{% extends "admin-header-with-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add an activity - Activities
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
+
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list">
+
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard">Dashboard</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/task-definitions/task-defi">Activities</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Add an activity</a>
+            </li>
+
+          </ol>
+        </div>
+    </div>
+    </div>
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Add an activity
+      </h1>
+
+      <p class="govuk-inset-text">Add an activity or task template which will be used to match agents and tasks</p>
+      <form class="form" action="check-defi-details" method="post">
+
+
+      <!--  <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Activity type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['activity-type'] | default('Regular') }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="type-of-activity">
+                Change<span class="govuk-visually-hidden"> task name</span>
+              </a>
+              <br>
+              <br>
+            </dd>
+
+
+          </div>
+          </dl>
+
+
+        <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+       Activity type
+       <p class="govuk-hint">It is the primary property for this attribute. </p>
+       </label>
+       <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="attribute-status" name="activity-type" type="radio" value="Adhoc" {{ checked("activity-type", "Adhoc") }}>
+            <label class="govuk-label govuk-radios__label" for="attribute-status">
+              Adhoc
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="attribute-status-2" name="activity-type" type="radio" value="Regular" {{ checked("activity-type", "Regular") }}>
+            <label class="govuk-label govuk-radios__label" for="attribute-status-2">
+              Regular
+            </label>
+          </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">-->
+
+        <fieldset class="govuk-fieldset govuk-!-padding-top-5">
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="task-name">
+            Activity or task name
+          </label>
+          <p class="govuk-hint">This the name of the task. For example "Verify address for NI" or "Find an address" or "Reopened Claim"  </p>
+
+          <input class="govuk-input govuk-!-width-two-thirds" id="task-defi-name" name="task-defi-name" type="text" value="{{ data['task-defi-name'] }}" ></div>
+<!--
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="task-domain">
+              Activity or task name to be displayed
+            </label>
+            <p class="govuk-hint">This the name of the task that is shown when agent claims a task. For example "Verify address" </p>
+            <input class="govuk-input " id="task-agent-name" name="agent-task-name" type="text" value="{{ data['agent-task-name'] }}"></div> -->
+
+            <!-- <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+            Select actor type
+            </label>
+
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="activity-property" name="activity-property" type="radio" value="Agents" {{ checked("activity-property", "Agents") }}>
+              <label class="govuk-label govuk-radios__label " for="activity-property">
+                Agents
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="activity-property-2" name="activity-property" type="radio" value="Citizens" {{ checked("activity-property", "Citizens") }}>
+              <label class="govuk-label govuk-radios__label" for="activity-property2">
+                Citizens
+              </label>
+            </div>
+          </div> -->
+
+      </fieldset>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <fieldset class="govuk-fieldset">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="task-priority">
+              Priority
+            </label>
+            <p class="govuk-hint">Select priority for these types of tasks. Default priority is 'Medium' </p>
+            <!-- <input class="govuk-input govuk-!-width-one-third" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}"> -->
+
+            <select class="govuk-select govuk-!-width-one-half" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}" >
+            <option value="No prority selected">-Select priority- </option>
+            <option value="Very high">Very High</option>
+            <option  value="High">High </option>
+            <option selected value="Medium">Medium (Default)</option>
+            <option value="Normal">Normal</option>
+            <option value="Low">Low</option>
+            <option value="Very low">Very low</option>
+            </select>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+              Task start page
+            </label>
+            <p class="govuk-hint">This is the URL in your appliction where the task can be carried out. If it is a multi-page flow, this is the URL of the first page.
+
+ </p>
+            <input class="govuk-input govuk-!-width-two-thirds" id="task-url" name="task-url" type="text" value="{{ data['task-url'] }}" ></div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+                Time for task completion (optional)
+              </label>
+              <p class="govuk-hint">Enter the number of days or maximum time this task should be completed. Sometimes known as SLA </p>
+              <input class="govuk-input govuk-!-width-one-third" id="task-sla" name="task-sla" type="text" value="{{ data['task-sla'] }}"></div>
+
+            <!--   <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+                  Reserve tasks in days (optional)
+                </label>
+                <p class="govuk-hint">Enter the number of days a task can be reserved. </p>
+                <input class="govuk-input govuk-!-width-one-third" id="task-reserve" name="task-reserve" type="text" value="{{ data['task-reserve'] }}" ></div>
+
+                  <h1 class="govuk-heading-m">
+                    Select type and attribute
+                  </h1> -->
+
+                  <!-- <label class="govuk-label" for="sort">
+                  Select type
+                  <p class="govuk-hint">It is the primary property for this attribute. </p>
+                  </label>
+
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="remove-agent" name="attribute-property" type="radio" value="Mandatory">
+                    <label class="govuk-label govuk-radios__label" for="remove-attribute">
+                      Agents
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="remove-agent-2" name="attribute-property" type="radio" value="Optional">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                      Citizens
+                    </label>
+                  </div>
+                </div> -->
+
+    </fieldset>
+
+
+
+
+            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Select task characteristics
+                  </h1>
+                </legend>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+                    <div class="govuk-grid-column-one-half" style="padding-left:0px;">
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <h1 class="govuk-heading-m">
+                              Location
+                            </h1>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Newcastle" {{ checked("['matching-attributes']", "Newcastle") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
+                                Newcastle
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="London" {{ checked("['matching-attributes']", "London") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
+                                London
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Leeds" {{ checked("['matching-attributes']", "Leeds") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
+                                Leeds
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Blackpool" {{ checked("['matching-attributes']", "Blackpool") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
+                                Blackpool
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes" name="matching-attributes" type="checkbox" value="Birmingham" {{ checked("['matching-attributes']", "Birmingham") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes">
+                                Birmingham
+                              </label>
+                            </div>
+
+                            </div>
+                            </fieldset>
+                            </div>
+
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                            <h1 class="govuk-heading-m">
+                              Role
+                            </h1>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-2" name="matching-attributes" type="checkbox" value="Decision maker" {{ checked("['matching-attributes']", "Decision maker") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-2">
+                                Decision maker
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-3" name="matching-attributes" type="checkbox" value="Specialist" {{ checked("['matching-attributes']", "Specialist") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-3">
+                                Specialist
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-4" name="matching-attributes" type="checkbox" value="Processing Agent" {{ checked("['matching-attributes']", "Processing Agent") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-4">
+                                Processing Agent
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Telephony" {{ checked("['matching-attributes']", "Telephony") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                Telephony
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Manager" {{ checked("['matching-attributes']", "Manager") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                Manager
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Executive officer" {{ checked("['matching-attributes']", "Executive officer") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                Executive officer
+                              </label>
+                            </div>
+
+                          </div>
+
+                        </fieldset>
+                      </div>
+                    </div>
+
+                    <div class="govuk-grid-column-one-half">
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <h1 class="govuk-heading-m">
+                              Job Grade
+                            </h1>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Grade 5" {{ checked("['matching-attributes']", "Grade 5") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                Grade 5
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Grade 7" {{ checked("['matching-attributes']", "Grade 7") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                Grade 7
+                              </label>
+                            </div>
+
+                          </fieldset>
+                          </div>
+
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                          <h1 class="govuk-heading-m">
+                            Language
+                          </h1>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-2" name="matching-attributes" type="checkbox" value="English" {{ checked("['matching-attributes']", "English") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-2">
+                                English
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-3" name="matching-attributes" type="checkbox" value="Irish" {{ checked("['matching-attributes']", "Irish") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-3">
+                                Irish
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-4" name="matching-attributes" type="checkbox" value="Welsh" {{ checked("['matching-attributes']", "Welsh") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-4">
+                                Welsh
+                              </label>
+                            </div>
+                          </fieldset>
+                          </div>
+
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                          <h1 class="govuk-heading-m">
+                            Skill
+                          </h1>
+
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="New Claims" {{ checked("['matching-attributes']", "New Claims") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                New Claims
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Recovery" {{ checked("['matching-attributes']", "Recovery") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                Recovery
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="Fraud" {{ checked("['matching-attributes']", "Fraud") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                Fraud
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="General" {{ checked("['matching-attributes']", "General") }}>
+                              <label class="govuk-label govuk-checkboxes__label" for="matching-attributes-5">
+                                General
+                              </label>
+                            </div>
+                          </div>
+
+                        </fieldset>
+                      </div>
+                    </div>
+
+                    <br><br>
+                    <div class="govuk-inset-text " >
+                      <p><span class="govuk-!-font-weight-bold">Can't see the characteristics you want? </span><br><a href="/self-service/admin-v2/attributes/add-attributes.html">Add characteristics</a> </p>
+                      <div class="govuk-warning-text">
+
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                      <span class="govuk-warning-text__assistive">Warning</span>
+                      You will be redirected to adding new characteristics (or attribute). You will have to add details again.
+                    </strong>
+                    </div>
+                    </div>
+
+
+
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "admin-header-with-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Activities list
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    function getDate () { var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+    document.write(today);
+   }
+  </script>
+
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+    <!-- Breadcrumbs for the page -->
+
+    <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+      <ol class="govuk-breadcrumbs__list">
+
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard">Dashboard</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Activities</a>
+        </li>
+
+      </ol>
+    </div>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Activities
+      </h1>
+
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Task start page </th>
+      <th scope="col" class="govuk-table__header">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Award updates (SRBs)</td>
+      <td class="govuk-table__cell">https://sp.dwp.gov.uk/3434asdf/award-review</td>
+      <td class="govuk-table__cell"><a href="view-defi-details">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+<p><a href="add-task-info">Add an activity</a></p>
+<br><br>
+<a href="/self-service/admin-v2/maintain/dashboard"><button class="govuk-button" data-module="govuk-button">Go to dashboard</button></a>
+
+    </div>
+  </div>
+
+{% endblock %}

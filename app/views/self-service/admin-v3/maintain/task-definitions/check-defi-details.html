@@ -1,0 +1,134 @@
+{% extends "admin-header-with-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check and confirm - Activities
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <!-- Breadcrumbs for the page -->
+
+            <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+              <ol class="govuk-breadcrumbs__list">
+
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard">Dashboard</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/task-definitions/task-defi">Activities</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/task-definitions/add-task-info">Add an activity</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Check and confirm</a>
+                </li>
+
+              </ol>
+            </div>
+        </div>
+        </div>
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check and confirm
+      </h1>
+
+  </div>
+  </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+      <p class="govuk-heading-m">
+        Activity details &nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="govuk-link" href="add-task-info" >
+        <span class="govuk-body">Change</span>
+      </a>
+      </p>
+
+      <form class="form"  method="post" action="added-to-task-defi">
+        <div class="govuk-form-group">
+
+          <br>
+
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Activity or task name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['task-defi-name'] | default('Verify address for NI template') }}
+          </dd>
+
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Priority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['task-priority'] | default('Very high') }}
+          </dd>
+
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task start page (URL)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Time for task completion (days)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['task-sla'] | default('2') }}
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task matching characteristics
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['matching-attributes'] | default('Decision maker') }}
+          </dd>
+
+
+        </div>
+
+      </dl>
+
+
+
+        <br><br>
+        <button class="govuk-button" data-module="govuk-button">Confirm and create activity</button>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

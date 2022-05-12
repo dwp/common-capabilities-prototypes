@@ -1,0 +1,116 @@
+{% extends "admin-header-with-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent profiles
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <!-- Breadcrumbs for the page -->
+
+      <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+        <ol class="govuk-breadcrumbs__list">
+
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard-agentAdded">Dashboard</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Agent profiles</a>
+          </li>
+
+        </ol>
+      </div>
+</div>
+</div>
+
+
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Agent profile added
+    </h3>
+    <p class="govuk-body" style="max-width:100%;">
+    <strong>Staff number: </strong> {{ data['agent-keyid'] | default('ID2232DS') }} <br>
+    <strong>Characteristics: </strong> {{ data['agent-attributes'] | default('Decision maker') }}<br>
+    </p>
+    </div>
+</div>
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Agent profiles
+        <p class="govuk-hint"></p>
+
+      </h1>
+
+      <table class="govuk-table">
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" style="width:20%">Staff number </th>
+        <th scope="col" class="govuk-table__header" style="width:45%">Characteristics</th>
+        <th scope="col" class="govuk-table__header" style="width:15%">Status</th>
+        <th scope="col" class="govuk-table__header" >Actions</th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">JKM32DS</td>
+          <td class="govuk-table__cell">Decision maker, Grade 5</td>
+          <td class="govuk-table__cell"> Active</td>
+          <td class="govuk-table__cell"><a href="#">Modify profile</a> &nbsp; <a href="#">Remove</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">ID122DS</td>
+          <td class="govuk-table__cell">Processing agent, English, New Claims</td>
+          <td class="govuk-table__cell"> Inactive</td>
+          <td class="govuk-table__cell" ><a href="#">Modify profile</a> &nbsp; <a href="#">Remove</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['agent-keyid'] | default('ID2232DS') }}</td>
+          <td class="govuk-table__cell">{{ data['agent-attributes'] | default('Decision maker') }}</td>
+          <td class="govuk-table__cell"> Active</td>
+          <td class="govuk-table__cell" ><a href="#">Modify profile</a> &nbsp; <a href="#">Remove</a></td>
+        </tr>
+
+      </tbody>
+      </table>
+
+      <p><a href="add-agent">Add agent profile</a></p>
+      <br><br>
+      <a href="/self-service/admin-v2/maintain/dashboard-agentAdded"><button class="govuk-button" data-module="govuk-button">Go to dashboard</button></a>
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock %}

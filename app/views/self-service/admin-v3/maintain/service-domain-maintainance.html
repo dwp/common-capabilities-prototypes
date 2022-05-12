@@ -1,0 +1,211 @@
+{% extends "header-setup-dwptask.html" %}
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Services on DWP Manage tasks
+{% endblock %}
+
+
+{% block pageScripts %}
+  <script type="text/javascript">
+
+    function validateForm() {
+      var serviceName = document.getElementById("business-service-name-field").value;
+      var domainName = document.getElementById("service-domain-field").value;
+
+      var serviceName_error = document.getElementById("service-name-error");
+      var domainName_error = document.getElementById("domain-error");
+
+      var error_summary = document.getElementById("no-service-domain");
+      var error_summary_e = document.getElementById("no-service-only");
+      var error_summary_p = document.getElementById("no-domain-only");
+
+      if (serviceName == "" && domainName == "") {
+        error_summary.style.display="block";
+        domainName_error.style.display="block";
+        serviceName_error.style.display="block";
+
+        error_summary_p.style.display="none";
+        error_summary_e.style.display="none";
+
+        document.getElementById("no-service-domain").focus();
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+        $("#service-domain-form").addClass("govuk-form-group--error");
+        $("#business-service-name-field").addClass("govuk-input--error");
+        $("#service-domain-field").addClass("govuk-input--error");
+        return false;
+
+      } else if (serviceName == "" && domainName !="") {
+        error_summary_e.style.display="block";
+
+        error_summary_p.style.display="none";
+        error_summary.style.display="none";
+        serviceName_error.style.display="block";
+        domainName_error.style.display="none";
+
+        document.getElementById("no-service-only").focus();
+
+        $("#service-domain-form").removeClass("govuk-form-group--error");
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+        $("#business-service-name-field").addClass("govuk-input--error");
+        $("#div-business-service-name").addClass("govuk-form-group--error");
+
+        $("#service-domain-field").removeClass("govuk-input--error");
+        $("#div-service-domain").removeClass("govuk-form-group--error");
+
+        return false;
+      } else if (serviceName != "" && domainName =="") {
+        error_summary_p.style.display="block";
+
+        error_summary_e.style.display="none";
+        error_summary.style.display="none";
+        serviceName_error.style.display="none";
+        domainName_error.style.display="block";
+
+        document.getElementById("no-domain-only").focus();
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+        $("#service-domain-form").removeClass("govuk-form-group--error");
+
+        $("#service-domain-field").addClass("govuk-input--error");
+        $("#div-service-domain").addClass("govuk-form-group--error");
+
+        $("#business-service-name-field").removeClass("govuk-input--error");
+        $("#div-business-service-name").removeClass("govuk-form-group--error");
+
+        return false;
+      }
+    }
+
+
+  </script>
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Error Summary - Start -->
+<div class="govuk-error-summary govuk-radios__conditional--hidden" id="no-service-domain" tabindex="-1" data-module="govuk-error-summary" >
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#service-name-error">Enter business area name </a>
+      </li>
+    </ul>
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#servic-domain-error">Enter business area domain </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Error Summary - End -->
+
+<!-- Error Summary - Start -->
+<div class="govuk-error-summary govuk-radios__conditional--hidden" id="no-service-only" tabindex="-1" data-module="govuk-error-summary" >
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#service-name-error">Enter service name </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Error Summary - End -->
+
+<!-- Error Summary - Start -->
+<div class="govuk-error-summary govuk-radios__conditional--hidden" id="no-domain-only" tabindex="-1" data-module="govuk-error-summary" >
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#service-domain-error">Enter service domain details </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Error Summary - End -->
+
+
+
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Set up a business area
+    </h1>
+
+    <p class="govuk-!-padding-bottom-6">Set up a business area so you can add task definitions, agents and task matching attributes.</p>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" id="service-domain-form" action="added-organisations-in-maintainance" method="post" onsubmit="return validateForm()">
+
+        <div class="govuk-form-group" id="div-business-service-name">
+
+          <fieldset data-required data-error="Cannot be blank" class="govuk-fieldset">
+          <label class="govuk-label" for="business-service-name">
+            Name
+          </label>
+          <span class="govuk-hint">For example, Get your State Pension</span>
+
+          <span id="service-name-error" class="govuk-error-message govuk-radios__conditional--hidden" >
+          <span class="govuk-visually-hidden">Error:</span> Enter business area name
+          </span>
+
+          <input class="govuk-input govuk-!-width-two-thirds form-control " id="business-service-name-field" name="business-service-name-m" type="text" >
+          </fieldset>
+        </div>
+
+
+        <div class="govuk-form-group" id="div-service-domain">
+
+        <fieldset class="govuk-fieldset"  data-required data-error="Cannot be blank">
+          <label class="govuk-label" for="service-domain">
+            Domain
+          </label>
+          <p class="govuk-hint">For example, uk.gov.dwp.rbc.gysp</p>
+
+
+          <span id="domain-error" class="govuk-error-message govuk-radios__conditional--hidden" >
+          <span class="govuk-visually-hidden">Error:</span> Enter businesss area domain
+          </span>
+
+
+          <input class="govuk-input govuk-!-width-two-thirds" id="service-domain-field" name="service-domain-m" type="text"  >
+        </fieldset>
+
+        </div>
+
+
+        <p class="govuk-!-padding-bottom-4"></p>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

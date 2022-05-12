@@ -1,0 +1,36 @@
+{% extends "admin-header-no-signout.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Signed out
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">You have been successfully signed out</h1>
+
+      </div>
+
+      <br>
+
+      <p>
+        You can now add and modify activities, agent profiles and agent grous using your <a href="/self-service/admin-v2/org-business-list"> sign in </a> to manage and configure your DWP manage task service.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <!-- Help section -->
+      <p class="govuk-heading-m">Need help?</p>
+      <p >View <a href="/self-service/admin-v2/terms-and-glossary.html" >View help and guidance</a> page</p>
+
+    </div>
+  </div>
+
+{% endblock %}

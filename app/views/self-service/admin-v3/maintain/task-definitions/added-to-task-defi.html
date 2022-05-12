@@ -1,0 +1,119 @@
+{% extends "admin-header-with-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Activities list
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    function getDate () { var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+    document.write(today);
+   }
+  </script>
+
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-attributes").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+  {{ super() }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <!-- Breadcrumbs for the page -->
+
+      <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+        <ol class="govuk-breadcrumbs__list">
+
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard-actAdded">Dashboard</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Activities</a>
+          </li>
+
+        </ol>
+      </div>
+</div>
+</div>
+
+
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Activity added.
+    </h3>
+    <p class="govuk-body" style="max-width:100%;"><strong>Activity or task name: </strong>{{ data['task-defi-name'] | default('Verify address for England') }} <br>
+    <strong>Priority: </strong> {{ data['task-priority'] | default('Very high') }}<br>
+    <strong>Task start page:</strong> {{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }} <br>
+    <strong>Completion time (days):</strong> {{ data['task-sla'] | default('4') }}
+    <br>
+    <strong>Task matching characteristics:</strong> {{ data['matching-attributes'] | default('Decision maker') }} ({{ data['task-attribute-property'] | default('Welsh, English') }})
+    </p>
+    </div>
+</div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Activities list
+      </h1>
+
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Task start page </th>
+        <th scope="col" class="govuk-table__header">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Award updates (SRBs)</td>
+        <td class="govuk-table__cell">https://sp.dwp.gov.uk/3434asdf/award-review</td>
+        <td class="govuk-table__cell"><a href="view-defi-details">View Details</a>&nbsp;<a href="remove-task">Remove</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ data['task-defi-name'] | default('Verify address for England') }}</td>
+        <td class="govuk-table__cell">{{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }}</td>
+        <td class="govuk-table__cell" ><a href="#">View Details</a>&nbsp;<a href="#">Remove</a></td>
+
+      </tr>
+
+
+
+
+  </tbody>
+</table>
+
+<p><a href="add-task-info">Add an activity</a></p>
+<br><br>
+<a href="/self-service/admin-v2/maintain/dashboard-actAdded"><button class="govuk-button" data-module="govuk-button">Go to dashboard</button></a>
+
+    </div>
+  </div>
+
+{% endblock %}
