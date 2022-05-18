@@ -828,18 +828,19 @@ const char = [
 //     }
 // }
 
-accessibleAutocomplete({
-    element: document.querySelector('#address-search'),
-    name: 'addresses',
-    id: 'address-search',
-    source: address
-})
+// accessibleAutocomplete({
+//     element: document.querySelector('#address-search'),
+//     name: 'addresses',
+//     id: 'address-search',
+//     source: address
+// })
 
 accessibleAutocomplete_1({
     element: document.querySelector('#char-search'),
     name: 'char',
     id: 'char-search',
     source: char
+
 })
 
 // if (document.addEventListener){

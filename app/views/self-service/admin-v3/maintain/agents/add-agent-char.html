@@ -1,0 +1,441 @@
+{% extends "admin-header-with-nav.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add agent profile - Agent profiles
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
+
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list">
+
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard">Dashboard</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agents/agents-list">Agent profiles</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add agent profile</a>
+            </li>
+
+          </ol>
+        </div>
+    </div>
+    </div>
+
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+              <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View task template details
+        </span>
+      </summary>
+
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            Staff Number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['agent-keyid'] | default('ID2232DS') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-agent">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Full Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['agent-fullname'] | default('Very high') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-task-info-exp">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task start page (URL)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-task-info-exp">
+              Change<span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+    Task completion time      </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['task-sla'] | default('2') }} &nbsp;
+            {{ data['sla-time'] | default('days') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-task-info-exp">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+    </details>
+
+    <form class="form" action="check-defi-details" method="post">
+
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Select characteristics
+                </h1>
+              </legend>
+              <p class="govuk-hint">This could be a skill, location, language or other criteria to help match this task to an agent.</p>
+
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+              <br>
+
+                  <div class="govuk-grid-column-full" style="padding-left:0px;">
+
+
+                    <div class="govuk-form-group">
+
+                      <fieldset class="govuk-fieldset">
+                        <h1 class="govuk-heading-m">
+                          Location
+                        </h1>
+                        <label class="govuk-label">
+                          Select matching criteria
+                        </label>
+                        <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="changed-name">
+                              Mandatory
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                              Optional
+                            </label>
+                          </div>
+                        </div>
+                        <br>
+                        <label class="govuk-label">
+                          Select from list
+                        </label>
+
+                          <select class="govuk-select govuk-!-width-one-half" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}" >
+                          <option value="No prority selected">-Select Location- </option>
+                          <option value="Very high">Newcastle</option>
+                          <option  value="High">London </option>
+                          <option  value="Medium">Leeds</option>
+                          <option value="Normal">Blackpool</option>
+                          <option value="Low">Bristol</option>
+                          <option value="Birmingham">Birmingham</option>
+                          </select>
+
+
+
+                      </fieldset>
+                          </div>
+
+                          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+
+
+
+                        <h1 class="govuk-heading-m">
+                          Role
+                        </h1>
+                        <label class="govuk-label">
+                          Select matching criteria
+                        </label>
+                        <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="changed-name">
+                              Mandatory
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                              Optional
+                            </label>
+                          </div>
+                        </div>
+                        <br>
+                        <label class="govuk-label">
+                          Select from list
+                        </label>
+                        <select class="govuk-select govuk-!-width-one-half" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}" >
+                        <option value="No prority selected">-Select Role- </option>
+                        <option value="Very high">Decision Maker</option>
+                        <option  value="High">Processing Agent </option>
+                        <option  value="Medium">Telephony</option>
+                        <option value="Normal">Manager</option>
+                        <option value="Low">Executive Officer</option>
+                        </select>
+
+                      </fieldset>
+                    </div>
+
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+
+                        <h1 class="govuk-heading-m">
+                          Language
+                        </h1>
+                        <label class="govuk-label">
+                          Select matching criteria
+                        </label>
+
+                        <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="changed-name">
+                              Mandatory
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                              Optional
+                            </label>
+                          </div>
+                        </div>
+                        <br>
+                        <label class="govuk-label">
+                          Select from list
+                        </label>
+
+                        <select class="govuk-select govuk-!-width-one-half" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}" >
+                        <option value="No prority selected">-Select Language- </option>
+                        <option value="Very high">Welsh</option>
+                        <option  value="High">English </option>
+                        <option  value="Medium">Scotish</option>
+                        <option value="Normal">Irish</option>
+                        <option value="Low">Spanish</option>
+                        </select>
+
+                        </fieldset>
+                        </div>
+
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                        <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset">
+                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                        <h1 class="govuk-heading-m">
+                          Type of task
+                        </h1>
+                        <label class="govuk-label">
+                          Select matching criteria
+                        </label>
+                        <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="changed-name">
+                              Mandatory
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                              Optional
+                            </label>
+                          </div>
+                        </div>
+                        <br>
+                        <label class="govuk-label">
+                          Select from list
+                        </label>
+                          <select class="govuk-select govuk-!-width-one-half" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}" >
+                          <option value="No prority selected">-Select- </option>
+                          <option  value="High">New Claim</option>
+                          <option value="Very high">Update benefit</option>
+                          <option  value="Medium">Delete benefit</option>
+                          <option value="Normal">Other</option>
+                          </select>
+                        </div>
+
+                      </fieldset>
+                    </div>
+
+                  </div>
+
+
+
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+
+                      <fieldset class="govuk-fieldset" >
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-form-group">
+
+    <div class="govuk-form-group">
+      <p class="govuk-inset-text">Can't see the task characteristic? Add a new characteristics. This could be the skill or location or role or any other unique characteristics you want to use to match this task to an agent.</p>
+
+
+      <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="" data-add-remove-block-remove-message="" data-add-remove-block-remove-all-message="All characteristics have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
+
+      <div class="add-remove-block__status visuallyhidden" role="status" aria-live="polite"></div>
+      <ul class="add-remove-block__list" style="padding-left:0px;"><li class="add-remove-block__item" data-item-index="0" style="list-style-type:none;">
+<!--
+        <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+          Select matching criteria
+        </label>
+        <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+            <label class="govuk-label govuk-radios__label" for="changed-name">
+              Mandatory
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+              Optional
+            </label>
+          </div>
+        </div>
+        <br>
+        <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+          Enter characteristic details
+        </label>
+
+
+        <label class="form-label-bold" for="condition-0"> Name </label>
+        <input class="govuk-input govuk-!-width-one-quarter" id="attribute-name" name="attribute-name" type="text"  >
+        &nbsp; &nbsp; &nbsp; &nbsp;<label class="form-label-bold" for="condition-0"> Value </label> &nbsp;
+          <input class="govuk-input  govuk-!-width-one-quarter" type="text" id="value-0" name="value-0">
+          <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+            Remove
+          </button>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+
+        </li></ul>
+
+        <!-- <div class="govuk-inset-text">
+          You can add multiple values to an attribute and create group. For example 'Language' can have multiple values like 'English', 'Welsh' or 'Irish'.
+        </div> -->
+      <div class="button-combo gutter-half-bottom">
+        <button type="button" class="add-remove-block__add-trigger govuk-button govuk-button--secondary">Add new characteristics</button>
+        <!-- <button type="button" class="add-remove-block__remove-all-trigger button-combo__right govuk-link">Remove all values</button> -->
+      </div>
+      <script type="text/x-template" class="add-remove-block__item-tpl">
+        <li class="add-remove-block__item" data-item-index="{index}" style="list-style-type: none; padding-left:0px;">
+          <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+            Select matching criteria
+          </label>
+
+          <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+              <label class="govuk-label govuk-radios__label" for="changed-name">
+                Mandatory
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                Optional
+              </label>
+            </div>
+          </div>
+
+          <br>
+          <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+            Enter characteristic details
+          </label>
+
+          <label class="form-label-bold" for="condition-0"> Name </label>
+          <input class="govuk-input govuk-!-width-one-quarter" id="attribute-name" name="attribute-name" type="text"  >
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <label class="form-label-bold" for="condition-{index}">Value</label>
+          <input class="govuk-input govuk-!-width-one-quarter" type="text" id="value-{index}" name="value-{index}">
+          <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+            Remove
+          </button>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        </li>
+      </script>
+
+    </div>
+
+  </fieldset>
+
+                    </div>
+                  </div>
+
+                  <!-- <br><br>
+                  <div class="govuk-inset-text " >
+                    <p><span class="govuk-!-font-weight-bold">Can't see the characteristics you want? </span><br><a href="/self-service/admin-v2/attributes/add-attributes.html">Add characteristics</a> </p>
+                    <div class="govuk-warning-text">
+
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    You will be redirected to adding new characteristics (or attribute). You will have to add details again.
+                  </strong>
+                  </div>
+                  </div> -->
+
+
+
+
+
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+</div>
+
+
+
+{% endblock %}

@@ -787,6 +787,25 @@ const address = [
 
 ]
 
+const char = [
+  'NewsamP',
+  'Decision maker',
+  'Jason bourne',
+  'NewsamP',
+  'Decision maker',
+  'Jason bourne',
+  'NewsamP',
+  'Decision maker',
+  'Jason bourne',
+  'NewsamP',
+  'Decision maker',
+  'Jason bourne',
+  'NewsamP',
+  'Decision maker',
+  'Jason bourne',
+
+]
+
 // accessibleAutocomplete({
 //     element: document.querySelector('#f-nationality'),
 //     name: 'nationality',
@@ -814,6 +833,13 @@ accessibleAutocomplete({
     name: 'addresses',
     id: 'address-search',
     source: address
+})
+
+accessibleAutocomplete_1({
+    element: document.querySelector('#char-search'),
+    name: 'char',
+    id: 'char-search',
+    source: char
 })
 
 // if (document.addEventListener){

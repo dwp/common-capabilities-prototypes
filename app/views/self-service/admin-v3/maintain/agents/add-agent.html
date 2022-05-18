@@ -56,8 +56,14 @@
                 </label>
                 <p class="govuk-hint">This is the unique staff number for the agent provided by DWP People. </p>
 
-                <input class="govuk-input govuk-!-width-two-thirds" id="agent-keyid" name="agent-keyid" type="text" value="{{ data['agent-keyid'] }}"></div>
+                <input class="govuk-input govuk-!-width-one-third" id="agent-keyid" name="agent-keyid" type="text" value="{{ data['agent-keyid'] }}"></div>
 
+                <label class="govuk-fieldset__legend--s govuk-!-font-weight-bold" for="agent-keyid">
+                  Full Name
+                </label>
+                <p class="govuk-hint">Please enter first name followed by surname </p>
+
+                <input class="govuk-input govuk-!-width-two-thirds" id="agent-fullname" name="agent-fullname" type="text" value="{{ data['agent-fullname'] }}"></div>
 
                 <!-- <label class="govuk-label govuk-!-font-weight-bold" for="sort">
                 Agent status
@@ -81,11 +87,13 @@
 
         </div>
         </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
+            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
                 Select agent characteristics
