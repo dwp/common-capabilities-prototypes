@@ -1,4 +1,4 @@
-{% extends "admin-header-with-nav.html" %}
+{% extends "admin-header-with-nav-v3.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -19,11 +19,13 @@
               <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard-agentAdded">Dashboard</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agent-groups/agent-groups-list">Agent groups</a>
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/agent-groups/agent-groups-list">Agent groups</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agent-groups/add-agent-group">Add agent group</a>
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agent-groups/add-agent-group">Create agent group</a>
             </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link "  href="/self-service/admin-v2/maintain/agent-groups/add-agent-group-char">Add group characteristics</a>
             <li class="govuk-breadcrumbs__list-item">
               <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Check and confirm</a>
             </li>
@@ -78,23 +80,10 @@
           </div>
 
 
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Group Characteristics
-                </dt>
-                <dd class="govuk-summary-list__value" >
-                  {{ data['group-attributes' ] | default('Decision maker') }}
-                </dd>
-
-
-
-              </div>
-
-
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key" >
-                Agents
+                Agents in this group
               </dt>
               <dd class="govuk-summary-list__value" >
                 {{ data['agents-0'] | default('James Bond') }}, {{ data['agents-1'] | default('James Bond') }}, {{ data['agents-2'] | default('James Bond') }},
@@ -103,6 +92,20 @@
 
 
             </div>
+
+
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Group Characteristics
+                            </dt>
+                            <dd class="govuk-summary-list__value" >
+                              {{ data['group-attributes' ] | default('Decision maker') }}
+                            </dd>
+
+
+
+                          </div>
+
 
 
             </dl>

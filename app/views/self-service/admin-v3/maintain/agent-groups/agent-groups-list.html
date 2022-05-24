@@ -1,4 +1,4 @@
-{% extends "admin-header-with-nav.html" %}
+{% extends "admin-header-with-nav-v3.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -28,7 +28,7 @@
         <ol class="govuk-breadcrumbs__list ">
 
           <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard-agentAdded">Dashboard</a>
+            <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard-agentAdded">Dashboard</a>
           </li>
           <li class="govuk-breadcrumbs__list-item">
             <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Agent groups</a>
@@ -57,7 +57,7 @@
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header" style="width:22%">Name </th>
         <th scope="col" class="govuk-table__header" style="width:32%">Agents</th>
-        <th scope="col" class="govuk-table__header" style="width:32%">Characteristics</th>
+        <th scope="col" class="govuk-table__header" style="width:32%">Group characteristics</th>
         <th scope="col" class="govuk-table__header" >Actions</th>
       </tr>
       </thead>
@@ -84,9 +84,9 @@
       </tbody>
       </table>
 
-      <p><a href="add-agent-group">Add agent group</a></p>
+      <p><a href="add-agent-group">Create agent group</a></p>
       <br><br>
-      <a href="/self-service/admin-v2/maintain/dashboard-agentAdded"><button class="govuk-button" data-module="govuk-button">Go to dashboard</button></a>
+      <a href="/self-service/admin-v3/maintain/dashboard-agentAdded"><button class="govuk-button" data-module="govuk-button">Go to dashboard</button></a>
     </div>
   </div>
 

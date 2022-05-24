@@ -1,4 +1,4 @@
-{% extends "admin-header-with-nav.html" %}
+{% extends "admin-header-with-nav-v3.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -18,13 +18,16 @@
               <ol class="govuk-breadcrumbs__list">
 
                 <li class="govuk-breadcrumbs__list-item">
-                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard">Dashboard</a>
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/task-definitions/task-defi">Activities</a>
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/task-defi">Task templates</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/task-definitions/add-task-info">Add an activity</a>
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/add-task-info">Create task template</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link " href="/self-service/admin-v3/maintain/task-definitions/add-char" >Add task matching characteriistcs</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
                   <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Check and confirm</a>
@@ -90,7 +93,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Task start page (URL)
+            Task start page
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
@@ -99,11 +102,12 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Time for task completion (days)
+            Time for task completion
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['task-sla'] | default('2') }}
-          </dd>
+            {{ data['task-sla'] | default('2') }} &nbsp;
+            {{ data['sla-time'] | default('days') }}
+                    </dd>
 
         </div>
 
@@ -123,7 +127,7 @@
 
 
         <br><br>
-        <button class="govuk-button" data-module="govuk-button">Confirm and create activity</button>
+        <button class="govuk-button" data-module="govuk-button">Confirm and create task template</button>
 
         </div>
       </form>

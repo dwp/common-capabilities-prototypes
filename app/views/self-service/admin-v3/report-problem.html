@@ -1,0 +1,58 @@
+{% extends "admin-header-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Report a problem - DWP Task Manage
+{% endblock %}
+
+
+{% block content %}
+<main class="govuk-template__body">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <h1 class="govuk-heading-xl">
+              Report a problem
+            </h1>
+            <div id="more-detail-hint" class="govuk-hint">
+              Do not include personal information, like customer's National Insurance number or identification details.
+            </div>
+            <form class="form" method="post" action="feedback-thankyou">
+
+
+        <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--s" for="more-detail">
+      What were you doing?
+    </label>
+  </h1>
+
+  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--s" for="more-detail">
+      What went wrong?
+    </label>
+  </h1>
+
+  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+<button type="submit" class="govuk-button" data-module="govuk-button">Report the problem</button>
+
+</form>
+
+        </div>
+    </div>
+
+
+
+
+</main>
+
+
+{% endblock %}

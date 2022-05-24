@@ -1,10 +1,20 @@
-{% extends "admin-header-with-nav.html" %}
+{% extends "admin-header-with-nav-v3.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
   Add agent group - Agent groups
 {% endblock %}
 
+{% block pageScripts %}
+
+
+    <link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+    <script src="/public/javascripts/accessible-autocomplete-agent.min.js" rel="stylesheet" type="text/javascript"></script>
+    <script src="/public/javascripts/assets_js_auto-complete-agent.js" rel="stylesheet" type="text/javascript"></script>
+
+
+
+{% endblock %}
 {% block beforeContent %}
 
     {{ super() }}
@@ -18,13 +28,13 @@
             <ol class="govuk-breadcrumbs__list ">
 
               <li class="govuk-breadcrumbs__list-item">
-                <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard-agentAdded">Dashboard</a>
+                <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard-agentAdded">Dashboard</a>
               </li>
               <li class="govuk-breadcrumbs__list-item">
-                <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agent-groups/agent-groups-list">Agent groups</a>
+                <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/agent-groups/agent-groups-list">Agent groups</a>
               </li>
               <li class="govuk-breadcrumbs__list-item">
-                <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Agent groups</a>
+                <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Create agent groups</a>
               </li>
 
             </ol>
@@ -42,12 +52,11 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form class="form" action="check-add-agent-group" method="post">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-three-quarters">
 
             <h1 class="govuk-heading-xl">
-              Add agent group
+              Create agent group
             </h1>
 
       <br>
@@ -62,25 +71,6 @@
                 </div>
 
 
-                <!-- <label class="govuk-label govuk-!-font-weight-bold" for="sort">
-                Agent status
-                <p class="govuk-hint">It is the primary property for this attribute. </p>
-                </label>
-
-              <div class="govuk-radios govuk-radios--inline">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="remove-agent" name="agent-status" type="radio" value="Active" {{ checked("agent-status", "Active") }}>
-                  <label class="govuk-label govuk-radios__label" for="remove-attribute">
-                    Active
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="remove-agent-2" name="agent-status" type="radio" value="Inactive" {{ checked("agent-status", "Inactive") }}>
-                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                    Inactive
-                  </label>
-                </div>
-              </div> -->
 
         </div>
         </div>
@@ -89,373 +79,141 @@
 
 
         <label class="govuk-fieldset__legend--l govuk-!-font-weight-bold" for="agents">
-          Select agents
+          Select and add agent to the group
         </label>
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
-        <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Agents selected: {labelIndex}" data-add-remove-block-remove-message="Attribute {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attributes have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
 
-        <div class="add-remove-block__status visuallyhidden" role="status" aria-live=""></div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
 
-        <ul class="add-remove-block__list" style="padding-left:0px;">
-          <li class="add-remove-block__item" data-item-index="0" style="list-style-type: none;">
 
-            <br>
-          <label class="form-label-bold govuk-!-font-weight-bold" for="condition-0">Select agent</label> <br>
-            <!-- <input class="govuk-input  govuk-!-width-two-thirds" type="text" id="value-0" name="value-0"> -->
-            <select class="govuk-select govuk-!-width-two-thirds" id="agents-0" name="agents-0">
-            <option disabled selected value>-- Select an agent --</option>
-            <option value="Peter Parker">JKM32DS - Peter Parker</option>
-            <option value="Bruce Wayne">ID122DS - Bruce Wayne</option>
-            <option value="Jean Teofil">23DFDF - Jean Teofil</option>
-            <option value="Artemi Shigeru">KDFI33F - Artemi Shigeru</option>
-            <option value="Alec Juliano">KDWP229 - Alec Juliano</option>
-            <option value="Phaidra Radoslava">ID122DK - Phaidra Radoslava</option>
-            <option value="Alban Vikenti">JKM3D2DS - Alban Vikenti</option>
-            <option value="Aleksandar Lidia">DID122DS - Aleksandar Lidia</option>
-            </select>
-            &nbsp;
-            <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
-              Remove agent
-            </button>
-            <hr class="govuk-section-break govuk-section-break-m govuk-section-break--visible">
+                <form class="form" method="post" action="add-agent-group-char">
+                  <fieldset class="govuk-fieldset" >
+                    <div class="govuk-form-group">
 
-          </li></ul>
 
-        <div class="button-combo gutter-half-bottom">
-          <button type="button" class="add-remove-block__add-trigger govuk-button govuk-button--secondary">Select another agent</button>
-          <!-- <button type="button" class="add-remove-block__remove-all-trigger button-combo__right govuk-link">Remove all values</button> -->
-        </div>
+                      <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+                        Select agent
+                      </label>
 
-        <script type="text/x-template" class="add-remove-block__item-tpl">
+                      <p class="govuk-hint">Start typing and select agent from the list or enter a new one </p>
 
-          <li class="add-remove-block__item" data-item-index="{index}" style="list-style-type: none;">
+                      <div class="govuk-body">
 
-            <br>
-            <label class="form-label-bold govuk-!-font-weight-bold" for="condition-{index}">Select agent </label><br>
 
-            <select class="govuk-select govuk-!-width-two-thirds" id="sort" name="agents-{index}">
-              <option disabled selected value>-- Select an agent --</option>
-              <option value="Peter Parker">JKM32DS - Peter Parker</option>
-              <option value="Bruce Wayne">ID122DS - Bruce Wayne</option>
-              <option value="Jean Teofil">23DFDF - Jean Teofil</option>
-              <option value="Artemi Shigeru">KDFI33F - Artemi Shigeru</option>
-              <option value="Alec Juliano">KDWP229 - Alec Juliano</option>
-              <option value="Phaidra Radoslava">ID122DK - Phaidra Radoslava</option>
-              <option value="Alban Vikenti">JKM3D2DS - Alban Vikenti</option>
-              <option value="Aleksandar Lidia">DID122DS - Aleksandar Lidia</option>
-            </select> &nbsp;
-            <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
-              Remove agent
-            </button>
+                        <!-- <div><input class="govuk-input govuk-!-width-two-fourth" id="agent-search" name="characteristics" type="" ></div> -->
+                        <div class="govuk-body govuk-!-width-one-quarter" id="agent-search" name="characteristics" > </div>
 
-            <hr class="govuk-section-break govuk-section-break-m govuk-section-break--visible">
 
-          </li>
-        </script>
+                      <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add agent to group</button>
+                    </div>
+
+                    <h1 class="govuk-heading-m">
+                      Agents in this group
+                    </h1>
+
+                    <div class="govuk-form-group">
+                      <table class="govuk-table" id="characteristics-table">
+                        <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Agent Name</th>
+                            <!-- <th scope="col" class="govuk-table__header">Criteria</th> -->
+                            <th scope="col" class="govuk-table__header">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row" id="nodataadded">
+                            <td class="govuk-table__cell">No characteristic added</td>
+                            <!-- <td class="govuk-table__cell"></td> -->
+                            <td class="govuk-table__cell"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </fieldset>
+                  <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+                  </form>
+                </div>
+              </div>
+
+              <script language="JavaScript">
+
+
+
+              function addRow() {
+
+                var count = 1;
+
+                if (count = 1) {
+
+                  function removeRow(id) {
+                    var tr = document.getElementById(id);
+                    if (tr) {
+                      if (tr.nodeName == 'TR') {
+                        var tbl = tr; // Look up the hierarchy for TABLE
+                        while (tbl != document && tbl.nodeName != 'TABLE') {
+                          tbl = tbl.parentNode;
+                        }
+
+                        if (tbl && tbl.nodeName == 'TABLE') {
+                          while (tr.hasChildNodes()) {
+                            tr.removeChild( tr.lastChild );
+                          }
+                        tr.parentNode.removeChild( tr );
+                        }
+                      } else {
+                        alert( 'Specified document element is not a TR. id=' + id );
+                      }
+                    } else {
+                      alert( 'Specified document element is not found. id=' + id );
+                    }
+                  }
+
+                removeRow('nodataadded');
+                count = 2;
+
+                }
+                var characteristics = document.getElementById('agent-search');
+                var char_criteria = document.getElementsByName('char-criteria');
+                var table = document.getElementById('characteristics-table');
+
+                var rowCount = table.rows.length;
+                var row = table.insertRow(rowCount);
+                row.className = 'govuk-table__row';
+                var intialrow = document.getElementById('nodataadded');
+
+                var valueCell = row.insertCell(0);
+                valueCell.innerHTML = characteristics.value;
+                valueCell.id = 'characteristics-' + characteristics.value;
+                valueCell.className = 'govuk-table__cell';
+
+
+
+                var actionCell = row.insertCell(1);
+                actionCell.innerHTML = '<a class="govuk-link" data-module="govuk-link" onclick="javascript:removeRow(' + rowCount + ');">Remove</a>';
+                actionCell.className = 'govuk-table__cell';
+                characteristics.value = '';
+
+              }
+
+              function removeRow(index) {
+                var table = document.getElementById('characteristics-table');
+                table.deleteRow(index);
+              }
+              </script>
+
+
+
+
+
+
+
       </div>
 
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Select group characteristics
-              </h1>
-            </legend>
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
-
-                <div class="govuk-grid-column-one-half" style="padding-left:0px;">
-
-                  <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset">
-
-                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                        <h1 class="govuk-heading-m">
-                          Location
-                        </h1>
-
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes" name="group-attributes" type="checkbox" value="Newcastle" {{ checked("['group-attributes']", "Newcastle") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes">
-                            Newcastle
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes" name="group-attributes" type="checkbox" value="London" {{ checked("['group-attributes']", "London") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes">
-                            London
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes" name="group-attributes" type="checkbox" value="Leeds" {{ checked("['group-attributes']", "Leeds") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes">
-                            Leeds
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes" name="group-attributes" type="checkbox" value="Blackpool" {{ checked("['group-attributes']", "Blackpool") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes">
-                            Blackpool
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes" name="group-attributes" type="checkbox" value="Birmingham" {{ checked("['group-attributes']", "Birmingham") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes">
-                            Birmingham
-                          </label>
-                        </div>
-
-                        </div>
-                        </fieldset>
-                        </div>
-
-                        <div class="govuk-form-group">
-                          <fieldset class="govuk-fieldset">
-                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-
-                        <h1 class="govuk-heading-m">
-                          Role
-                        </h1>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-2" name="group-attributes" type="checkbox" value="Decision maker" {{ checked("['group-attributes']", "Decision maker") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-2">
-                            Decision maker
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-3" name="group-attributes" type="checkbox" value="Specialist" {{ checked("['group-attributes']", "Specialist") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-3">
-                            Specialist
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-4" name="group-attributes" type="checkbox" value="Processing Agent" {{ checked("['group-attributes']", "Processing Agent") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-4">
-                            Processing Agent
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-5" name="group-attributes" type="checkbox" value="Telephony" {{ checked("['group-attributes']", "Telephony") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-5">
-                            Telephony
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-5" name="group-attributes" type="checkbox" value="Manager" {{ checked("['group-attributes']", "Manager") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-5">
-                            Manager
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-5" name="group-attributes" type="checkbox" value="Executive officer" {{ checked("['group-attributes']", "Executive officer") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-5">
-                            Executive officer
-                          </label>
-                        </div>
-
-                      </div>
-
-                    </fieldset>
-                  </div>
-                </div>
-
-                <div class="govuk-grid-column-one-half">
-
-                  <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset">
-
-                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                        <h1 class="govuk-heading-m">
-                          Job Grade
-                        </h1>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-5" name="group-attributes" type="checkbox" value="Grade 5" {{ checked("['group-attributes']", "Grade 5") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-5">
-                            Grade 5
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-5" name="group-attributes" type="checkbox" value="Grade 7" {{ checked("['group-attributes']", "Grade 7") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-5">
-                            Grade 7
-                          </label>
-                        </div>
-
-                      </fieldset>
-                      </div>
-
-                      <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-
-                      <h1 class="govuk-heading-m">
-                        Language
-                      </h1>
-
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-2" name="group-attributes" type="checkbox" value="English" {{ checked("['group-attributes']", "English") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-2">
-                            English
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-3" name="group-attributes" type="checkbox" value="Irish" {{ checked("['group-attributes']", "Irish") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-3">
-                            Irish
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-4" name="group-attributes" type="checkbox" value="Welsh" {{ checked("['group-attributes']", "Welsh") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-4">
-                            Welsh
-                          </label>
-                        </div>
-                      </fieldset>
-                      </div>
-
-                      <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-
-                      <h1 class="govuk-heading-m">
-                        Skill
-                      </h1>
-
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-5" name="group-attributes" type="checkbox" value="New Claims" {{ checked("['group-attributes']", "New Claims") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-5">
-                            New Claims
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-5" name="group-attributes" type="checkbox" value="Recovery" {{ checked("['group-attributes']", "Recovery") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-5">
-                            Recovery
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="group-attributes-5" name="group-attributes" type="checkbox" value="Fraud" {{ checked("['group-attributes']", "Fraud") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-5">
-                            Fraud
-                          </label>
-                        </div>
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="matching-attributes-5" name="matching-attributes" type="checkbox" value="General" {{ checked("['group-attributes']", "General") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="group-attributes-5">
-                            General
-                          </label>
-                        </div>
-                      </div>
-
-                    </fieldset>
-                  </div>
-                </div>
-
-                <br><br>
-                <div class="govuk-inset-text " >
-                  <p><span class="govuk-!-font-weight-bold">Can't see the characteristics you want? </span><br><a href="/self-service/admin-v2/attributes/add-attributes.html">Add characteristics</a> </p>
-                  <div class="govuk-warning-text">
-
-                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                <strong class="govuk-warning-text__text">
-                  <span class="govuk-warning-text__assistive">Warning</span>
-                  You will be redirected to adding new characteristics (or attribute). You will have to add details again.
-                </strong>
-                </div>
-                </div>
-
-                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
-
-<!--
-                <div class="govuk-grid-row">
-                  <div class="govuk-grid-column-full">
-
-                      <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
-                        <div class="govuk-form-group">
-                          <label class="govuk-fieldset__legend--l govuk-!-font-weight-bold" for="agents">
-                            Add agents to this group
-                          </label>
-                          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
-
-                          <p>Select and add</p>
-                          <select class="govuk-select govuk-!-width-two-thirds " id="agents" name="agents">
-                            <option disabled selected value>-- Select an agent --</option>
-                            <option value="JKM32DS - Peter Parker">JKM32DS - Peter Parker</option>
-                            <option value="ID122DS - Bruce Wayne">ID122DS - Bruce Wayne</option>
-                            <option value="23DFDF - Jean Teofil">23DFDF - Jean Teofil</option>
-                            <option value="KDFI33F - Artemi Shigeru">KDFI33F - Artemi Shigeru</option>
-                            <option value="KDWP229 - Alec Juliano">KDWP229 - Alec Juliano</option>
-                            <option value="ID122DK - Phaidra Radoslava">ID122DK - Phaidra Radoslava</option>
-                            <option value="JKM3D2DS">JKM3D2DS - Alban Vikenti</option>
-                            <option value="DID122DS">DID122DS - Aleksandar Lidia</option>
-
-                          </select>
-                          <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add agent</button>
-                        </div>
-                        <div class="govuk-form-group">
-                          <table class="govuk-table" id="agents-table">
-                            <thead class="govuk-table__head">
-                              <tr class="govuk-table__row">
-                                <th scope="col" class="govuk-table__header" style="width:70%;">Agent</th>
-                                <th scope="col" class="govuk-table__header">Action</th>
-                              </tr>
-                              <tr class="govuk-table__row" id="no-added-row">
-                                <td class="govuk-table__cell">- No agents added - </td>
-                                <td class="govuk-table__cell" ></td>
-                              </tr>
-                            </thead>
-                            <tbody class="govuk-table__body">
-                            </tbody>
-                          </table>
-                        </div>
-                      </fieldset>
-                  </div>
-                </div>
-
-                <script language="JavaScript">
-                function addRow() {
-                  var organisationUnit = document.getElementById('agents');
-                  var table = document.getElementById('agents-table');
-                  var noadded = document.getElementById('no-added-row');
-
-                  var rowCount = table.rows.length;
-                  var row = table.insertRow(rowCount);
-                  row.className = 'govuk-table__row';
-
-                  var valueCell = row.insertCell(0);
-
-                  valueCell.innerHTML = organisationUnit.options[organisationUnit.selectedIndex].text;
-                  valueCell.id = 'attribute-value-' + organisationUnit.options[organisationUnit.selectedIndex].text;
-                  valueCell.className = 'govuk-table__cell';
-
-                  var actionCell = row.insertCell(1);
-                  document.getElementById("no-added-row").style.display = 'none';
-                  actionCell.innerHTML = '<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="removeRow(' + rowCount + ');">Remove agent</button>';
-                  actionCell.className = 'govuk-table__cell';
-                }
-
-                function removeRow(index) {
-                  var table = document.getElementById('agents-table');
-                  table.deleteRow(index);
-                }
-                </script> -->
-
-
-
-        </div>
-
-        </div>
-
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
-
-
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
-    </form>
 
   </div>
-</div>
+
 
 
 

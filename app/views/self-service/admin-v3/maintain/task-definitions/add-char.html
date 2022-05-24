@@ -1,4 +1,4 @@
-{% extends "admin-header-with-nav.html" %}
+{% extends "admin-header-with-nav-v3.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -18,16 +18,16 @@
               <ol class="govuk-breadcrumbs__list">
 
                 <li class="govuk-breadcrumbs__list-item">
-                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard">Dashboard</a>
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/task-definitions/task-defi">Activities</a>
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/task-defi">Task templates</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/task-definitions/add-task-info">Add an activity</a>
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/add-task-info">Create task template</a>
                 </li>
                 <li class="govuk-breadcrumbs__list-item">
-                  <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Check and confirm</a>
+                  <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Add task matching characteristics</a>
                 </li>
 
               </ol>
@@ -264,7 +264,7 @@ Task completion time      </dt>
     </h1>
     <p class="govuk-hint">This could be a skill, location, language or other criteria to help match this task to an agent. </p>
 
-    <form class="form" method="post" action="add-attribute-confirmation">
+    <form class="form" method="post" action="check-defi-details">
       <fieldset class="govuk-fieldset" >
         <div class="govuk-form-group">
           <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">

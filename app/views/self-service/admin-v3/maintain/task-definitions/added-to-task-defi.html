@@ -1,4 +1,4 @@
-{% extends "admin-header-with-nav.html" %}
+{% extends "admin-header-with-nav-v3.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -39,10 +39,10 @@
         <ol class="govuk-breadcrumbs__list">
 
           <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard-actAdded">Dashboard</a>
+            <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard-actAdded">Dashboard</a>
           </li>
           <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Activities</a>
+            <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Task templates</a>
           </li>
 
         </ol>
@@ -61,12 +61,12 @@
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      Activity added.
+      Task template added.
     </h3>
-    <p class="govuk-body" style="max-width:100%;"><strong>Activity or task name: </strong>{{ data['task-defi-name'] | default('Verify address for England') }} <br>
+    <p class="govuk-body" style="max-width:100%;"><strong>Task name: </strong>{{ data['task-defi-name'] | default('Verify address for England') }} <br>
     <strong>Priority: </strong> {{ data['task-priority'] | default('Very high') }}<br>
     <strong>Task start page:</strong> {{ data['task-url'] | default('sp.dwp.gov.uk/34343adfasdf/3sdfasd') }} <br>
-    <strong>Completion time (days):</strong> {{ data['task-sla'] | default('4') }}
+    <strong>Completion time:</strong> {{ data['task-sla'] | default('4') }}
     <br>
     <strong>Task matching characteristics:</strong> {{ data['matching-attributes'] | default('Decision maker') }} ({{ data['task-attribute-property'] | default('Welsh, English') }})
     </p>
@@ -109,9 +109,9 @@
   </tbody>
 </table>
 
-<p><a href="add-task-info">Add an activity</a></p>
+<p><a href="add-task-info">Create task template</a></p>
 <br><br>
-<a href="/self-service/admin-v2/maintain/dashboard-actAdded"><button class="govuk-button" data-module="govuk-button">Go to dashboard</button></a>
+<a href="/self-service/admin-v3/maintain/dashboard-actAdded"><button class="govuk-button" data-module="govuk-button">Go to dashboard</button></a>
 
     </div>
   </div>

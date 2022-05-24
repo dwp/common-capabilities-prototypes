@@ -20,37 +20,14 @@
         Menu
       </button>
 
+      <ul id="super-navigation-menu" class="gem-c-layout-super-navigation-header__navigation-items">
 
+        <li class="gem-c-layout-super-navigation-header__navigation-item">
+             <a class="gem-c-layout-super-navigation-header__navigation-item-link" data-module="gem-track-click" data-track-action="departmentsLink" data-track-category="headerClicked" data-track-label="" data-track-dimension="Departments" data-track-dimension-index="29" href="/self-service/admin-v2/confirmation-signout.html"">Sign out</a>
+          </li>
 
+</ul>
 
-  <ul id="gem-c-layout-super-navigation-header__navigation-item" class="gem-c-layout-super-navigation-header__navigation-items">
-    <li class="gem-c-layout-super-navigation-header__navigation-item" id="menu-dashboard">
-      <a class="gem-c-layout-super-navigation-header__navigation-item-link" href="/self-service/admin-v2/maintain/dashboard-agentAdded">
-        Dashboard
-      </a>
-    </li>
-
-
-    <li class="gem-c-layout-super-navigation-header__navigation-item govuk-header__navigation-item--active" id="menu-agents">
-      <a class="gem-c-layout-super-navigation-header__navigation-item-link" href="/self-service/admin-v2/maintain/agents/added-agents-list">
-        Agent profiles
-      </a>
-    </li>
-    <li class="gem-c-layout-super-navigation-header__navigation-item " id="menu-attributes">
-      <a class="gem-c-layout-super-navigation-header__navigation-item-link" href="/self-service/admin-v2/maintain/agent-groups/agent-groups-list">
-        Agent groups
-      </a>
-    </li>
-    <li class="gem-c-layout-super-navigation-header__navigation-item " id="menu-task-definitions">
-      <a class="gem-c-layout-super-navigation-header__navigation-item-link" href="/self-service/admin-v2/maintain/task-definitions/task-defi">
-        Activities
-      </a>
-    </li>
-    <li class="gem-c-layout-super-navigation-header__navigation-item">
-      <a class="gem-c-layout-super-navigation-header__navigation-item-link" data-module="gem-track-click" data-track-action="departmentsLink" data-track-category="headerClicked" data-track-label="" data-track-dimension="Departments" data-track-dimension-index="29" href="/self-service/admin-v2/confirmation-signout.html">Sign out</a>
-      </li>
-
-  </ul>
 
 
 
@@ -60,35 +37,29 @@
 {% endblock %}
 
 {% block beforeContent %}
-<!-- <div class="govuk-phase-banner">
+<div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-tag--blue">
-      Private Alpha
+    <strong class="govuk-tag ">
+       Alpha
     </strong> &nbsp;
     <span class="govuk-phase-banner__text">
-      Set up and maintain your organisation or business area on DWP Task service.
+      This is a new service - <a href="/self-service/admin-v3/report-problem.html" target="_blank">report a problem </a> to help us to improve it.
     </span>
   </p>
-</div> -->
-
-<div class="govuk-grid-column-full" style="border-bottom:1px solid #b1b4b6; padding-top:20px; padding-left:0px;" >
-  <div class="govuk-grid-column-one-half" style="padding-left:0px;">
-    <span class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">Access to work</span>
-    <!-- <span class="govuk-hint"><strong>Domain</strong>: http://uk.dwp.gysp.not-an-actual-domain</span> -->
-  </div>
-  <div class="govuk-grid-column-one-half" style="padding-right:0px;" >
-    <p style="text-align:right;"><a href="/self-service/admin-v2/org-business-list"  >Switch organisation</a></p>
-    </div>
 </div>
+
+
 
 {% endblock %}
 
 {% block footer %}
 <footer class="govuk-footer " role="contentinfo">
   <div class="govuk-width-container ">
-
+<!--
     <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <!-- <h2 class="govuk-footer__heading govuk-heading-s">Feedback and help information</h2>
+
         <h2 class="govuk-visually-hidden">Support links</h2>
         <ul class="govuk-footer__inline-list">
           <li class="govuk-footer__inline-list-item">
@@ -106,7 +77,6 @@
               Contact the team
             </a>
           </li>
-
         </ul>
 
 
@@ -118,12 +88,15 @@
 
       </div>
 
-    </div>
+    </div> -->
     <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
 
 
-        Built by the <a href="/self-service/admin-v2/common-capablities-team.html" class="govuk-footer__link">DWP Digital Team</a>
+                Give your <a href="/self-service/admin-v3/give-feedback.html" target="_blank">feedback</a> to help us create a better service.
+                <br>
+                <br>
+        Built by the DWP Digital Team
 
       </div>
    </div>

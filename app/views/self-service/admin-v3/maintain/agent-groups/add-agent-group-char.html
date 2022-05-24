@@ -16,13 +16,16 @@
           <ol class="govuk-breadcrumbs__list">
 
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard">Dashboard</a>
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agents/agents-list">Agent profiles</a>
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/agent-groups/agent-groups-list">Agent groups</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add agent profile</a>
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agent-groups/add-agent-group">Create agent group</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add group characteristics</a>
             </li>
 
           </ol>
@@ -57,34 +60,35 @@
               <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          View agent details
+          View agent group details
         </span>
       </summary>
+      <form class="form" method="post" action="check-add-agent-group">
 
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">
-            Staff number
+            Group name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['agent-keyid'] | default('ID2232DS') }}
+            {{ data['group-name'] | default('ID2232DS') }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="add-task-info-exp">
+            <a class="govuk-link" href="add-agent-group">
               Change<span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Full Name
+            Agents in the group
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['agent-fullname'] | default('James Bond') }}
+            {{ data['agents-0'] | default('James Bond') }}, {{ data['agents-1'] | default('James Bond') }}, {{ data['agents-2'] | default('James Bond') }},
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="add-task-info-exp">
+            <a class="govuk-link" href="add-agent-group">
               Change<span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
@@ -100,10 +104,9 @@
       <div class="govuk-grid-column-full">
 
         <h1 class="govuk-heading-xl">
-          Add agent characteristics
+          Add group characteristics
         </h1>
 
-        <form class="form" method="post" action="check-add-agent">
           <fieldset class="govuk-fieldset" >
             <div class="govuk-form-group">
 
@@ -125,7 +128,7 @@
             </div>
 
             <h1 class="govuk-heading-m">
-              Agent characteristics
+              Agent group characteristics
             </h1>
 
             <div class="govuk-form-group">

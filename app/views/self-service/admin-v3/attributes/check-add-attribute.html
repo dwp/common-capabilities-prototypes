@@ -1,4 +1,4 @@
-{% extends "admin-header.html" %}
+{% extends "admin-header-v3.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -17,15 +17,16 @@
             <div class="govuk-breadcrumbs" style="background:#ffffff; ">
               <ol class="govuk-breadcrumbs__list">
 
-                <li class="govuk-breadcrumbs__list-item">
-                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/org-business-list">Organisation units or business areas</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/attributes-list">Common attributes</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/add-attributes">Add attributes</a>
-                </li>
+
+                            <li class="govuk-breadcrumbs__list-item">
+                              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/org-business-list">Business areas</a>
+                            </li>
+                            <li class="govuk-breadcrumbs__list-item">
+                              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/attributes/attributes-list">Common characteristics</a>
+                            </li>
+                            <li class="govuk-breadcrumbs__list-item">
+                              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/attributes/add-attributes">Add a common characteristic</a>
+                            </li>
                 <li class="govuk-breadcrumbs__list-item">
                   <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Check and confirm</a>
                 </li>
@@ -34,6 +35,7 @@
             </div>
       </div>
       </div>
+      <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
 
     {{ govukBackLink ({
         text: 'Back',
@@ -100,13 +102,13 @@
         </div> -->
 
       </dl>
-      <form class="form" action="/self-service/admin-v2/attributes/add-attributes-add-another" method="post">
+      <form class="form" action="added-to-attributes-list">
 
       <div class="govuk-form-group govuk-!-padding-top-8">
   <fieldset class="govuk-fieldset" aria-describedby="add-another-attribute-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Do you want to add another characteristics?
+        Do you want to add another characteristic?
       </h1>
     </legend>
     <!-- <div id="add-another-attribute-hint" class="govuk-hint">
