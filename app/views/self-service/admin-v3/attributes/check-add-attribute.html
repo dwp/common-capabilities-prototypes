@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check and Confirm - Add an attribute - Common attributes
+  Check and confirm - Add characteristic - DWP Task - Manage
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,7 +25,7 @@
                               <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/attributes/attributes-list">Common characteristics</a>
                             </li>
                             <li class="govuk-breadcrumbs__list-item">
-                              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/attributes/add-attributes">Add a common characteristic</a>
+                              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/attributes/add-attributes">Add characteristic</a>
                             </li>
                 <li class="govuk-breadcrumbs__list-item">
                   <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Check and confirm</a>
@@ -102,7 +102,7 @@
         </div> -->
 
       </dl>
-      <form class="form" action="added-to-attributes-list">
+      <form class="form" action="/added-to-characteristic-list" method="post">
 
       <div class="govuk-form-group govuk-!-padding-top-8">
   <fieldset class="govuk-fieldset" aria-describedby="add-another-attribute-hint">
@@ -116,14 +116,14 @@
     </div> -->
     <div class="govuk-radios govuk-radios--inline govuk-!-padding-top-3">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="add-another-attribute" name="add-another-attribute" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="add-another-attribute">
+        <input class="govuk-radios__input" id="add-another-characteristics" name="add-another-characteristics" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="add-another-characteristics">
           Yes, I want to add another
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="add-another-attribute-2" name="add-another-attribute" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="add-another-attribute-2">
+        <input class="govuk-radios__input" id="add-another-characteristics-2" name="add-another-characteristics" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="add-another-characteristics-2">
           No, take me to the list of characteristics
         </label>
       </div>
@@ -133,7 +133,7 @@
 
 
       <br><br>
-      <button class="govuk-button" data-module="govuk-button">Confirm and create characteristics</button>
+      <button class="govuk-button" data-module="govuk-button">Confirm and create characteristic</button>
 
       </form>
 

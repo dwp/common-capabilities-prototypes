@@ -2,33 +2,23 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add agent profile - Agent profiles
+  Add agent profile - DWP Task - Manage
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
 {% endblock %}
 
 {% block beforeContent %}
 
     {{ super() }}
-    <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <!-- Breadcrumbs for the page -->
 
-        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
-          <ol class="govuk-breadcrumbs__list">
-
-            <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard">Dashboard</a>
-            </li>
-            <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agents/agents-list">Agent profiles</a>
-            </li>
-            <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add agent profile</a>
-            </li>
-
-          </ol>
-        </div>
-    </div>
-    </div>
 
 
     {{ govukBackLink ({
@@ -41,7 +31,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form class="form" action="add-agent-char" method="post">
+    <form class="form" action="do-you-want-to-add-char" method="post">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-three-quarters">
 
@@ -66,9 +56,10 @@
 
                 <input class="govuk-input govuk-!-width-two-thirds" id="agent-fullname" name="agent-fullname" type="text" value="{{ data['agent-fullname'] }}"></div>
 
-                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
                 </div>
+
+
 
                 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 

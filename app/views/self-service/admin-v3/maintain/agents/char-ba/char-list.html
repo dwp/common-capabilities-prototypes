@@ -1,0 +1,134 @@
+{% extends "admin-header-with-nav-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Common Characteristics - DWP Task - Manage
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
+
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list">
+
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Characteristics</a>
+            </li>
+
+          </ol>
+        </div>
+  </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Characteristics
+      </h1>
+
+      <!-- List of agents in all the business areas -->
+      <div class="govuk-grid-row" style="border-bottom:2px solid #b1b4b6; ">
+        <div class="govuk-grid-column-full">
+
+        <div class="govuk-grid-column-one-half govuk-!-padding-top-6 govuk-!-padding-left-0" >
+          <p class="govuk-body govuk-!-font-weight-bold"><span class="govuk-heading-xl" style="display:inline;">5 &nbsp;</span>Characteristics </p>
+        </div>
+        <div class="govuk-grid-column-one-half  govuk-!-padding-top-6" style="text-align:right; vertical-align:bottom;">
+          <p class="govuk-body"><a href="add-char">Add characteristic</a></p>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full govuk-!-padding-top-6">
+
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" style="width:30%" >Name</th>
+      <th scope="col" class="govuk-table__header" style="width:40%" >Characteristics</th>
+      <th scope="col" class="govuk-table__header" style="width:30%; text-align:right;">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Specialists </td>
+      <td class="govuk-table__cell">Fraud investigator, Case investigator </td>
+      <td class="govuk-table__cell" style="text-align:right;"><a href="#">Modify </a> &nbsp; <a href="#">Remove</a></td>
+    </tr>
+
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Temporary roles </td>
+      <td class="govuk-table__cell">Winter Fuel Processing, Payment checker, Deputy team leader</td>
+      <td class="govuk-table__cell" style="text-align:right;" ><a href="#">Modify </a> &nbsp; <a href="#">Remove</a></td>
+    </tr>
+
+
+
+  </tbody>
+</table>
+
+<nav class="dwp-pagination" aria-label="Pagination navigation">
+
+<ul class="dwp-pagination__list" >
+<li class="dwp-pagination__item  dwp-pagination__item--prev">
+  <a class="dwp-pagination__link">Previous<span class="govuk-visually-hidden"> page</span></a>
+</li>
+
+    <li class="dwp-pagination__item dwp-pagination__item--active"><a class="dwp-pagination__link"  aria-label="Page 1 of 1" aria-current="page">1</a></li>
+
+    <!-- <li class="dwp-pagination__item" aria-label="Page 2 of 2" ><a class="dwp-pagination__link" href="#" aria-label="Page 2 of 2">2</a></li> -->
+
+    <!-- <li class="dwp-pagination__item"><a class="dwp-pagination__link" href="/page=3" aria-label="Page 3 of 30">3</a></li>
+
+    <li class="dwp-pagination__item dwp-pagination__item--dots">…</li>
+
+    <li class="dwp-pagination__item"><a class="dwp-pagination__link" href="/page=5" aria-label="Page 5 of 30">5</a></li> -->
+
+<li class="dwp-pagination__item  dwp-pagination__item--next ">
+  <a class="dwp-pagination__link" >Next<span class="govuk-visually-hidden"> page</span></a>
+</li>
+</ul>
+<p class="dwp-pagination__results">Showing <b>1</b> to <b>2</b> of <b>1</b> pages</p>
+</nav>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+
+<a href="/self-service/admin-v3/maintain/dashboard""><button class="govuk-button" data-module="govuk-button">Go to dashboard</button></a>
+</div>
+</div>
+    </div>
+  </div>
+
+{% endblock %}

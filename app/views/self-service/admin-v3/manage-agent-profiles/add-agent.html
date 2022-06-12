@@ -1,0 +1,89 @@
+{% extends "admin-header-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add agent business areas - Agent profiles - DWP Task - Manage
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
+
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/org-business-list">Business areas</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/manage-agent-profiles/agents-list">Manage agent profiles</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add agent profile</a>
+            </li>
+
+
+          </ol>
+        </div>
+    </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form class="form" action="add-agent-ba" method="post">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-three-quarters">
+
+            <h1 class="govuk-heading-xl">
+              Add agent profile
+            </h1>
+
+      <br>
+
+                <div class="govuk-form-group">
+                <label class="govuk-fieldset__legend--s govuk-!-font-weight-bold" for="agent-keyid">
+                  Staff number
+                </label>
+                <p class="govuk-hint">This is the unique staff number for the agent provided by DWP People. </p>
+
+                <input class="govuk-input govuk-!-width-one-third" id="agent-keyid" name="agent-keyid" type="text" value="{{ data['agent-keyid'] }}"></div>
+
+                <label class="govuk-fieldset__legend--s govuk-!-font-weight-bold" for="agent-keyid">
+                  Full Name
+                </label>
+                <p class="govuk-hint">Please enter first name followed by surname </p>
+
+                <input class="govuk-input govuk-!-width-two-thirds" id="agent-fullname" name="agent-fullname" type="text" value="{{ data['agent-fullname'] }}"></div>
+
+
+                </div>
+
+
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+              </form>
+
+        </div>
+        </div>
+
+
+
+
+
+{% endblock %}

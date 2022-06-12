@@ -1,0 +1,88 @@
+{% extends "admin-header-with-nav-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check and confirm - Add characteristic - DWP Task - Manage
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").addClass("govuk-header__navigation-item--active");
+    $("#menu-char").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removelass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check and confirm
+      </h1>
+  </div>
+  </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+      <p class="govuk-heading-m">
+        Characteristics details &nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="govuk-link" href="add-attributes" >
+        <span class="govuk-body">Change</span>
+      </a>
+      </p>
+        <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['char-a-name'] | default('Language for England and Wales') }}
+          </dd>
+
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Value(s)
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data['char-a-value-0'] }}, {{ data['char-a-value-1'] }}, {{ data['char-a-value-2'] }}
+          </dd>
+
+        </div>
+
+
+      </dl>
+      <form class="form" action="/self-service/admin-v3/maintain/agent-groups/add-agent-group-char-new-added" >
+
+      <br><br>
+      <button class="govuk-button" data-module="govuk-button">Confirm and create characteristic</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

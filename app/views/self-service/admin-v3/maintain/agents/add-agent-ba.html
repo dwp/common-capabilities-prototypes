@@ -1,0 +1,179 @@
+{% extends "admin-header-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add agent business areas - Agent profiles
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
+
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list">
+
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/org-business-list">Home</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/agents/agents-list">Manage agent profiles</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/agents/add-agent">Add agent profile</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add agent business areas</a>
+            </li>
+
+          </ol>
+        </div>
+    </div>
+    </div>
+
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View agent details
+        </span>
+      </summary>
+
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            Staff number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['agent-keyid'] | default('ID2232DS') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-task-info-exp">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Full Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['agent-fullname'] | default('James Bond') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-task-info-exp">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+    </details>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">
+          Add agent business areas
+        </h1>
+
+        <p class="govuk-body">Select and add all the business areas this agent works for.</p>
+
+        <br>
+
+          <form class="form" method="post" action="do-you-want-to-add-char">
+            <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+                  Business areas
+                </label>
+
+
+                <p class="govuk-hint">Select business areas from the list </p>
+
+                <div class="govuk-form-group">
+
+
+                <select class="govuk-select govuk-!-width-one-half" id="selected-ba" name="selected-ba">
+                  <option>Select business area</option>
+                </select>
+
+              </div>
+              <br>
+                <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add business area</button>
+              </div>
+
+              <h2 class="govuk-heading-m">
+                Selected business areas
+              </h2>
+
+              <div class="govuk-form-group">
+                <table class="govuk-table" id="ba">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">Business areas</th>
+                      <th scope="col" class="govuk-table__header">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                  </tbody>
+                </table>
+              </div>
+            </fieldset>
+
+            <br><br>
+            <div class="govuk-inset-text " >
+              <p><span class="govuk-!-font-weight-bold">Can't see the business area you want? </span>
+                <br>Contact your team SPOC or DWP Task team to give you access to your business area.</p>
+
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+            </form>
+
+            <script type="text/javascript" src="/public/javascripts/ba-list.js"></script>
+
+        </div>
+      </div>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

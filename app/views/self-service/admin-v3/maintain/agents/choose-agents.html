@@ -1,0 +1,137 @@
+{% extends "admin-header-with-nav-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add agents - Agents
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
+
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list">
+
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/agents/agents-list">Agents</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add agents</a>
+            </li>
+
+          </ol>
+        </div>
+  </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+
+
+
+        {{ govukBackLink ({
+            text: 'Back',
+            href: 'javascript:history.back()'
+        }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">
+          Add agents
+        </h1>
+
+        <p class="govuk-body">Select and add agents.</p>
+
+        <br>
+
+          <form class="form" method="post" action="check-add-agent">
+            <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+                  Agent
+                </label>
+
+
+                <p class="govuk-hint">Select agents from the list </p>
+
+                <div class="govuk-form-group">
+
+
+                  <select class="govuk-select govuk-!-width-one-half" id="agent-selected" name="agent-selected">
+                    <option>- Select agent - </option>
+                  </select>
+
+              </div>
+              <br>
+                <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add agent</button>
+              </div>
+
+              <h2 class="govuk-heading-m">
+                Selected agents
+              </h2>
+
+              <div class="govuk-form-group">
+                <table class="govuk-table" id="agent-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">Agent names and staff number</th>
+                      <th scope="col" class="govuk-table__header">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                  </tbody>
+                </table>
+              </div>
+            </fieldset>
+
+            <br><br>
+            <div class="govuk-inset-text " >
+              <p><span class="govuk-!-font-weight-bold">Can't see the agent you want? </span><br><a href="/self-service/admin-v3/maintain/agents/add-agent.html">Add agent profile</a> </p>
+
+        </div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+
+        <script type="text/javascript" src="/public/javascripts/agent-list.js"></script>
+      </div>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

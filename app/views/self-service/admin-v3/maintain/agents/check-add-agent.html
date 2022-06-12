@@ -1,8 +1,19 @@
-{% extends "admin-header-with-nav-v3.html" %}
+{% extends "admin-header-v3.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
   Check agent detials and confirm - Agent profiles
+{% endblock %}
+
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,18 +23,17 @@
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <!-- Breadcrumbs for the page -->
-
         <div class="govuk-breadcrumbs" style="background:#ffffff; ">
           <ol class="govuk-breadcrumbs__list">
 
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/dashboard">Dashboard</a>
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agents/agents-list">Agent profiles</a>
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/agents/agents-list">Agents</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agents/add-agent">Add agent profile</a>
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/agents/agents-list">Add agents</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
               <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Check and confirm</a>
@@ -31,8 +41,11 @@
 
           </ol>
         </div>
-    </div>
-    </div>
+        </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+
 
     {{ govukBackLink ({
         text: 'Back',
@@ -60,8 +73,8 @@
    <div class="govuk-grid-column-full">
 
      <p class="govuk-heading-m">
-       Agent profile details &nbsp;&nbsp;&nbsp;&nbsp;
-     <a class="govuk-link" href="add-agent" >
+       Agent selected &nbsp;&nbsp;&nbsp;&nbsp;
+     <a class="govuk-link" href="choose-agents" >
        <span class="govuk-body">Change</span>
      </a>
      </p>
@@ -78,37 +91,47 @@
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Staff number
+              Name and staff number
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['agent-keyid'] | default('ID2232DS') }}
+              {{ data['agent-selected'] | default('ID2232DS') }}
             </dd>
 
           </div>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="border-bottom:0px;">
-              Full Name
-            </dt>
-            <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-              {{ data['agent-fullname'] | default('James Bond') }}
-            </dd>
-          </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key" style="border-bottom:0px;">
-                  Agent characteristics
-                </dt>
-                <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-                  {{ data['agent-attributes'] | default('Decision maker') }}
-                </dd>
-              </div>
+
 
 
             </dl>
+            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
 
+            <fieldset class="govuk-fieldset" aria-describedby="add-another-attribute-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Do you want to add another agent?
+                </h1>
+              </legend>
+              <!-- <div id="add-another-attribute-hint" class="govuk-hint">
+                Add another attribute to the attributes list.
+              </div> -->
+              <div class="govuk-radios govuk-radios--inline govuk-!-padding-top-3">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="add-another-characteristics" name="add-another-characteristics" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="add-another-characteristics">
+                    Yes, I want to add another
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="add-another-characteristics-2" name="add-another-characteristics" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="add-another-characteristics-2">
+                    No, take me to the list of agents
+                  </label>
+                </div>
+              </div>
 
-        <br><br>
-        <button class="govuk-button" data-module="govuk-button">Confirm and create agent profile</button>
+            </fieldset>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+        <button class="govuk-button" data-module="govuk-button">Confirm and add </button>
 
         </div>
       </form>

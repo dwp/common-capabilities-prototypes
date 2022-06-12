@@ -1,0 +1,102 @@
+{% extends "admin-header-with-nav-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check details of the attribute
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").addClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+
+  <a class="govuk-back-link" href="check-add-attribute">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check changed details
+      </h1>
+
+      <h1 class="govuk-heading-m">
+        Attribute details
+      </h1>
+
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['attribute-name'] | default('Language for England and Wales') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> attribute name</span>
+          </a>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Value(s)
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data['value-0'] }}  {{ data['value-1'] }}  {{ data['value-2'] }}  {{ data['value-3'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-attributes">
+              Change<span class="govuk-visually-hidden"> attribute value</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data['attribute-status'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-attributes">
+              Change<span class="govuk-visually-hidden"> attribute value</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+      <form class="form" action="/self-service/admin-self-service-1/attributes/add-attributes-add-another" method="">
+
+      <div class="govuk-form-group govuk-!-padding-top-8">
+
+      <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

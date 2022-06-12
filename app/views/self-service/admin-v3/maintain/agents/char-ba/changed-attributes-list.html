@@ -1,0 +1,93 @@
+{% extends "admin-header-with-nav-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Agent attributes list
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-tag--blue">
+      Prototype
+    </strong>&nbsp;<strong class="govuk-tag govuk-tag--red">
+      Experimental
+    </strong> &nbsp;
+    <span class="govuk-phase-banner__text">
+      Set up or maintain your organisation to use DWP Task.
+    </span>
+  </p>
+</div>
+<!-- Bread crumbs -->
+
+<div class="govuk-breadcrumbs govuk-breadcrumbs--collapse-on-mobile">
+<ol class="govuk-breadcrumbs__list">
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="/self-service/admin-self-service-1/setup-task-list">Home</a>
+  </li>
+  <li class="govuk-breadcrumbs__list-item">
+    <a class="govuk-breadcrumbs__link" href="#">List attributes</a>
+  </li>
+
+</ol>
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        Attribute added
+      </h3>
+      <p class="govuk-body"><strong>Name: </strong>{{ data['attribute-name'] | default('Language for England and Wales') }} <br>
+      <strong>Values: </strong> {{ data['attribute-uid'] | default('Welsh, English') }}
+      </p>
+      </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Attributes list
+      </h1>
+
+
+      <table class="govuk-table">
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Value(s)</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header" style="text-align:right;">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{ data['attribute-name'] | default('Language for England and Wales') }}</td>
+      <td class="govuk-table__cell"> {{ data['attribute-uid'] | default('Welsh, English') }}</td>
+      <td class="govuk-table__cell"> {{ data['attribute-status'] | default('Active') }}</td>
+      <td class="govuk-table__cell" style="text-align:right;"><a href="change-attribute">Change</a></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<p><a href="add-attributes">Add attribute</a></p>
+<br><br>
+<a href="/self-service/admin-self-service-1/setup-task-list-added-org-attri"><button class="govuk-button" data-module="govuk-button">Continue setup with task list</button></a>
+
+    </div>
+  </div>
+
+{% endblock %}

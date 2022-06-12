@@ -1,0 +1,132 @@
+{% extends "admin-header-with-nav-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add characteristic - DWP Task - Manage
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+
+
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Add characteristic
+
+      </h1>
+      <div class="govuk-inset-text">
+        Characteristics are used to match tasks to agents. For example, agent roles, location or grade.
+      </div>
+
+      <form class="form" method="post" action="check-add-char">
+        <fieldset class="govuk-fieldset" data-required data-error="Cannot be blank">
+
+          <br>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="attribute-name">
+            Characteristic name
+          </label>
+          <p class="govuk-hint">For example, ‘Skill’, ‘Location’, ‘Role’ or ‘Language’. </p>
+          <input class="govuk-input govuk-!-width-one-half" id="char--name" name="char--name" type="text"  ></div>
+
+
+<br>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="attribute-uid">
+            Characteristics value
+          </label>
+          <p class="govuk-hint">If the characteristic name is ‘Skill’, the value could be ‘New claims’ or ‘Policy specialist’. </p>
+          <!-- <input class="govuk-input govuk-!-width-two-thirds" id="attribute-uid" name="attribute-uid" type="text"></div>
+
+          <a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Add another value
+          </button></a> -->
+
+          <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Characteristics values added: {labelIndex}" data-add-remove-block-remove-message="Attribute value {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attribute values have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
+
+          <div class="add-remove-block__status visuallyhidden" role="status" aria-live="polite"></div>
+          <ul class="add-remove-block__list" style="padding-left:0px;"><li class="add-remove-block__item" data-item-index="0" style="list-style-type:none;">
+            <label class="form-label-bold" for="condition-0">Characteristics value <span class="add-remove-block__label-index">1</span> </label> <br>
+              <input class="govuk-input  govuk-!-width-one-third" type="text" id="char-value-0" name="char-value-0">
+              <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+                Remove value
+              </button>
+            </li></ul>
+            <!-- <div class="govuk-inset-text">
+              You can add multiple values to an attribute and create group. For example 'Language' can have multiple values like 'English', 'Welsh' or 'Irish'.
+            </div> -->
+          <div class="button-combo gutter-half-bottom">
+            <button type="button" class="add-remove-block__add-trigger govuk-button govuk-button--secondary">Add another value</button>
+            <!-- <button type="button" class="add-remove-block__remove-all-trigger button-combo__right govuk-link">Remove all values</button> -->
+          </div>
+          <script type="text/x-template" class="add-remove-block__item-tpl">
+            <li class="add-remove-block__item" data-item-index="{index}" style="list-style-type: none; padding-left:0px;">
+              <label class="form-label-bold" for="condition-{index}">Characteristics value <span class="add-remove-block__label-index"></span></label><br>
+              <input class="govuk-input govuk-!-width-one-third" type="text" id="char-value-{index}" name="char-value-{index}">
+              <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
+                Remove value
+              </button>
+            </li>
+          </script>
+        </div>
+
+      </fieldset>
+
+<!--
+      <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+      Attribute status
+      <p class="govuk-hint">It is the primary property for this attribute. </p>
+      </label>
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="attribute-status" name="attribute-status" type="radio" value="Active" {{ checked("attribute-status", "Active") }}>
+          <label class="govuk-label govuk-radios__label" for="attribute-status">
+            Active
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="attribute-status-2" name="attribute-status" type="radio" value="Inactive" {{ checked("attribute-status", "Inactive") }}>
+          <label class="govuk-label govuk-radios__label" for="attribute-status-2">
+            Inactive
+          </label>
+        </div>
+      </div> -->
+
+      <br><br>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

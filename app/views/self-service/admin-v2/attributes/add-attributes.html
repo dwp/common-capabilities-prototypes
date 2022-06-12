@@ -40,6 +40,16 @@
 
 {% endblock %}
 
+{% block pageScripts %}
+
+    <link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+    <script src="/public/javascripts/accessible-autocomplete-char.min.js" rel="stylesheet" type="text/javascript"></script>
+    <script src="/public/javascripts/assets_js_auto-complete-char.js" rel="stylesheet" type="text/javascript"></script>
+
+{% endblock %}
+
+
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -57,14 +67,32 @@
 
           <br>
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-!-font-weight-bold" for="attribute-name">
+          <!-- <label class="govuk-label govuk-!-font-weight-bold" for="attribute-name">
             Characteristic name
           </label>
           <p class="govuk-hint">This could be the skill or location or role or any other unique attribute. For example 'role' or 'language' </p>
-          <input class="govuk-input" id="attribute-name" name="attribute-name" type="text"  ></div>
+          <input class="govuk-input" id="attribute-name" name="attribute-name" type="text"  ></div> -->
 
 
 <br>
+
+
+              <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+                Characteristic
+              </label>
+
+              <p class="govuk-hint">Start typing and select characteristics from the list or enter a new one </p>
+
+              <div class="govuk-body">
+
+
+                <!-- <div><input class="govuk-input govuk-!-width-two-fourth" id="char-search" name="characteristics-selected" type="" ></div> -->
+                <div class="govuk-body govuk-!-width-one-half" id="char-search" name="characteristics-selected" > </div>
+                <div class="button-combo gutter-half-bottom">
+                  <button type="button" class="add-remove-block__add-trigger govuk-button govuk-button--secondary">Add another value</button>
+                  <!-- <button type="button" class="add-remove-block__remove-all-trigger button-combo__right govuk-link">Remove all values</button> -->
+                </div>
+
         <div class="govuk-form-group">
           <label class="govuk-label govuk-!-font-weight-bold" for="attribute-uid">
             Characteristics value
@@ -78,6 +106,10 @@
           <br>
 
           <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Characteristics values added: {labelIndex}" data-add-remove-block-remove-message="Attribute value {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attribute values have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
+
+
+
+
 
           <div class="add-remove-block__status visuallyhidden" role="status" aria-live="polite"></div>
           <ul class="add-remove-block__list" style="padding-left:0px;"><li class="add-remove-block__item" data-item-index="0" style="list-style-type:none;">
@@ -106,6 +138,8 @@
         </div>
 
       </fieldset>
+
+
 
 <!--
       <label class="govuk-label govuk-!-font-weight-bold" for="sort">

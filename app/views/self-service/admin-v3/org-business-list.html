@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Manage your business area - DWP task manage
+  Manage your business area - DWP Task - Manage
 {% endblock %}
 
 
@@ -10,17 +10,14 @@
 <main class="govuk-template__body">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
-
-                <h1 class="govuk-heading-xl">
-                    Manage your business area
-                </h1>
-
+            <h1 class="govuk-heading-xl">
+            Manage your business area
+            </h1>
             <p class="govuk-!-padding-bottom-8">View details, add & modify agent profiles, groups and activities.</p>
-
     </div>
     </div>
 
-
+    <!-- List of business areas -->
     <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
             <table class="govuk-table">
@@ -31,58 +28,78 @@
                 </tr>
                 </thead>
                 <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Attendance Allowance</td>
+                      <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Bereavement support</td>
+                      <td class="govuk-table__cell"><a href="maintain/dashboard">View dashboard</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Carer's Allowance</td>
+                      <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Care Homes</td>
+                      <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Cross Retirement</td>
+                      <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Get your state pension</td>
+                      <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Health</td>
+                      <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
+                  </tr>
+
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Pension Credit</td>
                     <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
                 </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Care Homes</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Health</td>
-                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Bereavement</td>
-                    <td class="govuk-table__cell"><a href="maintain/dashboard">View dashboard</a></td>
-                </tr>
+
+
+
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">Searchlight</td>
                     <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-underline" style="text-decoration:none;">View dashboard</a></td>
                 </tr>
+
                 </tbody>
             </table>
 
-      </div>
-  </div>
 
 
 
-
-
-
-  <div class="govuk-grid-row govuk-!-padding-top-5 contact-panel">
-    <div class="govuk-grid-column-full "  style="padding-left:0px;">
-
-    <!-- <h2 class="govuk-heading-m govuk-!-padding-top-5 "  style="padding-left:0px;">Useful links   </h2> -->
-
-          <div class="govuk-grid-column-full" style="padding-left:0px;">
-
-          <!-- Help section -->
-          <p><a href="/self-service/admin-v3/attributes/attributes-list.html" >Common Characteristics</a><br>
-          <span class="govuk-hint">Common skills, roles, languages and locations</span></p>
 
           </div>
+      </div>
 
-        <!-- <div class="govuk-grid-column-one-half">
+      <div class="govuk-grid-row ">
+            <div class="govuk-grid-column-one-half">
+                <p class="contact-panel govuk-body  govuk-!-padding-top-6">
+                  <a href="/self-service/admin-v3/manage-agent-profiles/agents-list.html" >Manage agent profiles</a><br>
+                  <span class="govuk-hint">Manage agent profile and their task matching characteristics</span>
+                </p>
+            </div>
 
-        <p><a href="/self-service/admin-v2/terms-and-glossary.html" >Help and guidance</a>
-        <span class="govuk-hint">List of terms used in this service.</span></p>
-        </div> -->
+            <div class="govuk-grid-column-one-half">
+                <p class="contact-panel govuk-body  govuk-!-padding-top-6">
+                  <a href="/self-service/admin-v3/attributes/attributes-list" >Common Characteristics</a><br>
+                  <span class="govuk-hint">Common skills, roles, languages and locations</span>
+                </p>
+            </div>
+      </div>
 
-  </div>
-  </div>
+
+
+
+
+
 </main>
 
 

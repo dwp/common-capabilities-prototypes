@@ -1,0 +1,227 @@
+{% extends "admin-header-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add agent characteristics - Agent profiles
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
+
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list">
+
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/org-business-list">Business areas</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/manage-agent-profiles/agents-list">Manage agent profiles</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/manage-agent-profiles/add-agent">Add agent profile</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item" >
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/manage-agent-profiles/add-agent-ba">Add agent business areas</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add agent characteristics</a>
+            </li>
+
+          </ol>
+        </div>
+    </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View agent details
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            Staff number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['agent-keyid'] | default('ID2232DS') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-agent">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Full Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['agent-fullname'] | default('Jack Reacher') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-agent">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business areas
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['selected-ba'] | default('Pension credit') }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="add-agent-ba">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+    </div>
+
+    </details>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">
+          Add agent characteristics
+        </h1>
+
+        <p class="govuk-body">Select and add all the characteristics this agent works for.</p>
+
+        <br>
+
+
+          <form class="form" method="post" action="check-add-agent-char-added">
+            <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+                  Characteristic
+                </label>
+
+                <p class="govuk-hint">Select characteristics from the list </p>
+
+                <div class="govuk-form-group">
+
+
+                <select class="govuk-select govuk-!-width-one-half" id="selected-char" name="selected-char">
+                  <option>Select characteristic</option>
+                  <option>{{ data['charvalue-0'] }}</option>
+                  <option>{{ data['charvalue-1'] }}</option>
+                  <option>{{ data['charvalue-2'] }}</option>
+
+                </select>
+
+              </div>
+              <br>
+                <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add characteristics</button>
+              </div>
+
+              <h2 class="govuk-heading-m">
+                Selected characteristics
+              </h2>
+
+              <div class="govuk-form-group">
+                <table class="govuk-table" id="characteristics">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">Characteristics</th>
+                      <th scope="col" class="govuk-table__header">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                  </tbody>
+                </table>
+              </div>
+            </fieldset>
+
+            <br><br>
+            <div class="govuk-inset-text " >
+              <p><span class="govuk-!-font-weight-bold">Can't see the characteristics you want? </span><br><a href="/self-service/admin-v3/manage-agent-profiles/char-agent/add-attributes.html">Add characteristics</a> </p>
+              <div class="govuk-warning-text">
+
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              You will be redirected to adding new characteristics.
+            </strong>
+            </div>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+            </form>
+
+            <script type="text/javascript" src="/public/javascripts/char-list.js"></script>
+
+        </div>
+      </div>
+
+
+
+
+<!--
+      // function addRow() {
+      //   var characteristics = document.getElementByName('characteristics-selected');
+      //   var char_criteria = document.getElementsByName('char-criteria');
+      //   var table = document.getElementById('characteristics-table');
+      //
+      //   var rowCount = table.rows.length;
+      //   var row = table.insertRow(rowCount);
+      //   row.className = 'govuk-table__row';
+      //
+      //   var valueCell = row.insertCell(0);
+      //   valueCell.innerHTML = characteristics.value;
+      //   valueCell.id = 'characteristics-' + characteristics.value;
+      //   valueCell.className = 'govuk-table__cell';
+      //
+      //   var actionCell = row.insertCell(1);
+      //   actionCell.innerHTML = '<a class="govuk-link" data-module="govuk-link" onclick="javascript:removeRow(' + rowCount + ');">Remove</a>';
+      //   actionCell.className = 'govuk-table__cell';
+      //   characteristics.value = '';
+      //
+      // }
+      //
+      // function removeRow(index) {
+      //   var table = document.getElementById('characteristics-table');
+      //   table.deleteRow(index);
+      // } -->
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

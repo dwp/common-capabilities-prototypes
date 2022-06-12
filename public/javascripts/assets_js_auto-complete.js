@@ -837,22 +837,25 @@ accessibleAutocomplete({
 
 accessibleAutocomplete_1({
     element: document.querySelector('#char-search'),
-    name: 'char',
+    name: 'characteristics-selected',
     id: 'char-search',
     source: char
 })
 
-// if (document.addEventListener){
-//     document.addEventListener('DOMContentLoaded', getElement, false);
-// } else if (document.attachEvent){
-//     document.attachEvent('onDOMContentLoaded', getElement);
-// }
 
-// function getElement() {
-//     if (document.getElementById("previousValue")) {
-//         document.getElementsByClassName("autocomplete__input autocomplete__input--default")[0].value = document.getElementById("previousValue").value;
-//         setTimeout(function(){
-//             document.getElementById("address-search__option--0").click()
-//         }, 100);
-//     }
-// }
+
+
+if (document.addEventListener){
+    document.addEventListener('DOMContentLoaded', getElement, false);
+} else if (document.attachEvent){
+    document.attachEvent('onDOMContentLoaded', getElement);
+}
+
+function getElement() {
+    if (document.getElementById("previousValue")) {
+        document.getElementsByClassName("autocomplete__input autocomplete__input--default")[0].value = document.getElementById("previousValue").value;
+        setTimeout(function(){
+            document.getElementById("address-search__option--0").click()
+        }, 100);
+    }
+}

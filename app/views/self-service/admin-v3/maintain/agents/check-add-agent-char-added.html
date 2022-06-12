@@ -1,0 +1,143 @@
+{% extends "admin-header-with-nav-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check agent detials and confirm - Agent profiles
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check and confirm
+      </h1>
+
+
+   </div>
+ </div>
+
+ <div class="govuk-grid-row">
+
+
+   <div class="govuk-grid-column-full">
+
+     <p class="govuk-heading-m">
+       Agent profile details &nbsp;&nbsp;&nbsp;&nbsp;
+     <a class="govuk-link" href="add-agent" >
+       <span class="govuk-body">Change</span>
+     </a>
+     </p>
+
+     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+
+      <form class="form"  method="post" action="added-to-agents-list">
+        <div class="govuk-form-group">
+
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+          <!-- <p><strong class="govuk-heading-m">Agent details</strong></p> -->
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Staff number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['agent-keyid'] | default('ID2232DS') }}
+            </dd>
+
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+              Full Name
+            </dt>
+            <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+              {{ data['agent-fullname'] | default('James Bond') }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Business areas
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['selected-ba'] | default('Bereavement support') }}
+            </dd>
+
+          </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+                  Agent characteristics
+                </dt>
+                <dd class="govuk-summary-list__value" style="border-bottom:0px;">
+                  {{ data['selected-char'] | default('Decision Maker, Newcastle') }}
+                </dd>
+              </div>
+
+
+            </dl>
+            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
+
+            <fieldset class="govuk-fieldset" aria-describedby="add-another-attribute-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Do you want to add another agent?
+                </h1>
+              </legend>
+              <!-- <div id="add-another-attribute-hint" class="govuk-hint">
+                Add another attribute to the attributes list.
+              </div> -->
+              <div class="govuk-radios govuk-radios--inline govuk-!-padding-top-3">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="add-another-characteristics" name="add-another-characteristics" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="add-another-characteristics">
+                    Yes, I want to add another
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="add-another-characteristics-2" name="add-another-characteristics" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="add-another-characteristics-2">
+                    No, take me to the list of agents
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+        <button class="govuk-button" data-module="govuk-button">Confirm and create agent profile</button>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

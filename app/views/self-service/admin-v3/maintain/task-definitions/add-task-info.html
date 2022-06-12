@@ -2,52 +2,47 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add an activity - Activities
+  Create teask template - Task templates - DWP Task - Manage
 {% endblock %}
 
 {% block pageScripts %}
   <script type="text/javascript">
     $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
     $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").removeClass("govuk-header__navigation-item--active");
     $("#menu-agents").removeClass("govuk-header__navigation-item--active");
     $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
   </script>
-
-
-
-    <link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
-    <script src="/public/javascripts/accessible-autocomplete-char.min.js" rel="stylesheet" type="text/javascript"></script>
-    <script src="/public/javascripts/assets_js_auto-complete-char.js" rel="stylesheet" type="text/javascript"></script>
-
-
-
 {% endblock %}
 
 {% block beforeContent %}
 
     {{ super() }}
 
-    <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <!-- Breadcrumbs for the page -->
 
-        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
-          <ol class="govuk-breadcrumbs__list">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <!-- Breadcrumbs for the page -->
 
-            <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
-            </li>
-            <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/task-definitions/task-defi">Task templates</a>
-            </li>
-            <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold" >Create task template</a>
-            </li>
+            <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+              <ol class="govuk-breadcrumbs__list">
 
-          </ol>
-        </div>
-    </div>
-    </div>
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/task-defi">Task templates</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Create task template</a>
+                </li>
+
+              </ol>
+            </div>
+      </div>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
     {{ govukBackLink ({
         text: 'Back',
         href: 'javascript:history.back()'
@@ -65,49 +60,9 @@
       </h1>
 
       <p class="govuk-inset-text">Add a re-usable task template that help users quickly create tasks to match with agents.</p>
-      <form class="form" action="add-char" method="post">
+      <form class="form" action="do-you-want-to-add-char" method="post">
 
 
-      <!--  <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Activity type
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['activity-type'] | default('Regular') }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="type-of-activity">
-                Change<span class="govuk-visually-hidden"> task name</span>
-              </a>
-              <br>
-              <br>
-            </dd>
-
-
-          </div>
-          </dl>
-
-
-        <label class="govuk-label govuk-!-font-weight-bold" for="sort">
-       Activity type
-       <p class="govuk-hint">It is the primary property for this attribute. </p>
-       </label>
-       <div class="govuk-radios govuk-radios--inline">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="attribute-status" name="activity-type" type="radio" value="Adhoc" {{ checked("activity-type", "Adhoc") }}>
-            <label class="govuk-label govuk-radios__label" for="attribute-status">
-              Adhoc
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="attribute-status-2" name="activity-type" type="radio" value="Regular" {{ checked("activity-type", "Regular") }}>
-            <label class="govuk-label govuk-radios__label" for="attribute-status-2">
-              Regular
-            </label>
-          </div>
-        </div>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">-->
 
         <fieldset class="govuk-fieldset govuk-!-padding-top-5">
 
@@ -119,32 +74,7 @@
           <p class="govuk-hint"> For example "Verify address for NI" or "Find an address" or "Reopened Claim"  </p>
 
           <input class="govuk-input govuk-!-width-two-thirds" id="task-defi-name" name="task-defi-name" type="text" value="{{ data['task-defi-name'] }}" ></div>
-<!--
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-!-font-weight-bold" for="task-domain">
-              Activity or task name to be displayed
-            </label>
-            <p class="govuk-hint">This the name of the task that is shown when agent claims a task. For example "Verify address" </p>
-            <input class="govuk-input " id="task-agent-name" name="agent-task-name" type="text" value="{{ data['agent-task-name'] }}"></div> -->
 
-            <!-- <label class="govuk-label govuk-!-font-weight-bold" for="sort">
-            Select actor type
-            </label>
-
-          <div class="govuk-radios govuk-radios--inline">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="activity-property" name="activity-property" type="radio" value="Agents" {{ checked("activity-property", "Agents") }}>
-              <label class="govuk-label govuk-radios__label " for="activity-property">
-                Agents
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="activity-property-2" name="activity-property" type="radio" value="Citizens" {{ checked("activity-property", "Citizens") }}>
-              <label class="govuk-label govuk-radios__label" for="activity-property2">
-                Citizens
-              </label>
-            </div>
-          </div> -->
 
       </fieldset>
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -155,8 +85,6 @@
             <label class="govuk-label govuk-!-font-weight-bold" for="task-priority">
               Priority
             </label>
-            <!-- <p class="govuk-hint">Select priority for these types of tasks. Default priority is 'Medium' </p> -->
-            <!-- <input class="govuk-input govuk-!-width-one-third" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}"> -->
 
             <select class="govuk-select govuk-!-width-one-half" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}" >
             <option value="No prority selected">-Select priority- </option>
@@ -212,36 +140,7 @@
                   </div>
       <br>
       <br>
-            <!--   <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
-                  Reserve tasks in days (optional)
-                </label>
-                <p class="govuk-hint">Enter the number of days a task can be reserved. </p>
-                <input class="govuk-input govuk-!-width-one-third" id="task-reserve" name="task-reserve" type="text" value="{{ data['task-reserve'] }}" ></div>
 
-                  <h1 class="govuk-heading-m">
-                    Select type and attribute
-                  </h1> -->
-
-                  <!-- <label class="govuk-label" for="sort">
-                  Select type
-                  <p class="govuk-hint">It is the primary property for this attribute. </p>
-                  </label>
-
-                <div class="govuk-radios govuk-radios--inline">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="remove-agent" name="attribute-property" type="radio" value="Mandatory">
-                    <label class="govuk-label govuk-radios__label" for="remove-attribute">
-                      Agents
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="remove-agent-2" name="attribute-property" type="radio" value="Optional">
-                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                      Citizens
-                    </label>
-                  </div>
-                </div> -->
 
     </fieldset>
 

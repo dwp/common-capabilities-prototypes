@@ -1,0 +1,237 @@
+{% extends "admin-header-with-nav-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add task characterisitics - Task templates - DWP Task - Manage
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").removeClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
+
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list">
+
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/task-defi">Task templates</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/add-task-info">Create task templates</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add task characteristics</a>
+            </li>
+
+          </ol>
+        </div>
+  </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block pageScripts %}
+
+
+    <link href="/public/stylesheets/accessible-autocomplete.min.css" rel="stylesheet" type="text/css">
+    <script src="/public/javascripts/accessible-autocomplete-char.min.js" rel="stylesheet" type="text/javascript"></script>
+    <script src="/public/javascripts/assets_js_auto-complete-char.js" rel="stylesheet" type="text/javascript"></script>
+
+
+
+{% endblock %}
+
+{% block content %}
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+
+          <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      View task template details
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+      <dt class="govuk-summary-list__key">
+        Task template name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['task-defi-name'] | default('Verify address for NI template') }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="add-task-info-exp">
+          Change<span class="govuk-visually-hidden"> date of birth</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Priority
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['task-priority'] | default('Very high') }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="add-task-info-exp">
+          Change<span class="govuk-visually-hidden"> date of birth</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Task start page (URL)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['task-url'] | default('sp.dwp.gov.uk/asdi23232asd/sdfsf') }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="add-task-info-exp">
+          Change<span class="govuk-visually-hidden"> address</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+Task completion time      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['task-sla'] | default('2') }} &nbsp;
+        {{ data['sla-time'] | default('days') }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="add-task-info-exp">
+          Change<span class="govuk-visually-hidden"> contact details</span>
+        </a>
+      </dd>
+    </div>
+  </dl>
+</div>
+
+</details>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">
+      Add task characteristics
+    </h1>
+    <p class="govuk-hint">This could be a skill, location, language or other criteria to help match this task to an agent. </p>
+
+    <form class="form" method="post" action="check-defi-details">
+      <fieldset class="govuk-fieldset" >
+        <div class="govuk-form-group">
+
+          <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+            Characteristic
+          </label>
+
+          <div class="govuk-form-group">
+
+
+          <select class="govuk-select govuk-!-width-one-half" id="selected-char" name="selected-char">
+            <option>Select characteristic</option>
+            <option>{{ data['char-a-value-0'] }}</option>
+            <option>{{ data['char-a-value-1'] }}</option>
+            <option>{{ data['char-a-value-2'] }}</option>
+          </select>
+
+        </div>
+
+
+        <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+          Select matching criteria
+        </label>
+
+        <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios" >
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"  id="selected-opt-1" name="selected-opt"  type="radio" value="Mandatory">
+            <label class="govuk-label govuk-radios__label" for="selected-opt-1" >
+              Mandatory
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"  id="selected-opt-2" name="selected-opt"  type="radio" value="Optional">
+            <label class="govuk-label govuk-radios__label" for="selected-opt-2">
+              Optional
+            </label>
+          </div>
+        </div>
+        <br>
+          <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add characteristics and criteria</button>
+        </div>
+        <br>
+        <br>
+        <h2 class="govuk-heading-m">
+          Selected characteristics and criteria
+        </h2>
+
+        <div class="govuk-form-group">
+          <table class="govuk-table" id="characteristics">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Characteristics</th>
+                <th scope="col" class="govuk-table__header">Criteria</th>
+                <th scope="col" class="govuk-table__header">Action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+      <br><br>
+      <div class="govuk-inset-text " >
+        <p><span class="govuk-!-font-weight-bold">Can't see the characteristics you want? </span><br><a href="/self-service/admin-v3/maintain/task-definitions/char-ba/add-char.html">Add characteristics</a> </p>
+        <div class="govuk-warning-text">
+
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You will be redirected to adding new characteristics.
+      </strong>
+      </div>
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+      <script type="text/javascript" src="/public/javascripts/char-list-tt.js"></script>
+
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+
+{% endblock %}
