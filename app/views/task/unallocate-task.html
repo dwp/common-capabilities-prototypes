@@ -1,0 +1,134 @@
+{% extends "tl-tasks.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cancel task
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<!-- Error Summary - Start -->
+<div class="govuk-error-summary govuk-radios__conditional--hidden" id="error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" >
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#reason-for-cancel">Enter reason for cancelling task</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Error Summary - End -->
+
+
+
+
+<!-- Main content start  -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Unallocate task
+      </h1>
+
+
+            <!-- Task information - start -->
+
+            <h2 class="govuk-heading-m">Task information</h2>
+
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Task
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Check non-employment income
+
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Status
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <strong class="govuk-tag govuk-tag--blue">
+                    In progress
+                  </strong>
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Assigned by
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Me
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Case number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  HR238615M
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Description
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Investigate and verify fostering, rental income and direct payment details
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Priority
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Very high
+                </dd>
+
+              </div>
+
+            </dl>
+
+            <!-- Task information - end -->
+
+      <br>
+      <br>
+
+      <form class="form " name="reason-for-cancel" action="/my-tasks-using-tl/task-list-cancel-paper-claim#in-progress" onsubmit="return validateForm()" method="post">
+        <h2 class="govuk-heading-m">Reason for unallocation</h2>
+
+      <div class="govuk-form-group" id="reason-for-cancel">
+        <label class="govuk-label" for="more-detail">
+          Reason for unallocating task
+        </label>
+
+        <!-- Field Error - Start -->
+        <span id="reason-to-cancel-text" class="govuk-error-message govuk-radios__conditional--hidden">
+            <span class="govuk-visually-hidden">Error:</span>Enter reason for cancelling task
+        </span>
+        <!-- Field Error - End -->
+
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Confirm and unallocate task</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

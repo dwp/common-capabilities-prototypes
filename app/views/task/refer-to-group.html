@@ -1,0 +1,212 @@
+{% extends "tl-tasks.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Refer task
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Error Summary - Start -->
+<div class="govuk-error-summary govuk-radios__conditional--hidden" id="error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" >
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#more-notes-text">Enter notes</a>
+      </li>
+      <li>
+        <a href="#more-details">Enter reason for referring task</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Error Summary - End -->
+
+<!-- Error Summary - Start -->
+<div class="govuk-error-summary govuk-radios__conditional--hidden" id="error-summary-2" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" >
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#more-notes-text">Enter notes</a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<!-- Error Summary - End -->
+
+<!-- Error Summary - Start -->
+<div class="govuk-error-summary govuk-radios__conditional--hidden" id="error-summary-3" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" >
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#more-details">Enter reason for referring task</a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<!-- Error Summary - End -->
+
+
+
+
+<!-- Main content start  -->
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Refer to an agent group
+      </h1>
+
+
+      <!-- Task information - start -->
+
+      <h2 class="govuk-heading-m">Task information</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+              Check non-employment income
+
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Assigned by
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Me
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            HR238615M
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Investigate and verify fostering, rental income and direct payment details
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Priority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Very high
+          </dd>
+
+        </div>
+
+      </dl>
+
+      <!-- Task information - end -->
+
+
+      <br>
+      <br>
+      <h2 class="govuk-heading-m">Select agent group and add notes</h2>
+
+      <form class="form" name="reason-for-escalate" action="escalate-confirm-answers" onsubmit="return validateForm()" method="post">
+
+        <div class="govuk-form-group">
+
+        <label class="govuk-label" for="escalate-level">
+          Select agent group
+        </label>
+
+        <!-- Field Error - Start -->
+        <span id="escalate-level-error" class="govuk-error-message govuk-radios__conditional--hidden">
+            <span class="govuk-visually-hidden">Error:</span>Enter your reason for not doing this task
+        </span>
+        <!-- Field Error - End -->
+
+        <select id="escalate-level-select " class="govuk-select govuk-!-width-one-half" name="escalate-level" value="" >
+          <option value="Team leader" selected>Team leader</option>
+          <option value="Decision maker" >Decision maker</option>
+        </select>
+        </div>
+
+
+
+
+      <!-- Notes -->
+      <div class="govuk-form-group" id="more-notes-section">
+        <label class="govuk-label" for="escalate-notes">
+          Enter notes
+        </label>
+
+        <!-- Field Error - Start -->
+        <span id="more-notes-text" class="govuk-error-message govuk-radios__conditional--hidden">
+            <span class="govuk-visually-hidden">Error:</span>Enter notes
+        </span>
+        <!-- Field Error - End -->
+
+
+        <textarea class="govuk-textarea" id="more-notes" name="more-notes" rows="5" aria-describedby="more-detail-hint"></textarea>
+      </div>
+
+      <!-- Reason for escalation -->
+      <div class="govuk-form-group" id="more-details">
+
+        <label class="govuk-label" for="more-detail">
+          Enter reason for referring task
+        </label>
+
+        <!-- Field Error - Start -->
+        <span id="reason-to-escalate-text" class="govuk-error-message govuk-radios__conditional--hidden">
+            <span class="govuk-visually-hidden">Error:</span>Enter reason for referring task
+        </span>
+        <!-- Field Error - End -->
+
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail"  rows="5" aria-describedby="more-detail-hint"></textarea>
+      </div>
+
+
+      <br>
+      <br>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
