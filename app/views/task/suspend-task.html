@@ -2,10 +2,27 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Suspend task
+  Suspend task - DWP Task
 {% endblock %}
 
 
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-mytask").removeClass("govuk-header__navigation-item--active");
+    $("#menu-manage-tasks").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
 
 {% block content %}
 
@@ -130,16 +147,20 @@
 
     </div>
     </div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      <form class="form " name="reason-for-cancel" action="/my-tasks-using-tl/task-list-cancel-paper-claim#in-progress" onsubmit="return validateForm()" method="post">
+      <form class="form " name="reason-for-cancel" action="confirm-suspension"  method="post">
 
         <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-    <h2 class="govuk-heading-m">Suspend task untill</h2>
 
+    <label class="govuk-label" for="more-detail">
+      Suspend task untill
+    </label>
     <div id="passport-issued-hint" class="govuk-hint">
       For example, 27 3 2007
     </div>
@@ -149,7 +170,7 @@
           <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
             Day
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="suspend-issued-day" type="text" inputmode="numeric">
         </div>
       </div>
       <div class="govuk-date-input__item">
@@ -157,7 +178,7 @@
           <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
             Month
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="suspend-issued-month" type="text" inputmode="numeric">
         </div>
       </div>
       <div class="govuk-date-input__item">
@@ -165,7 +186,7 @@
           <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
             Year
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="suspend-issued-year" type="text" inputmode="numeric">
         </div>
       </div>
     </div>
@@ -184,13 +205,26 @@
         </span>
         <!-- Field Error - End -->
 
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        <textarea class="govuk-textarea" id="more-detail" name="reason-suspend" rows="5" aria-describedby="more-detail-hint"></textarea>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Conffirm and suspend task</button>
+
+                    <div class="govuk-warning-text">
+                      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                      <strong class="govuk-warning-text__text">
+                        <span class="govuk-warning-text__assistive">Warning</span>
+                        Suspending this task will remove it from the task queue.
+                      </strong>
+                    </div>
+
+                    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+      <button class="govuk-button" data-module="govuk-button">Confirm and suspend</button>
 
       </form>
     </div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
   </div>
 
 

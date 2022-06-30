@@ -2,9 +2,27 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Unsuspend task
+Unsuspend task - DWP Task
 {% endblock %}
 
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-mytask").removeClass("govuk-header__navigation-item--active");
+    $("#menu-manage-tasks").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
 
 
 {% block content %}
@@ -19,116 +37,120 @@ Unsuspend task
         Unsuspend task
       </h1>
 
-
-            <!-- Task information - start -->
-
-            <h2 class="govuk-heading-m">Task information</h2>
-
-
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Task
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Check non-employment income
-
-                </dd>
-
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Status
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <strong class="govuk-tag govuk-tag--blue">
-                    In progress
-                  </strong>
-                </dd>
-
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Assigned by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Me
-                </dd>
-
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Case number
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  HR238615M
-                </dd>
-
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Description
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Investigate and verify fostering, rental income and direct payment details
-                </dd>
-
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Priority
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Very high
-                </dd>
-
-              </div>
-
-            </dl>
-
-            <!-- Task information - end -->
-
-      <br>
-      <br>
-
-      <form class="form " name="reason-for-cancel" action="/my-tasks-using-tl/task-list-cancel-paper-claim#in-progress" onsubmit="return validateForm()" method="post">
-        <!-- <h2 class="govuk-heading-m">Suspend task untill</h2> -->
-
-        <!-- <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-
-    <div id="passport-issued-hint" class="govuk-hint">
-      For example, 27 3 2007
     </div>
-    <div class="govuk-date-input" id="passport-issued">
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-            Day
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
-        </div>
       </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-            Month
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
-        </div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-            Year
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
-        </div>
-      </div>
-    </div>
+        <!-- Task information - start -->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
 
-  </fieldset>
-</div> -->
+        <h2 class="govuk-heading-m">Task information</h2>
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Task ID
+            </dt>
+            <dd class="govuk-summary-list__value">
+              DWPP2929
+            </dd>
+
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Task
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <a href="#">Update benefit information on behalf of a claimant</a>
+            </dd>
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date allocated
+            </dt>
+            <dd class="govuk-summary-list__value">
+              22/01/2022
+            </dd>
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Citizen GUID
+            </dt>
+            <dd class="govuk-summary-list__value">
+              HR238615M
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Claimant name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              J**** Bo**e
+            </dd>
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong class="govuk-tag govuk-tag--green">
+                Allocated
+              </strong>
+            </dd>
+
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Priority
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Very high
+            </dd>
+
+          </div>
+
+        </dl>
+        <!-- Task information - end -->
+        </div>
+
+        <!--  Task history </p> -->
+
+        <div class="govuk-grid-column-one-third">
+
+              <h2 class="govuk-heading-m" id="subsection-title">
+                Task history
+              </h2>
+          <ol style="list-style: none; padding-left:0px;" class="dwp-timeline" class="govuk-list govuk-!-font-size-16">
+            <li class="dwp-timeline__entry">
+              <h3 class="govuk-heading-s">Started</h3>
+              <p class="dwp-timeline__info">
+                <span class="govuk-visually-hidden visually-hidden">Task started</span>
+                <span class="dwp-timeline__author">by Jason Bourne</span>
+                <span class="dwp-timeline__date">29 June 2022 at 13:02</span>
+              </p>
+            </li>
+
+          </ol>
+
+          <!-- <p><a href="check-claim-details-history">View complete history</a></p> -->
+
+
+        </div>
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+      <form class="form " name="reason-for-cancel" action="confirm-unsuspend" onsubmit="return validateForm()" method="post">
+
 
       <div class="govuk-form-group" id="reason-for-cancel">
         <label class="govuk-label" for="more-detail">
@@ -141,13 +163,19 @@ Unsuspend task
         </span>
         <!-- Field Error - End -->
 
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        <textarea class="govuk-textarea" id="more-detail" name="unsuspend-reason" rows="5" aria-describedby="more-detail-hint"></textarea>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Conffirm and suspend task</button>
+
+
+                    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+      <button class="govuk-button" data-module="govuk-button">Confirm and unsuspend </button>
 
       </form>
     </div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
   </div>
 
 {% endblock %}

@@ -2,29 +2,32 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Cancel task
+  Reopen task - DWP Task
 {% endblock %}
 
 
 
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-mytask").removeClass("govuk-header__navigation-item--active");
+    $("#menu-manage-tasks").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+
 
 {% block content %}
-
-<!-- Error Summary - Start -->
-<div class="govuk-error-summary govuk-radios__conditional--hidden" id="error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" >
-  <h2 class="govuk-error-summary__title" id="error-summary-title">
-    There is a problem
-  </h2>
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        <a href="#reason-for-cancel">Enter reason for cancelling task</a>
-      </li>
-    </ul>
-  </div>
-</div>
-<!-- Error Summary - End -->
-
 
 
 
@@ -37,119 +40,117 @@
       </h1>
 
 
-            <!-- Task information - start -->
+          </div>
+            </div>
+              <!-- Task information - start -->
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
 
-            <h2 class="govuk-heading-m">Task information</h2>
+              <h2 class="govuk-heading-m">Task information</h2>
 
 
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Task ID
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  DWPP2929
-                </dd>
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Task ID
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    DWPP2929
+                  </dd>
 
+                </div>
+
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Task
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                      <a href="#">Update address information</a>
+                  </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Date allocated
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    11/06/2022
+                  </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Citizen GUID
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    HR238615M
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Claimant name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    J**** Bo**e
+                  </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Status
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--grey">
+                      Done
+                    </strong>
+                  </dd>
+
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Priority
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                     Medium
+                  </dd>
+
+                </div>
+
+              </dl>
+              <!-- Task information - end -->
               </div>
 
+              <!--  Task history </p> -->
+<!--
+              <div class="govuk-grid-column-one-third">
 
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Task
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    <a href="#">Update address information</a>
-                </dd>
+                    <h2 class="govuk-heading-m" id="subsection-title">
+                      Task history
+                    </h2>
+                <ol style="list-style: none; padding-left:0px;" class="dwp-timeline" class="govuk-list govuk-!-font-size-16">
+                  <li class="dwp-timeline__entry">
+                    <h3 class="govuk-heading-s">Started</h3>
+                    <p class="dwp-timeline__info">
+                      <span class="govuk-visually-hidden visually-hidden">Task started</span>
+                      <span class="dwp-timeline__author">by Jason Bourne</span>
+                      <span class="dwp-timeline__date">29 June 2022 at 13:02</span>
+                    </p>
+                  </li>
 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date allocated
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  22/01/2022
-                </dd>
+                </ol>
 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Citizen GUID
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  HR238615M
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Claimant name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  J**** Bo**e
-                </dd>
 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Status
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <strong class="govuk-tag govuk-tag--grey">
-                    Done
-                  </strong>
-                </dd>
 
+              </div> -->
               </div>
 
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Priority
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Very high
-                </dd>
-
-              </div>
-
-            </dl>
-            <br>
-            <h2 class="govuk-heading-m">Additional information</h2>
-
-
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Completed on
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  22/01/2022
-                </dd>
-
-              </div>
-
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Notes
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Update address information of claimant
-                </dd>
-
-              </div>
-
-
-
-            </dl>
-
-            <!-- Task information - end -->
-
-      <br>
-      <br>
-
-      <form class="form " name="reason-for-reopen" action="confirmation-reopen" method="post">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+      <form class="form " name="reason-for-reopen" action="confirm-reopen" method="post">
         <!-- <h2 class="govuk-heading-m">Reason for reopen</h2> -->
 
       <div class="govuk-form-group" id="reason-for-cancel">
@@ -163,10 +164,10 @@
         </span>
         <!-- Field Error - End -->
 
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        <textarea class="govuk-textarea" id="more-detail" name="reopen-reason" rows="5" aria-describedby="more-detail-hint"></textarea>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Confirm and reopen task</button>
+      <button class="govuk-button" data-module="govuk-button">Confirm and reopen</button>
 
       </form>
     </div>

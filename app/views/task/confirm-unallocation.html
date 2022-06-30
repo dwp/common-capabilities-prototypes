@@ -1,0 +1,150 @@
+{% extends "tl-tasks.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation - Unallocation - DWP Task
+{% endblock %}
+
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-mytask").removeClass("govuk-header__navigation-item--active");
+    $("#menu-manage-tasks").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Task unallocated</h1>
+
+      </div>
+
+      <br>
+
+
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Task information</h2>
+
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            DWPP2929
+          </dd>
+
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+              <a href="#">Update benefit information on behalf of a claimant</a>
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date allocated
+          </dt>
+          <dd class="govuk-summary-list__value">
+            22/01/2022
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Citizen GUID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            HR238615M
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claimant name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            J**** Bo**e
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--blue">
+              unallocated
+            </strong>
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Priority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Very high
+          </dd>
+
+        </div>
+
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+      <h2 class="govuk-heading-m">Unallocation information</h2>
+
+
+      <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reason for unallocation
+          </dt>
+          <dd class="govuk-summary-list__value">
+             {{ data['unallocation-reason'] }}
+          </dd>
+
+        </div>
+
+
+
+      </dl>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+      <p class="govuk-body">
+        <a href="search-results-staffnumber"> <button class="govuk-button" data-module="govuk-button">Back to search results</button>
+</a>
+&nbsp;
+<a href="search-task"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Find a task
+</button></a>
+      </p>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

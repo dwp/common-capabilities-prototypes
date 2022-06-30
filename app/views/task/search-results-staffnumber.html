@@ -5,7 +5,12 @@
   Search results
 {% endblock %}
 
-
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-mytask").removeClass("govuk-header__navigation-item--active");
+    $("#menu-manage-tasks").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
 
 {% block beforeContent %}
 
@@ -28,6 +33,8 @@
 
 
 <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
   <h1 class="govuk-heading-xl">Search results</h1>
 
   <span class="govuk-body-s">Staff number</span>
@@ -38,7 +45,7 @@
        <h1 class="govuk-heading-l">  {{ data['staff-number'] }} </h1>
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="change-selection">
+        <a href="search-task">
           Change
           <span class="govuk-visually-hidden">change staff number</span>
         </a>
@@ -83,13 +90,47 @@
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
-<span class="govuk-heading-xl">
-  9
-  <span class="govuk-body-m">Tasks</span>
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row">
 
-</span>
+<div class="govuk-grid-column-full" style="padding-left:0px; border-bottom:1px solid #b1b4b6; margin-bottom:50px;">
 
+  <div class="govuk-grid-column-one-quarter"   >
+
+    <span class="govuk-heading-xl" style="margin-bottom:15px;">
+      4
+      <span class="govuk-body-m">Allocated</span>
+
+    </span>
+</div>
+<div class="govuk-grid-column-one-quarter"   >
+
+  <span class="govuk-heading-xl" style="margin-bottom:15px;">
+    3
+    <span class="govuk-body-m">Suspended</span>
+
+  </span>
+</div>
+<div class="govuk-grid-column-one-quarter"   >
+
+  <span class="govuk-heading-xl" style="margin-bottom:15px;">
+    3
+    <span class="govuk-body-m">Done</span>
+
+  </span>
+</div>
+<div class="govuk-grid-column-one-quarter"  style="text-align:right !important;" >
+
+
+    <span class="govuk-body-m" ><a href="#">View all done tasks</a></span>
+
+
+</div>
+
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+</div>
 
           <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -97,17 +138,17 @@
       <th scope="col" class="govuk-table__header " style="width:10% !important;">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-!-font-weight-bold govuk-checkboxes__label" for="organisation">
+        <input class="govuk-checkboxes__input" id="task" name="task" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-!-font-weight-bold govuk-checkboxes__label" for="task">
           Task ID
         </label>
       </div></div>
      </th>
 
-      <th scope="col" class="govuk-table__header " style="width:35% !important;">Task</th>
-      <th scope="col" class="govuk-table__header" style="width:17% !important;">Allocated on</th>
-      <th scope="col" class="govuk-table__header" style="width:11% !important;">Status</th>
-      <th scope="col" class="govuk-table__header " style="width:40% !important;">Actions</th>
+      <th scope="col" class="govuk-table__header " style="width:35% !important; padding-top:20px;">Task</th>
+      <th scope="col" class="govuk-table__header" style="width:17% !important; padding-top:20px;">Allocated on</th>
+      <th scope="col" class="govuk-table__header" style="width:11% !important; padding-top:20px;">Status</th>
+      <th scope="col" class="govuk-table__header " style="width:40% !important; padding-top:20px;">Actions</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
@@ -303,6 +344,6 @@
 
         </div>
 
-
+</div>
 
 {% endblock %}
