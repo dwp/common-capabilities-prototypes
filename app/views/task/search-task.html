@@ -1,12 +1,17 @@
-{% extends "header-banner-tl.html" %}
+{% extends "tl-tasks.html" %}
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-How would you like to search for a task?
+Find a task
 
 {% endblock %}
 
-
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-mytask").removeClass("govuk-header__navigation-item--active");
+    $("#menu-manage-tasks").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
 
 
 {% block content %}
@@ -40,7 +45,7 @@ How would you like to search for a task?
   <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        How would you like to search for a task?
+        Find a task
       </h1>
     </legend>
     <br>

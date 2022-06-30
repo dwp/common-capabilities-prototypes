@@ -70,4 +70,24 @@ router.post('/char-ba', function (req, res) {
   }
 })
 
+
+
+//For Team leader interfaces
+
+// Selecting the search in Manage tasks
+router.post('/task/search-task', function (req, res) {
+
+  const searchTerm = req.session.data['searchTerm']
+
+  if (searchTerm === 'taskid') {
+    res.redirect('/task/search-results-taskid')
+  } else if(searchTerm === 'citizenGUID') {
+    res.redirect('/task/search-results-citizenGUID')
+  } else if(searchTerm === 'staffnumber') {
+    res.redirect('/task/search-results-staffnumber')
+  }
+})
+
+
+
 module.exports = router
