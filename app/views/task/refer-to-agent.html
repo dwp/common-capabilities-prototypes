@@ -7,52 +7,6 @@
 
 
 
-{% block header %}
-
-<header class="govuk-header " role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__content">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <span class="govuk-header__logotype-text">
-            Manage tasks
-          </span>
-        </span>
-      </a>
-      <br>
-      <br>
-      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
-      <nav>
-        <ul id="navigation" class="govuk-header__navigation  " aria-label="Navigation menu">
-          <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
-            <a class="govuk-header__link" href="/my-tasks-using-tl/task-list">
-              My tasks
-            </a>
-          </li>
-
-          <li class="govuk-header__navigation-item ">
-            <a class="govuk-header__link" href="/my-tasks-using-tl/statistics/statistics">
-              My clearances
-            </a>
-          </li>
-
-        </ul>
-      </nav>
-    </div>
-  </div>
-
-
-
-</header>
-{% endblock %}
-
-
-
-
-{% block beforeContent %}
-  <a class="govuk-back-link" href="verify-non-employment">Back</a>
-{% endblock %}
-
 
 
 
@@ -171,11 +125,47 @@
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Task ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            DWPP2929
+          </dd>
+
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Task
           </dt>
           <dd class="govuk-summary-list__value">
-              Check non-employment income
+              <a href="#">Update benefit information on behalf of a claimant</a>
+          </dd>
 
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date allocated
+          </dt>
+          <dd class="govuk-summary-list__value">
+            22/01/2022
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Citizen GUID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            HR238615M
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claimant name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            J**** Bo**e
           </dd>
 
         </div>
@@ -184,39 +174,15 @@
             Status
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong class="govuk-tag govuk-tag--blue">
-              In progress
+            <strong class="govuk-tag govuk-tag--green">
+              Allocated
             </strong>
           </dd>
 
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Assigned by
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Me
-          </dd>
 
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Case number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            HR238615M
-          </dd>
 
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Investigate and verify fostering, rental income and direct payment details
-          </dd>
 
-        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Priority
@@ -233,19 +199,19 @@
 
       <br>
       <br>
-      <h2 class="govuk-heading-m">Select team member and add notes</h2>
+      <h2 class="govuk-heading-m">Select an agent and add notes</h2>
 
-      <form class="form" name="reason-for-escalate" action="assign-task-confirm-answers" onsubmit="return validateForm()" method="post">
+      <form class="form" name="reason-for-refer" action="confirm-refer"  method="post">
 
         <div class="govuk-form-group" id="assign-team-member">
 
         <label class="govuk-label" for="assign-team-member">
-          Select team member
+          Select an agent
         </label>
 
         <!-- Field Error - Start -->
         <span id="assign-team-member-error" class="govuk-error-message govuk-radios__conditional--hidden">
-            <span class="govuk-visually-hidden">Error:</span>Select team member
+            <span class="govuk-visually-hidden">Error:</span>Select an agent
         </span>
         <!-- Field Error - End -->
 
@@ -268,12 +234,12 @@
       <!-- Notes -->
       <div class="govuk-form-group" id="more-notes-section">
         <label class="govuk-label" for="escalate-notes">
-          Enter notes
+          Notes (Optional)
         </label>
 
         <!-- Field Error - Start -->
         <span id="more-notes-text" class="govuk-error-message govuk-radios__conditional--hidden">
-            <span class="govuk-visually-hidden">Error:</span>Enter notes
+            <span class="govuk-visually-hidden">Error:</span>Notes
         </span>
         <!-- Field Error - End -->
 
@@ -285,12 +251,12 @@
       <div class="govuk-form-group" id="more-details">
 
         <label class="govuk-label" for="more-detail">
-          Enter reason for assigning task
+          Reason for reffering task
         </label>
 
         <!-- Field Error - Start -->
         <span id="reason-to-escalate-text" class="govuk-error-message govuk-radios__conditional--hidden">
-            <span class="govuk-visually-hidden">Error:</span>Enter reason for assigning task
+            <span class="govuk-visually-hidden">Error:</span>Reason for reffering task
         </span>
         <!-- Field Error - End -->
 
@@ -303,7 +269,7 @@
       <br>
       <br>
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <button class="govuk-button" data-module="govuk-button">Confirm and refer</button>
 
       </form>
     </div>

@@ -33,7 +33,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Unallocate task
+        Reopen task
       </h1>
 
 
@@ -45,11 +45,47 @@
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
+                  Task ID
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  DWPP2929
+                </dd>
+
+              </div>
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                   Task
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Check non-employment income
+                    <a href="#">Update address information</a>
+                </dd>
 
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date allocated
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  22/01/2022
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Citizen GUID
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  HR238615M
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Claimant name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  J**** Bo**e
                 </dd>
 
               </div>
@@ -58,39 +94,15 @@
                   Status
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  <strong class="govuk-tag govuk-tag--blue">
-                    In progress
+                  <strong class="govuk-tag govuk-tag--grey">
+                    Done
                   </strong>
                 </dd>
 
               </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Assigned by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Me
-                </dd>
 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Case number
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  HR238615M
-                </dd>
 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Description
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Investigate and verify fostering, rental income and direct payment details
-                </dd>
 
-              </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Priority
@@ -102,30 +114,59 @@
               </div>
 
             </dl>
+            <br>
+            <h2 class="govuk-heading-m">Additional information</h2>
+
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Completed on
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  22/01/2022
+                </dd>
+
+              </div>
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Notes
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Update address information of claimant
+                </dd>
+
+              </div>
+
+
+
+            </dl>
 
             <!-- Task information - end -->
 
       <br>
       <br>
 
-      <form class="form " name="reason-for-cancel" action="/my-tasks-using-tl/task-list-cancel-paper-claim#in-progress" onsubmit="return validateForm()" method="post">
-        <h2 class="govuk-heading-m">Reason for unallocation</h2>
+      <form class="form " name="reason-for-reopen" action="confirmation-reopen" method="post">
+        <!-- <h2 class="govuk-heading-m">Reason for reopen</h2> -->
 
       <div class="govuk-form-group" id="reason-for-cancel">
         <label class="govuk-label" for="more-detail">
-          Reason for unallocating task
+          Reason for reopening this task (optional)
         </label>
 
         <!-- Field Error - Start -->
         <span id="reason-to-cancel-text" class="govuk-error-message govuk-radios__conditional--hidden">
-            <span class="govuk-visually-hidden">Error:</span>Enter reason for cancelling task
+            <span class="govuk-visually-hidden">Error:</span>Enter reason for reopening task
         </span>
         <!-- Field Error - End -->
 
         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Confirm and unallocate task</button>
+      <button class="govuk-button" data-module="govuk-button">Confirm and reopen task</button>
 
       </form>
     </div>

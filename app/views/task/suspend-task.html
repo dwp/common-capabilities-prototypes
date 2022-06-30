@@ -13,11 +13,14 @@
 
 <!-- Main content start  -->
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full" >
 
-      <h1 class="govuk-heading-xl">
-        Suspend task
-      </h1>
+        <h1 class="govuk-heading-xl">
+          Suspend task
+        </h1>
+
+    <div class="govuk-grid-column-two-thirds" style="padding-left:0px;">
+
 
 
             <!-- Task information - start -->
@@ -28,11 +31,47 @@
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
+                  Task ID
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  DWPP2929
+                </dd>
+
+              </div>
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                   Task
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Check non-employment income
+                    <a href="#">Update address information</a>
+                </dd>
 
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date allocated
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  22/01/2022
+                </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Citizen GUID
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  HR238615M
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Claimant name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  J**** Bo**e
                 </dd>
 
               </div>
@@ -41,39 +80,15 @@
                   Status
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  <strong class="govuk-tag govuk-tag--blue">
-                    In progress
+                  <strong class="govuk-tag govuk-tag--green">
+                    Allocated
                   </strong>
                 </dd>
 
               </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Assigned by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Me
-                </dd>
 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Case number
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  HR238615M
-                </dd>
 
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Description
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Investigate and verify fostering, rental income and direct payment details
-                </dd>
 
-              </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Priority
@@ -85,18 +100,46 @@
               </div>
 
             </dl>
+          </div>
 
-            <!-- Task information - end -->
+                  <!--  Task history </p> -->
 
-      <br>
-      <br>
+                  <div class="govuk-grid-column-one-third">
+
+                        <h2 class="govuk-heading-m" id="subsection-title">
+                          Task history
+                        </h2>
+                    <ol style="list-style: none; padding-left:0px;" class="dwp-timeline" class="govuk-list govuk-!-font-size-16">
+                      <li class="dwp-timeline__entry">
+                        <h3 class="govuk-heading-s">Started</h3>
+                        <p class="dwp-timeline__info">
+                          <span class="govuk-visually-hidden visually-hidden">Task started</span>
+                          <span class="dwp-timeline__author">by Jason Bourne</span>
+                          <span class="dwp-timeline__date">29 June 2022 at 13:02</span>
+                        </p>
+                      </li>
+
+                    </ol>
+
+                    <!-- <p><a href="check-claim-details-history">View complete history</a></p> -->
+
+
+                  </div>
+
+
+
+    </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
       <form class="form " name="reason-for-cancel" action="/my-tasks-using-tl/task-list-cancel-paper-claim#in-progress" onsubmit="return validateForm()" method="post">
-        <h2 class="govuk-heading-m">Suspend task untill</h2>
 
         <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-  
+    <h2 class="govuk-heading-m">Suspend task untill</h2>
+
     <div id="passport-issued-hint" class="govuk-hint">
       For example, 27 3 2007
     </div>
@@ -149,5 +192,7 @@
       </form>
     </div>
   </div>
+
+
 
 {% endblock %}
