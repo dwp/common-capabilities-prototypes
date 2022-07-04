@@ -6,6 +6,12 @@
 {% endblock %}
 
 
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-mytask").removeClass("govuk-header__navigation-item--active");
+    $("#menu-manage-tasks").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
 
 {% block beforeContent %}
 
@@ -21,52 +27,24 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
       <h1 class="govuk-heading-xl">Search results</h1>
 
-      <h2 class="govuk-heading-s">Task ID</h2>
+      <span class="govuk-body-s">Task ID</span>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            {{ data['taskid'] }}
+           <h1 class="govuk-heading-l">  {{ data['taskid'] }} </h1>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="change-selection">
+            <a href="search-task">
               Change
               <span class="govuk-visually-hidden">change task id</span>
             </a>
           </dd>
-          <!-- <table class="govuk-table">
-    <caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>
-    <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Task ID</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Staff ID</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Task name</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Action</th>
-
-      </tr>
-    </thead>
-    <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">£109.80 per week</td>
-        <td class="govuk-table__cell">£109.80 per week</td>
-        <td class="govuk-table__cell">£109.80 per week</td>
-        <td class="govuk-table__cell">£59.10 per week</td>
-      </tr>
-
-    </tbody>
-  </table> -->
-
 
         </div>
-
-
-
       </dl>
-
 
     </div>
 
@@ -75,71 +53,12 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-s">
-        Task name
-      </h1>
+
           <h1 class="govuk-heading-xl">
-            Check residency qualification on behalf of a claimant
-          </h1>
+Task details          </h1>
 
           <p></p>
 
-          <h1 class="govuk-heading-m">
-            Allocation details
-          </h1>
-          <dl class="govuk-summary-list">
-
-
-                        <div class="govuk-summary-list__row">
-                          <dt class="govuk-summary-list__key">
-                            Activated on
-                          </dt>
-
-                          <dd class="govuk-summary-list__value">
-                              29 January 2022
-                          </dd>
-
-                        </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Activated by
-              </dt>
-
-              <dd class="govuk-summary-list__value">
-                  James Bond
-              </dd>
-
-            </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Staff number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                DWP-RBC009
-              </dd>
-
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Status
-              </dt>
-
-              <dd class="govuk-summary-list__value">
-                <strong class="govuk-tag govuk-tag--green">
-                  In progress
-                </strong>
-              </dd>
-
-            </div>
-
-
-          </dl>
-          <br><br>
-          <h1 class="govuk-heading-m">
-            Task details
-          </h1>
 
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
@@ -147,56 +66,68 @@
                 Task ID
               </dt>
               <dd class="govuk-summary-list__value">
-                  {{ data['taskid'] }}
+                DWPP2929
               </dd>
 
             </div>
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Task
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  <a href="#">Update benefit information on behalf of a claimant</a>
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date allocated
+              </dt>
+              <dd class="govuk-summary-list__value">
+                11/06/2022
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Citizen GUID
+              </dt>
+              <dd class="govuk-summary-list__value">
+                HR238615M
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Claimant name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                J**** Bo**e
+              </dd>
+
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <strong class="govuk-tag govuk-tag--green">
+                  Allocated
+                </strong>
+              </dd>
+
+            </div>
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Priority
               </dt>
               <dd class="govuk-summary-list__value">
-                Very high
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Attributes
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Decision maker, Welsh
+                 Medium
               </dd>
 
             </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Organisation name
-              </dt>
-
-              <dd class="govuk-summary-list__value">
-                  Residency
-              </dd>
-
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Execution URL
-              </dt>
-              <dd class="govuk-summary-list__value">
-                https://dwp.internal.benefit.app
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                SLA (days)
-              </dt>
-              <dd class="govuk-summary-list__value">
-                12
-              </dd>
-            </div>
-
-
 
           </dl>
 
@@ -206,22 +137,42 @@
 
         <div class="govuk-grid-column-one-third">
 
-          <aside class="app-related-items" role="complementary">
-            <h2 class="govuk-heading-m" id="subsection-title">
-              Actions
-            </h2>
-              <p><a href="address-information-map">
-                Unallocate task
-              </a></p>
-              <p><a href="address-information-map">
-                Refer the task
-              </a></p>
-              <p><a href="address-information-map">
-                Cancel task
-              </a></p>
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Task history
+          </h2>
+      <ol style="list-style: none; padding-left:0px;" class="dwp-timeline" class="govuk-list govuk-!-font-size-16">
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s">Started</h3>
+          <p class="dwp-timeline__info">
+            <span class="govuk-visually-hidden visually-hidden">Task started</span>
+            <span class="dwp-timeline__author">by Jason Bourne</span>
+            <span class="dwp-timeline__date">29 June 2022 at 13:02</span>
+          </p>
+        </li>
 
-          </aside>
+      </ol>
 
         </div>
+
   </div>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form class="form " name="reason-for-reopen" action="confirm-reopen" method="post">
+ <h1 class="govuk-heading-m">
+    Actions
+  </h1>
+
+  <p>
+  <td class="govuk-table__cell"><a href="refer-to-agent">Refer to an agent</a><br> <a href="refer-to-group">Refer to an agent group</a><br><a href="unallocate-task">Unallocate task</a> <br><a href="suspend-task">Suspend task</a> <br><a href="cancel-task">Cancel task</a></td>
+  </p>
+
+</form>
+</div>
+
+</div>
+
+
+
 {% endblock %}

@@ -2,55 +2,26 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Assign task
+  Reserve task for an agent - DWP Task
 {% endblock %}
 
 
-
-{% block header %}
-
-<header class="govuk-header " role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__content">
-      <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <span class="govuk-header__logotype-text">
-            Manage tasks
-          </span>
-        </span>
-      </a>
-      <br>
-      <br>
-      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
-      <nav>
-        <ul id="navigation" class="govuk-header__navigation  " aria-label="Navigation menu">
-          <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
-            <a class="govuk-header__link" href="/my-tasks-using-tl/task-list">
-              My tasks
-            </a>
-          </li>
-
-          <li class="govuk-header__navigation-item ">
-            <a class="govuk-header__link" href="/my-tasks-using-tl/statistics/statistics">
-              My clearances
-            </a>
-          </li>
-
-        </ul>
-      </nav>
-    </div>
-  </div>
-
-
-
-</header>
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-mytask").removeClass("govuk-header__navigation-item--active");
+    $("#menu-manage-tasks").addClass("govuk-header__navigation-item--active");
+  </script>
 {% endblock %}
-
-
-
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="verify-non-employment">Back</a>
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
 {% endblock %}
 
 
@@ -168,72 +139,82 @@
       <h2 class="govuk-heading-m">Task information</h2>
 
 
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Task
-          </dt>
-          <dd class="govuk-summary-list__value">
-              Check non-employment income
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Task ID
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          DWPP2929
+                        </dd>
 
-          </dd>
+                      </div>
 
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Status
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <strong class="govuk-tag govuk-tag--blue">
-              In progress
-            </strong>
-          </dd>
 
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Assigned by
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Me
-          </dd>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Task
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <a href="#">Update benefit information on behalf of a claimant</a>
+                        </dd>
 
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Case number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            HR238615M
-          </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Date allocated
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          11/06/2022
+                        </dd>
 
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Investigate and verify fostering, rental income and direct payment details
-          </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Citizen GUID
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          HR238615M
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Claimant name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          J**** Bo**e
+                        </dd>
 
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Priority
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Very high
-          </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Status
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong class="govuk-tag govuk-tag--grey">
+                            Done
+                          </strong>
+                        </dd>
 
-        </div>
+                      </div>
 
-      </dl>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Priority
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                           Medium
+                        </dd>
+
+                      </div>
+
+                    </dl>
       <!-- Task information - end -->
 
 
       <br>
       <br>
-      <h2 class="govuk-heading-m">Select team member and add notes</h2>
+      <h2 class="govuk-heading-m">Select team member</h2>
 
       <form class="form" name="reason-for-escalate" action="assign-task-confirm-answers" onsubmit="return validateForm()" method="post">
 
@@ -264,7 +245,7 @@
         </div>
 
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-          <h2 class="govuk-heading-m">Reserve untill</h2>
+          <h2 class="govuk-heading-m">Reserve until</h2>
 
           <div id="passport-issued-hint" class="govuk-hint">
             For example, 27 3 2007
@@ -301,12 +282,12 @@
       <!-- Notes -->
       <div class="govuk-form-group" id="more-notes-section">
         <label class="govuk-label" for="escalate-notes">
-          Enter notes
+          Notes
         </label>
 
         <!-- Field Error - Start -->
         <span id="more-notes-text" class="govuk-error-message govuk-radios__conditional--hidden">
-            <span class="govuk-visually-hidden">Error:</span>Enter notes
+            <span class="govuk-visually-hidden">Error:</span>Notes
         </span>
         <!-- Field Error - End -->
 
@@ -318,12 +299,12 @@
       <div class="govuk-form-group" id="more-details">
 
         <label class="govuk-label" for="more-detail">
-          Enter reason for assigning task
+          Reason for reserving task
         </label>
 
         <!-- Field Error - Start -->
         <span id="reason-to-escalate-text" class="govuk-error-message govuk-radios__conditional--hidden">
-            <span class="govuk-visually-hidden">Error:</span>Enter reason for assigning task
+            <span class="govuk-visually-hidden">Error:</span>Reason for reserving task
         </span>
         <!-- Field Error - End -->
 

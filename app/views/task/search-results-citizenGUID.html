@@ -24,28 +24,22 @@
 
       <h1 class="govuk-heading-xl">Search results</h1>
 
-      <h2 class="govuk-heading-s">Citizen GUID</h2>
+      <span class="govuk-body-s">Citizen GUID</span>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            {{ data['citizenGUID'] }}
+           <h1 class="govuk-heading-l">  {{ data['citizenGUID'] }} </h1>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="change-selection">
+            <a href="search-task">
               Change
-              <span class="govuk-visually-hidden">change citizen GUID</span>
+              <span class="govuk-visually-hidden">citizenGUID</span>
             </a>
           </dd>
 
-
-
         </div>
-
-
-
       </dl>
-
 
     </div>
 
@@ -61,85 +55,185 @@
           </h1>
 
 
-          <p></p>
+
+          <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full" style="padding-left:0px; border-bottom:1px solid #b1b4b6; margin-bottom:50px;">
+
+            <div class="govuk-grid-column-one-quarter"   >
+
+              <span class="govuk-heading-xl" style="margin-bottom:15px;">
+                2
+                <span class="govuk-body-m">Unallocated</span>
+
+              </span>
+            </div>
+
+            <div class="govuk-grid-column-one-quarter"   >
+
+              <span class="govuk-heading-xl" style="margin-bottom:15px;">
+                1
+                <span class="govuk-body-m">Allocated</span>
+
+              </span>
+          </div>
+          <div class="govuk-grid-column-one-quarter"   >
+
+            <span class="govuk-heading-xl" style="margin-bottom:15px;">
+              3
+              <span class="govuk-body-m">Suspended</span>
+
+            </span>
+          </div>
+
+          <div class="govuk-grid-column-one-quarter"  style="text-align:right !important;" >
+
+
+              <span class="govuk-body-m" ><a href="#">View all completed tasks</a></span>
+
+
+          </div>
+
+
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+          </div>
+
+
 
           <table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header ">Task ID</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Organisation</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Allocated on</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Status</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-third">Actions</th>
+      <th scope="col" class="govuk-table__header " style="width:10% !important;">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="task" name="task" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-!-font-weight-bold govuk-checkboxes__label" for="task">
+          Task ID
+        </label>
+      </div></div>
+     </th>
+
+      <th scope="col" class="govuk-table__header " style="width:35% !important; padding-top:20px;">Task</th>
+      <th scope="col" class="govuk-table__header" style="width:17% !important; padding-top:20px;">Allocated on</th>
+      <th scope="col" class="govuk-table__header" style="width:11% !important; padding-top:20px;">Status</th>
+      <th scope="col" class="govuk-table__header " style="width:40% !important; padding-top:20px;">Actions</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">GMP2232</td>
-      <td class="govuk-table__cell">Residency</td>
-      <td class="govuk-table__cell">12 January 2022</td>
-      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Active</strong></td>
-      <td class="govuk-table__cell"><a href="#">Unallocate</a> <br> <a href="#">Refer the task</a><br> <a href="#">Cancel task</a></td>
+
+
+      <td class="govuk-table__cell">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label  govuk-checkboxes__label" for="organisation">
+          GMP2232
+        </label>
+      </div></div>
+
+        </td>
+      <td class="govuk-table__cell">Update benefit information on behalf of a claimant</td>
+      <td class="govuk-table__cell">29 June 2022</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">unallocated</strong></td>
+      <td class="govuk-table__cell"> <a href="reserve-for-agent">Reserve for an agent</a><br><a href="reserve-for-group">Reserve for an group</a>  <br><a href="cancel-task">Cancel task</a></td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">GMP2232</td>
-      <td class="govuk-table__cell">Residency</td>
-      <td class="govuk-table__cell">12 January 2022</td>
-      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Active</strong></td>
-      <td class="govuk-table__cell"><a href="#">Unallocate</a> <br> <a href="#">Refer the task</a><br> <a href="#">Cancel task</a></td>
+      <td class="govuk-table__cell">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label  govuk-checkboxes__label" for="organisation">
+          GMP2232
+        </label>
+      </div></div>
+
+        </td>
+              <td class="govuk-table__cell">Update payment status</td>
+      <td class="govuk-table__cell">29 June 2022</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Allocated</strong></td>
+      <td class="govuk-table__cell"><a href="refer-to-agent">Refer to an agent</a><br> <a href="refer-to-group">Refer to an agent group</a><br><a href="unallocate-task">Unallocate task</a> <br><a href="suspend-task">Suspend task</a> <br><a href="cancel-task">Cancel task</a></td>
     </tr>
 
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">GMP332</td>
-      <td class="govuk-table__cell">Residency</td>
-      <td class="govuk-table__cell">12 January 2022</td>
+      <td class="govuk-table__cell">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label  govuk-checkboxes__label" for="organisation">
+          GMP2232
+        </label>
+          </div></div>
+
+      </td>
+
+      <td class="govuk-table__cell">Update payment status</td>
+      <td class="govuk-table__cell">12 June 2022</td>
       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Suspended</strong></td>
-      <td class="govuk-table__cell"><a href="#">Unsuspend</a> <br> <a href="#">Cancel task</a></td>
+      <td class="govuk-table__cell"><a href="unsuspend-task">Unsuspend task</a> <br> <a href="cancel-task">Cancel task</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label  govuk-checkboxes__label" for="organisation">
+          GMP2232
+        </label>
+          </div></div>
+
+      </td>
+            <td class="govuk-table__cell">Update residency information</td>
+      <td class="govuk-table__cell">10 April 2022</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Unallocated</strong></td>
+      <td class="govuk-table__cell"> <a href="reserve-for-agent">Reserve for an agent</a><br><a href="reserve-for-group">Reserve for an group</a>  <br><a href="cancel-task">Cancel task</a></td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">DWPP2929</td>
-      <td class="govuk-table__cell">Residency</td>
-      <td class="govuk-table__cell">11 January 2022</td>
-      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Done</strong></td>
-      <td class="govuk-table__cell"><a href="#">Reopen the task</a> </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">DWP2993</td>
-      <td class="govuk-table__cell">Residency</td>
-      <td class="govuk-table__cell">10 January 2022</td>
-      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Active</strong></td>
-      <td class="govuk-table__cell"><a href="#">Unallocate</a> <br> <a href="#">Refer the task</a><br> <a href="#">Cancel task</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">GMP3302</td>
-      <td class="govuk-table__cell">Residency</td>
-      <td class="govuk-table__cell">9 January 2022</td>
+      <td class="govuk-table__cell">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label  govuk-checkboxes__label" for="organisation">
+          GMP2232
+        </label>
+          </div></div>
+
+      </td>
+
+      <td class="govuk-table__cell">Update payment status</td>
+      <td class="govuk-table__cell">9 April 2022</td>
       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Suspended</strong></td>
       <td class="govuk-table__cell"><a href="#">Unsuspend</a>  <br> <a href="#">Cancel task</a></td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">GMP9332</td>
-      <td class="govuk-table__cell">Residency</td>
+      <td class="govuk-table__cell">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label  govuk-checkboxes__label" for="organisation">
+          GMP2232
+        </label>
+          </div></div>
+
+      </td>
+            <td class="govuk-table__cell">Update payment status</td>
       <td class="govuk-table__cell">19 December 2021</td>
       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Suspended</strong></td>
-      <td class="govuk-table__cell"><a href="#">Unsuspend</a> <br> <a href="#">Cancel task</a></td>
+      <td class="govuk-table__cell"><a href="unsuspend-task">Unsuspend</a> <br> <a href="#">Cancel task</a></td>
     </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">DW0929</td>
-      <td class="govuk-table__cell">Residency</td>
-      <td class="govuk-table__cell">8 March 2020</td>
-      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Done</strong></td>
-      <td class="govuk-table__cell"><a href="#">Reopen the task</a> </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">DWP829</td>
-      <td class="govuk-table__cell">Residency</td>
-      <td class="govuk-table__cell">29 May 2019</td>
-      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Done</strong></td>
-      <td class="govuk-table__cell"><a href="#">Reopen the task</a> </td>
-    </tr>
+
   </tbody>
 </table>
+
 
 
 
