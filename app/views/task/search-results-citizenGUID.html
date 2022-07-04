@@ -211,7 +211,7 @@
       <td class="govuk-table__cell">Update payment status</td>
       <td class="govuk-table__cell">9 April 2022</td>
       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Suspended</strong></td>
-      <td class="govuk-table__cell"><a href="#">Unsuspend</a>  <br> <a href="#">Cancel task</a></td>
+      <td class="govuk-table__cell"><a href="unsuspend-task">Unsuspend task</a> <br> <a href="cancel-task">Cancel task</a></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
@@ -228,12 +228,37 @@
             <td class="govuk-table__cell">Update payment status</td>
       <td class="govuk-table__cell">19 December 2021</td>
       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Suspended</strong></td>
-      <td class="govuk-table__cell"><a href="unsuspend-task">Unsuspend</a> <br> <a href="#">Cancel task</a></td>
+      <td class="govuk-table__cell"><a href="unsuspend-task">Unsuspend task</a> <br> <a href="cancel-task">Cancel task</a></td>
     </tr>
 
   </tbody>
 </table>
 
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold  " for="sort">
+    Bulk actions
+  </label>
+  <label class="govuk-hint" for="sort">
+    Select more than one task to enable bulk actions
+  </label>
+  <br><br>
+  <select class="govuk-select govuk-!-width-one-third" id="sort" name="sort">
+    <option value="published">- Select - </option>
+    <option value="updated">Unallocate task</option>
+    <option value="views">Cancel task</option>
+    <option value="comments">Reopen task</option>
+  </select>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+<button disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled" data-module="govuk-button">
+  Confirm and continue
+</button>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
 
 
 

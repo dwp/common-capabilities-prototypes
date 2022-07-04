@@ -30,14 +30,19 @@
 
 <!-- Main content start  -->
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
+    <h1 class="govuk-heading-xl">
+      Reserve to an agent group
+    </h1>
+
+</div>
+</div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        Reserve to an agent group
-      </h1>
 
 
       <!-- Task information - start -->
@@ -116,10 +121,31 @@
                           </dl>
 
       <!-- Task information - end -->
+</div>
+      <div class="govuk-grid-column-one-third">
+
+            <h2 class="govuk-heading-m" id="subsection-title">
+              Task history
+            </h2>
+        <ol style="list-style: none; padding-left:0px;" class="dwp-timeline" class="govuk-list govuk-!-font-size-16">
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s">No history</h3>
+
+          </li>
+
+        </ol>
+
+        <!-- <p><a href="check-claim-details-history">View complete history</a></p> -->
 
 
-      <br>
-      <br>
+      </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
       <h2 class="govuk-heading-m">Select agent group</h2>
 
       <form class="form" name="reason-for-escalate" action="escalate-confirm-answers" onsubmit="return validateForm()" method="post">
@@ -211,9 +237,10 @@
       </div>
 
 
-      <br>
-      <br>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
       <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
       </form>
     </div>
