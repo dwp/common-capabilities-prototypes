@@ -1,0 +1,225 @@
+{% extends "tl-tasks.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  View completed tasks
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-mytask").removeClass("govuk-header__navigation-item--active");
+    $("#menu-manage-tasks").addClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+  <h1 class="govuk-heading-xl">Completed tasks</h1>
+
+
+  <h1 class="govuk-heading-xl">
+    <span class="govuk-heading-s" style="margin-bottom:0px;">Citizen details </span>
+
+    Jason Bourne
+    <br>
+    <span class="govuk-body-l">XX 12 XX 34 56</span>
+  </h1>
+<br>
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-full" style="padding-left:0px; border-bottom:1px solid #b1b4b6; margin-bottom:50px;">
+
+  <div class="govuk-grid-column-one-quarter"   >
+
+    <span class="govuk-heading-xl" style="margin-bottom:15px;">
+      5
+      <span class="govuk-body-m">Completed tasks</span>
+
+    </span>
+</div>
+<div class="govuk-grid-column-one-quarter"   >
+
+
+</div>
+<div class="govuk-grid-column-one-quarter"   >
+
+
+
+</div>
+<div class="govuk-grid-column-one-quarter"  style="text-align:right !important;" >
+
+
+    <!-- <span class="govuk-body-m" ><a href="#">View all completed tasks</a></span> -->
+
+
+</div>
+
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
+
+</div>
+
+          <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header " style="width:10% !important;">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="task" name="task" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-!-font-weight-bold govuk-checkboxes__label" for="task">
+          Task ID
+        </label>
+      </div></div>
+     </th>
+
+      <th scope="col" class="govuk-table__header " style="width:35% !important; padding-top:20px;">Task</th>
+      <th scope="col" class="govuk-table__header" style="width:17% !important; padding-top:20px;">Completed on</th>
+      <th scope="col" class="govuk-table__header" style="width:11% !important; padding-top:20px;">Status</th>
+      <th scope="col" class="govuk-table__header " style="width:40% !important; padding-top:20px;">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label  govuk-checkboxes__label" for="organisation">
+          GMP2932
+        </label>
+          </div></div>
+
+      </td>
+            <td class="govuk-table__cell">Update residency information</td>
+      <td class="govuk-table__cell">10 April 2022</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Done</strong></td>
+      <td class="govuk-table__cell"><a href="reopen-task">Reopen the task</a> </td></tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label  govuk-checkboxes__label" for="organisation">
+          GMP9232
+        </label>
+          </div></div>
+
+      </td>
+
+      <td class="govuk-table__cell">Update payment status</td>
+      <td class="govuk-table__cell">9 April 2022</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Done</strong></td>
+      <td class="govuk-table__cell"><a href="reopen-task">Reopen the task</a> </td></tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label  govuk-checkboxes__label" for="organisation">
+          GMP832
+        </label>
+          </div></div>
+
+      </td>
+            <td class="govuk-table__cell">Update payment status</td>
+      <td class="govuk-table__cell">19 December 2021</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Done</strong></td>
+      <td class="govuk-table__cell"><a href="reopen-task">Reopen the task</a> </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label  govuk-checkboxes__label" for="organisation">
+          GMP13232
+        </label>
+          </div></div>
+
+      </td>
+            <td class="govuk-table__cell">Update address information</td>
+      <td class="govuk-table__cell">8 March 2020</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Done</strong></td>
+      <td class="govuk-table__cell"><a href="reopen-task">Reopen the task</a> </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label  govuk-checkboxes__label" for="organisation">
+          GMP90232
+        </label>
+          </div></div>
+
+      </td>
+            <td class="govuk-table__cell">Update address information</td>
+      <td class="govuk-table__cell">29 May 2019</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Done</strong></td>
+      <td class="govuk-table__cell"><a href="reopen-task">Reopen the task</a> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold  " for="sort">
+    Bulk actions
+  </label>
+  <label class="govuk-hint" for="sort">
+    Select more than one task to enable bulk actions
+  </label>
+  <br><br>
+  <select class="govuk-select govuk-!-width-one-third" id="sort" name="sort">
+    <option value="published">- Select - </option>
+    <option value="updated">Unallocate task</option>
+    <option value="views">Cancel task</option>
+    <option value="comments">Reopen task</option>
+  </select>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+
+<button disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled" data-module="govuk-button">
+  Confirm and continue
+</button>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
+
+
+        </div>
+
+</div>
+
+{% endblock %}
