@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add characteristic - DWP Task - Manage
+Add attribute - DWP Task - Manage
 {% endblock %}
 
 {% block pageScripts %}
@@ -30,10 +30,10 @@ Add characteristic - DWP Task - Manage
               <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/char-ba/char-list">Characteristics</a>
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/char-ba/char-list">Attributes</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add characteristic</a>
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add attribute</a>
             </li>
 
           </ol>
@@ -56,11 +56,40 @@ Add characteristic - DWP Task - Manage
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
-        Add characteristic
+        Add attribute
 
       </h1>
       <div class="govuk-inset-text">
-        Characteristics are used to match tasks to agents. For example, agent roles, location or grade.
+        Attributes are criteria used to match tasks with agents. They have names and values.
+      <br>
+      <br>
+      <p>For example:</p>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Attribute name</th>
+            <th scope="col" class="govuk-table__header">Value</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Skill</td>
+            <td class="govuk-table__cell">New claims</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Language</td>
+            <td class="govuk-table__cell">Welsh, Spanish, Italian</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Role</td>
+            <td class="govuk-table__cell">Policy specialist</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Location</td>
+            <td class="govuk-table__cell">Newcastle, London, Blackpool</td>
+          </tr>
+        </tbody>
+      </table>
       </div>
 
       <form class="form" method="post" action="check-add-char">
@@ -69,29 +98,29 @@ Add characteristic - DWP Task - Manage
           <br>
         <div class="govuk-form-group">
           <label class="govuk-label govuk-!-font-weight-bold" for="attribute-name">
-            Characteristic name
+            Attribute name
           </label>
-          <p class="govuk-hint">For example, ‘Skill’, ‘Location’, ‘Role’ or ‘Language’. </p>
+          <!-- <p class="govuk-hint">For example, ‘Skill’, ‘Location’, ‘Role’ or ‘Language’. </p> -->
           <input class="govuk-input govuk-!-width-one-half" id="attribute-name" name="attribute-name" type="text"  ></div>
 
 
 <br>
         <div class="govuk-form-group">
           <label class="govuk-label govuk-!-font-weight-bold" for="attribute-uid">
-            Characteristics value
+            Attribute value
           </label>
-          <p class="govuk-hint">If the characteristic name is ‘Skill’, the value could be ‘New claims’ or ‘Policy specialist’. </p>
+          <!-- <p class="govuk-hint">If the characteristic name is ‘Skill’, the value could be ‘New claims’ or ‘Policy specialist’. </p> -->
           <!-- <input class="govuk-input govuk-!-width-two-thirds" id="attribute-uid" name="attribute-uid" type="text"></div>
 
           <a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Add another value
           </button></a> -->
 
-          <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Characteristics values added: {labelIndex}" data-add-remove-block-remove-message="Attribute value {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attribute values have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
+          <div class="add-remove-block add-remove-block--has-min-items govuk-body" data-add-remove-block-add-message="Attribute values added: {labelIndex}" data-add-remove-block-remove-message="Attribute value {labelIndex} has been removed" data-add-remove-block-remove-all-message="All attribute values have been removed" data-add-remove-block-start="1" data-add-remove-block-min="1" data-add-remove-block-max="20">
 
           <div class="add-remove-block__status visuallyhidden" role="status" aria-live="polite"></div>
           <ul class="add-remove-block__list" style="padding-left:0px;"><li class="add-remove-block__item" data-item-index="0" style="list-style-type:none;">
-            <label class="form-label-bold" for="condition-0">Characteristics value <span class="add-remove-block__label-index">1</span> </label> <br>
+            <label class="form-label-bold" for="condition-0">Attribute value <span class="add-remove-block__label-index">1</span> </label> <br>
               <input class="govuk-input  govuk-!-width-one-third" type="text" id="value-0" name="value-0">
               <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
                 Remove value
@@ -106,7 +135,7 @@ Add characteristic - DWP Task - Manage
           </div>
           <script type="text/x-template" class="add-remove-block__item-tpl">
             <li class="add-remove-block__item" data-item-index="{index}" style="list-style-type: none; padding-left:0px;">
-              <label class="form-label-bold" for="condition-{index}">Characteristics value <span class="add-remove-block__label-index"></span></label><br>
+              <label class="form-label-bold" for="condition-{index}">Attribute value <span class="add-remove-block__label-index"></span></label><br>
               <input class="govuk-input govuk-!-width-one-third" type="text" id="value-{index}" name="value-{index}">
               <button class="add-remove-block__remove-trigger govuk-button govuk-button--secondary" type="button">
                 Remove value

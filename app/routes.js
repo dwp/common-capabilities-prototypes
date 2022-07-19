@@ -61,7 +61,7 @@ router.post('/added-to-characteristic-list', function (req, res) {
 // Add characteristeristcs while adding characteristic
 router.post('/char-ba', function (req, res) {
 
-  const addChar = req.session.data['add-another-characteristics']
+  const addChar = req.session.data['add-another-attribute']
 
   if (addChar === 'yes') {
     res.redirect('/self-service/admin-v3/maintain/char-ba/add-char')
