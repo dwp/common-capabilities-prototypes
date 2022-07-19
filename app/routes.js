@@ -4,7 +4,7 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 
-// Add characteristeristcs while adding agent profiles
+// Add attribute while adding agent profiles
 router.post('/add-agent-char', function (req, res) {
 
   const addChar = req.session.data['add-char-answer']
@@ -19,7 +19,7 @@ router.post('/add-agent-char', function (req, res) {
 
 
 
-// Add characteristeristcs while adding agent profiles
+// Add attribute while adding agent profiles
 router.post('/add-agent-char-ba', function (req, res) {
 
   const addChar = req.session.data['add-char-answer']
@@ -34,7 +34,7 @@ router.post('/add-agent-char-ba', function (req, res) {
 
 
 
-// Add characteristeristcs while adding task template
+// Add attribute while adding task template
 router.post('/add-tt-char-ba', function (req, res) {
 
   const addChar = req.session.data['add-char-answer']
@@ -46,7 +46,7 @@ router.post('/add-tt-char-ba', function (req, res) {
   }
 })
 
-// Add characteristeristcs while adding characteristic
+// Add attribute while adding characteristic
 router.post('/added-to-characteristic-list', function (req, res) {
 
   const addChar = req.session.data['add-another-characteristics']
@@ -58,7 +58,7 @@ router.post('/added-to-characteristic-list', function (req, res) {
   }
 })
 
-// Add characteristeristcs while adding characteristic
+// Add attribute while adding characteristic
 router.post('/char-ba', function (req, res) {
 
   const addChar = req.session.data['add-another-attribute']
@@ -69,6 +69,19 @@ router.post('/char-ba', function (req, res) {
     res.redirect('/self-service/admin-v3/maintain/char-ba/added-to-char-list')
   }
 })
+
+// Remove attribute while adding characteristic
+router.post('/remove-attri-ba', function (req, res) {
+
+  const addChar = req.session.data['add-another-attribute']
+
+  if (addChar === 'yes') {
+    res.redirect('/self-service/admin-v3/maintain/char-ba/removed-char-list')
+  } else {
+    res.redirect('/self-service/admin-v3/maintain/char-ba/char-list')
+  }
+})
+
 
 
 

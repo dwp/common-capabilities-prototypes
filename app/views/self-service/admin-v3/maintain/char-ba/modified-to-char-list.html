@@ -44,6 +44,24 @@ Attributes - DWP Task
 
 
 {% block content %}
+  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        Attribute modified
+      </h3>
+      <p class="govuk-body"><strong>Attribute name: </strong>{{ data['attribute-name'] | default('Speciality') }} <br>
+      <strong>Values: </strong> {{ data['value-0'] | default('Fraud investigator') }}, {{ data['value-1']}}
+      <!-- <strong>Status: </strong> {{ data['attribute-status'] | default('Active') }} -->
+      </p>
+
+      </div>
+  </div>
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -57,10 +75,10 @@ Attributes - DWP Task
         <div class="govuk-grid-column-full">
 
           <div class="govuk-grid-column-one-quarter govuk-!-padding-top-6 govuk-!-padding-left-0" >
-            <p class="govuk-body govuk-!-font-weight-bold"><span class="govuk-heading-xl" style="display:inline;">3 &nbsp;</span>Attributes </p>
+            <p class="govuk-body govuk-!-font-weight-bold"><span class="govuk-heading-xl" style="display:inline;">2 &nbsp;</span>Attributes </p>
           </div>
           <div class="govuk-grid-column-one-quarter govuk-!-padding-top-6 govuk-!-padding-left-0" >
-            <p class="govuk-body govuk-!-font-weight-bold"><span class="govuk-heading-xl" style="display:inline;">8 &nbsp;</span>Attribute values </p>
+            <p class="govuk-body govuk-!-font-weight-bold"><span class="govuk-heading-xl" style="display:inline;">5 &nbsp;</span>Attribute values </p>
           </div>
           <div class="govuk-grid-column-one-quarter  govuk-!-padding-top-6" style="text-align:right; vertical-align:bottom;">
           </div>
@@ -83,15 +101,11 @@ Attributes - DWP Task
       </tr>
       </thead>
       <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">{{ data['attribute-name'] | default('Speciality') }} </td>
-        <td class="govuk-table__cell">{{ data['value-0'] | default('Counsellor') }}, {{ data['value-1'] | default('Safeguarding') }}, {{ data['value-2'] }}</td>
-        <td class="govuk-table__cell" style="text-align:right;"><a href="#">Modify </a> &nbsp; <a href="#">Remove</a></td>
-        </tr>
+
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Specialists </td>
-          <td class="govuk-table__cell">Fraud investigator, Case investigator </td>
+          <td class="govuk-table__cell">{{ data['value-0']}}, {{ data['value-1']}}</td>
           <td class="govuk-table__cell" style="text-align:right;"><a href="modify-attribute">Modify </a> &nbsp; <a href="remove-attribute">Remove</a></td>
         </tr>
 

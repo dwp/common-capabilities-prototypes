@@ -1,0 +1,137 @@
+{% extends "admin-header-with-nav-v3.html" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Remove attribute - DWP Task - Manage
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
+    $("#menu-group").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").addClass("govuk-header__navigation-item--active");
+    $("#menu-agents").removeClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
+
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list">
+
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/char-ba/char-list">Attributes</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link">Remove attribute</a>
+            </li>
+
+
+          </ol>
+        </div>
+  </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Remove attribute
+      </h1>
+  </div>
+  </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+      <p class="govuk-heading-m">
+        Attributes details &nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="govuk-link" href="modify-attribute" >
+        <span class="govuk-body">Modify</span>
+      </a>
+      </p>
+        <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Specialists
+          </dd>
+
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Value(s)
+          </dt>
+          <dd class="govuk-summary-list__value">
+           	Fraud investigator, Case investigator
+          </dd>
+
+        </div>
+
+
+      </dl>
+      <form class="form" action="/remove-attri-ba" method="post">
+
+      <div class="govuk-form-group govuk-grid-column-three-quarters govuk-!-padding-top-8 govuk-!-padding-left-0">
+  <fieldset class="govuk-fieldset" aria-describedby="add-another-attribute-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Do you want to remove this attribute permanently?
+      </h1>
+    </legend>
+    <div id="changed-name-hint" class="govuk-hint">
+      This will remove the attribute and attribute values from the list permanently. You will no longer will be able use them to match tasks with agents.
+    </div><br>
+    <div class="govuk-radios govuk-radios--inline govuk-!-padding-top-3">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="add-another-attributes" name="add-another-attribute" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="add-another-attributes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="add-another-attributes-2" name="add-another-attribute" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="add-another-attributes-2">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+
+
+      <br><br>
+      <button class="govuk-button" data-module="govuk-button">Confirm and remove attribute</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
