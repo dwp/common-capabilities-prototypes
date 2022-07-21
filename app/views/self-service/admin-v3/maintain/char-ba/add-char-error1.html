@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Modify attribute - DWP Task - Manage
+Add attribute - DWP Task - Manage
 {% endblock %}
 
 {% block pageScripts %}
@@ -34,7 +34,7 @@ Modify attribute - DWP Task - Manage
               <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/char-ba/char-list">Attributes</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Modify attribute</a>
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add attribute</a>
             </li>
 
           </ol>
@@ -54,51 +54,62 @@ Modify attribute - DWP Task - Manage
 
 {% block content %}
 
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#attribute-name-error">Enter attribute name</a>
+      </li>
+      <li>
+        <a href="#attribute-value-error">Enter attribute value </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
-        Modify attribute
+        Add attribute
 
       </h1>
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Help with attribute and attribute values
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          Attributes are criteria used to match tasks with agents. They have names and values.
-          <br>
-          <br>
-          <p>For example:</p>
-          <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Attribute name</th>
-              <th scope="col" class="govuk-table__header">Attribute value(s)</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Skill</td>
-              <td class="govuk-table__cell">New claims</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Language</td>
-              <td class="govuk-table__cell">Welsh, Spanish, Italian</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Role</td>
-              <td class="govuk-table__cell">Policy specialist</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Location</td>
-              <td class="govuk-table__cell">Newcastle, London, Blackpool</td>
-            </tr>
-          </tbody>
-          </table>
-        </div>
-      </details>
+      <div class="govuk-inset-text">
+        Attributes are criteria used to match tasks with agents. They have names and values.
+      <br>
+      <br>
+      <p>For example:</p>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Attribute name</th>
+            <th scope="col" class="govuk-table__header">Attribute value(s)</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Skill</td>
+            <td class="govuk-table__cell">New claims</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Language</td>
+            <td class="govuk-table__cell">Welsh, Spanish, Italian</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Role</td>
+            <td class="govuk-table__cell">Policy specialist</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Location</td>
+            <td class="govuk-table__cell">Newcastle, London, Blackpool</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
@@ -107,58 +118,45 @@ Modify attribute - DWP Task - Manage
         <fieldset class="govuk-fieldset" data-required data-error="Cannot be blank">
 
           <br>
+          <div class="govuk-form-group govuk-form-group--error">
+
         <div class="govuk-form-group">
-          <h1 class="govuk-heading-m">
+          <label class="govuk-label govuk-!-font-weight-bold" for="attribute-name">
             Attribute name
-          </h1>
-          <p class="govuk-body govuk-!-font-size-36 ">Specialists</p>
+          </label>
+          <p id="attribute-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter attribute name
+          </p>
+          <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="attribute-name" name="attribute-name" type="text"  ></div>
 
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
+        </div>
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-          <h1 class="govuk-heading-m">
-            Attribute values
-          </h1>
 
-          <div class="govuk-form-group">
-            <table class="govuk-table" id="attribute-values_R">
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header">Value</th>
-                  <th scope="col" class="govuk-table__header">Action</th>
-                </tr>
-              </thead>
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">Fraud investigator</td>
-                <td class="govuk-table__cell"><a class="govuk-link" data-module="govuk-link" onclick="javascript:removeRow_R(1);">Remove</a></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Case investigator</td>
-                <td class="govuk-table__cell"><a class="govuk-link" data-module="govuk-link" onclick="javascript:removeRow_R(2);">Remove</a></td>
-            </tr>
-              </tbody>
-            </table>
-          </div>
 
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
+
 
             <h1 class="govuk-heading-l">
-              Add new attribute values
+              Add attribute values
             </h1>
 
+            <div class="govuk-form-group govuk-form-group--error">
 
             <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-!-font-weight-bold" for="attribute-value">
                   Value
                 </label>
-                <input class="govuk-input govuk-input--width-30" type="text" id="attribute-value" name="attribute-value">
+                <p id="attribute-value-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Enter attribute value
+                </p>
+                <input class="govuk-input govuk-input--width-30 govuk-input--error" type="text" id="attribute-value" name="attribute-value">
                 <br><br>
                 <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add</button>
               </div>
-
+            </div>
               <h1 class="govuk-heading-m">
-                Attribute values
+                Added values
               </h1>
 
               <div class="govuk-form-group">
@@ -171,10 +169,9 @@ Modify attribute - DWP Task - Manage
                   </thead>
                   <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">No attributes added</td>
+                    <td class="govuk-table__cell">No value added</td>
                     <td class="govuk-table__cell"></td>
-                  </tr>
-
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -201,7 +198,7 @@ Modify attribute - DWP Task - Manage
     var attributeValue = document.getElementById('attribute-value');
     var table = document.getElementById('attribute-values');
 
-    var rowCount = 3;
+    var rowCount = table.rows.length;
     var row = table.insertRow(rowCount);
     row.className = 'govuk-table__row';
 
@@ -217,10 +214,6 @@ Modify attribute - DWP Task - Manage
 
   function removeRow(index) {
     var table = document.getElementById('attribute-values');
-    table.deleteRow(index);
-  }
-  function removeRow_R(index) {
-    var table = document.getElementById('attribute-values_R');
     table.deleteRow(index);
   }
   </script>

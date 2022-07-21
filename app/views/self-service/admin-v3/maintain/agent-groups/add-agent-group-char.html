@@ -37,7 +37,7 @@
               <a class="govuk-breadcrumbs__link" href="/self-service/admin-v2/maintain/agent-groups/add-agent-group">Create agent group</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add group characteristics</a>
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add group attributes</a>
             </li>
 
           </ol>
@@ -109,7 +109,7 @@
       <div class="govuk-grid-column-full">
 
         <h1 class="govuk-heading-xl">
-          Add group characteristics
+          Add group attributes
         </h1>
 
         <p class="govuk-body">Select at least one characteristic to help match the agent to a task.</p>
@@ -122,7 +122,7 @@
                 <fieldset class="govuk-fieldset" data-required="" data-error="Cannot be blank">
                   <div class="govuk-form-group">
                     <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
-                      Characteristic
+                      Attribute
                     </label>
 
                     <!-- <p class="govuk-hint">Select at least one characteristic to help match the agents to a task. </p> -->
@@ -131,25 +131,25 @@
 
 
                     <select class="govuk-select govuk-!-width-one-half" id="selected-char" name="selected-char">
-                      <option>Select characteristic</option>
+                      <option>Select attribute value</option>
 
 
                     </select>
 
                   </div>
                   <br>
-                    <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add characteristics</button>
+                    <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add</button>
                   </div>
 
                   <h2 class="govuk-heading-m">
-                    Selected characteristics
+                    Selected attribute
                   </h2>
 
                   <div class="govuk-form-group">
                     <table class="govuk-table" id="characteristics">
                       <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
-                          <th scope="col" class="govuk-table__header">Characteristics</th>
+                          <th scope="col" class="govuk-table__header">Attribute</th>
                           <th scope="col" class="govuk-table__header">Action</th>
                         </tr>
                       </thead>
@@ -161,13 +161,13 @@
 
                 <br><br>
                 <div class="govuk-inset-text " >
-                  <p><span class="govuk-!-font-weight-bold">Can't see the characteristics you want? </span><br><a href="/self-service/admin-v3/maintain/agent-groups/char-agent/add-char.html">Add characteristics</a> </p>
+                  <p><span class="govuk-!-font-weight-bold">Can't see the attribute value you want? </span><br><a href="/self-service/admin-v3/maintain/agent-groups/char-agent/add-char.html">Add characteristics</a> </p>
                   <div class="govuk-warning-text">
 
                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                 <strong class="govuk-warning-text__text">
                   <span class="govuk-warning-text__assistive">Warning</span>
-                  You will be redirected to adding new characteristics.
+                  You will be redirected to adding new attribute.
                 </strong>
                 </div>
                 </div>
@@ -177,7 +177,9 @@
 
                 <script type="text/javascript" src="/public/javascripts/char-list.js"></script>
 
-              </div>
+
+            </div>
+            </div>
             </div>
 
 
