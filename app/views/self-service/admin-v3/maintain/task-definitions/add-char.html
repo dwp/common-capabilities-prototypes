@@ -36,7 +36,7 @@
               <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/add-task-info">Create task templates</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add task characteristics</a>
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Add task matching attribute values and criteria</a>
             </li>
 
           </ol>
@@ -134,23 +134,23 @@ Task completion time      </dt>
   <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-xl">
-      Add task characteristics
+      Add task matching attribute values and criteria
     </h1>
-    <p class="govuk-hint">This could be a skill, location, language or other criteria to help match an agent to a task. </p>
+    <!-- <p class="govuk-hint">This could be a skill, location, language or other criteria to help match an agent to a task. </p> -->
 
     <form class="form" method="post" action="check-defi-details">
       <fieldset class="govuk-fieldset" >
         <div class="govuk-form-group">
 
           <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
-            Characteristic
+            Attribute values
           </label>
 
           <div class="govuk-form-group">
 
 
           <select class="govuk-select govuk-!-width-one-half" id="selected-char" name="selected-char">
-            <option>Select characteristic</option>
+            <option>Select value</option>
           </select>
 
         </div>
@@ -175,19 +175,19 @@ Task completion time      </dt>
           </div>
         </div>
         <br>
-          <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add characteristics and criteria</button>
+          <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="addRow();">Add value and criteria</button>
         </div>
         <br>
         <br>
         <h2 class="govuk-heading-m">
-          Selected characteristics and criteria
+          Selected values and criteria
         </h2>
 
         <div class="govuk-form-group">
           <table class="govuk-table" id="characteristics">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Characteristics</th>
+                <th scope="col" class="govuk-table__header">Value</th>
                 <th scope="col" class="govuk-table__header">Criteria</th>
                 <th scope="col" class="govuk-table__header">Action</th>
               </tr>
@@ -199,13 +199,13 @@ Task completion time      </dt>
       </fieldset>
       <br><br>
       <div class="govuk-inset-text " >
-        <p><span class="govuk-!-font-weight-bold">Can't see the characteristics you want? </span><br><a href="/self-service/admin-v3/maintain/task-definitions/char-ba/add-char.html">Add characteristics</a> </p>
+        <p><span class="govuk-!-font-weight-bold">Can't see the attribtue you want? </span><br><a href="/self-service/admin-v3/maintain/task-definitions/char-ba/add-char.html">Add attribute</a> </p>
         <div class="govuk-warning-text">
 
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
         <span class="govuk-warning-text__assistive">Warning</span>
-        You will be redirected to adding new characteristics.
+        You will be redirected to adding new attribute.
       </strong>
       </div>
       </div>

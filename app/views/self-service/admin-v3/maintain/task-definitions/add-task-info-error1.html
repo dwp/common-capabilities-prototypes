@@ -52,6 +52,28 @@
 
 
 {% block content %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#template-name-error">Enter template name</a>
+      </li>
+      <li>
+        <a href="#priority-error">Select a priority</a>
+      </li>
+      <li>
+        <a href="#start-page-error">Enter task start page</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -69,7 +91,7 @@
         <strong>Task start page: </strong>https://gov.uk/find-address<br>
         <strong>Time for task completion: </strong>1 hour<br>
         <br>
-        They can have attribute values associated that help match tasks to agents.
+        They can have characteristics associated that help match tasks to agents.
 
 
         </p>
@@ -80,13 +102,16 @@
         <fieldset class="govuk-fieldset govuk-!-padding-top-5">
 
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
           <label class="govuk-label govuk-!-font-weight-bold" for="task-name">
             Task template name
           </label>
           <p class="govuk-hint"> For example "Verify address for NI" or "Find an address" or "Reopened Claim".  </p>
 
-          <input class="govuk-input govuk-!-width-two-thirds" id="task-defi-name" name="task-defi-name" type="text" value="{{ data['task-defi-name'] }}" ></div>
+          <p id="template-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter template name
+          </p>
+          <input class="govuk-input govuk-!-width-two-thirds govuk-input--error" id="task-defi-name" name="task-defi-name" type="text" value="{{ data['task-defi-name'] }}" ></div>
 
 
       </fieldset>
@@ -94,12 +119,14 @@
 
       <fieldset class="govuk-fieldset">
 
-          <div class="govuk-form-group">
+          <div class="govuk-form-group govuk-form-group--error">
             <label class="govuk-label govuk-!-font-weight-bold" for="task-priority">
               Priority
             </label>
-
-            <select class="govuk-select govuk-!-width-one-half" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}" >
+            <p id="priority-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select a priority
+            </p>
+            <select class="govuk-select govuk-!-width-one-half govuk-select--error" id="task-priority" name="task-priority" value="{{ data['task-priority'] }}" >
             <option value="No prority selected">-Select priority- </option>
             <option value="Very high">Very High</option>
             <option  value="High">High </option>
@@ -110,14 +137,17 @@
             </select>
           </div>
 
-          <div class="govuk-form-group">
+          <div class="govuk-form-group govuk-form-group--error">
             <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
               Task start page
             </label>
             <p class="govuk-hint">This is the web page address where the task will start.
 
- </p>
-            <input class="govuk-input govuk-!-width-two-thirds" id="task-url" name="task-url" type="text" value="{{ data['task-url'] }}" ></div>
+         </p>
+         <p id="start-page-error" class="govuk-error-message">
+           <span class="govuk-visually-hidden">Error:</span> Enter task start page
+         </p>
+            <input class="govuk-input govuk-!-width-two-thirds govuk-input--error" id="task-url" name="task-url" type="text" value="{{ data['task-url'] }}" ></div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">

@@ -4,6 +4,7 @@
 {% block pageTitle %}
   Confirm removal - Award updates (SRBs) - Task template
 {% endblock %}
+
 {% block pageScripts %}
   <script type="text/javascript">
     $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
@@ -32,7 +33,7 @@
               <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/task-defi">Task templates</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Confirm removal - Award updates (SRBs)</a>
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Confirm and remove</a>
             </li>
 
           </ol>
@@ -42,8 +43,10 @@
   <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
 
 
-    <a class="govuk-back-link" href="/self-service/admin-v3/maintain/dashboard">Back</a>
-
+  {{ govukBackLink ({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -109,10 +112,13 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Task matching characteristics
+              Task matching attribute values and criteria
             </dt>
             <dd class="govuk-summary-list__value">
-              Newcastle, Specialist, Grade 7, Fraud
+              Newcastle (Manditory) <br>
+              Specialist (Manditory)<br>
+              Grade 7 (Optional)<br>
+              Fraud (Manditory)
             </dd>
 
 
@@ -132,7 +138,7 @@
   </div>
   <div class="govuk-notification-banner__content">
 
-      <div class="govuk-form-group">
+      <div class="govuk-form-group" style="max-width:90%;">
 
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <p class="govuk-heading-l">Confirmation removal</p>

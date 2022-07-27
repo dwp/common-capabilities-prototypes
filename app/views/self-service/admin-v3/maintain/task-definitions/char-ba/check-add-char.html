@@ -2,16 +2,16 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check and confirm - Add characteristic - DWP Task - Manage
+  Check and confirm - Add attribute - DWP Task - Manage
 {% endblock %}
 
 {% block pageScripts %}
   <script type="text/javascript">
     $("#menu-dashboard").removeClass("govuk-header__navigation-item--active");
     $("#menu-group").removeClass("govuk-header__navigation-item--active");
-    $("#menu-char").removeClass("govuk-header__navigation-item--active");
+    $("#menu-char").addClass("govuk-header__navigation-item--active");
     $("#menu-agents").removeClass("govuk-header__navigation-item--active");
-    $("#menu-task-definitions").addClass("govuk-header__navigation-item--active");
+    $("#menu-task-definitions").removeClass("govuk-header__navigation-item--active");
   </script>
 {% endblock %}
 
@@ -19,7 +19,31 @@
 
     {{ super() }}
 
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- Breadcrumbs for the page -->
 
+        <div class="govuk-breadcrumbs" style="background:#ffffff; ">
+          <ol class="govuk-breadcrumbs__list">
+
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/dashboard">Dashboard</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/char-ba/char-list">Attributes</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/char-ba/add-char">Add attribute</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+              <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Check and confirm</a>
+            </li>
+
+          </ol>
+        </div>
+  </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
 
     {{ govukBackLink ({
         text: 'Back',
@@ -44,8 +68,8 @@
         <div class="govuk-grid-column-full">
 
       <p class="govuk-heading-m">
-        Characteristics details &nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="govuk-link" href="add-attributes" >
+        Attributes details &nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="govuk-link" href="add-char" >
         <span class="govuk-body">Change</span>
       </a>
       </p>
@@ -57,7 +81,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['char-a-name'] | default('Language for England and Wales') }}
+            {{ data['attribute-name'] | default('Language for England and Wales') }}
           </dd>
 
 
@@ -67,17 +91,57 @@
             Value(s)
           </dt>
           <dd class="govuk-summary-list__value">
-           {{ data['char-a-value-0'] }}, {{ data['char-a-value-1'] }}, {{ data['char-a-value-2'] }}
+           {{ data['value-0'] }}, {{ data['value-1'] }}, {{ data['value-2'] }}
           </dd>
 
         </div>
-
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+           {{ data['attribute-status'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-attribute-details">
+              Change<span class="govuk-visually-hidden"> attribute value</span>
+            </a>
+          </dd>
+        </div> -->
 
       </dl>
-      <form class="form" action="/self-service/admin-v3/maintain/task-definitions/add-char-new-added" >
+      <form class="form" action="/char-ba" method="post">
+
+      <div class="govuk-form-group govuk-!-padding-top-8">
+  <fieldset class="govuk-fieldset" aria-describedby="add-another-attribute-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Do you want to add another attribute?
+      </h1>
+    </legend>
+    <!-- <div id="add-another-attribute-hint" class="govuk-hint">
+      Add another attribute to the attributes list.
+    </div> -->
+    <div class="govuk-radios govuk-radios--inline govuk-!-padding-top-3">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="add-another-attributes" name="add-another-attribute" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="add-another-attributes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="add-another-attributes-2" name="add-another-attribute" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="add-another-attributes-2">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+
 
       <br><br>
-      <button class="govuk-button" data-module="govuk-button">Confirm and create characteristic</button>
+      <button class="govuk-button" data-module="govuk-button">Confirm and create attribute</button>
 
       </form>
 

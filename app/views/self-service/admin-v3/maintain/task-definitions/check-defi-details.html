@@ -37,7 +37,7 @@
               <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/add-task-info">Create task templates</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
-              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/add-task-info">Add task characteristics</a>
+              <a class="govuk-breadcrumbs__link" href="/self-service/admin-v3/maintain/task-definitions/add-char">Add task matching attribute values and criteria</a>
             </li>
             <li class="govuk-breadcrumbs__list-item">
               <a class="govuk-breadcrumbs__link govuk-!-font-weight-bold">Check and confirm</a>
@@ -70,7 +70,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
       <p class="govuk-heading-m">
-        Activity details &nbsp;&nbsp;&nbsp;&nbsp;
+        Task template details &nbsp;&nbsp;&nbsp;&nbsp;
       <a class="govuk-link" href="add-task-info" >
         <span class="govuk-body">Change</span>
       </a>
@@ -84,7 +84,7 @@
         <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Activity or task name
+            Task template name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['task-defi-name'] | default('Verify address for NI template') }}
@@ -125,43 +125,16 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Task characteristics
+            Task matching attribute values and criteria
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['selected-char'] | default('No characteristics added') }}
+            {{ data['selected-char'] | default('No characteristics added') }} ({{ data['selected-opt'] }})
           </dd>
 
 
         </div>
 
       </dl>
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--hidden">
-
-      <fieldset class="govuk-fieldset" aria-describedby="add-another-attribute-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            Do you want to create another task template?
-          </h1>
-        </legend>
-        <!-- <div id="add-another-attribute-hint" class="govuk-hint">
-          Add another attribute to the attributes list.
-        </div> -->
-        <div class="govuk-radios govuk-radios--inline govuk-!-padding-top-3">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="add-another-characteristics" name="add-another-characteristics" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="add-another-characteristics">
-              Yes
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="add-another-characteristics-2" name="add-another-characteristics" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="add-another-characteristics-2">
-              No
-            </label>
-          </div>
-        </div>
-
-      </fieldset>
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--hidden">
 
