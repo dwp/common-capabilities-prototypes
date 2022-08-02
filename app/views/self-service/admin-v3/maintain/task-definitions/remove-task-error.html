@@ -50,6 +50,20 @@
 {% endblock %}
 
 {% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+        <a href="#select-error">Select yes if you want to remove task template</a>
+      </li>
+
+    </ul>
+  </div>
+</div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -138,7 +152,7 @@
   </div>
   <div class="govuk-notification-banner__content">
 
-      <div class="govuk-form-group" style="max-width:90%;">
+      <div class="govuk-form-group govuk-form-group--error " style="max-width:90%;">
 
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <p class="govuk-heading-l">Confirmation removal</p>
@@ -149,6 +163,9 @@
             This will remove the task template from the list permanently. You will no longer be able to use this to match tasks to agents.
           </strong>
         </div>
+        <p id="select-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Select yes if you want to remove task template
+        </p>
         <div class="govuk-radios govuk-radios--inline">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="remove-attribute" name="remove-task-definition" type="radio" value="yes">

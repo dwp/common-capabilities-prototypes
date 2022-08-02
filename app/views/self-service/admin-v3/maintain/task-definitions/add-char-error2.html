@@ -56,6 +56,24 @@
 
 {% block content %}
 
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#attribute-error">Select attribute value</a>
+      </li>
+      <!-- <li>
+        <a href="#select-error">Select if this is mandatory or optional</a>
+      </li> -->
+
+    </ul>
+  </div>
+</div>
+
+
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
@@ -134,22 +152,25 @@ Task completion time      </dt>
   <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-xl">
-      Add task matching attribute values
+      Add task matching attribute values and criteria
     </h1>
     <!-- <p class="govuk-hint">This could be a skill, location, language or other criteria to help match an agent to a task. </p> -->
 
     <form class="form" method="post" action="check-defi-details">
       <fieldset class="govuk-fieldset" >
-        <div class="govuk-form-group">
-
-          <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
-            Attribute values
-          </label>
-
-          <div class="govuk-form-group">
+        <div class="govuk-form-group ">
 
 
-          <select class="govuk-select govuk-!-width-one-half" id="selected-char" name="selected-char">
+          <div class="govuk-form-group govuk-form-group--error">
+            <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
+              Attribute values
+            </label>
+
+
+            <p id="attribute-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select attribute value
+            </p>
+          <select class="govuk-select govuk-!-width-one-half govuk-select--error" id="selected-char" name="selected-char">
             <option>Select value</option>
           </select>
 
@@ -159,10 +180,12 @@ Task completion time      </dt>
         <label class="govuk-label govuk-!-font-weight-bold" for="task-subject">
           Select matching criteria
         </label>
-
+        <!-- <p id="select-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Select if this is mandatory or optional
+        </p> -->
         <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios" >
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input"  id="selected-opt-1" name="selected-opt"  type="radio" value="Mandatory">
+            <input class="govuk-radios__input"  id="selected-opt-1" name="selected-opt" checked type="radio" value="Mandatory">
             <label class="govuk-label govuk-radios__label" for="selected-opt-1" >
               Mandatory
             </label>
@@ -193,6 +216,11 @@ Task completion time      </dt>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Processing agent</td>
+                <td class="govuk-table__cell">Manditory</td>
+                <td class="govuk-table__cell" ><a href="#">Remove</a></td>
+              </tr>
             </tbody>
           </table>
         </div>
