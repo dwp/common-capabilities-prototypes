@@ -68,7 +68,7 @@ for (var i = 0; i < charArray.length; ++i) {
 
 
 function addRow() {
-  var selectedChar = document.getElementById('attri-value');
+  var selectedChar = document.getElementById('attri-value-added');
   var table = document.getElementById('attri-values');
 
   var rowCount = table.rows.length;
@@ -77,7 +77,7 @@ function addRow() {
 
   var valueCell = row.insertCell(0);
   valueCell.innerHTML = selectedChar.options[selectedChar.selectedIndex].text;
-  valueCell.id = 'attribute-value-' + selectedChar.options[selectedChar.selectedIndex].text;
+  valueCell.id = 'attri-value-' + selectedChar.options[selectedChar.selectedIndex].text;
   valueCell.className = 'govuk-table__cell';
 
   var actionCell = row.insertCell(1);
